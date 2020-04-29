@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tarea2progra3.controller;
+package viruss.controller;
 
 import javafx.scene.control.Control;
 import javafx.scene.control.TextInputControl;

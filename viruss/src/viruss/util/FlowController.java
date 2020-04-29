@@ -5,35 +5,28 @@
  */
 package viruss.util;
 
-import clinicauna.ClinicaUNA;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import javafx.animation.FadeTransition;
-import javafx.animation.Transition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
-import javafx.util.Duration;
-import clinicauna.controller.Controller;
-import javafx.scene.layout.HBox;
+import viruss.controller.Controller;
 
 public class FlowController {
 
     private static FlowController INSTANCE = null;
     private static Stage mainStage;
     public static Stage mainStageNueva;
-    private static ResourceBundle idioma;
+//    private static ResourceBundle idioma;
     private static HashMap<String, FXMLLoader> loaders = new HashMap<>();
 
     private FlowController() {
@@ -64,7 +57,7 @@ public class FlowController {
     public void InitializeFlow(Stage stage, ResourceBundle idioma) {
         getInstance();
         this.mainStage = stage;
-        this.idioma = idioma;
+//        this.idioma = idioma;
     }
 
     private FXMLLoader getLoader(String name) {
@@ -73,9 +66,9 @@ public class FlowController {
             synchronized (FlowController.class) {
                 if (loader == null) {
                     try {
-                        loader = new FXMLLoader(ClinicaUNA.class.getResource("view/" + name + ".fxml"), this.idioma);
+                        loader = new FXMLLoader(viruss.Viruss.class.getResource("view/" + name + ".fxml"));
                         loader.load();
-//                        loaders.put(name, loader);
+                        loaders.put(name, loader);
                     } catch (Exception ex) {
                         loader = null;
                         java.util.logging.Logger.getLogger(FlowController.class.getName()).log(Level.SEVERE, "Creando loader [" + name + "].", ex);
@@ -88,9 +81,9 @@ public class FlowController {
 
     public void goMain() {
         try {
-            this.mainStage.setScene(new Scene(FXMLLoader.load(ClinicaUNA.class.getResource("view/Principal.fxml"), this.idioma)));
-            this.mainStage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-            this.mainStage.setTitle("Clinica UNA");
+            this.mainStage.setScene(new Scene(FXMLLoader.load(viruss.Viruss.class.getResource("view/Principal.fxml"))));
+//            this.mainStage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
+//            this.mainStage.setTitle("Clinica UNA");
             this.mainStage.show();
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(FlowController.class.getName()).log(Level.SEVERE, "Error inicializando la vista base.", ex);
@@ -146,8 +139,8 @@ public class FlowController {
         Controller controller = loader.getController();
         controller.initialize();
         Stage stage = new Stage();
-        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-        stage.setTitle("Clinica UNA");
+//        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
+//        stage.setTitle("Clinica UNA");
 
         stage.setOnHidden((WindowEvent event) -> {
             controller.getStage().getScene().setRoot(new Pane());
@@ -168,8 +161,8 @@ public class FlowController {
         Controller controller = loader.getController();
         controller.initialize();
         Stage stage = new Stage();
-        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-        stage.setTitle("Clinica UNA");
+//        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
+//        stage.setTitle("Clinica UNA");
         stage.setResizable(resizable);
         stage.setOnHidden((WindowEvent event) -> {
             controller.getStage().getScene().setRoot(new Pane());
@@ -194,8 +187,8 @@ public class FlowController {
         Controller controller = loader.getController();
         controller.initialize();
         Stage stage = new Stage();
-        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-        stage.setTitle("Clinica UNA");
+//        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
+//        stage.setTitle("Clinica UNA");
         stage.setResizable(resizable);
         stage.setOnHidden((WindowEvent event) -> {
             controller.getStage().getScene().setRoot(new Pane());
@@ -216,26 +209,26 @@ public class FlowController {
         return getLoader(viewName).getController();
     }
 
-    public static void setIdioma(ResourceBundle idioma) {
-        FlowController.idioma = idioma;
-    }
+//    public static void setIdioma(ResourceBundle idioma) {
+//        FlowController.idioma = idioma;
+//    }
 
-    public static void CambiarIdioma(String L) {
-        ResourceBundle idioma;
-        if (L.equals("I")) {
-            idioma = ResourceBundle.getBundle("clinicauna.resources.i18n/idioma_EN");
-        } else {
-//            if (L.equals("E")) {
-            idioma = ResourceBundle.getBundle("clinicauna.resources.i18n/idioma_ES");
-//            } 
-        }
+//    public static void CambiarIdioma(String L) {
+//        ResourceBundle idioma;
+//        if (L.equals("I")) {
+//            idioma = ResourceBundle.getBundle("clinicauna.resources.i18n/idioma_EN");
+//        } else {
+////            if (L.equals("E")) {
+//            idioma = ResourceBundle.getBundle("clinicauna.resources.i18n/idioma_ES");
+////            } 
+//        }
+//
+//        setIdioma(idioma);
+//    }
 
-        setIdioma(idioma);
-    }
-
-    public String obtenerTexto(String param) {
-        return String.valueOf(FlowController.idioma.getObject(param));
-    }
+//    public String obtenerTexto(String param) {
+//        return String.valueOf(FlowController.idioma.getObject(param));
+//    }
 
     public void initialize() {
         this.loaders.clear();

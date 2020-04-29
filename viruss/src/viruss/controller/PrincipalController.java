@@ -38,7 +38,7 @@ public class PrincipalController extends Controller implements Initializable {
 
     @FXML
     private void actionSiguiente(ActionEvent event) {
-        FlowController.getInstance().goView("Inicio");
+        
     }
     
 }

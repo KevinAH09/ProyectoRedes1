@@ -2,14 +2,27 @@
 
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
-      <ImageView fitHeight="700.0" fitWidth="900.0" pickOnBounds="true" smooth="false">
-         <image>
-            <Image url="@../recursos/virus2.jpg" />
-         </image>
-      </ImageView>
+      <AnchorPane prefHeight="650.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="650.0" fitWidth="900.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../recursos/24408.jpg" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="208.0" layoutY="536.0" prefHeight="100.0" prefWidth="485.0" style="-fx-background-color: BLACK;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="536.0" />
+            <HBox layoutX="208.0" layoutY="403.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: BLACK;" />
+            <HBox layoutX="493.0" layoutY="403.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: BLACK;" />
+            <VBox layoutX="108.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: BLACK;" />
+            <VBox layoutX="693.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: BLACK;" />
+            <HBox layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: BLACK;" />
+            <HBox layoutX="493.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: BLACK;" />
+         </children>
+      </AnchorPane>
    </children>
 </VBox>

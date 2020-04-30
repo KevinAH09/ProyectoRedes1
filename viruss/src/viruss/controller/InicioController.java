@@ -7,7 +7,10 @@ package viruss.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -15,6 +18,21 @@ import javafx.fxml.Initializable;
  * @author colo7
  */
 public class InicioController extends Controller implements Initializable {
+
+    @FXML
+    private HBox hboxMasoJug;
+    @FXML
+    private HBox hboxMesaJug1;
+    @FXML
+    private HBox hboxMesaJug2;
+    @FXML
+    private VBox hboxMesaJug3;
+    @FXML
+    private VBox hboxMesaJug4;
+    @FXML
+    private HBox hboxMesaJug5;
+    @FXML
+    private HBox hboxMesaJug6;
 
     /**
      * Initializes the controller class.

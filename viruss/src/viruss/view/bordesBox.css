@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 29, 2020, 9:42:59 PM
+    Author     : colo7
+*/
+
+.vbox{
+   -fx-background-color: #116c78; 
+}
+#hboxMasoJug {
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 15px;
+    
+}
+#hboxMesaJug1{
+    -fx-border-color: white;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug2{
+    -fx-border-color: darkblue;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug3{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug4{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug5{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug6{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}

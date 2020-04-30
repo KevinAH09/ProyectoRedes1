@@ -21,69 +21,69 @@ public class Carta extends ImageView{
         if(tipoCarta.equals("Virus"))
         {
             
-            if(color == 1)
+            if(color == 1)//ROJIVIRUS
             {
                 //this.setImage("");
             }
-            if(color == 2)
+            if(color == 2)//VERDON EL VIRUS
             {
                 //this.setImage("");
             }
-            if(color == 3)
+            if(color == 3)//VIRUBLU
             {
                 //this.setImage("");
             }
-            if(color == 4)
+            if(color == 4)//YELLVIRUS
             {
                 //this.setImage("");
             }
-            if(color == 5)
+            if(color == 5)//COVID-19
             {
                 //this.setImage("");
             }
         }
         if(tipoCarta.equals("Tratamientos"))
         {
-            if(color == 1)
+            if(color == 1)//Transplante
             {
                 //this.setImage("");
             }
-            if(color == 2)
+            if(color == 2)//Ladrón de órganos
             {
                 //this.setImage("");
             }
-            if(color == 3)
+            if(color == 3)//Contagio
             {
                 //this.setImage("");
             }
-            if(color == 4)
+            if(color == 4)//Guante de látex
             {
                 //this.setImage("");
             }
-            if(color == 5)
+            if(color == 5)//Error médico
             {
                 //this.setImage("");
             }
         }
         if(tipoCarta.equals("Organos"))
         {
-            if(color == 1)
+            if(color == 1)//corazon
             {
                 //this.setImage("");
             }
-            if(color == 2)
+            if(color == 2)//estomago
             {
                 //this.setImage("");
             }
-            if(color == 3)
+            if(color == 3)//cerebro
             {
                 //this.setImage("");
             }
-            if(color == 4)
+            if(color == 4)//hueso
             {
                 //this.setImage("");
             }
-            if(color == 5)
+            if(color == 5)//comodin
             {
                 //this.setImage("");
             }

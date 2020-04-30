@@ -77,37 +77,37 @@ public class PrincipalController extends Controller implements Initializable {
             if(i>=38 && i<58)//medicinas
             {
                 if (i < 42) {
-                    lista.add(new Carta("Medicinas", 1, 50, 50));
+                    lista.add(new Carta("Medicinas", 1, 50, 50));//BOTIQUIN
                 }
                 if (i >= 42 && i < 46) {
-                    lista.add(new Carta("Medicinas", 2, 50, 50));
+                    lista.add(new Carta("Medicinas", 2, 50, 50));//VACUNA
                 }
                 if (i >= 46 && i < 50) {
-                    lista.add(new Carta("Medicinas", 3, 50, 50));
+                    lista.add(new Carta("Medicinas", 3, 50, 50));//ANTISUERO
                 }
                 if (i >= 50 && i < 54) {
-                    lista.add(new Carta("Medicinas", 4, 50, 50));
+                    lista.add(new Carta("Medicinas", 4, 50, 50));//CURITAS
                 }
                 if (i >= 54 && i < 58) {
-                    lista.add(new Carta("Medicinas", 5, 50, 50));
+                    lista.add(new Carta("Medicinas", 5, 50, 50));//HOSPITAL
                 }
             }
             if(i>=58 && i<58)//tratamientos
             {
                 if (i < 60) {
-                    lista.add(new Carta("Tratamientos", 1, 50, 50));//Transplante
+                    lista.add(new Carta("Tratamientos", 6, 50, 50));//Transplante
                 }
                 if (i >= 60 && i < 63) {
-                    lista.add(new Carta("Tratamientos", 2, 50, 50));//Ladrón de órganos
+                    lista.add(new Carta("Tratamientos", 6, 50, 50));//Ladrón de órganos
                 }
                 if (i >= 63 && i < 66) {
-                    lista.add(new Carta("Tratamientos", 3, 50, 50));//Contagio
+                    lista.add(new Carta("Tratamientos", 6, 50, 50));//Contagio
                 }
                 if (i >= 66 && i < 67) {
-                    lista.add(new Carta("Tratamientos", 4, 50, 50));//Guante de látex
+                    lista.add(new Carta("Tratamientos", 6, 50, 50));//Guante de látex
                 }
                 if (i >= 67 && i < 68) {
-                    lista.add(new Carta("Tratamientos", 5, 50, 50));//Error médico
+                    lista.add(new Carta("Tratamientos", 6, 50, 50));//Error médico
                 }
             }
         }

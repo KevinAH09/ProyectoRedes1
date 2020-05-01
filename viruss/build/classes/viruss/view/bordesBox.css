@@ -14,7 +14,7 @@ and open the template in the editor.
 #hboxMasoJug {
     -fx-border-color: black;
     -fx-border-width: 3px;
-    -fx-border-style: dashed;
+    -fx-border-style: solid;
     -fx-border-radius: 15px;
     
 }

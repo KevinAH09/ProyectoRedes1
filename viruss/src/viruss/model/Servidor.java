@@ -34,11 +34,11 @@ public class Servidor extends Conexion
 
                 //Se obtiene el flujo entrante desde el cliente
                 BufferedReader entrada = new BufferedReader(new InputStreamReader(cs.getInputStream()));
-
                 while((mensajeServidor = entrada.readLine()) != null) //Mientras haya mensajes desde el cliente
                 {
                     //Se muestra por pantalla el mensaje recibido
                     System.out.println(mensajeServidor);
+                    System.out.println(cs.getRemoteSocketAddress());
                 }
 
                 System.out.println("Fin de la conexión");

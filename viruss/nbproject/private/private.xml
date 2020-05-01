@@ -1,30 +1,13 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-
-            <file>file:/C:/Users/Bosco/Desktop/PROYECTO1%20REDES/ProyectoRedes1/viruss/src/viruss/model/Carta.java</file>
-            <file>file:/C:/Users/Bosco/Desktop/PROYECTO1%20REDES/ProyectoRedes1/viruss/src/viruss/controller/InicioController.java</file>
-
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/model/Carta.java</file>
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/controller/MenuController.java</file>
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/controller/InicioController.java</file>
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/util/FlowController.java</file>
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/view/bordesBox.css</file>
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/view/Menu.fxml</file>
-            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/Viruss.java</file>
-
+            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/model/Conexion.java</file>
+            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/model/Cliente.java</file>
+            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/model/MainServidor.java</file>
+            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/model/Servidor.java</file>
+            <file>file:/C:/Users/colo7/Documents/ProyectoRedes/ProyectoRedes1/viruss/src/viruss/model/MainCliente.java</file>
         </group>
     </open-files>
 </project-private>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
-    </open-files>
-</project-private>
-

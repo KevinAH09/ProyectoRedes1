@@ -8,11 +8,19 @@ package viruss.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -37,7 +45,16 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Timeline clock =new Timeline(new KeyFrame(Duration.ZERO, e->{
+        DateTimeFormatter format= DateTimeFormatter.ofPattern("HH:mm:ss");
+        lHora.setText(LocalDateTime.now().format(format));
+        }),new KeyFrame(javafx.util.Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+        
+        Date now = new Date(System.currentTimeMillis());
+        SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
+        lFecha.setText(date.format(now));
     }    
 
     @FXML

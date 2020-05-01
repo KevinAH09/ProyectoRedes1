@@ -49,7 +49,7 @@ public class InicioController extends Controller implements Initializable {
         crearCartas();
         Image i = new Image("viruss/recursos/MASO.jpg");
         ImageView p = new ImageView(i);
-        p.setFitWidth(100);
+        p.setFitWidth(70);
         p.setFitHeight(100);
         
         
@@ -108,73 +108,73 @@ public class InicioController extends Controller implements Initializable {
         for (int i = 0; i < 68; i++) {//organos
             if (i < 21) {
                 if (i < 5) {
-                    lista.add(new Carta("viruss/recursos/CORAZON.jpg","Organos", 1, 100, 100));//corazon
+                    lista.add(new Carta("viruss/recursos/CORAZON.jpg","Organos", 1, 100, 70));//corazon
                 }
                 if (i >= 5 && i < 10) {
-                    lista.add(new Carta("viruss/recursos/ESTOMAGO.jpg","Organos", 2, 100, 100));//estomago
+                    lista.add(new Carta("viruss/recursos/ESTOMAGO.jpg","Organos", 2, 100, 70));//estomago
                 }
                 if (i >= 10 && i < 15) {
-                    lista.add(new Carta("viruss/recursos/CEREBRO.jpg","Organos", 3, 100, 100));//cerebor
+                    lista.add(new Carta("viruss/recursos/CEREBRO.jpg","Organos", 3, 100, 70));//cerebor
                 }
                 if (i >= 15 && i < 20) {
-                    lista.add(new Carta("viruss/recursos/HUESO.jpg","Organos", 4, 100, 100));//hueso
+                    lista.add(new Carta("viruss/recursos/HUESO.jpg","Organos", 4, 100, 70));//hueso
                 }
                 if (i >= 20 && i < 21) {
-                    lista.add(new Carta("viruss/recursos/CUERPO.jpg","Organos", 5, 100, 100));//comodin
+                    lista.add(new Carta("viruss/recursos/CUERPO.jpg","Organos", 5, 100, 70));//comodin
                 }
             }
             if(i>=21 && i<38)//virus
             {
                 if (i < 25) {
-                    lista.add(new Carta("viruss/recursos/ROJIVURUS.jpg","Virus", 1, 100, 100));//ROJIVIRUS
+                    lista.add(new Carta("viruss/recursos/ROJIVURUS.jpg","Virus", 1, 100, 70));//ROJIVIRUS
                 }
                 if (i >= 25 && i < 29) {
-                    lista.add(new Carta("viruss/recursos/VERDON EL VIRUS.jpg","Virus", 2, 100, 100));//VERDON EL VIRUS
+                    lista.add(new Carta("viruss/recursos/VERDON EL VIRUS.jpg","Virus", 2, 100, 70));//VERDON EL VIRUS
                 }
                 if (i >= 29 && i < 33) {
-                    lista.add(new Carta("viruss/recursos/VIRUBLU.jpg","Virus", 3, 100, 100));//VIRUBLU
+                    lista.add(new Carta("viruss/recursos/VIRUBLU.jpg","Virus", 3, 100, 70));//VIRUBLU
                 }
                 if (i >= 33 && i < 37) {
-                    lista.add(new Carta("viruss/recursos/YELLVIRUS.jpg","Virus", 4, 100, 100));//YELLVIRUS
+                    lista.add(new Carta("viruss/recursos/YELLVIRUS.jpg","Virus", 4, 100, 70));//YELLVIRUS
                 }
                 if (i >= 37 && i < 38) {
-                    lista.add(new Carta("viruss/recursos/COVID-19.jpg","Virus", 5, 100, 100));//COVID-19
+                    lista.add(new Carta("viruss/recursos/COVID-19.jpg","Virus", 5, 100, 70));//COVID-19
                 }
             }
             if(i>=38 && i<58)//medicinas
             {
                 if (i < 42) {
-                    lista.add(new Carta("viruss/recursos/BOTIQUIN.jpg","Medicinas", 1, 100, 100));//BOTIQUIN
+                    lista.add(new Carta("viruss/recursos/BOTIQUIN.jpg","Medicinas", 1, 100, 70));//BOTIQUIN
                 }
                 if (i >= 42 && i < 46) {
-                    lista.add(new Carta("viruss/recursos/VACUNA.jpg","Medicinas", 2, 100, 100));//VACUNA
+                    lista.add(new Carta("viruss/recursos/VACUNA.jpg","Medicinas", 2, 100, 70));//VACUNA
                 }
                 if (i >= 46 && i < 50) {
-                    lista.add(new Carta("viruss/recursos/ANTISUERO.jpg","Medicinas", 3, 100, 100));//ANTISUERO
+                    lista.add(new Carta("viruss/recursos/ANTISUERO.jpg","Medicinas", 3, 100, 70));//ANTISUERO
                 }
                 if (i >= 50 && i < 54) {
-                    lista.add(new Carta("viruss/recursos/CURITAS.jpg","Medicinas", 4, 100, 100));//CURITAS
+                    lista.add(new Carta("viruss/recursos/CURITAS.jpg","Medicinas", 4, 100, 70));//CURITAS
                 }
                 if (i >= 54 && i < 58) {
-                    lista.add(new Carta("viruss/recursos/HOSPITAL.jpg","Medicinas", 5, 100, 100));//HOSPITAL
+                    lista.add(new Carta("viruss/recursos/HOSPITAL.jpg","Medicinas", 5, 100, 70));//HOSPITAL
                 }
             }
             if(i>=58 && i<58)//tratamientos
             {
                 if (i < 60) {
-                    lista.add(new Carta("viruss/recursos/TRANSPLANTE.jpg","Tratamientos", 1, 100, 100));//Transplante
+                    lista.add(new Carta("viruss/recursos/TRANSPLANTE.jpg","Tratamientos", 1, 100, 70));//Transplante
                 }
                 if (i >= 60 && i < 63) {
-                    lista.add(new Carta("viruss/recursos/LADRON DE ORGANOS.jpg","Tratamientos", 2, 100, 100));//Ladrón de órganos
+                    lista.add(new Carta("viruss/recursos/LADRON DE ORGANOS.jpg","Tratamientos", 2, 100, 70));//Ladrón de órganos
                 }
                 if (i >= 63 && i < 66) {
-                    lista.add(new Carta("viruss/recursos/CONTAGIO.jpg","Tratamientos", 3, 100, 100));//Contagio
+                    lista.add(new Carta("viruss/recursos/CONTAGIO.jpg","Tratamientos", 3, 100, 70));//Contagio
                 }
                 if (i >= 66 && i < 67) {
-                    lista.add(new Carta("viruss/recursos/GUANTE DE LATEX.jpg","Tratamientos", 4, 100, 100));//Guante de látex
+                    lista.add(new Carta("viruss/recursos/GUANTE DE LATEX.jpg","Tratamientos", 4, 100, 70));//Guante de látex
                 }
                 if (i >= 67 && i < 68) {
-                    lista.add(new Carta("viruss/recursos/ERROR MEDICO.jpg","Tratamientos", 5, 100, 100));//Error médico
+                    lista.add(new Carta("viruss/recursos/ERROR MEDICO.jpg","Tratamientos", 5, 100, 70));//Error médico
                 }
             }
         }

@@ -21,13 +21,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
+import viruss.util.FlowController;
 
 /**
  * FXML Controller class
  *
- * @author cfugu
+ * @author colo7
  */
-public class LoginController implements Initializable {
+public class MenuController extends Controller implements Initializable {
 
     @FXML
     private Label lFecha;
@@ -57,8 +58,16 @@ public class LoginController implements Initializable {
         lFecha.setText(date.format(now));
     }    
 
+    @Override
+    public void initialize() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
     @FXML
     private void Ingresar(ActionEvent event) {
+        FlowController.getInstance().goView("Inicio");
     }
     
 }

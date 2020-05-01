@@ -7,9 +7,27 @@ and open the template in the editor.
     Created on : Apr 29, 2020, 9:42:59 PM
     Author     : colo7
 */
-
+@font-face {
+    src: url("../resources/font/century.ttf");
+}
+*{
+    /*-fx-border-style: segments*/
+    -fx-focus-traversable: false;
+    -jfx-label-float: true;
+    -fx-verde: #49c0b6;
+    -fx-celeste:#0093f4;
+    -fx-blanco: #ffffff;
+    -fx-azul: #0000FF;
+    -fx-pa:  #e39727;
+}
 .vbox{
    -fx-background-color: #116c78; 
+}
+.imageView {
+   -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 15px;  
 }
 #hboxMasoJug {
     -fx-border-color: black;
@@ -59,4 +77,12 @@ and open the template in the editor.
     -fx-border-style: solid;
     -fx-border-radius: 10px;
     
+}
+.jfx-text-field{
+    -fx-prompt-text-fill: -fx-pa;
+    -fx-text-fill: -fx-blanco;
+    -fx-font-family: "century";
+    -fx-font-size: 15px;
+    -jfx-focus-color: -fx-pa;
+    -jfx-unfocus-color: -fx-pa;
 }

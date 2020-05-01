@@ -9,31 +9,35 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="765.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="viruss.controller.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.LoginController">
    <children>
       <AnchorPane prefHeight="475.0" prefWidth="771.0" style="-fx-background-color: e39727;">
          <children>
             <ImageView fitHeight="460.0" fitWidth="753.0" layoutX="10.0" layoutY="8.0" opacity="0.95" pickOnBounds="true" smooth="false">
                <image>
-                  <Image url="@../../../../../../../Downloads/textura-reciclado-arrugado-azul_4500x3000_xtrafondos.com.jpg" />
+                  <Image url="@../recursos/Fondo1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="69.0" fitWidth="292.0" layoutX="212.0" layoutY="90.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../recursos/Logo.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
       <ImageView fitHeight="127.0" fitWidth="159.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Downloads/transmision.png" />
+            <Image url="@../recursos/transmision.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="110.0" fitWidth="150.0" layoutX="633.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Downloads/transmision.png" />
+            <Image url="@../recursos/transmision.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="23.0" layoutY="362.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../../../Downloads/radiation_virus_icon_140463.png" />
+            <Image url="@../recursos/radiation.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="127.0" layoutX="534.0" layoutY="14.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="224.0" />

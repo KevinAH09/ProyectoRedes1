@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * @author colo7
  */
 public class conector {
-    int puerto = 3333;
+    int puerto = 44440;
     ServerSocket server;
     Socket socket;
     DataOutputStream salida;

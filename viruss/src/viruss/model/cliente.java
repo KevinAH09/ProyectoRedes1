@@ -20,8 +20,8 @@ import java.util.logging.Logger;
 public class cliente {
     ServerSocket server;
     Socket socket;
-    String host = "192.168.1.4";
-    int puerto = 333;
+    String host = "192.168.1.8";
+    int puerto = 44440;
     DataOutputStream salida;
     DataInputStream entrada;
     public void iniciar() throws IOException

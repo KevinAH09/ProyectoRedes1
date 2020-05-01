@@ -51,6 +51,10 @@ public class InicioController extends Controller implements Initializable {
         ImageView p = new ImageView(i);
         p.setFitWidth(100);
         p.setFitHeight(100);
+        
+        
+        
+        
         p.setOnMouseClicked(ke->{
             
             hboxMasoJug.getChildren().add(lista.get(lista.size()-1));
@@ -58,16 +62,40 @@ public class InicioController extends Controller implements Initializable {
         });
         hboxmaso.getChildren().add(p);
         
-        int cont=0;
-        for(Carta carta : lista)
-        {
-            
-            if(cont<3)
+            int cont=0;
+            while(cont !=18)
             {
-                hboxMasoJug.getChildren().add(cont, carta);
-                cont++;
+                if (cont < 18) {
+                    if (cont < 3) {
+                        hboxMesaJug1.getChildren().add(lista.get(lista.size() - 1));
+                        lista.remove(lista.get(lista.size() - 1));
+
+                    }
+                    if (cont >= 3 && cont < 6) {
+                        hboxMesaJug2.getChildren().add(lista.get(lista.size() - 1));
+                        lista.remove(lista.get(lista.size() - 1));
+                    }
+                    if (cont >= 6 && cont < 9) {
+                        hboxMesaJug3.getChildren().add(lista.get(lista.size() - 1));
+                        lista.remove(lista.get(lista.size() - 1));
+                    }
+                    if (cont >= 9 && cont < 12) {
+                        hboxMesaJug4.getChildren().add(lista.get(lista.size() - 1));
+                        lista.remove(lista.get(lista.size() - 1));
+                    }
+                    if (cont >= 12 && cont < 14) {
+                        hboxMesaJug5.getChildren().add(lista.get(lista.size() - 1));
+                        lista.remove(lista.get(lista.size() - 1));
+                    }
+                    if(cont>=14 && cont<16)
+                    {
+                        hboxMesaJug6.getChildren().add(lista.get(lista.size()-1));
+                        lista.remove(lista.get(lista.size()-1));
+                    }
+                    cont++;
+                }
             }
-        }
+        
     }   
 
     @Override

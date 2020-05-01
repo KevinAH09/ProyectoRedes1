@@ -15,30 +15,30 @@ import java.util.logging.Logger;
  * @author colo7
  */
 public class conector {
+    int puerto = 3333;
     ServerSocket server;
     Socket socket;
-    int puerto = 3333;
     DataOutputStream salida;
     DataInputStream entrada;
-    
     public void iniciar() throws IOException
     {
-
-       try {
-                
-                while(true){
-                    server = new ServerSocket(puerto);
-                    socket = new Socket();
-                    socket = server.accept();
-                    
-                    entrada = new DataInputStream(socket.getInputStream());
-                    salida = new DataOutputStream(socket.getOutputStream());
-                    String mensaje = entrada.readUTF();
-                    System.out.println(mensaje);
-                    System.err.println("Adios mundo");
-                    
-                }
-                
+        server = new ServerSocket(puerto);
+        socket = new Socket();
+        while (true) {            
+            servidor();
+        }
+       
+    }
+    
+    public void servidor(){
+        try {
+                socket = server.accept();
+                entrada = new DataInputStream(socket.getInputStream());
+                salida = new DataOutputStream(socket.getOutputStream());
+                String mensaje = entrada.readUTF();
+                System.out.println(mensaje);
+                System.err.println("Adios mundo");
+                socket.close();
         } catch (IOException ex) {
             Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
         }

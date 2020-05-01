@@ -21,7 +21,7 @@ public class cliente {
     ServerSocket server;
     Socket socket;
     String host = "192.168.1.4";
-    int puerto = 3333;
+    int puerto = 333;
     DataOutputStream salida;
     DataInputStream entrada;
     public void iniciar() throws IOException

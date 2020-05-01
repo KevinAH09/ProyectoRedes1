@@ -6,49 +6,59 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="765.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="viruss.controller.LoginController">
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.Logincontroller">
    <children>
-      <AnchorPane prefHeight="475.0" prefWidth="771.0" style="-fx-background-color: e39727;">
+      <AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="765.0">
          <children>
-            <ImageView fitHeight="460.0" fitWidth="753.0" layoutX="10.0" layoutY="8.0" opacity="0.95" pickOnBounds="true" smooth="false">
+            <AnchorPane prefHeight="475.0" prefWidth="771.0" style="-fx-background-color: e39727;">
+               <children>
+                  <ImageView fitHeight="460.0" fitWidth="753.0" layoutX="10.0" layoutY="8.0" opacity="0.95" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@../recursos/Fondo1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="69.0" fitWidth="292.0" layoutX="212.0" layoutY="90.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../recursos/Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="127.0" fitWidth="159.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/textura-reciclado-arrugado-azul_4500x3000_xtrafondos.com.jpg" />
+                  <Image url="@../recursos/transmision.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="150.0" layoutX="633.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/transmision.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="23.0" layoutY="362.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../recursos/radiation.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="127.0" layoutX="534.0" layoutY="14.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="224.0" />
+            <Label fx:id="lFecha" layoutX="542.0" layoutY="27.0" prefHeight="17.0" prefWidth="134.0" textFill="#e39727" />
+            <Label fx:id="lHora" layoutX="544.0" layoutY="61.0" prefHeight="17.0" prefWidth="134.0" textFill="#e39727" />
+            <Label fx:id="lCrono" layoutX="547.0" layoutY="98.0" prefHeight="17.0" prefWidth="134.0" textFill="#e39727" />
+            <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="238.0" layoutY="203.0" prefHeight="25.0" prefWidth="292.0" promptText="Nickname" unFocusColor="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnIngresar" layoutX="326.0" layoutY="242.0" onAction="#actionIngresar" prefHeight="25.0" prefWidth="91.0" text="Ingresar" textFill="#e39727">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="127.0" fitWidth="159.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../Downloads/transmision.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="110.0" fitWidth="150.0" layoutX="633.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../Downloads/transmision.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="23.0" layoutY="362.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../../../../../Downloads/radiation_virus_icon_140463.png" />
-         </image>
-      </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="127.0" layoutX="534.0" layoutY="14.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="224.0" />
-      <Label fx:id="lFecha" layoutX="542.0" layoutY="27.0" prefHeight="17.0" prefWidth="134.0" textFill="#e39727" />
-      <Label fx:id="lHora" layoutX="544.0" layoutY="61.0" prefHeight="17.0" prefWidth="134.0" textFill="#e39727" />
-      <Label fx:id="lCrono" layoutX="547.0" layoutY="98.0" prefHeight="17.0" prefWidth="134.0" textFill="#e39727" />
-      <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="238.0" layoutY="203.0" prefHeight="25.0" prefWidth="292.0" promptText="Nickname" unFocusColor="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXButton fx:id="btnIngresar" layoutX="326.0" layoutY="242.0" onAction="#Ingresar" prefHeight="25.0" prefWidth="91.0" text="Ingresar" textFill="#e39727">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </JFXButton>
    </children>
-</AnchorPane>
+</VBox>

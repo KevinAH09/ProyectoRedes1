@@ -5,14 +5,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
-
-public class Carta extends ImageView{
+import java.io.Serializable;
+public class Carta extends ImageView implements Serializable{
     
     private String tipoCarta;
-    private int color;
-    private int altura;
-    private int ancho;
+    public int color;
+    public int altura;
+    public int ancho;
     public Image img;
+
+    public Carta() {
+    }
     
     public Carta(String img,String tipoCarta,int color,int altura,int ancho){
         this.setFitHeight(altura);
@@ -123,10 +126,41 @@ public class Carta extends ImageView{
     {
         this.altura = altura;
     }
+        public int getAltura() {
+        return altura;
+    }
     public void setAncho(int ancho)
     {
         this.ancho = ancho;
     }
+    public int getAncho() {
+        return ancho;
+    }
+
+    public String getTipoCarta() {
+        return tipoCarta;
+    }
+
+    public void setTipoCarta(String tipoCarta) {
+        this.tipoCarta = tipoCarta;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
+    
     
     
 }

@@ -1,0 +1,88 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 29, 2020, 9:42:59 PM
+    Author     : colo7
+*/
+@font-face {
+    src: url("../resources/font/century.ttf");
+}
+*{
+    /*-fx-border-style: segments*/
+    -fx-focus-traversable: false;
+    -jfx-label-float: true;
+    -fx-verde: #49c0b6;
+    -fx-celeste:#0093f4;
+    -fx-blanco: #ffffff;
+    -fx-azul: #0000FF;
+    -fx-pa:  #e39727;
+}
+.vbox{
+   -fx-background-color: #116c78; 
+}
+.imageView {
+   -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 15px;  
+}
+#hboxMasoJug {
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 15px;
+    
+}
+#hboxMesaJug1{
+    -fx-border-color: white;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug2{
+    -fx-border-color: darkblue;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug3{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug4{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug5{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+#hboxMesaJug6{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
+.jfx-text-field{
+    -fx-prompt-text-fill: -fx-pa;
+    -fx-text-fill: -fx-blanco;
+    -fx-font-family: "century";
+    -fx-font-size: 15px;
+    -jfx-focus-color: -fx-pa;
+    -jfx-unfocus-color: -fx-pa;
+}

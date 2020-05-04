@@ -5,19 +5,19 @@
  */
 package viruss.model;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Conexion
 {
     private final int PUERTO = 44440; //Puerto para la conexión
-    private final String HOST = "25.146.184.249"; //Host para la conexión
+    private final String HOST = "localhost"; //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
     protected ServerSocket ss; //Socket del servidor
     protected Socket cs; //Socket del cliente
-    protected DataOutputStream salidaServidor, salidaCliente; //Flujo de datos de salida
+    protected ObjectOutputStream salidaServidor, salidaCliente; //Flujo de datos de salida
 
     public Conexion(String tipo) throws IOException //Constructor
     {

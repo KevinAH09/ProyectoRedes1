@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package viruss.model;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import viruss.model.Conexion;
+import java.io.ObjectOutputStream;
 
 public class Cliente extends Conexion
 {
@@ -15,17 +14,20 @@ public class Cliente extends Conexion
     public void startClient() //Método para iniciar el cliente
     {
         try
-        {
-            //Flujo de datos hacia el servidor
-            salidaServidor = new DataOutputStream(cs.getOutputStream());
+        {        
+//          //Se recibe un objeto
+           Carta cart=new Carta();
+           cart.setAltura(150);
+           cart.setAncho(50);
 
-            //Se enviarán dos mensajes
-//            for (int i = 0; i < 2; i++)
-//            {
-                //Se escribe en el servidor usando su flujo de datos
-                salidaServidor.writeUTF("Este es el mensaje número Gustavoo");
-//            }
-
+    
+            //FLUJO DE salida para objetos
+            ObjectOutputStream carta1 = new ObjectOutputStream( cs.getOutputStream());
+           
+            // Se envía el objeto
+            carta1.writeObject(cart);
+            System.out.println("Envio: " + cart.getAltura() + "*" + cart.getAncho());   
+            carta1.close();
             cs.close();//Fin de la conexión
 
         }

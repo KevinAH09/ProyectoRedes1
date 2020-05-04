@@ -78,6 +78,13 @@ and open the template in the editor.
     -fx-border-radius: 10px;
     
 }
+#scrollmaso{
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    
+}
 .jfx-text-field{
     -fx-prompt-text-fill: -fx-pa;
     -fx-text-fill: -fx-blanco;

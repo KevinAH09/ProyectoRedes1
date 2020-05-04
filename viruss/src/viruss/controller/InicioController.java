@@ -5,12 +5,15 @@
  */
 package viruss.controller;
 
+import java.awt.Color;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Point3D;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -41,6 +44,8 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox hboxmaso;
     private List <Carta> lista = new ArrayList();
+    @FXML
+    private ScrollPane scrollmaso;
     
     
     
@@ -51,6 +56,8 @@ public class InicioController extends Controller implements Initializable {
         ImageView p = new ImageView(i);
         p.setFitWidth(70);
         p.setFitHeight(100);
+        
+        
         
         
         
@@ -76,20 +83,34 @@ public class InicioController extends Controller implements Initializable {
                         lista.remove(lista.get(lista.size() - 1));
                     }
                     if (cont >= 6 && cont < 9) {
-                        hboxMesaJug3.getChildren().add(lista.get(lista.size() - 1));
+                        ImageView l;
+                        l =lista.get(lista.size() - 1);
+                        l.setFitHeight(80);
+                        l.setRotate(90);
+                        hboxMesaJug3.getChildren().add(l);
                         lista.remove(lista.get(lista.size() - 1));
                     }
                     if (cont >= 9 && cont < 12) {
-                        hboxMesaJug4.getChildren().add(lista.get(lista.size() - 1));
-                        lista.remove(lista.get(lista.size() - 1));
+                        ImageView l;
+                        l =lista.get(lista.size() - 1);
+                        l.setFitHeight(80);
+                        l.setRotate(270);
+                        hboxMesaJug4.getChildren().add(l);
+                        lista.remove(lista.size() - 1);
                     }
                     if (cont >= 12 && cont < 14) {
-                        hboxMesaJug5.getChildren().add(lista.get(lista.size() - 1));
+                        ImageView l;
+                        l =lista.get(lista.size() - 1);
+                        l.setRotate(180);
+                        hboxMesaJug5.getChildren().add(l);
                         lista.remove(lista.get(lista.size() - 1));
                     }
                     if(cont>=14 && cont<16)
                     {
-                        hboxMesaJug6.getChildren().add(lista.get(lista.size()-1));
+                        ImageView l;
+                        l =lista.get(lista.size() - 1);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                        l.setRotate(180);
+                        hboxMesaJug6.getChildren().add(l);
                         lista.remove(lista.get(lista.size()-1));
                     }
                     cont++;

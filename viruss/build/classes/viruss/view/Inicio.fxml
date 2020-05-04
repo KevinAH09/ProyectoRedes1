@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,10 +16,14 @@
                   <Image url="@../recursos/24408.jpg" />
                </image>
             </ImageView>
-            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="208.0" layoutY="536.0" prefHeight="100.0" prefWidth="485.0" stylesheets="@bordesBox.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="536.0" />
+            <ScrollPane fx:id="scrollmaso" layoutX="180.0" layoutY="517.0" prefHeight="125.0" prefWidth="544.0" stylesheets="@bordesBox.css">
+               <content>
+                  <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="100.0" prefWidth="546.0" stylesheets="@bordesBox.css" />
+               </content>
+            </ScrollPane>
             <HBox fx:id="hboxMesaJug1" layoutX="208.0" layoutY="403.0" prefHeight="100.0" prefWidth="200.0" />
             <HBox fx:id="hboxMesaJug2" layoutX="493.0" layoutY="403.0" prefHeight="100.0" prefWidth="200.0" />
-            <VBox fx:id="hboxMesaJug3" layoutX="108.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" />
+            <VBox fx:id="hboxMesaJug3" layoutX="95.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" />
             <VBox fx:id="hboxMesaJug4" layoutX="693.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" />
             <HBox fx:id="hboxMesaJug5" layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" />
             <HBox fx:id="hboxMesaJug6" layoutX="493.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" />

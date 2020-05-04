@@ -13,6 +13,9 @@ public class Carta extends ImageView{
     private int altura;
     private int ancho;
     public Image img;
+    static int cont = 0;
+    static String tipo = "";
+    static int p =0;
     
     public Carta(String img,String tipoCarta,int color,int altura,int ancho){
         this.setFitHeight(altura);
@@ -113,9 +116,41 @@ public class Carta extends ImageView{
                 this.setImage(this.img);
             }
         }
+        
         this.setOnMouseClicked(ke->{
-            System.out.println(this.color);
-            System.out.println(this.tipoCarta);
+            
+            
+            if(cont == 0)
+            {
+                tipo=this.tipoCarta;
+                p = this.color;
+                System.out.println(tipo);
+                System.out.println(p);
+                cont++;
+            }
+            else if(cont==1)
+            {
+                if(this.tipoCarta.equals("Organos"))
+                {
+                    System.out.println(this.tipoCarta);
+                    if(this.color==1)
+                    {
+                        System.out.println(this.color);
+                        System.out.println(tipo);
+                        if(tipo.equals("Virus"))
+                        {
+                            
+                            if(p==1)
+                            {
+                                  System.out.println("hola");
+                            }
+                        }   
+                    }
+                }
+                
+                cont=0;
+            }
+            
         });
     }
     

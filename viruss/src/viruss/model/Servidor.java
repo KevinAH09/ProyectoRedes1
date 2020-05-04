@@ -7,6 +7,7 @@ package viruss.model;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 
 public class Servidor extends Conexion 
 {
@@ -21,8 +22,9 @@ public class Servidor extends Conexion
                 System.out.println("Cliente en línea");
                 
                 ObjectInputStream inObjeto = new ObjectInputStream( cs.getInputStream());
-                Carta dato = (Carta) inObjeto.readObject();
-                System.out.println("Recibo: " + dato.getAltura() + "*" + dato.getAncho());
+                List<Carta> lc =(List<Carta>) inObjeto.readObject();
+                System.out.println("Recibo: " + lc.get(0).getAltura() + "" + lc.get(0).getAncho());
+                System.out.println("Recibo: " + lc.get(1).getAltura() + "" + lc.get(1).getAncho());             
             
 
                 System.out.println("Fin de la conexión");

@@ -8,6 +8,7 @@ package viruss.controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -40,7 +41,7 @@ public class InicioController extends Controller implements Initializable {
     private HBox hboxMesaJug6;
     @FXML
     private HBox hboxmaso;
-    private List <Carta> lista = new ArrayList();
+    private List <Carta> lista = new ArrayList();   
     Carta p = new Carta();
     
     
@@ -54,17 +55,18 @@ public class InicioController extends Controller implements Initializable {
         
         
         
-        
         p.setOnMouseClicked(ke->{
             
-            hboxMasoJug.getChildren().add(lista.get(lista.size()-1));
-            lista.remove(lista.get(lista.size()-1));
+            hboxMasoJug.getChildren().add(lista.get(lista.size() - 1));
+            lista.remove(lista.get(lista.size() - 1));
         });
         hboxmaso.getChildren().add(p);
         
             int cont=0;
             while(cont !=18)
             {
+                Random r = new Random();
+                int random= r.nextInt(68)+1;
                 if (cont < 19) {
                     if (cont < 3) {
                         hboxMesaJug1.getChildren().add(lista.get(lista.size() - 1));

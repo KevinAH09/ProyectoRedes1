@@ -13,6 +13,8 @@ public class Carta extends ImageView implements Serializable{
     public int altura;
     public int ancho;
     public Image img;
+    
+    
     static int cont=0;
     static int c;
     static String tipo;
@@ -148,8 +150,10 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if(this.color==1)
                     {
-                       this.setImg(image);
-                        //Carta aux = new Carta("viruss/recursos/CORAZON.jpg",tipo,c,50,50);
+                        //Atacar con virus
+                        
+                       //this.setImg(image);
+                       //Carta aux = new Carta("viruss/recursos/CORAZON.jpg",tipo,c,50,50);
                     }
                 }
                 cont=0;

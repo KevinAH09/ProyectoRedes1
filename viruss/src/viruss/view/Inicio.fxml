@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +16,11 @@
                   <Image url="@../recursos/24408.jpg" />
                </image>
             </ImageView>
-            <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="100.0" prefWidth="785.0" stylesheets="@bordesBox.css" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="671.0" />
+            <ScrollPane layoutX="228.0" layoutY="640.0" prefHeight="122.0" prefWidth="744.0">
+               <content>
+                  <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="110.0" prefWidth="741.0" stylesheets="@bordesBox.css" />
+               </content>
+            </ScrollPane>
             <HBox fx:id="hboxMesaJug1" layoutX="208.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
             <HBox fx:id="hboxMesaJug2" layoutX="633.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
             <HBox fx:id="hboxMesaJug5" layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />

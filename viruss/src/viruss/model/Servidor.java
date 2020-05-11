@@ -25,7 +25,7 @@ public class Servidor extends Conexion
                 List<Carta> lc =(List<Carta>) inObjeto.readObject();
                 System.out.println("Recibo: " + lc.get(0).getAltura() + "" + lc.get(0).getAncho());
                 System.out.println("Recibo: " + lc.get(1).getAltura() + "" + lc.get(1).getAncho());             
-            
+                System.out.println(cs.getInetAddress().toString());
 
                 System.out.println("Fin de la conexión");
                 inObjeto.close();

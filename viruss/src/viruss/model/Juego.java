@@ -12,9 +12,9 @@ import java.util.List;
  * @author cfugu
  */
 public class Juego {
-    List jugadores;
+    List<Jugador> jugadores;
     int turno;
-    List mazo;
+    List<Carta> mazo;
 
     public int getTurno() {
         return turno;

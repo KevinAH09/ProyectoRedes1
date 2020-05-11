@@ -14,8 +14,8 @@ import java.util.List;
 public class Jugador {
     String nickname;
     String ip;
-    List mazo1;
-    List mazo2;
+    List<Carta> mazo1;
+    List<Carta> mazo2;
 
     public Jugador(String nickname, String ip) {
         this.nickname = nickname;

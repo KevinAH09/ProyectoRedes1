@@ -13,6 +13,10 @@ public class Carta extends ImageView implements Serializable{
     public int altura;
     public int ancho;
     public Image img;
+    static int cont=0;
+    static int c;
+    static String tipo;
+    static Image image;
 
     public Carta() {
     }
@@ -116,10 +120,40 @@ public class Carta extends ImageView implements Serializable{
                 this.setImage(this.img);
             }
         }
+        
         this.setOnMouseClicked(ke->{
-            System.out.println(this.color);
-            System.out.println(this.tipoCarta);
+            
+           jugar();
+           
         });
+    }
+    
+    public void jugar()
+    {
+        if(cont ==0)
+            {
+                if(this.tipoCarta.equals("Virus"))
+                {
+                    if(this.color==1)
+                    {
+                        c=this.color;
+                        tipo=this.tipoCarta;
+                        image=this.img;
+                    }
+                }
+                cont++;
+            }
+            else if(cont==1){
+                if(this.tipoCarta.equals("Organos"))
+                {
+                    if(this.color==1)
+                    {
+                       this.setImg(image);
+                        //Carta aux = new Carta("viruss/recursos/CORAZON.jpg",tipo,c,50,50);
+                    }
+                }
+                cont=0;
+            }
     }
     
     public void setAltura(int altura)

@@ -16,7 +16,7 @@
                   <Image url="@../recursos/24408.jpg" />
                </image>
             </ImageView>
-            <ScrollPane layoutX="228.0" layoutY="640.0" prefHeight="122.0" prefWidth="744.0">
+            <ScrollPane layoutX="228.0" layoutY="640.0" prefHeight="122.0" prefWidth="744.0" style="-fx-background-color: TRANSPARENT;">
                <content>
                   <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="110.0" prefWidth="741.0" stylesheets="@bordesBox.css" />
                </content>
@@ -25,7 +25,7 @@
             <HBox fx:id="hboxMesaJug2" layoutX="633.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
             <HBox fx:id="hboxMesaJug5" layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />
             <HBox fx:id="hboxMesaJug6" layoutX="633.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />
-            <HBox fx:id="hboxmaso" layoutX="401.0" layoutY="210.0" prefHeight="100.0" prefWidth="100.0" stylesheets="@bordesBox.css" />
+            <HBox fx:id="hboxmaso" layoutX="550.0" layoutY="286.0" prefHeight="100.0" prefWidth="100.0" stylesheets="@bordesBox.css" />
             <HBox fx:id="hboxMesaJug4" layoutX="764.0" layoutY="286.0" prefHeight="100.0" prefWidth="360.0" rotate="-90.0" />
             <HBox fx:id="hboxMesaJug3" layoutX="78.0" layoutY="286.0" prefHeight="100.0" prefWidth="360.0" rotate="90.0" />
          </children>

@@ -65,7 +65,7 @@ public class InicioController extends Controller implements Initializable {
             int cont=0;
             while(cont !=18)
             {
-                if (cont < 18) {
+                if (cont < 19) {
                     if (cont < 3) {
                         hboxMesaJug1.getChildren().add(lista.get(lista.size() - 1));
                         lista.remove(lista.get(lista.size() - 1));
@@ -83,13 +83,13 @@ public class InicioController extends Controller implements Initializable {
                         hboxMesaJug4.getChildren().add(lista.get(lista.size() - 1));
                         lista.remove(lista.get(lista.size() - 1));
                     }
-                    if (cont >= 12 && cont < 14) {
+                    if (cont >= 12 && cont < 15) {
                         p= lista.get(lista.size()-1);
                         p.setRotate(180);
                         hboxMesaJug5.getChildren().add(p);
                         lista.remove(lista.get(lista.size() - 1));
                     }
-                    if(cont>=14 && cont<16)
+                    if(cont>=15 && cont<18)
                     {
                         p= lista.get(lista.size()-1);
                         p.setRotate(180);

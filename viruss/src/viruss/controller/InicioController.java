@@ -31,9 +31,9 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox hboxMesaJug2;
     @FXML
-    private VBox hboxMesaJug3;
+    private HBox hboxMesaJug3;
     @FXML
-    private VBox hboxMesaJug4;
+    private HBox hboxMesaJug4;
     @FXML
     private HBox hboxMesaJug5;
     @FXML

@@ -6,23 +6,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
-      <AnchorPane prefHeight="650.0" prefWidth="900.0" stylesheets="@bordesBox.css">
+      <AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@bordesBox.css">
          <children>
-            <ImageView fitHeight="650.0" fitWidth="900.0" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="800.0" fitWidth="1200.0" layoutX="1.0" layoutY="-6.0" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../recursos/24408.jpg" />
                </image>
             </ImageView>
-            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="208.0" layoutY="536.0" prefHeight="100.0" prefWidth="485.0" stylesheets="@bordesBox.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="536.0" />
-            <HBox fx:id="hboxMesaJug1" layoutX="208.0" layoutY="403.0" prefHeight="100.0" prefWidth="200.0" />
-            <HBox fx:id="hboxMesaJug2" layoutX="493.0" layoutY="403.0" prefHeight="100.0" prefWidth="200.0" />
-            <VBox fx:id="hboxMesaJug3" layoutX="108.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" />
-            <VBox fx:id="hboxMesaJug4" layoutX="693.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" />
-            <HBox fx:id="hboxMesaJug5" layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" />
-            <HBox fx:id="hboxMesaJug6" layoutX="493.0" layoutY="34.0" prefHeight="100.0" prefWidth="200.0" />
+            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="208.0" layoutY="671.0" prefHeight="100.0" prefWidth="785.0" stylesheets="@bordesBox.css" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="671.0" />
+            <HBox fx:id="hboxMesaJug1" layoutX="208.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxMesaJug2" layoutX="633.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxMesaJug5" layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxMesaJug6" layoutX="633.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />
             <HBox fx:id="hboxmaso" layoutX="401.0" layoutY="210.0" prefHeight="100.0" prefWidth="100.0" stylesheets="@bordesBox.css" />
+            <HBox fx:id="hboxMesaJug4" layoutX="764.0" layoutY="286.0" prefHeight="100.0" prefWidth="360.0" rotate="-90.0" />
+            <HBox fx:id="hboxMesaJug3" layoutX="78.0" layoutY="286.0" prefHeight="100.0" prefWidth="360.0" rotate="90.0" />
          </children>
       </AnchorPane>
    </children>

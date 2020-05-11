@@ -41,7 +41,7 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox hboxmaso;
     private List <Carta> lista = new ArrayList();
-    
+    Carta p = new Carta();
     
     
     @Override
@@ -84,12 +84,16 @@ public class InicioController extends Controller implements Initializable {
                         lista.remove(lista.get(lista.size() - 1));
                     }
                     if (cont >= 12 && cont < 14) {
-                        hboxMesaJug5.getChildren().add(lista.get(lista.size() - 1));
+                        p= lista.get(lista.size()-1);
+                        p.setRotate(180);
+                        hboxMesaJug5.getChildren().add(p);
                         lista.remove(lista.get(lista.size() - 1));
                     }
                     if(cont>=14 && cont<16)
                     {
-                        hboxMesaJug6.getChildren().add(lista.get(lista.size()-1));
+                        p= lista.get(lista.size()-1);
+                        p.setRotate(180);
+                        hboxMesaJug6.getChildren().add(p);
                         lista.remove(lista.get(lista.size()-1));
                     }
                     cont++;

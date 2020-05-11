@@ -16,6 +16,10 @@ public class Juego {
     int turno;
     List mazo;
 
+    public Juego() {
+    }
+
+    
     public int getTurno() {
         return turno;
     }

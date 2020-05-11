@@ -17,10 +17,10 @@ public class Jugador {
     List mazo1;
     List mazo2;
 
-    public Jugador(String nickname, String ip) {
-        this.nickname = nickname;
-        this.ip = ip;
+    public Jugador() {
     }
+
+    
 
     public String getNickname() {
         return nickname;

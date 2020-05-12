@@ -42,6 +42,7 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox hboxmaso;
     private List <Carta> lista = new ArrayList();   
+    static private List <Carta> listaRandom =  new ArrayList();
     Carta p = new Carta();
     
     
@@ -53,50 +54,59 @@ public class InicioController extends Controller implements Initializable {
         p.setFitWidth(70);
         p.setFitHeight(100);
         
+        Random o = new Random();
+        int aux;
+        int resta=67;
         
-        
+        while(lista!=null&&resta>0)
+        {
+            Carta a;
+            aux=o.nextInt(resta);
+            a=lista.get(aux);
+            listaRandom.add(a);
+            lista.remove(a);
+            resta--;
+        }
         p.setOnMouseClicked(ke->{
             
-            hboxMasoJug.getChildren().add(lista.get(lista.size() - 1));
-            lista.remove(lista.get(lista.size() - 1));
+            hboxMasoJug.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+            listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
         });
         hboxmaso.getChildren().add(p);
         
             int cont=0;
             while(cont !=18)
             {
-                Random r = new Random();
-                int random= r.nextInt(68)+1;
                 if (cont < 19) {
                     if (cont < 3) {
-                        hboxMesaJug1.getChildren().add(lista.get(lista.size() - 1));
-                        lista.remove(lista.get(lista.size() - 1));
+                        hboxMesaJug1.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
 
                     }
                     if (cont >= 3 && cont < 6) {
-                        hboxMesaJug2.getChildren().add(lista.get(lista.size() - 1));
-                        lista.remove(lista.get(lista.size() - 1));
+                        hboxMesaJug2.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
                     }
                     if (cont >= 6 && cont < 9) {
-                        hboxMesaJug3.getChildren().add(lista.get(lista.size() - 1));
-                        lista.remove(lista.get(lista.size() - 1));
+                        hboxMesaJug3.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
                     }
                     if (cont >= 9 && cont < 12) {
-                        hboxMesaJug4.getChildren().add(lista.get(lista.size() - 1));
-                        lista.remove(lista.get(lista.size() - 1));
+                        hboxMesaJug4.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
                     }
                     if (cont >= 12 && cont < 15) {
-                        p= lista.get(lista.size()-1);
+                        p= listaRandom.get(listaRandom.size()-1);
                         p.setRotate(180);
                         hboxMesaJug5.getChildren().add(p);
-                        lista.remove(lista.get(lista.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
                     }
                     if(cont>=15 && cont<18)
                     {
-                        p= lista.get(lista.size()-1);
+                        p= listaRandom.get(listaRandom.size()-1);
                         p.setRotate(180);
                         hboxMesaJug6.getChildren().add(p);
-                        lista.remove(lista.get(lista.size()-1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size()-1));
                     }
                     cont++;
                 }
@@ -165,7 +175,7 @@ public class InicioController extends Controller implements Initializable {
                     lista.add(new Carta("viruss/recursos/HOSPITAL.jpg","Medicinas", 5, 100, 70));//HOSPITAL
                 }
             }
-            if(i>=58 && i<58)//tratamientos
+            if(i>=58 && i<69)//tratamientos
             {
                 if (i < 60) {
                     lista.add(new Carta("viruss/recursos/TRANSPLANTE.jpg","Tratamientos", 1, 100, 70));//Transplante
@@ -177,7 +187,7 @@ public class InicioController extends Controller implements Initializable {
                     lista.add(new Carta("viruss/recursos/CONTAGIO.jpg","Tratamientos", 3, 100, 70));//Contagio
                 }
                 if (i >= 66 && i < 67) {
-                    lista.add(new Carta("viruss/recursos/GUANTE DE LATEX.jpg","Tratamientos", 4, 100, 70));//Guante de látex
+                    lista.add(new Carta("viruss/recursos/GUANTES DE LATEX.jpg","Tratamientos", 4, 100, 70));//Guante de látex
                 }
                 if (i >= 67 && i < 68) {
                     lista.add(new Carta("viruss/recursos/ERROR MEDICO.jpg","Tratamientos", 5, 100, 70));//Error médico

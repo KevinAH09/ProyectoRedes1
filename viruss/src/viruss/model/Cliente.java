@@ -29,7 +29,7 @@ public class Cliente extends Conexion
                 x+=50;
                 y+=75;
             }
-            System.out.println(cs.getInetAddress().toString());
+            
             //FLUJO DE salida para objetos
             ObjectOutputStream carta1 = new ObjectOutputStream( cs.getOutputStream());
            

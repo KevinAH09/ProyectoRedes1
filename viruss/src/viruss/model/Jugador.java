@@ -6,6 +6,7 @@
 package viruss.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,8 +16,8 @@ import java.util.List;
 public class Jugador implements Serializable{
     String nickname;
     String ip;
-    List<Carta> mazo1;
-    List<Carta> mazo2;
+    List<Carta> mazo1 = new ArrayList<>();;
+    List<Carta> mazo2 = new ArrayList<>();;
 
     public Jugador() {
     }
@@ -25,6 +26,7 @@ public class Jugador implements Serializable{
     public Jugador(String nick , String ip) {
         this.nickname = nick;
         this.ip = ip; 
+        
     }
     public String getNickname() {
         return nickname;

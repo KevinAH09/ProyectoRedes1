@@ -6,6 +6,7 @@
 package viruss.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,11 +15,13 @@ import java.util.List;
  */
 
 public class Juego implements Serializable{
-    List<Jugador> jugadores;
+    List<Jugador> jugadores = new ArrayList<>();;
     int turno;
-    List<Carta> mazo;
+    List<Carta> mazo = new ArrayList<>();;
 
     public Juego() {
+        jugadores = new ArrayList<>();
+        mazo = new ArrayList<>();
     }
 
     

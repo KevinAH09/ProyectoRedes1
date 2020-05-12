@@ -36,6 +36,7 @@ public class Servidor extends Conexion
                 for (Jugador object : MainServidor.juegoMain.jugadores) {
                     System.out.println(object.nickname);
                 }
+                
                 System.out.println("Fin de la conexión");
                 inObjeto.close();
                 cs.close();

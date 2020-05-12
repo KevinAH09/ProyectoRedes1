@@ -36,6 +36,7 @@ public class Cliente extends Conexion
 //            System.out.println(ju.nickname);
             
             Juego res=new Juego();
+            
             res.jugadores.add(ju);
             System.out.println(res.getJugadores().size());
             System.out.println(res.jugadores.get(0).nickname);

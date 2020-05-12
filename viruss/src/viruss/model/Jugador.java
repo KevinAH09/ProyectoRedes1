@@ -5,13 +5,14 @@
  */
 package viruss.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author cfugu
  */
-public class Jugador {
+public class Jugador implements Serializable{
     String nickname;
     String ip;
     List<Carta> mazo1;

@@ -10,13 +10,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1802.0" stylesheets="@bordesBox.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1800.0" stylesheets="@bordesBox.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.MenuController">
    <children>
-      <AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1802.0" stylesheets="@bordesBox.css">
+      <AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1800.0" stylesheets="@bordesBox.css">
          <children>
-            <AnchorPane prefHeight="1000.0" prefWidth="1802.0" style="-fx-background-color: e39727;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="1000.0" prefWidth="1800.0" style="-fx-background-color: e39727;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="1000.0" fitWidth="1802.0" layoutY="1.0" opacity="0.84" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                  <ImageView fitHeight="980.0" fitWidth="1780.0" layoutY="1.0" opacity="0.84" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <image>
                         <Image url="@../recursos/Fondo1.jpg" />
                      </image>
@@ -46,9 +46,18 @@
                         <Image url="@../recursos/radiation.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lFecha" layoutX="1442.0" layoutY="46.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
-                  <Label fx:id="lHora" layoutX="1442.0" layoutY="85.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
-                  <Label fx:id="lCrono" layoutX="1442.0" layoutY="123.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
+                  <Label fx:id="lFecha" layoutX="1442.0" layoutY="46.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lHora" layoutX="1442.0" layoutY="85.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lCrono" layoutX="1442.0" layoutY="123.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="117.0" layoutX="1434.0" layoutY="37.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
                   <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>

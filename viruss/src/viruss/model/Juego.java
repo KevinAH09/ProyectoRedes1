@@ -5,16 +5,18 @@
  */
 package viruss.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author cfugu
  */
-public class Juego {
-    List<Jugador> jugadores;
+import java.io.Serializable;
+public class Juego implements Serializable{
+    List<Jugador> jugadores=new ArrayList();
     int turno;
-    List<Carta> mazo;
+    List<Carta> mazo=new ArrayList();
 
     public Juego() {
     }
@@ -32,16 +34,16 @@ public class Juego {
         return jugadores;
     }
 
-    public void setJugadores(List jugadores) {
-        this.jugadores = jugadores;
+    public void setJugadores(Jugador jugadores) {
+        this.jugadores = (List<Jugador>) jugadores;
     }
 
     public List getMazo() {
         return mazo;
     }
 
-    public void setMazo(List mazo) {
-        this.mazo = mazo;
+    public void setMazo(Carta mazo) {
+        this.mazo = (List<Carta>) mazo;
     }
     
     

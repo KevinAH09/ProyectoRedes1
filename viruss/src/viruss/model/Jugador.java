@@ -5,17 +5,19 @@
  */
 package viruss.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author cfugu
  */
-public class Jugador {
+import java.io.Serializable;
+public class Jugador implements Serializable{
     String nickname;
     String ip;
-    List<Carta> mazo1;
-    List<Carta> mazo2;
+    List<Carta> mazo1= new ArrayList();
+    List<Carta> mazo2=new ArrayList();
 
     public Jugador() {
     }

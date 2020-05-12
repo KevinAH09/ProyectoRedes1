@@ -21,19 +21,19 @@
                         <Image url="@../recursos/Fondo1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="117.0" fitWidth="527.0" layoutX="638.0" layoutY="302.0" pickOnBounds="true" smooth="false">
+                  <ImageView fitHeight="176.0" fitWidth="676.0" layoutX="497.0" layoutY="221.0" pickOnBounds="true" smooth="false">
                      <image>
                         <Image url="@../recursos/Logo.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="704.0" layoutY="419.0" prefHeight="38.0" prefWidth="395.0" promptText="Nickname" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="576.0" layoutY="446.0" prefHeight="50.0" prefWidth="500.0" promptText="Nickname" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="btnIngresar" layoutX="835.0" layoutY="471.0" onAction="#Ingresar" prefHeight="30.0" prefWidth="134.0" text="Ingresar" textFill="#e39727">
+                  <JFXButton fx:id="btnIngresar" layoutX="768.0" layoutY="554.0" onAction="#Ingresar" prefHeight="30.0" prefWidth="134.0" text="Ingresar" textFill="#e39727">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
                   <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="1644.0" layoutY="838.0" pickOnBounds="true" preserveRatio="true">

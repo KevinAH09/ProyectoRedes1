@@ -150,10 +150,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if(this.color==1)
                     {
-                        //Atacar con virus
-                        
-                       //this.setImg(image);
-                       //Carta aux = new Carta("viruss/recursos/CORAZON.jpg",tipo,c,50,50);
+                        this.setImage(image);
                     }
                 }
                 cont=0;

@@ -24,18 +24,18 @@ public class Servidor extends Conexion
                 ObjectInputStream inObjeto = new ObjectInputStream( cs.getInputStream());
                 Juego lc =(Juego) inObjeto.readObject();          
                 System.out.println(cs.getInetAddress().toString());
-//                String ip = cs.getInetAddress().toString();
-//                ip.replaceAll("/", "");
-//                if(MainServidor.juegoMain.jugadores.isEmpty()){
-//                    MainServidor.juegoMain = lc;
-//                    MainServidor.juegoMain.jugadores.get(0).setIp(ip);
-//                }else{
-//                    lc.jugadores.get(0).ip=ip;
-//                    MainServidor.juegoMain.jugadores.add(lc.jugadores.get(0));                    
-//                }
-//                for (Jugador object : MainServidor.juegoMain.jugadores) {
-//                    System.out.println(object.nickname);
-//                }
+                String ip = cs.getInetAddress().toString();
+                ip.replaceAll("/", "");
+                if(MainServidor.juegoMain.jugadores.isEmpty()){
+                    MainServidor.juegoMain = lc;
+                    MainServidor.juegoMain.jugadores.get(0).setIp(ip);
+                }else{
+                    lc.jugadores.get(0).ip=ip;
+                    MainServidor.juegoMain.jugadores.add(lc.jugadores.get(0));                    
+                }
+                for (Jugador object : MainServidor.juegoMain.jugadores) {
+                    System.out.println(object.nickname);
+                }
                 System.out.println("Fin de la conexión");
                 inObjeto.close();
                 cs.close();

@@ -3,8 +3,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="borPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.PrincipalController">
+<BorderPane fx:id="borPane" prefHeight="939.0" prefWidth="1457.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.PrincipalController">
    <center>
-      <VBox prefHeight="800.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="939.0" prefWidth="1457.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

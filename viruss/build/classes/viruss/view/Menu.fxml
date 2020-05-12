@@ -10,46 +10,46 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@bordesBox.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="939.0" prefWidth="1457.0" stylesheets="@bordesBox.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.MenuController">
    <children>
-      <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@bordesBox.css">
+      <AnchorPane id="AnchorPane" prefHeight="939.0" prefWidth="1457.0" stylesheets="@bordesBox.css">
          <children>
-            <AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: e39727;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="939.0" prefWidth="1457.0" style="-fx-background-color: e39727;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="780.0" fitWidth="1179.0" layoutX="10.0" layoutY="10.0" opacity="0.84" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="10.0">
+                  <ImageView fitHeight="959.0" fitWidth="1478.0" layoutY="1.0" opacity="0.84" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                      <image>
                         <Image url="@../recursos/Fondo1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="117.0" fitWidth="527.0" layoutX="373.0" layoutY="283.0" pickOnBounds="true" smooth="false">
+                  <ImageView fitHeight="117.0" fitWidth="527.0" layoutX="470.0" layoutY="302.0" pickOnBounds="true" smooth="false">
                      <image>
                         <Image url="@../recursos/Logo.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="403.0" layoutY="419.0" prefHeight="38.0" prefWidth="395.0" promptText="Nickname" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="536.0" layoutY="419.0" prefHeight="38.0" prefWidth="395.0" promptText="Nickname" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="btnIngresar" layoutX="526.0" layoutY="479.0" onAction="#Ingresar" prefHeight="30.0" prefWidth="134.0" text="Ingresar" textFill="#e39727">
+                  <JFXButton fx:id="btnIngresar" layoutX="667.0" layoutY="466.0" onAction="#Ingresar" prefHeight="30.0" prefWidth="134.0" text="Ingresar" textFill="#e39727">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="1061.0" layoutY="656.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="1311.0" layoutY="804.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/transmision.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="117.0" fitWidth="134.0" layoutX="25.0" layoutY="656.0" pickOnBounds="true">
+                  <ImageView fitHeight="117.0" fitWidth="134.0" layoutX="40.0" layoutY="804.0" pickOnBounds="true">
                      <image>
                         <Image url="@../recursos/radiation.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lFecha" layoutX="861.0" layoutY="44.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
-                  <Label fx:id="lHora" layoutX="863.0" layoutY="78.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
-                  <Label fx:id="lCrono" layoutX="866.0" layoutY="115.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="117.0" layoutX="857.0" layoutY="27.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
+                  <Label fx:id="lFecha" layoutX="1128.0" layoutY="44.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
+                  <Label fx:id="lHora" layoutX="1128.0" layoutY="75.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
+                  <Label fx:id="lCrono" layoutX="1128.0" layoutY="119.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="117.0" layoutX="1120.0" layoutY="38.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
                   <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/transmision.png" />

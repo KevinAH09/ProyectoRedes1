@@ -18,18 +18,28 @@ public class Cliente extends Conexion
         try
         {        
 //          //Se recibe un objeto
-            int x=0;
-            int y=0;
-            List<Carta> res =new ArrayList();
-           for(int i=0;i<2;i++){
-                Carta cart=new Carta();
-                cart.setAltura(150+x);
-                cart.setAncho(50+y);
-                res.add(cart);
-                x+=50;
-                y+=75;
-            }
+//            int x=0;
+//            int y=0;
+//            List<Carta> res =new ArrayList();
+//           for(int i=0;i<2;i++){
+//                Carta cart=new Carta();
+//                cart.setAltura(150+x);
+//                cart.setAncho(50+y);
+//                res.add(cart);
+//                x+=50;
+//                y+=75;
+//            }
             
+            
+             Jugador ju=new Jugador();
+            ju.setNickname("GUSTAVO");
+//            System.out.println(ju.nickname);
+            
+            Juego res=new Juego();
+            
+            res.jugadores.add(ju);
+            System.out.println(res.getJugadores().size());
+            System.out.println(res.jugadores.get(0).nickname);
             //FLUJO DE salida para objetos
             ObjectOutputStream carta1 = new ObjectOutputStream( cs.getOutputStream());
            

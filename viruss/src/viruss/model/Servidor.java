@@ -30,8 +30,13 @@ public class Servidor extends Conexion
                     MainServidor.juegoMain = lc;
                     MainServidor.juegoMain.jugadores.get(0).setIp(ip);
                 }else{
+                    lc.jugadores.get(0).ip=ip;
                     MainServidor.juegoMain.jugadores.add(lc.jugadores.get(0));                    
                 }
+                for (Jugador object : MainServidor.juegoMain.jugadores) {
+                    System.out.println(object.nickname);
+                }
+                
                 System.out.println("Fin de la conexión");
                 inObjeto.close();
                 cs.close();

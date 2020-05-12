@@ -7,15 +7,24 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1802.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
       <AnchorPane prefHeight="1000.0" prefWidth="1802.0" stylesheets="@bordesBox.css">
          <children>
             <ImageView fitHeight="1000.0" fitWidth="1840.0" pickOnBounds="true" smooth="false">
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@bordesBox.css">
+         <children>
+            <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" smooth="false">
+
                <image>
                   <Image url="@../recursos/24408.jpg" />
                </image>
             </ImageView>
+
             <ScrollPane layoutX="458.0" layoutY="702.0" prefHeight="210.0" prefWidth="847.0" style="-fx-background-color: TRANSPARENT;">
                <content>
                   <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="192.0" prefWidth="844.0" stylesheets="@bordesBox.css" />
@@ -28,6 +37,20 @@
             <HBox fx:id="hboxmaso" layoutX="1408.0" layoutY="695.0" prefHeight="197.0" prefWidth="150.0" stylesheets="@bordesBox.css" />
             <HBox fx:id="hboxMesaJug4" layoutX="1296.0" layoutY="291.0" prefHeight="195.0" prefWidth="492.0" rotate="-90.0" />
             <HBox fx:id="hboxMesaJug3" layoutX="-34.0" layoutY="291.0" prefHeight="195.0" prefWidth="492.0" rotate="90.0" />
+
+            <ScrollPane layoutX="228.0" layoutY="640.0" prefHeight="122.0" prefWidth="744.0" style="-fx-background-color: TRANSPARENT;">
+               <content>
+                  <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="110.0" prefWidth="741.0" stylesheets="@bordesBox.css" />
+               </content>
+            </ScrollPane>
+            <HBox fx:id="hboxMesaJug1" layoutX="208.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxMesaJug2" layoutX="633.0" layoutY="531.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxMesaJug5" layoutX="208.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxMesaJug6" layoutX="633.0" layoutY="34.0" prefHeight="100.0" prefWidth="360.0" />
+            <HBox fx:id="hboxmaso" layoutX="550.0" layoutY="286.0" prefHeight="100.0" prefWidth="100.0" stylesheets="@bordesBox.css" />
+            <HBox fx:id="hboxMesaJug4" layoutX="764.0" layoutY="286.0" prefHeight="100.0" prefWidth="360.0" rotate="-90.0" />
+            <HBox fx:id="hboxMesaJug3" layoutX="78.0" layoutY="286.0" prefHeight="100.0" prefWidth="360.0" rotate="90.0" />
+
          </children>
       </AnchorPane>
    </children>

@@ -5,18 +5,23 @@
  */
 package viruss.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author cfugu
  */
-public class Juego {
-    List<Jugador> jugadores;
+
+public class Juego implements Serializable{
+    List<Jugador> jugadores = new ArrayList<>();;
     int turno;
-    List<Carta> mazo;
+    List<Carta> mazo = new ArrayList<>();;
 
     public Juego() {
+        jugadores = new ArrayList<>();
+        mazo = new ArrayList<>();
     }
 
     

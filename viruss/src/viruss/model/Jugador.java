@@ -21,7 +21,10 @@ public class Jugador {
     }
 
     
-
+    public Jugador(String nick , String ip) {
+        this.nickname = nick;
+        this.ip = ip; 
+    }
     public String getNickname() {
         return nickname;
     }

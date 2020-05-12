@@ -22,11 +22,16 @@ public class Servidor extends Conexion
                 System.out.println("Cliente en línea");
                 
                 ObjectInputStream inObjeto = new ObjectInputStream( cs.getInputStream());
-                List<Carta> lc =(List<Carta>) inObjeto.readObject();
-                System.out.println("Recibo: " + lc.get(0).getAltura() + "" + lc.get(0).getAncho());
-                System.out.println("Recibo: " + lc.get(1).getAltura() + "" + lc.get(1).getAncho());             
+                Juego lc =(Juego) inObjeto.readObject();          
                 System.out.println(cs.getInetAddress().toString());
-
+                String ip = cs.getInetAddress().toString();
+                ip.replaceAll("/", "");
+                if(MainServidor.juegoMain.jugadores.isEmpty()){
+                    MainServidor.juegoMain = lc;
+                    MainServidor.juegoMain.jugadores.get(0).setIp(ip);
+                }else{
+                    MainServidor.juegoMain.jugadores.add(lc.jugadores.get(0));                    
+                }
                 System.out.println("Fin de la conexión");
                 inObjeto.close();
                 cs.close();

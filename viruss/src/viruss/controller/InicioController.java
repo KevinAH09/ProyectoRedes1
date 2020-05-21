@@ -53,6 +53,10 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private ScrollPane scrollpane;
     public static List <Carta> listaMasoJugador =  new ArrayList();
+    public static List <Carta> listaCementerio =  new ArrayList();
+    
+    @FXML
+    private ImageView cemento;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -198,9 +202,18 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) {
+        if(listaRandom.isEmpty()!=true)
+        {
             hboxMasoJug.getChildren().add(listaRandom.get(listaRandom.size() - 1));
             listaMasoJugador.add(listaRandom.get(listaRandom.size() - 1));
             listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+        }
+        else
+        {
+            System.out.println(listaCementerio);
+            listaRandom=listaCementerio;
+            listaCementerio.clear();
+        }
     }
     
 }

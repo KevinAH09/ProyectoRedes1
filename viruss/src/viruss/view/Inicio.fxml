@@ -28,11 +28,15 @@
             <HBox fx:id="hboxmaso" layoutX="1408.0" layoutY="695.0" prefHeight="197.0" prefWidth="150.0" stylesheets="@bordesBox.css" />
             <HBox fx:id="hboxMesaJug4" layoutX="1296.0" layoutY="256.0" prefHeight="193.0" prefWidth="492.0" rotate="-90.0" />
             <HBox fx:id="hboxMesaJug3" layoutX="-26.0" layoutY="256.0" prefHeight="193.0" prefWidth="492.0" rotate="90.0" />
-            <ImageView fitHeight="193.0" fitWidth="130.0" layoutX="817.0" layoutY="256.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="193.0" fitWidth="130.0" layoutX="892.0" layoutY="256.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../recursos/carta_detras.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="cemento" fitHeight="193.0" fitWidth="130.0" layoutX="744.0" layoutY="256.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../recursos/Cementerio.jpg" />
+               </image></ImageView>
          </children>
       </AnchorPane>
    </children>

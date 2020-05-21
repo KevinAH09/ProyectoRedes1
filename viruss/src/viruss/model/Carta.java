@@ -241,6 +241,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -259,6 +260,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -277,6 +279,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -295,6 +298,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -315,6 +319,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -334,6 +339,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -353,6 +359,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -372,6 +379,7 @@ public class Carta extends ImageView implements Serializable{
                             if(carta.getColor()==c){
                                 if(carta.getTipoCarta().equals(tipo))
                                 {
+                                    InicioController.listaCementerio.add(carta);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
@@ -385,7 +393,6 @@ public class Carta extends ImageView implements Serializable{
                         }
                     }
                 }
-                
                 cont=0;
             }
     }

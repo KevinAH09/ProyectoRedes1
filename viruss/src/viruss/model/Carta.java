@@ -142,6 +142,7 @@ public class Carta extends ImageView implements Serializable{
                         
                         c=this.color;
                         tipo=this.tipoCarta;
+                        
                         image=new Image("viruss/recursos/rojoinfectado.jpg");
                     }
                 }

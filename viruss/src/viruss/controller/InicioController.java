@@ -48,7 +48,7 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private ImageView imgMaso;
     
-    
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         crearCartas();

@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import viruss.model.Carta;
@@ -44,15 +45,14 @@ public class InicioController extends Controller implements Initializable {
     private List <Carta> lista = new ArrayList();   
     static private List <Carta> listaRandom =  new ArrayList();
     Carta p = new Carta();
+    @FXML
+    private ImageView imgMaso;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         crearCartas();
-        Image i = new Image("viruss/recursos/MASO.jpg");
-        ImageView p = new ImageView(i);
-        p.setFitWidth(70);
-        p.setFitHeight(100);
+        
         
         Random o = new Random();
         int aux;
@@ -67,12 +67,7 @@ public class InicioController extends Controller implements Initializable {
             lista.remove(a);
             resta--;
         }
-        p.setOnMouseClicked(ke->{
-            
-            hboxMasoJug.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-            listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-        });
-        hboxmaso.getChildren().add(p);
+       
         
             int cont=0;
             while(cont !=18)
@@ -194,6 +189,12 @@ public class InicioController extends Controller implements Initializable {
                 }
             }
         }
+    }
+
+    @FXML
+    private void actionMasoClick(MouseEvent event) {
+            hboxMasoJug.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+            listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
     }
     
 }

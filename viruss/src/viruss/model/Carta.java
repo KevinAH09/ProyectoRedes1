@@ -143,6 +143,15 @@ public class Carta extends ImageView implements Serializable{
                         image=this.img;
                     }
                 }
+                else if(this.tipoCarta.equals("Medicinas"))
+                {
+                    if(this.color == 11)
+                    {
+                        c=this.color;
+                        tipo=this.tipoCarta;
+                        image=this.img;
+                    }
+                }
                 cont++;
             }
             else if(cont==1){
@@ -151,8 +160,21 @@ public class Carta extends ImageView implements Serializable{
                     if(this.color==1)
                     {
                         this.setImage(image);
+                        this.setTipoCarta("OrganosVirus");
+                        this.setColor(11);
                     }
                 }
+                else if(this.tipoCarta.equals("OrganosVirus"))
+                {
+                    if(this.color==11)
+                    {
+                       image= new Image("viruss/recursos/CORAZON.jpg");
+                        this.setImage(image);
+                        this.setTipoCarta("Organos");
+                        this.setColor(1);
+                    }
+                }
+                
                 cont=0;
             }
     }

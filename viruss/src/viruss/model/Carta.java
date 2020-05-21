@@ -6,6 +6,8 @@ import javafx.scene.image.ImageView;
 
 
 import java.io.Serializable;
+import java.util.List;
+import viruss.controller.InicioController;
 public class Carta extends ImageView implements Serializable{
     
     private String tipoCarta;
@@ -14,6 +16,8 @@ public class Carta extends ImageView implements Serializable{
     public int ancho;
     public Image img;
     
+    
+    List <Carta> lista;
     
     static int cont=0;
     static int c;
@@ -132,6 +136,7 @@ public class Carta extends ImageView implements Serializable{
     
     public void jugar()
     {
+        
         if(cont ==0)
             {
                 
@@ -139,11 +144,13 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if(this.color==1)
                     {
-                        
-                        c=this.color;
-                        tipo=this.tipoCarta;
-                        
-                        image=new Image("viruss/recursos/rojoinfectado.jpg");
+                        if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        {
+                            
+                            c=this.color;
+                            tipo=this.tipoCarta;
+                            image=new Image("viruss/recursos/rojoinfectado.jpg");
+                        }
                     }
                 }
                 else if(this.tipoCarta.equals("Medicinas"))
@@ -162,10 +169,21 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if(this.color==1)
                     {
-                        this.setImage(image);
-                        this.setTipoCarta("OrganosVirus");
-                        this.setColor(11);
                         
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if(carta.getColor()==c){
+                                if(carta.getTipoCarta().equals(tipo))
+                                {
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    this.setImage(image);
+                                    this.setTipoCarta("OrganosVirus");
+                                    this.setColor(11);
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
                 else if(this.tipoCarta.equals("OrganosVirus"))

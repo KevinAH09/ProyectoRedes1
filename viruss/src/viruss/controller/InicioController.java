@@ -28,7 +28,7 @@ import viruss.model.Carta;
 public class InicioController extends Controller implements Initializable {
 
     @FXML
-    private HBox hboxMasoJug;
+    private  HBox hboxMasoJug;
     @FXML
     private HBox hboxMesaJug1;
     @FXML
@@ -43,6 +43,8 @@ public class InicioController extends Controller implements Initializable {
     private HBox hboxMesaJug6;
     @FXML
     private HBox hboxmaso;
+    
+    public static HBox masoStatico;
     private List <Carta> lista = new ArrayList();   
     static private List <Carta> listaRandom =  new ArrayList();
     Carta p = new Carta();
@@ -55,7 +57,7 @@ public class InicioController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         crearCartas();
-        
+        masoStatico = hboxMasoJug;
         
         Random o = new Random();
         int aux;

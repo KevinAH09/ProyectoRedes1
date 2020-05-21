@@ -139,7 +139,54 @@ public class Carta extends ImageView implements Serializable{
         
         if(cont ==0)
             {
-                
+                if(this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS SOBRE MESA    --------------------------------------------------------
+                {
+                    if(this.color==1)
+                    {
+                        if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        {
+                            
+                            c=this.color;
+                            tipo=this.tipoCarta;
+                            
+                        }
+                    }
+                    
+                    if(this.color==2)
+                    {
+                        if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        {
+                            
+                            c=this.color;
+                            tipo=this.tipoCarta;
+                        }
+                    }
+                    
+                    if(this.color==3)
+                    {
+                        if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        {
+                            
+                            c=this.color;
+                            tipo=this.tipoCarta;
+                        }
+                    }
+                    
+                    if(this.color==4)
+                    {
+                        if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        {
+                            
+                            c=this.color;
+                            tipo=this.tipoCarta;
+                        }
+                    }
+                    
+//                    if(this.color==)
+//                    {
+//                        
+//                    }
+                }
                 if(this.tipoCarta.equals("Virus"))//-----------------------------------------------------------------------     VIRUS     --------------------------------------------------------
                 {
                     if(this.color==1)
@@ -227,6 +274,8 @@ public class Carta extends ImageView implements Serializable{
                         }
                         
                     }
+                    
+                    
                     
                 }
                 cont++;
@@ -393,6 +442,10 @@ public class Carta extends ImageView implements Serializable{
                         }
                     }
                 }
+//                else if(InicioController.miMesa.)
+//                {
+//                    System.out.println("hola");
+//                }
                 cont=0;
             }
     }

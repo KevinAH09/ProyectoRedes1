@@ -134,13 +134,15 @@ public class Carta extends ImageView implements Serializable{
     {
         if(cont ==0)
             {
+                
                 if(this.tipoCarta.equals("Virus"))
                 {
                     if(this.color==1)
                     {
+                        
                         c=this.color;
                         tipo=this.tipoCarta;
-                        image=this.img;
+                        image=new Image("viruss/recursos/rojoinfectado.jpg");
                     }
                 }
                 else if(this.tipoCarta.equals("Medicinas"))
@@ -149,7 +151,7 @@ public class Carta extends ImageView implements Serializable{
                     {
                         c=this.color;
                         tipo=this.tipoCarta;
-                        image=this.img;
+                        
                     }
                 }
                 cont++;
@@ -162,6 +164,7 @@ public class Carta extends ImageView implements Serializable{
                         this.setImage(image);
                         this.setTipoCarta("OrganosVirus");
                         this.setColor(11);
+                        
                     }
                 }
                 else if(this.tipoCarta.equals("OrganosVirus"))

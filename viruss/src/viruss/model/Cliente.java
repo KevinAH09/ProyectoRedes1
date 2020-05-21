@@ -32,7 +32,7 @@ public class Cliente extends Conexion
             
             
              Jugador ju=new Jugador();
-            ju.setNickname("GUSTAVO");
+            ju.setNickname("JSON");
 //            System.out.println(ju.nickname);
             
             Juego res=new Juego();

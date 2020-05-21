@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -47,7 +48,9 @@ public class InicioController extends Controller implements Initializable {
     Carta p = new Carta();
     @FXML
     private ImageView imgMaso;
-    
+    @FXML
+    private ScrollPane scrollpane;
+    public static List <Carta> listaMasoJugador =  new ArrayList();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -194,6 +197,7 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private void actionMasoClick(MouseEvent event) {
             hboxMasoJug.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+            listaMasoJugador.add(listaRandom.get(listaRandom.size() - 1));
             listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
     }
     

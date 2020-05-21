@@ -20,6 +20,9 @@ and open the template in the editor.
     -fx-azul: #0000FF;
     -fx-pa:  #e39727;
 }
+#scrollpane {
+  -fx-background-color: transparent;
+}
 .vbox{
    -fx-background-color: #116c78; 
 }

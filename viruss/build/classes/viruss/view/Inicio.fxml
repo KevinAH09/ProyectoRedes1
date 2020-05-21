@@ -16,9 +16,9 @@
                   <Image url="@../recursos/24408.jpg" />
                </image>
             </ImageView>
-            <ScrollPane layoutX="458.0" layoutY="702.0" prefHeight="210.0" prefWidth="847.0" style="-fx-background-color: TRANSPARENT;">
+            <ScrollPane fx:id="scrollpane" layoutX="459.0" layoutY="766.0" prefHeight="200.0" prefWidth="847.0" style="-fx-background-color: TRANSPARENT;">
                <content>
-                  <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="192.0" prefWidth="844.0" stylesheets="@bordesBox.css" />
+                  <HBox fx:id="hboxMasoJug" alignment="CENTER" prefHeight="195.0" prefWidth="844.0" stylesheets="@bordesBox.css" />
                </content>
             </ScrollPane>
             <HBox fx:id="hboxMesaJug1" layoutX="355.0" layoutY="500.0" prefHeight="193.0" prefWidth="527.0" />

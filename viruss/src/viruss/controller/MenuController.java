@@ -17,11 +17,19 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import viruss.util.AppContext;
 import viruss.util.FlowController;
+import viruss.util.Mensaje;
 
 /**
  * FXML Controller class
@@ -40,6 +48,8 @@ public class MenuController extends Controller implements Initializable {
     private JFXTextField txtNick;
     @FXML
     private JFXButton btnIngresar;
+    @FXML
+    private AnchorPane scene;
 
     /**
      * Initializes the controller class.
@@ -56,18 +66,41 @@ public class MenuController extends Controller implements Initializable {
         Date now = new Date(System.currentTimeMillis());
         SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
         lFecha.setText(date.format(now));
+        
+        
+        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("Mouse clicked X : Y - " + 
+                        mouseEvent.getX() + " : " + mouseEvent.getY());         
+//                if(mouseEvent.getButton() == MouseButton.PRIMARY) {
+//                    System.out.println("Botón principal");
+//                } else if(mouseEvent.getButton() == MouseButton.SECONDARY) {
+//                    System.out.println("Botón secundario");
+//                }
+            }
+        });
     }    
 
     @Override
     public void initialize() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    
+   
 
     @FXML
     private void Ingresar(ActionEvent event) {
-        FlowController.getInstance().goView("Inicio");
+//        if(txtNick.getText().isEmpty()){
+////            ObservableList<String> alex = FXCollections.observableArrayList("First word","Second word", "Third word", "Etc."); 
+////            listViewJugadores.setItems(alex);
+//            new Mensaje().showModal(Alert.AlertType.ERROR, "Error al iniciar sesión", (Stage) btnIngresar.getScene().getWindow(),"El campo de usuario se encuentra vacío, este no debe estar vacío");     
+//        }else{
+            AppContext.getInstance().set("nick", txtNick.getText());
+            FlowController.getInstance().goView("Inicio");
+//        }
+        
     }
     
 }
+    
+

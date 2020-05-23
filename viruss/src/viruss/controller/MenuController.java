@@ -22,11 +22,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javax.swing.JOptionPane;
 import viruss.util.AppContext;
 import viruss.util.FlowController;
 import viruss.util.Mensaje;
@@ -50,6 +52,10 @@ public class MenuController extends Controller implements Initializable {
     private JFXButton btnIngresar;
     @FXML
     private AnchorPane scene;
+    @FXML
+    private JFXButton btnRed;
+    @FXML
+    private ListView<String> listViewJugadores;
 
     /**
      * Initializes the controller class.
@@ -100,6 +106,15 @@ public class MenuController extends Controller implements Initializable {
 //        }
         
     }
+
+    @FXML
+    private void ingresarRed(ActionEvent event) {
+        String name = JOptionPane.showInputDialog("Ingrese la dirección IP del servidor de destino");
+        JOptionPane.showMessageDialog(null, "Se ha guardado la IP ");
+        AppContext.getInstance().set("ipservidor", name);
+  
+    }
+    
     
 }
     

@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -25,8 +26,7 @@ public class FlowController {
 
     private static FlowController INSTANCE = null;
     private static Stage mainStage;
-    public static Stage mainStageNueva;
-//    private static ResourceBundle idioma;
+    private static ResourceBundle idioma;
     private static HashMap<String, FXMLLoader> loaders = new HashMap<>();
 
     private FlowController() {
@@ -57,7 +57,7 @@ public class FlowController {
     public void InitializeFlow(Stage stage, ResourceBundle idioma) {
         getInstance();
         this.mainStage = stage;
-//        this.idioma = idioma;
+        this.idioma = idioma;
     }
 
     private FXMLLoader getLoader(String name) {
@@ -66,7 +66,7 @@ public class FlowController {
             synchronized (FlowController.class) {
                 if (loader == null) {
                     try {
-                        loader = new FXMLLoader(viruss.Viruss.class.getResource("view/" + name + ".fxml"));
+                        loader = new FXMLLoader(viruss.Viruss.class.getResource("view/" + name + ".fxml"), this.idioma);
                         loader.load();
                         loaders.put(name, loader);
                     } catch (Exception ex) {
@@ -81,9 +81,7 @@ public class FlowController {
 
     public void goMain() {
         try {
-            this.mainStage.setScene(new Scene(FXMLLoader.load(viruss.Viruss.class.getResource("view/Principal.fxml"))));
-//            this.mainStage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-//            this.mainStage.setTitle("Clinica UNA");
+            FlowController.mainStage.setScene(new Scene(FXMLLoader.load(viruss.Viruss.class.getResource("view/Principal.fxml"))));
             this.mainStage.show();
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(FlowController.class.getName()).log(Level.SEVERE, "Error inicializando la vista base.", ex);
@@ -124,7 +122,6 @@ public class FlowController {
             default:
                 break;
         }
-        mainStageNueva = stage;
     }
 
     public void goViewInStage(String viewName, Stage stage) {
@@ -139,9 +136,8 @@ public class FlowController {
         Controller controller = loader.getController();
         controller.initialize();
         Stage stage = new Stage();
-//        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-//        stage.setTitle("Clinica UNA");
-
+//        stage.getIcons().add(new Image("unaplanilla2/resources/Agregar-48.png"));
+//        stage.setTitle("UNA PLANILLA");
         stage.setOnHidden((WindowEvent event) -> {
             controller.getStage().getScene().setRoot(new Pane());
             controller.setStage(null);
@@ -151,7 +147,6 @@ public class FlowController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.centerOnScreen();
-        mainStageNueva = stage;
         stage.show();
 
     }
@@ -161,8 +156,8 @@ public class FlowController {
         Controller controller = loader.getController();
         controller.initialize();
         Stage stage = new Stage();
-//        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-//        stage.setTitle("Clinica UNA");
+//        stage.getIcons().add(new Image("unaplanilla2/resources/Agregar-48.png"));
+//        stage.setTitle("UNA PLANILLA");
         stage.setResizable(resizable);
         stage.setOnHidden((WindowEvent event) -> {
             controller.getStage().getScene().setRoot(new Pane());
@@ -175,32 +170,6 @@ public class FlowController {
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(parentStage);
         stage.centerOnScreen();
-        stage.setWidth(1200);
-        stage.setHeight(700);
-        mainStageNueva = stage;
-        stage.showAndWait();
-
-    }
-
-    public void goViewInWindowModalRequts(String viewName, Boolean resizable) {
-        FXMLLoader loader = getLoader(viewName);
-        Controller controller = loader.getController();
-        controller.initialize();
-        Stage stage = new Stage();
-//        stage.getIcons().add(new Image("clinicauna/recursos/LOGOCLINICA.png"));
-//        stage.setTitle("Clinica UNA");
-        stage.setResizable(resizable);
-        stage.setOnHidden((WindowEvent event) -> {
-            controller.getStage().getScene().setRoot(new Pane());
-            controller.setStage(null);
-        });
-        controller.setStage(stage);
-        Parent root = loader.getRoot();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(mainStageNueva);
-        stage.centerOnScreen();
         stage.showAndWait();
 
     }
@@ -212,24 +181,7 @@ public class FlowController {
 //    public static void setIdioma(ResourceBundle idioma) {
 //        FlowController.idioma = idioma;
 //    }
-
-//    public static void CambiarIdioma(String L) {
-//        ResourceBundle idioma;
-//        if (L.equals("I")) {
-//            idioma = ResourceBundle.getBundle("clinicauna.resources.i18n/idioma_EN");
-//        } else {
-////            if (L.equals("E")) {
-//            idioma = ResourceBundle.getBundle("clinicauna.resources.i18n/idioma_ES");
-////            } 
-//        }
-//
-//        setIdioma(idioma);
-//    }
-
-//    public String obtenerTexto(String param) {
-//        return String.valueOf(FlowController.idioma.getObject(param));
-//    }
-
+    
     public void initialize() {
         this.loaders.clear();
     }

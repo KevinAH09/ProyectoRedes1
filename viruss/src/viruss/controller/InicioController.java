@@ -56,6 +56,7 @@ public class InicioController extends Controller implements Initializable {
     private ScrollPane scrollpane;
     public static List <Carta> listaMasoJugador =  new ArrayList();
     public static List <Carta> listaCementerio =  new ArrayList();
+    public static Carta cartaSelec=null;
     
     @FXML
     private ImageView cemento;
@@ -216,6 +217,17 @@ public class InicioController extends Controller implements Initializable {
             System.out.println(listaCementerio);
             listaRandom=listaCementerio;
             listaCementerio.clear();
+        }
+    }
+
+    @FXML
+    private void actionHboxJug(MouseEvent event) {
+        if(cartaSelec!=null){
+            hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
+            Carta.cont=0;
+            System.out.println(listaMasoJugador);
+            listaMasoJugador.remove(InicioController.cartaSelec);
+            System.out.println(listaMasoJugador);
         }
     }
     

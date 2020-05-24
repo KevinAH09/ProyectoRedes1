@@ -82,42 +82,42 @@ public class InicioController extends Controller implements Initializable {
        
         
             int cont=0;
-//            while(cont !=18)
-//            {
-//                if (cont < 19) {
-//                    if (cont < 3) {
-//                        hboxMesaJug1.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//
-//                    }
-//                    if (cont >= 3 && cont < 6) {
-//                        hboxMesaJug2.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//                    }
-//                    if (cont >= 6 && cont < 9) {
-//                        hboxMesaJug3.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//                    }
-//                    if (cont >= 9 && cont < 12) {
-//                        hboxMesaJug4.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//                    }
-//                    if (cont >= 12 && cont < 15) {
-//                        p= listaRandom.get(listaRandom.size()-1);
-//                        p.setRotate(180);
-//                        hboxMesaJug5.getChildren().add(p);
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//                    }
-//                    if(cont>=15 && cont<18)
-//                    {
-//                        p= listaRandom.get(listaRandom.size()-1);
-//                        p.setRotate(180);
-//                        hboxMesaJug6.getChildren().add(p);
-//                        listaRandom.remove(listaRandom.get(listaRandom.size()-1));
-//                    }
-//                    cont++;
-//                }
-//            }
+            while(cont !=18)
+            {
+                if (cont < 19) {
+                    if (cont < 3) {
+                        hboxMesaJug1.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+
+                    }
+                    if (cont >= 3 && cont < 6) {
+                        hboxMesaJug2.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+                    }
+                    if (cont >= 6 && cont < 9) {
+                        hboxMesaJug3.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+                    }
+                    if (cont >= 9 && cont < 12) {
+                        hboxMesaJug4.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+                    }
+                    if (cont >= 12 && cont < 15) {
+                        p= listaRandom.get(listaRandom.size()-1);
+                        p.setRotate(180);
+                        hboxMesaJug5.getChildren().add(p);
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+                    }
+                    if(cont>=15 && cont<18)
+                    {
+                        p= listaRandom.get(listaRandom.size()-1);
+                        p.setRotate(180);
+                        hboxMesaJug6.getChildren().add(p);
+                        listaRandom.remove(listaRandom.get(listaRandom.size()-1));
+                    }
+                    cont++;
+                }
+            }
         
     }   
 

@@ -11,7 +11,7 @@ import viruss.model.Conexion;
 
 //Clase principal que hará uso del servidor
 public class MainServidor
-{ 
+{
    public static Juego juegoMain;
    public static void main(String[] args) throws IOException
     {

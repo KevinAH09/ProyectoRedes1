@@ -19,7 +19,7 @@ public class Carta extends ImageView implements Serializable{
     
     List <Carta> lista;
     
-    public static int cont=0;
+    static int cont=0;
     static int c;
     static String tipo;
     static Image image;
@@ -145,9 +145,9 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            InicioController.cartaSelec = this;
-                            c= this.color;
-                            tipo= this.tipoCarta;
+                            
+                            c=this.color;
+                            tipo=this.tipoCarta;
                             
                         }
                     }
@@ -156,7 +156,7 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            InicioController.cartaSelec = this;
+                            
                             c=this.color;
                             tipo=this.tipoCarta;
                         }
@@ -166,7 +166,7 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            InicioController.cartaSelec = this;
+                            
                             c=this.color;
                             tipo=this.tipoCarta;
                         }
@@ -176,7 +176,7 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            InicioController.cartaSelec = this;
+                            
                             c=this.color;
                             tipo=this.tipoCarta;
                         }

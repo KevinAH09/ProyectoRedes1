@@ -228,6 +228,7 @@ public class InicioController extends Controller implements Initializable {
             System.out.println(listaMasoJugador);
             listaMasoJugador.remove(InicioController.cartaSelec);
             System.out.println(listaMasoJugador);
+            cartaSelec=null;
         }
     }
     

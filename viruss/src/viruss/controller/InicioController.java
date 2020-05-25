@@ -99,16 +99,16 @@ public class InicioController extends Controller implements Initializable {
 //                        hboxMesaJug3.getChildren().add(listaRandom.get(listaRandom.size() - 1));
 //                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
 //                    }
-//                    if (cont >= 9 && cont < 12) {
-//                        hboxMesaJug4.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//                    }
-//                    if (cont >= 12 && cont < 15) {
-//                        p= listaRandom.get(listaRandom.size()-1);
-//                        p.setRotate(180);
-//                        hboxMesaJug5.getChildren().add(p);
-//                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
-//                    }
+                    if (cont >= 9 && cont < 12) {
+                        hboxMesaJug4.getChildren().add(listaRandom.get(listaRandom.size() - 1));
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+                    }
+                    if (cont >= 12 && cont < 15) {
+                        p= listaRandom.get(listaRandom.size()-1);
+                        p.setRotate(180);
+                        hboxMesaJug5.getChildren().add(p);
+                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+                    }
                     if(cont>=15 && cont<18)
                     {
                         p= listaRandom.get(listaRandom.size()-1);
@@ -231,6 +231,7 @@ public class InicioController extends Controller implements Initializable {
             }
             if(band)
             {
+                
                 ListaMesaJugador.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 listaMasoJugador.remove(InicioController.cartaSelec);

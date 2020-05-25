@@ -286,6 +286,7 @@ public class Carta extends ImageView implements Serializable{
             }
             else if(cont==1){
                 boolean fuera=true;
+                boolean dentroMedicina=true;
                 for(Carta cartas : InicioController.listaMasoJugador)
                 {
                     if (cartas.equals(this)){
@@ -296,6 +297,7 @@ public class Carta extends ImageView implements Serializable{
                 for(Carta cartass : InicioController.ListaMesaJugador)
                 {
                     if (cartass.equals(this)){
+                        dentroMedicina=false;
                         fuera=false;
                     }
                     
@@ -384,7 +386,7 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas") &&this.estado.equals("Contaminado")) {
                             for (Carta carta : InicioController.listaMasoJugador) {
-                                if (carta.equals(CartaAux)) {
+                                if (carta.equals(CartaAux) && !dentroMedicina) {
 
                                     InicioController.listaCementerio.add(CartaAux);
                                     InicioController.listaMasoJugador.remove(carta);
@@ -405,7 +407,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux)&& !dentroMedicina) {
 
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);
@@ -425,7 +427,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux)&& !dentroMedicina) {
 
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);
@@ -444,7 +446,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux)&& !dentroMedicina) {
 
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);

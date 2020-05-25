@@ -231,7 +231,6 @@ public class InicioController extends Controller implements Initializable {
             }
             if(band)
             {
-                
                 ListaMesaJugador.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 listaMasoJugador.remove(InicioController.cartaSelec);

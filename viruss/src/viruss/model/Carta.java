@@ -22,8 +22,6 @@ public class Carta extends ImageView implements Serializable{
     List <Carta> lista;
     
     public static int cont=0;
-    static int c;
-    static String tipo;
     static Image image;
 
     public Carta() {
@@ -147,7 +145,7 @@ public class Carta extends ImageView implements Serializable{
         
         if(cont ==0)
             {
-                
+               
                 if(this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS SOBRE MESA    --------------------------------------------------------
                 {
                     if(this.color==1)
@@ -155,8 +153,7 @@ public class Carta extends ImageView implements Serializable{
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            
                             
                         }
                     }
@@ -166,8 +163,7 @@ public class Carta extends ImageView implements Serializable{
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            
                         }
                     }
                     
@@ -176,8 +172,7 @@ public class Carta extends ImageView implements Serializable{
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            
                         }
                     }
                     
@@ -186,15 +181,20 @@ public class Carta extends ImageView implements Serializable{
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            
                         }
                     }
                     
-//                    if(this.color==)
-//                    {
-//                        
-//                    }
+                    if(this.color==5)
+                    {
+                        if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        {
+                            InicioController.cartaSelec = this;
+                            
+                        }
+                    }
+                    
+                    
                 }
                 if(this.tipoCarta.equals("Virus"))//-----------------------------------------------------------------------     VIRUS     --------------------------------------------------------
                 {
@@ -285,13 +285,28 @@ public class Carta extends ImageView implements Serializable{
                 cont++;
             }
             else if(cont==1){
+                boolean fuera=true;
+                for(Carta cartas : InicioController.listaMasoJugador)
+                {
+                    if (cartas.equals(this)){
+                        fuera=false;
+                    }
+                    
+                }
+                for(Carta cartass : InicioController.ListaMesaJugador)
+                {
+                    if (cartass.equals(this)){
+                        fuera=false;
+                    }
+                    
+                }
                 if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS     --------------------------------------------------------
             {
                    
                 if (this.color == 1) {
                     if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
@@ -308,7 +323,7 @@ public class Carta extends ImageView implements Serializable{
                 } else if (this.color == 2) {
                     if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&&this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux)&& fuera) {
 
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);
@@ -326,7 +341,7 @@ public class Carta extends ImageView implements Serializable{
                 } else if (this.color == 3) {
                     if (this.color == CartaAux.color&& CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux)&& fuera) {
 
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);
@@ -343,7 +358,7 @@ public class Carta extends ImageView implements Serializable{
                 } else if (this.color == 4) {
                     if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&& this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if (carta.equals(CartaAux)) {
+                            if (carta.equals(CartaAux)&& fuera) {
 
                                 InicioController.listaCementerio.add(CartaAux);
                                 InicioController.listaMasoJugador.remove(carta);

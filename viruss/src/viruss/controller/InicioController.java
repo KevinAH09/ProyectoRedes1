@@ -60,7 +60,7 @@ public class InicioController extends Controller implements Initializable {
     
     @FXML
     private ImageView cemento;
-    private List <Carta> ListaMesaJugador = new ArrayList();  
+    public static  List <Carta> ListaMesaJugador = new ArrayList();  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         crearCartas();
@@ -83,8 +83,8 @@ public class InicioController extends Controller implements Initializable {
        
         
             int cont=0;
-//            while(cont !=18)
-//            {
+            while(cont !=18)
+            {
 //                if (cont < 19) {
 //                    if (cont < 3) {
 //                        hboxMesaJug1.getChildren().add(listaRandom.get(listaRandom.size() - 1));
@@ -109,15 +109,15 @@ public class InicioController extends Controller implements Initializable {
 //                        hboxMesaJug5.getChildren().add(p);
 //                        listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
 //                    }
-//                    if(cont>=15 && cont<18)
-//                    {
-//                        p= listaRandom.get(listaRandom.size()-1);
-//                        p.setRotate(180);
-//                        hboxMesaJug6.getChildren().add(p);
-//                        listaRandom.remove(listaRandom.get(listaRandom.size()-1));
-//                    }
-//                    cont++;
-//                }
+                    if(cont>=15 && cont<18)
+                    {
+                        p= listaRandom.get(listaRandom.size()-1);
+                        p.setRotate(180);
+                        hboxMesaJug6.getChildren().add(p);
+                        listaRandom.remove(listaRandom.get(listaRandom.size()-1));
+                    }
+                    cont++;
+                }
 //            }
         
     }   

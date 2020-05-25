@@ -285,8 +285,8 @@ public class Carta extends ImageView implements Serializable{
                 cont++;
             }
             else if(cont==1){
-                boolean fuera=true;
-                boolean dentroMedicina=true;
+                boolean fuera=true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
+                boolean dentroMedicina=true;//validacion de poder curar los organos de la mesa del jugador
                 for(Carta cartas : InicioController.listaMasoJugador)
                 {
                     if (cartas.equals(this)){
@@ -384,6 +384,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if (this.color == 11)//CORAZON-VIRUS
                     {
+                        //--------------- CURAR ORGANOS -----------------
                         if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas") &&this.estado.equals("Contaminado")) {
                             for (Carta carta : InicioController.listaMasoJugador) {
                                 if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -402,9 +403,31 @@ public class Carta extends ImageView implements Serializable{
                                 }
                             }
                         }
+                        
+                        //--------------  MATAR ORGANOS    -------------------------------------------
+                        
+                        else if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    this.setTipoCarta("Organos");
+                                    this.setColor(1);
+                                    this.setEstado("Estable");
+                                    InicioController.listaCementerio.add(this);
+                                    System.out.println("hola");
+                                    this.setImg(null);
+                                    break;
+
+                                }
+                            }
+                        }
                     
                 } else if (this.color == 22)//ESTOMAGO-VIRUS
                 {
+                    //--------------- CURAR ORGANOS -----------------
                     if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
                             if (carta.equals(CartaAux)&& !dentroMedicina) {
@@ -425,6 +448,7 @@ public class Carta extends ImageView implements Serializable{
                     }
                 } else if (this.color == 33)//CEREBRO-VIRUS
                 {
+                    //--------------- CURAR ORGANOS -----------------
                     if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
                             if (carta.equals(CartaAux)&& !dentroMedicina) {
@@ -444,6 +468,7 @@ public class Carta extends ImageView implements Serializable{
                     }
                 } else if (this.color == 44)//HUESO-VIRUS
                 {
+                    //--------------- CURAR ORGANOS -----------------
                     if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
                             if (carta.equals(CartaAux)&& !dentroMedicina) {

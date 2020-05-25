@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.Serializable;
 import java.util.List;
+import javafx.geometry.Point2D;
 import viruss.controller.InicioController;
 public class Carta extends ImageView implements Serializable{
     
@@ -15,8 +16,9 @@ public class Carta extends ImageView implements Serializable{
     public int altura;
     public int ancho;
     public Image img;
+    public String estado;
     
-    
+    public static Carta CartaAux;
     List <Carta> lista;
     
     public static int cont=0;
@@ -33,6 +35,7 @@ public class Carta extends ImageView implements Serializable{
         this.tipoCarta = tipoCarta;
         this.color = color;
         this.img = new Image(img);
+        
         if(tipoCarta.equals("Virus"))
         {
             
@@ -84,22 +87,27 @@ public class Carta extends ImageView implements Serializable{
         {
             if(color == 1)//corazon
             {
+                this.estado = "Estable";
                 this.setImage(this.img);
             }
             if(color == 2)//estomago
             {
+                this.estado = "Estable";
                 this.setImage(this.img);
             }
             if(color == 3)//cerebro
             {
+                this.estado = "Estable";
                 this.setImage(this.img);
             }
             if(color == 4)//hueso
             {
+                this.estado = "Estable";
                 this.setImage(this.img);
             }
             if(color == 5)//comodin
             {
+                this.estado = "Estable";
                 this.setImage(this.img);
             }
         }
@@ -139,6 +147,7 @@ public class Carta extends ImageView implements Serializable{
         
         if(cont ==0)
             {
+                
                 if(this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS SOBRE MESA    --------------------------------------------------------
                 {
                     if(this.color==1)
@@ -193,43 +202,42 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                             image=new Image("viruss/recursos/rojoinfectado.jpg");
+                            CartaAux.setImg(image);
                         }
                     }
                     
-                    if(this.color==2)
+                    else if(this.color==2)
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                             image=new Image("viruss/recursos/verdeinfectado.jpg");
+                            CartaAux.setImg(image);
                         }
                     }
                     
-                    if(this.color==3)
+                    else if(this.color==3)
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                             image=new Image("viruss/recursos/azulinfectado.jpg");
+                            CartaAux.setImg(image);
                         }
                     }
                     
-                    if(this.color==4)
+                    else if(this.color==4)
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                             image=new Image("viruss/recursos/amarilloinfectado.jpg");
+                            CartaAux.setImg(image);
                         }
                     }
                 }
@@ -239,38 +247,34 @@ public class Carta extends ImageView implements Serializable{
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                         }
                         
                     }
                     
-                    if(this.color == 2)
+                    else if(this.color == 2)
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                         }
                         
                     }
                     
-                    if(this.color == 3)
+                    else if(this.color == 3)
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                         }
                         
                     }
                     
-                    if(this.color == 4)
+                    else if(this.color == 4)
                     {
                         if(InicioController.listaMasoJugador.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
-                            c=this.color;
-                            tipo=this.tipoCarta;
+                            CartaAux=this;
                         }
                         
                     }
@@ -281,173 +285,171 @@ public class Carta extends ImageView implements Serializable{
                 cont++;
             }
             else if(cont==1){
-                if(this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS     --------------------------------------------------------
+                if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS     --------------------------------------------------------
+            {
+                   
+                if (this.color == 1) {
+                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux)) {
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVirus");
+                                this.setColor(11);
+                                this.setEstado("Contaminado");
+                                break;
+
+                            }
+                        }
+                    }
+                } else if (this.color == 2) {
+                    if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&&this.estado.equals("Estable")) {
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux)) {
+
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVirus");
+                                this.setColor(22);
+                                this.setEstado("Contaminado");
+                                break;
+
+                            }
+                        }
+                    }
+                } else if (this.color == 3) {
+                    if (this.color == CartaAux.color&& CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux)) {
+
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVirus");
+                                this.setColor(33);
+                                this.setEstado("Contaminado");
+                                break;
+                            }
+                        }
+                    }
+                } else if (this.color == 4) {
+                    if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&& this.estado.equals("Estable")) {
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux)) {
+
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVirus");
+                                this.setColor(44);
+                                this.setEstado("Contaminado");
+                                break;
+
+                            }
+                        }
+                    }
+                }
+                }
+                
+                
+            
+                else if (this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
                 {
-                    if(this.color==1)
+                    if (this.color == 11)//CORAZON-VIRUS
                     {
-                        
-                        for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
+                        if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas") &&this.estado.equals("Contaminado")) {
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux)) {
+
+                                    InicioController.listaCementerio.add(CartaAux);
                                     InicioController.listaMasoJugador.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/CORAZON.jpg");
                                     this.setImage(image);
-                                    this.setTipoCarta("OrganosVirus");
-                                    this.setColor(11);
+                                    this.setTipoCarta("Organos");
+                                    this.setColor(1);
+                                    this.setEstado("Estable");
                                     break;
+
                                 }
                             }
                         }
-                    }
                     
-                    if(this.color==2)
-                    {
+                } else if (this.color == 22)//ESTOMAGO-VIRUS
+                {
+                    if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
-                                    this.setImage(image);
-                                    this.setTipoCarta("OrganosVirus");
-                                    this.setColor(22);
-                                    break;
-                                }
+                            if (carta.equals(CartaAux)) {
+
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                image = new Image("viruss/recursos/ESTOMAGO.jpg");
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(2);
+                                this.setEstado("Estable");
+                                break;
+
                             }
                         }
                     }
-                    
-                    if(this.color==3)
-                    {
+                } else if (this.color == 33)//CEREBRO-VIRUS
+                {
+                    if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
-                                    this.setImage(image);
-                                    this.setTipoCarta("OrganosVirus");
-                                    this.setColor(33);
-                                    break;
-                                }
+                            if (carta.equals(CartaAux)) {
+
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                image = new Image("viruss/recursos/CEREBRO.jpg");
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(3);
+                                this.setEstado("Estable");
+                                break;
                             }
                         }
                     }
-                    
-                    if(this.color==4)
-                    {
+                } else if (this.color == 44)//HUESO-VIRUS
+                {
+                    if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
+                            if (carta.equals(CartaAux)) {
+
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/HUESO.jpg");
                                     this.setImage(image);
-                                    this.setTipoCarta("OrganosVirus");
-                                    this.setColor(44);
+                                    this.setTipoCarta("Organos");
+                                    this.setColor(4);
+                                    this.setEstado("Estable");
                                     break;
                                 }
                             }
                         }
                     }
                 }
-                else if(this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
-                {
-                    if(this.color==11)//CORAZON-VIRUS
-                    {
-                        for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
-                                    image= new Image("viruss/recursos/CORAZON.jpg");
-                                     this.setImage(image);
-                                     this.setTipoCarta("Organos");
-                                     this.setColor(1);
-                                     break;
-                                }
-                            }
-                        }
-                    }
-                    
-                    if(this.color==22)//ESTOMAGO-VIRUS
-                    {
-                        for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
-                                    image= new Image("viruss/recursos/ESTOMAGO.jpg");
-                                     this.setImage(image);
-                                     this.setTipoCarta("Organos");
-                                     this.setColor(2);
-                                     break;
-                                }
-                            }
-                        }
-                    }
-                    
-                    if(this.color==33)//CEREBRO-VIRUS
-                    {
-                        for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
-                                    image= new Image("viruss/recursos/CEREBRO.jpg");
-                                     this.setImage(image);
-                                     this.setTipoCarta("Organos");
-                                     this.setColor(3);
-                                     break;
-                                }
-                            }
-                        }
-                    }
-                    
-                    if(this.color==44)//HUESO-VIRUS
-                    {
-                        for (Carta carta : InicioController.listaMasoJugador) {
-                            if(carta.getColor()==c){
-                                if(carta.getTipoCarta().equals(tipo))
-                                {
-                                    InicioController.listaCementerio.add(carta);
-                                    InicioController.listaMasoJugador.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
-                                    image= new Image("viruss/recursos/HUESO.jpg");
-                                     this.setImage(image);
-                                     this.setTipoCarta("Organos");
-                                     this.setColor(4);
-                                     break;
-                                }
-                            }
-                        }
-                    }
-                }
-//                else if(InicioController.miMesa.)
-//                {
-//                    System.out.println("hola");
-//                }
-                cont=0;
-            }
+            
+
+            cont = 0;
+        }
     }
     
     public void setAltura(int altura)
@@ -489,10 +491,22 @@ public class Carta extends ImageView implements Serializable{
         this.img = img;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
-        return "Carta{" + "tipoCarta=" + tipoCarta + ", color=" + color + '}';
+        return "Carta{" + "tipoCarta=" + tipoCarta + ", color=" + color + ", estado=" + estado + '}';
     }
+
+    
+    
+    
     
     
     

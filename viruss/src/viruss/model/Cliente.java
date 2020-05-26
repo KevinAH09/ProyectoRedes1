@@ -16,23 +16,10 @@ public class Cliente extends Conexion
     public void startClient() //Método para iniciar el cliente
     {
         try
-        {        
-//          //Se recibe un objeto
-//            int x=0;
-//            int y=0;
-//            List<Carta> res =new ArrayList();
-//           for(int i=0;i<2;i++){
-//                Carta cart=new Carta();
-//                cart.setAltura(150+x);
-//                cart.setAncho(50+y);
-//                res.add(cart);
-//                x+=50;
-//                y+=75;
-//            }
+        {                  
             
-            
-             Jugador ju=new Jugador();
-            ju.setNickname("JSON");
+            Jugador ju=new Jugador();
+            ju.setNickname("Gustavo");
 //            System.out.println(ju.nickname);
             
             Juego res=new Juego();

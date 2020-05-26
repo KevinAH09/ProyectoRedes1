@@ -9,11 +9,13 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import viruss.util.AppContext;
 
 public class Conexion
 {
+    String ip=(String) AppContext.getInstance().get("ipservidor");
     private final int PUERTO = 5000; //Puerto para la conexión
-    private final String HOST = "25.101.246.19"; //Host para la conexión
+    private final String HOST = ip;  //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
     protected ServerSocket ss; //Socket del servidor
     protected Socket cs; //Socket del cliente

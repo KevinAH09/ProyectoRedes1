@@ -416,9 +416,11 @@ public class Carta extends ImageView implements Serializable{
                                     this.setTipoCarta("Organos");
                                     this.setColor(1);
                                     this.setEstado("Estable");
+                                    image = new Image("viruss/recursos/CORAZON.jpg");
+                                    this.setImage(image);
                                     InicioController.listaCementerio.add(this);
-                                    System.out.println("hola");
-                                    this.setImg(null);
+                                    InicioController.basura.getChildren().add(this);
+                                    InicioController.basura.getChildren().remove(0);
                                     break;
 
                                 }
@@ -446,6 +448,30 @@ public class Carta extends ImageView implements Serializable{
                             }
                         }
                     }
+                    
+                    //--------------  MATAR ORGANOS    -------------------------------------------
+                        
+                        else if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    this.setTipoCarta("Organos");
+                                    this.setColor(2);
+                                    this.setEstado("Estable");
+                                    image = new Image("viruss/recursos/ESTOMAGO.jpg");
+                                    this.setImage(image);
+                                    InicioController.listaCementerio.add(this);
+                                    InicioController.basura.getChildren().add(this);
+                                    InicioController.basura.getChildren().remove(0);
+                                    break;
+
+                                }
+                            }
+                        }
+                    
                 } else if (this.color == 33)//CEREBRO-VIRUS
                 {
                     //--------------- CURAR ORGANOS -----------------
@@ -466,6 +492,31 @@ public class Carta extends ImageView implements Serializable{
                             }
                         }
                     }
+                    
+                    //--------------  MATAR ORGANOS    -------------------------------------------
+                        
+                        else if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    this.setTipoCarta("Organos");
+                                    this.setColor(3);
+                                    this.setEstado("Estable");
+                                    image = new Image("viruss/recursos/CEREBRO.jpg");
+                                    this.setImage(image);
+                                    InicioController.listaCementerio.add(this);
+                                    InicioController.basura.getChildren().add(this);
+                                    InicioController.basura.getChildren().remove(0);
+                                    break;
+
+                                }
+                            }
+                        }
+                    
+                    
                 } else if (this.color == 44)//HUESO-VIRUS
                 {
                     //--------------- CURAR ORGANOS -----------------
@@ -483,6 +534,28 @@ public class Carta extends ImageView implements Serializable{
                                     this.setColor(4);
                                     this.setEstado("Estable");
                                     break;
+                                }
+                            }
+                        }
+                    //--------------  MATAR ORGANOS    -------------------------------------------
+                        
+                        else if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    this.setTipoCarta("Organos");
+                                    this.setColor(4);
+                                    this.setEstado("Estable");
+                                    image = new Image("viruss/recursos/HUESO.jpg");
+                                    this.setImage(image);
+                                    InicioController.listaCementerio.add(this);
+                                    InicioController.basura.getChildren().add(this);
+                                    InicioController.basura.getChildren().remove(0);
+                                    break;
+
                                 }
                             }
                         }

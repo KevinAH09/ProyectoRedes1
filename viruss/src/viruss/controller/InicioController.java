@@ -46,6 +46,7 @@ public class InicioController extends Controller implements Initializable {
     
     public static HBox masoStatico;
     public static  HBox miMesa;
+    //public static HBox mesaJugador;
             
     private List <Carta> lista = new ArrayList();   
     static private List <Carta> listaRandom =  new ArrayList();
@@ -61,11 +62,17 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private ImageView cemento;
     public static  List <Carta> ListaMesaJugador = new ArrayList();  
+    @FXML
+    private HBox HboxBasura;
+    public static HBox basura;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         crearCartas();
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
+        basura = HboxBasura;
         
         Random o = new Random();
         int aux;
@@ -234,7 +241,6 @@ public class InicioController extends Controller implements Initializable {
                 ListaMesaJugador.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 listaMasoJugador.remove(InicioController.cartaSelec);
-                
             }
            Carta.cont=0;
            cartaSelec=null;

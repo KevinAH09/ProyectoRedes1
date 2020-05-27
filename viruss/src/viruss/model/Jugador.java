@@ -16,8 +16,8 @@ import java.util.List;
 public class Jugador implements Serializable{
     String nickname;
     String ip;
-    List<Carta> mazo1 = new ArrayList<>();;
-    List<Carta> mazo2 = new ArrayList<>();;
+    public List<Carta> mazo1 = new ArrayList<>();;
+    public List<Carta> mazo2 = new ArrayList<>();;
 
     public Jugador() {
     }

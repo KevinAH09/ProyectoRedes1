@@ -21,6 +21,7 @@ import javafx.scene.layout.VBox;
 import viruss.model.Carta;
 import viruss.model.Cliente;
 import viruss.model.Juego;
+import viruss.model.Jugador;
 import viruss.model.MainCliente;
 import viruss.model.MainServidor;
 
@@ -97,6 +98,17 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.setMazo(listaRandom);
             MainServidor.juegoMain.setCementerio(listaCementerio);
             
+            Jugador jugador1 = new Jugador("bosco","1");
+            Jugador jugador2 = new Jugador("kevin","2");
+            Jugador jugador3 = new Jugador("gustavo","3");
+            
+            MainServidor.juegoMain.jugadores.add(jugador1);
+            MainServidor.juegoMain.jugadores.add(jugador2);
+            MainServidor.juegoMain.jugadores.add(jugador3);
+            
+            
+            MainServidor.juegoMain.jugadores.get(0).mazo1 = listaMasoJugador;
+            MainServidor.juegoMain.jugadores.get(0).mazo2 = ListaMesaJugador;
         
             int cont=0;
             while(cont !=18)
@@ -127,6 +139,7 @@ public class InicioController extends Controller implements Initializable {
                     }
                     if(cont>=15 && cont<18)
                     {
+                        
                         p= MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size()-1);
                         p.setRotate(180);
                         hboxMesaJug6.getChildren().add(p);
@@ -225,7 +238,7 @@ public class InicioController extends Controller implements Initializable {
         if(MainServidor.juegoMain.mazo.isEmpty()!=true)
         {
             hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size()-1));
-            listaMasoJugador.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+            MainServidor.juegoMain.jugadores.get(0).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
             MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
         }
         else
@@ -240,16 +253,16 @@ public class InicioController extends Controller implements Initializable {
     private void actionHboxJug(MouseEvent event) {
         if(cartaSelec!=null){
             boolean band=true;
-            for (Carta carta : ListaMesaJugador) {
+            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo2) {
                 if (carta.color==cartaSelec.color) {
                     band=false;
                 }
             }
             if(band)
             {
-                ListaMesaJugador.add(InicioController.cartaSelec);
+                MainServidor.juegoMain.jugadores.get(0).mazo2.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
-                listaMasoJugador.remove(InicioController.cartaSelec);
+                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(InicioController.cartaSelec);
             }
            Carta.cont=0;
            cartaSelec=null;

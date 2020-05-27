@@ -306,7 +306,7 @@ public class Carta extends ImageView implements Serializable{
             {
                    
                 if (this.color == 1) {
-                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
+                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) { //-------------------CONTAMINAR ORGANO---------------------------------
                         for (Carta carta : InicioController.listaMasoJugador) {
                             if (carta.equals(CartaAux) && fuera) {
                                 InicioController.listaCementerio.add(CartaAux);
@@ -322,6 +322,24 @@ public class Carta extends ImageView implements Serializable{
                             }
                         }
                     }
+                    
+                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                image = new Image("viruss/recursos/CORAZONINM.jpg");
+                                CartaAux.setImg(image);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVacuna");
+                                break;
+
+                            }
+                        }
+                    }
+                    
                 } else if (this.color == 2) {
                     if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&&this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
@@ -340,6 +358,24 @@ public class Carta extends ImageView implements Serializable{
                             }
                         }
                     }
+                    
+                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                image = new Image("viruss/recursos/ESTOMAGOINM.jpg");
+                                CartaAux.setImg(image);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVacuna");
+                                break;
+
+                            }
+                        }
+                    }
+                    
                 } else if (this.color == 3) {
                     if (this.color == CartaAux.color&& CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
@@ -357,6 +393,25 @@ public class Carta extends ImageView implements Serializable{
                             }
                         }
                     }
+                    
+                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                image = new Image("viruss/recursos/CEREBROINM.jpg");
+                                CartaAux.setImg(image);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVacuna");
+                                break;
+
+                            }
+                        }
+                    }
+                    
+                    
                 } else if (this.color == 4) {
                     if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&& this.estado.equals("Estable")) {
                         for (Carta carta : InicioController.listaMasoJugador) {
@@ -375,7 +430,28 @@ public class Carta extends ImageView implements Serializable{
                             }
                         }
                     }
+                    
+                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                        for (Carta carta : InicioController.listaMasoJugador) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                InicioController.listaCementerio.add(CartaAux);
+                                InicioController.listaMasoJugador.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                image = new Image("viruss/recursos/HUESOINM.jpg");
+                                CartaAux.setImg(image);
+                                this.setImage(CartaAux.getImg());
+                                this.setTipoCarta("OrganosVacuna");
+                                break;
+
+                            }
+                        }
+                    }
+                    
                 }
+                
+                
+                
                 }
                 
                 
@@ -561,7 +637,160 @@ public class Carta extends ImageView implements Serializable{
                         }
                     }
                 }
-            
+                
+                else if(this.tipoCarta.equals("OrganosVacuna"))//---------------- ORGANOS INMUNES --------------------------------------------------
+                {
+                    if (this.color == 1) {
+                        if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && !dentroMedicina) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/CORAZONINM2.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("OrganosInmune");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                        else if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/CORAZON.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("Organos");
+                                    break;
+
+                                }
+                            }
+                        }
+                    }
+                    
+                    else if (this.color == 2) {
+                        if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && !dentroMedicina) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/ESTOMAGOINM2.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("OrganosInmune");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                        else if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/ESTOMAGO.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("Organos");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    else if (this.color == 3) {
+                        if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && !dentroMedicina) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/CEREBROINM2.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("OrganosInmune");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                      else if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/CEREBRO.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("Organos");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    
+                    else if (this.color == 4) {
+                        if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")) { 
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && !dentroMedicina) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/HUESOINM2.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("OrganosInmune");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                        else if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                            for (Carta carta : InicioController.listaMasoJugador) {
+                                if (carta.equals(CartaAux) && fuera) {
+                                    InicioController.listaCementerio.add(CartaAux);
+                                    InicioController.listaMasoJugador.remove(carta);
+                                    InicioController.masoStatico.getChildren().clear();
+                                    InicioController.masoStatico.getChildren().addAll(InicioController.listaMasoJugador);
+                                    image = new Image("viruss/recursos/HUESO.jpg");
+                                    CartaAux.setImg(image);
+                                    this.setImage(CartaAux.getImg());
+                                    this.setTipoCarta("Organos");
+                                    break;
+
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                
+              
 
             cont = 0;
         }

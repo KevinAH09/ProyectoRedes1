@@ -23,6 +23,15 @@ public class Juego implements Serializable{
     public Juego() {
         jugadores = new ArrayList<>();
         mazo = new ArrayList<>();
+        cementerio = new ArrayList<>();
+    }
+
+    public List<Carta> getCementerio() {
+        return cementerio;
+    }
+
+    public void setCementerio(List<Carta> cementerio) {
+        this.cementerio = cementerio;
     }
 
     

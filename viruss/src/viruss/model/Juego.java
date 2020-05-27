@@ -19,6 +19,7 @@ public class Juego implements Serializable{
     int turno;
     List<Carta> mazo = new ArrayList<>();
     List<Carta> cementerio = new ArrayList<>();
+    
     public Juego() {
         jugadores = new ArrayList<>();
         mazo = new ArrayList<>();

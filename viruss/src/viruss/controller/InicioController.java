@@ -94,6 +94,8 @@ public class InicioController extends Controller implements Initializable {
         }
             MainServidor.juegoMain = new Juego();
             MainServidor.juegoMain.setMazo(listaRandom);
+            MainServidor.juegoMain.setCementerio(listaCementerio);
+            
         
             int cont=0;
             while(cont !=18)
@@ -219,17 +221,17 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) {
-        if(listaRandom.isEmpty()!=true)
+        if(MainServidor.juegoMain.mazo.isEmpty()!=true)
         {
-            hboxMasoJug.getChildren().add(listaRandom.get(listaRandom.size() - 1));
-            listaMasoJugador.add(listaRandom.get(listaRandom.size() - 1));
-            listaRandom.remove(listaRandom.get(listaRandom.size() - 1));
+            hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size()-1));
+            listaMasoJugador.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+            MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
         }
         else
         {
-            System.out.println(listaCementerio);
-            listaRandom=listaCementerio;
-            listaCementerio.clear();
+            
+            MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+            MainServidor.juegoMain.cementerio.clear();
         }
     }
 

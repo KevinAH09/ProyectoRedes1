@@ -18,20 +18,20 @@ public class Cliente extends Conexion
         try
         {                  
             
-            Jugador ju=new Jugador();
-            ju.setNickname("Gustavo");
+//            Jugador ju=new Jugador();
+//            ju.setNickname("Gustavo");
 //            System.out.println(ju.nickname);
             
-            Juego res=new Juego();
-            
-            res.jugadores.add(ju);
-            System.out.println(res.getJugadores().size());
-            System.out.println(res.jugadores.get(0).nickname);
+//            Juego res=new Juego();
+//            
+//            res.jugadores.add(ju);
+//            System.out.println(res.getJugadores().size());
+//            System.out.println(res.jugadores.get(0).nickname);
             //FLUJO DE salida para objetos
             ObjectOutputStream carta1 = new ObjectOutputStream( cs.getOutputStream());
            
             // Se envía el objeto
-            carta1.writeObject(res);           
+            carta1.writeObject(MainServidor.juegoMain);           
             carta1.close();
             cs.close();//Fin de la conexión
 

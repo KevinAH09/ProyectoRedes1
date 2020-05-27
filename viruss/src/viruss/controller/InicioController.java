@@ -19,6 +19,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import viruss.model.Carta;
+import viruss.model.Cliente;
+import viruss.model.Juego;
+import viruss.model.MainCliente;
+import viruss.model.MainServidor;
 
 /**
  * FXML Controller class
@@ -84,6 +88,8 @@ public class InicioController extends Controller implements Initializable {
             aux=o.nextInt(resta);
             a=lista.get(aux);
             listaRandom.add(a);
+            MainServidor.juegoMain = new Juego();
+            MainServidor.juegoMain.setMazo(listaRandom);
             lista.remove(a);
             resta--;
         }

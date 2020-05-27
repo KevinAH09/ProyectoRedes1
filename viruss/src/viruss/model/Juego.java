@@ -17,8 +17,8 @@ import java.util.List;
 public class Juego implements Serializable{
     List<Jugador> jugadores = new ArrayList<>();;
     int turno;
-    List<Carta> mazo = new ArrayList<>();;
-
+    List<Carta> mazo = new ArrayList<>();
+    List<Carta> cementerio = new ArrayList<>();
     public Juego() {
         jugadores = new ArrayList<>();
         mazo = new ArrayList<>();

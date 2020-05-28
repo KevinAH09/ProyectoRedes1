@@ -15,6 +15,7 @@ public class MainServidor
    public static Juego juegoMain;
    public static void main(String[] args) throws IOException
     {
+        
         juegoMain = new Juego();
         while(TRUE){
             Servidor serv = new Servidor(); //Se crea el servidor

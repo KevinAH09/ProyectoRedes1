@@ -8,7 +8,7 @@ import java.util.List;
 
 import viruss.controller.InicioController;
 public class Carta extends ImageView implements Serializable{
-
+    private static final long serialVersionUID = 6529685098267757690L;
     private String tipoCarta;
     public int color;
     public int altura;

@@ -3,19 +3,16 @@ package viruss.model;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
-
 import java.io.Serializable;
 import java.util.List;
-import javafx.geometry.Point2D;
+
 import viruss.controller.InicioController;
 public class Carta extends ImageView implements Serializable{
-    
+
     private String tipoCarta;
     public int color;
     public int altura;
     public int ancho;
-    public Image img;
     public String estado;
     
     public static Carta CartaAux;
@@ -32,53 +29,53 @@ public class Carta extends ImageView implements Serializable{
         this.setFitWidth(ancho);
         this.tipoCarta = tipoCarta;
         this.color = color;
-        this.img = new Image(img);
+//        this.img = new Image(img);
         
         if(tipoCarta.equals("Virus"))
         {
             
             if(color == 1)//ROJIVIRUS
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 2)//VERDON EL VIRUS
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 3)//VIRUBLU
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 4)//YELLVIRUS
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 5)//COVID-19
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
         }
         if(tipoCarta.equals("Tratamientos"))
         {
             if(color == 1)//Transplante
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 2)//Ladrón de órganos
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 3)//Contagio
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 4)//Guante de látex
             {
-               this.setImage(this.img);
+               this.setImage(new Image(img));
             }
             if(color == 5)//Error médico
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
         }
         if(tipoCarta.equals("Organos"))
@@ -86,53 +83,52 @@ public class Carta extends ImageView implements Serializable{
             if(color == 1)//corazon
             {
                 this.estado = "Estable";
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 2)//estomago
             {
                 this.estado = "Estable";
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 3)//cerebro
             {
                 this.estado = "Estable";
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 4)//hueso
             {
                 this.estado = "Estable";
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 5)//comodin
             {
                 this.estado = "Estable";
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
         }
         if(tipoCarta.equals("Medicinas"))
         {
             if(color == 1)
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 2)
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 3)
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 4)
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
             if(color == 5)
             {
-                this.setImage(this.img);
+                this.setImage(new Image(img));
             }
         }
-        
         this.setOnMouseClicked(ke->{
             
            jugar();
@@ -204,7 +200,7 @@ public class Carta extends ImageView implements Serializable{
                         {
                             CartaAux=this;
                             image=new Image("viruss/recursos/rojoinfectado.jpg");
-                            CartaAux.setImg(image);
+                            CartaAux.setImage(image);
                         }
                     }
                     
@@ -215,7 +211,7 @@ public class Carta extends ImageView implements Serializable{
                             
                             CartaAux=this;
                             image=new Image("viruss/recursos/verdeinfectado.jpg");
-                            CartaAux.setImg(image);
+                            CartaAux.setImage(image);
                         }
                     }
                     
@@ -226,7 +222,7 @@ public class Carta extends ImageView implements Serializable{
                             
                             CartaAux=this;
                             image=new Image("viruss/recursos/azulinfectado.jpg");
-                            CartaAux.setImg(image);
+                            CartaAux.setImage(image);
                         }
                     }
                     
@@ -237,7 +233,7 @@ public class Carta extends ImageView implements Serializable{
                             
                             CartaAux=this;
                             image=new Image("viruss/recursos/amarilloinfectado.jpg");
-                            CartaAux.setImg(image);
+                            CartaAux.setImage(image);
                         }
                     }
                 }
@@ -316,7 +312,7 @@ public class Carta extends ImageView implements Serializable{
                                 MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
-                                this.setImage(CartaAux.getImg());
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(11);
                                 this.setEstado("Contaminado");
@@ -335,8 +331,8 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                 image = new Image("viruss/recursos/CORAZONINM.jpg");
-                                CartaAux.setImg(image);
-                                this.setImage(CartaAux.getImg());
+                                CartaAux.setImage(image);
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
 
@@ -354,7 +350,7 @@ public class Carta extends ImageView implements Serializable{
                                 MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
-                                this.setImage(CartaAux.getImg());
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(22);
                                 this.setEstado("Contaminado");
@@ -373,8 +369,8 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                 image = new Image("viruss/recursos/ESTOMAGOINM.jpg");
-                                CartaAux.setImg(image);
-                                this.setImage(CartaAux.getImg());
+                                CartaAux.setImage(image);
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
 
@@ -392,7 +388,7 @@ public class Carta extends ImageView implements Serializable{
                                 MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
-                                this.setImage(CartaAux.getImg());
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(33);
                                 this.setEstado("Contaminado");
@@ -409,8 +405,8 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                 image = new Image("viruss/recursos/CEREBROINM.jpg");
-                                CartaAux.setImg(image);
-                                this.setImage(CartaAux.getImg());
+                                CartaAux.setImage(image);
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
 
@@ -429,7 +425,7 @@ public class Carta extends ImageView implements Serializable{
                                 MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
-                                this.setImage(CartaAux.getImg());
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(44);
                                 this.setEstado("Contaminado");
@@ -447,8 +443,8 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                 image = new Image("viruss/recursos/HUESOINM.jpg");
-                                CartaAux.setImg(image);
-                                this.setImage(CartaAux.getImg());
+                                CartaAux.setImage(image);
+                                this.setImage(CartaAux.getImage());
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
 
@@ -665,8 +661,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/CORAZONINM2.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("OrganosInmune");
                                     break;
 
@@ -682,8 +678,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/CORAZON.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("Organos");
                                     break;
 
@@ -701,8 +697,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/ESTOMAGOINM2.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("OrganosInmune");
                                     break;
 
@@ -718,8 +714,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/ESTOMAGO.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("Organos");
                                     break;
 
@@ -738,8 +734,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/CEREBROINM2.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("OrganosInmune");
                                     break;
 
@@ -755,8 +751,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/CEREBRO.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("Organos");
                                     break;
 
@@ -776,8 +772,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/HUESOINM2.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("OrganosInmune");
                                     break;
 
@@ -793,8 +789,8 @@ public class Carta extends ImageView implements Serializable{
                                     InicioController.masoStatico.getChildren().clear();
                                     InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
                                     image = new Image("viruss/recursos/HUESO.jpg");
-                                    CartaAux.setImg(image);
-                                    this.setImage(CartaAux.getImg());
+                                    CartaAux.setImage(image);
+                                    this.setImage(CartaAux.getImage());
                                     this.setTipoCarta("Organos");
                                     break;
 
@@ -841,14 +837,6 @@ public class Carta extends ImageView implements Serializable{
 
     public void setColor(int color) {
         this.color = color;
-    }
-
-    public Image getImg() {
-        return img;
-    }
-
-    public void setImg(Image img) {
-        this.img = img;
     }
 
     public String getEstado() {

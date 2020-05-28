@@ -10,19 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import viruss.model.Carta;
-import viruss.model.Cliente;
 import viruss.model.Juego;
 import viruss.model.Jugador;
-import viruss.model.MainCliente;
 import viruss.model.MainServidor;
 
 /**
@@ -105,8 +102,14 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.jugadores.add(jugador1);
             MainServidor.juegoMain.jugadores.add(jugador2);
             MainServidor.juegoMain.jugadores.add(jugador3);
-            
-            
+//            Cliente cli;
+//            try {
+//                cli = new Cliente(); //Se crea el cliente
+//                System.out.println("Iniciando cliente\n");
+//                cli.startClient(); //Se inicia el cliente
+//            } catch (IOException ex) {
+//                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+//            }
             MainServidor.juegoMain.jugadores.get(0).mazo1 = listaMasoJugador;
             MainServidor.juegoMain.jugadores.get(0).mazo2 = ListaMesaJugador;
         

@@ -18,16 +18,6 @@ public class Cliente extends Conexion
         try
         {                  
             
-//            Jugador ju=new Jugador();
-//            ju.setNickname("Gustavo");
-//            System.out.println(ju.nickname);
-            
-//            Juego res=new Juego();
-//            
-//            res.jugadores.add(ju);
-//            System.out.println(res.getJugadores().size());
-//            System.out.println(res.jugadores.get(0).nickname);
-            //FLUJO DE salida para objetos
             ObjectOutputStream carta1 = new ObjectOutputStream( cs.getOutputStream());
            
             // Se envía el objeto

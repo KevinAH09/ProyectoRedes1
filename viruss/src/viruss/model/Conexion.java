@@ -13,9 +13,9 @@ import viruss.util.AppContext;
 
 public class Conexion
 {
-    String ip=(String) AppContext.getInstance().get("ipservidor");
-    private final int PUERTO = 5000; //Puerto para la conexión
-    private final String HOST = ip;  //Host para la conexión
+//    String ip=(String) AppContext.getInstance().get("ipservidor");
+    private final int PUERTO = 44440; //Puerto para la conexión
+    private final String HOST = "localhost";  //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
     protected ServerSocket ss; //Socket del servidor
     protected Socket cs; //Socket del cliente

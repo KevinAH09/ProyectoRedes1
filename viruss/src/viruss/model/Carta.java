@@ -19,7 +19,7 @@ public class Carta extends ImageView implements Serializable{
     List <Carta> lista;
     
     public static int cont=0;
-    static Image image;
+    public Image image;
 
     public Carta() {
     }
@@ -901,7 +901,7 @@ public class Carta extends ImageView implements Serializable{
                 }
                 
               
-
+            image=null;     
             cont = 0;
         }
     }

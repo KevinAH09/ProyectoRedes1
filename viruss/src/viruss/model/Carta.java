@@ -301,7 +301,7 @@ public class Carta extends ImageView implements Serializable{
                     }
                     
                 }
-                
+//                
                 for(Carta cartass : MainServidor.juegoMain.jugadores.get(0).mazo2)
                 {
                     if (cartass.equals(this)){

@@ -106,16 +106,16 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.jugadores.add(jugador1);
             MainServidor.juegoMain.jugadores.add(jugador2);
             MainServidor.juegoMain.jugadores.add(jugador3);
-            Cliente cli;
-            try {
-                cli = new Cliente(); //Se crea el cliente
-                System.out.println("Iniciando cliente\n");
-                cli.startClient(); //Se inicia el cliente
-            } catch (IOException ex) {
-                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            MainServidor.juegoMain.jugadores.get(0).mazo1 = listaMasoJugador;
-            MainServidor.juegoMain.jugadores.get(0).mazo2 = ListaMesaJugador;
+//            Cliente cli;
+//            try {
+//                cli = new Cliente(); //Se crea el cliente
+//                System.out.println("Iniciando cliente\n");
+//                cli.startClient(); //Se inicia el cliente
+//            } catch (IOException ex) {
+//                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            MainServidor.juegoMain.jugadores.get(0).mazo1 = listaMasoJugador;
+//            MainServidor.juegoMain.jugadores.get(0).mazo2 = ListaMesaJugador;
         
             int cont=0;
             while(cont !=18)

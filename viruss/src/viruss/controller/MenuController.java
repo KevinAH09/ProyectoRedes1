@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -66,7 +67,8 @@ public class MenuController extends Controller implements Initializable {
     private JFXButton btnRed;
     @FXML
     private ListView<String> listViewJugadores;
-    boolean band=true;
+    boolean band = true;
+    Timeline t;
 
     /**
      * Initializes the controller class.
@@ -98,7 +100,6 @@ public class MenuController extends Controller implements Initializable {
 //            }
 //        });
 
-
     }
 
     @Override
@@ -108,7 +109,7 @@ public class MenuController extends Controller implements Initializable {
 
     @FXML
     private void Ingresar(ActionEvent event) throws IOException {
-        band=true;
+        band = true;
 //        AppContext.getInstance().set("nick", txtNick.getText());
         Juego ju = new Juego();
         Jugador jug = new Jugador();
@@ -118,7 +119,7 @@ public class MenuController extends Controller implements Initializable {
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
         cli.startClient(ju); //Se inicia el cliente
-        
+
         while (band) {
             Servidor serv = new Servidor(); //Se crea el servidor
             System.out.println("Iniciando servidor\n");
@@ -134,11 +135,15 @@ public class MenuController extends Controller implements Initializable {
 
                 case "w":
                     System.out.println("En modo espera de juego");
+                    lCrono.setText("Esperando al host");
+                    t.play();
                     break;
 
                 case "o":
                     Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
-                    band=false;
+                    band = false;
+                    t.stop();
+                    lCrono.setText("");
                     break;
 
                 case "l":
@@ -164,4 +169,13 @@ public class MenuController extends Controller implements Initializable {
 
     }
 
+    private void texto() {
+        t = new Timeline(
+                new KeyFrame(Duration.seconds(0), new KeyValue(lCrono.translateXProperty(), 0)),
+                new KeyFrame(Duration.seconds(2), new KeyValue(lCrono.translateXProperty(), 80))
+        );
+        t.setAutoReverse(true);
+        t.setCycleCount(Timeline.INDEFINITE);
+
+    }
 }

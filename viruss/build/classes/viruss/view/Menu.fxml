@@ -55,17 +55,17 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lCrono" layoutX="1442.0" layoutY="123.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                  <Label fx:id="lCrono" layoutX="1450.0" layoutY="235.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="117.0" layoutX="1434.0" layoutY="37.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="108.0" layoutX="1434.0" layoutY="37.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
                   <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/transmision.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnRed" layoutX="1434.0" layoutY="188.0" onAction="#ingresarRed" prefHeight="66.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
+                  <JFXButton fx:id="btnRed" layoutX="1434.0" layoutY="162.0" onAction="#ingresarRed" prefHeight="44.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
                      <graphic>
                         <ImageView fitHeight="58.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>

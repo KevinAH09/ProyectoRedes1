@@ -121,19 +121,19 @@ public class InicioController extends Controller implements Initializable {
             while(cont !=18)
             {
                 if (cont < 19) {
-//                    if (cont < 3) {
-//                        hboxMesaJug1.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-//                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-//
-//                    }
+                    if (cont < 3) {
+                        hboxMesaJug1.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+
+                    }
 //                    if (cont >= 3 && cont < 6) {
 //                        hboxMesaJug2.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
 //                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
 //                    }
-//                    if (cont >= 6 && cont < 9) {
-//                        hboxMesaJug3.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-//                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-//                    }
+                    if (cont >= 6 && cont < 9) {
+                        hboxMesaJug3.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                    }
                     if (cont >= 9 && cont < 12) {
                         hboxMesaJug4.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                         MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));

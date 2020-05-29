@@ -18,11 +18,12 @@ public class Juego implements Serializable {
     public List<Jugador> jugadores = new ArrayList<>();
 
     int turno;
-    public String conexion = "w";//w=esperar, o=tiempo excedido, l=juego listo
+    public String conexion ;//w=esperar, o=tiempo excedido, l=juego listo
     public List<Carta> mazo = new ArrayList<>();
     public List<Carta> cementerio = new ArrayList<>();
 
     public Juego() {
+        conexion = "w";
         jugadores = new ArrayList<>();
         mazo = new ArrayList<>();
         cementerio = new ArrayList<>();

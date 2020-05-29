@@ -85,6 +85,7 @@ public class MenuController extends Controller implements Initializable {
         Date now = new Date(System.currentTimeMillis());
         SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
         lFecha.setText(date.format(now));
+        texto();
 //        
 //        
 //        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {

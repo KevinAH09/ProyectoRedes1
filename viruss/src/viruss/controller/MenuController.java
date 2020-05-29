@@ -8,6 +8,7 @@ package viruss.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
+import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -23,17 +24,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 ;
-import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
-import javax.swing.JOptionPane;
-import viruss.model.Cliente;
-import viruss.model.Juego;
-import viruss.model.Jugador;
-import viruss.util.AppContext;
-import viruss.util.FlowController;
+
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
@@ -44,6 +39,7 @@ import viruss.model.MainServidor;
 import viruss.model.Servidor;
 import viruss.util.AppContext;
 import viruss.util.FlowController;
+import viruss.util.Mensaje;
 
 /**
  * FXML Controller class
@@ -70,6 +66,7 @@ public class MenuController extends Controller implements Initializable {
     private JFXButton btnRed;
     @FXML
     private ListView<String> listViewJugadores;
+    boolean band=true;
 
     /**
      * Initializes the controller class.
@@ -100,6 +97,8 @@ public class MenuController extends Controller implements Initializable {
 ////                }
 //            }
 //        });
+
+
     }
 
     @Override
@@ -109,29 +108,52 @@ public class MenuController extends Controller implements Initializable {
 
     @FXML
     private void Ingresar(ActionEvent event) throws IOException {
-
+        band=true;
 //        AppContext.getInstance().set("nick", txtNick.getText());
         Juego ju = new Juego();
         Jugador jug = new Jugador();
         jug.nickname = txtNick.getText();
         ju.jugadores.add(jug);
 
-
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
         cli.startClient(ju); //Se inicia el cliente
+        
+        while (band) {
+            Servidor serv = new Servidor(); //Se crea el servidor
+            System.out.println("Iniciando servidor\n");
+            serv.startServer(); //Se inicia el servidor
 
-//             while(TRUE){
-        Servidor serv = new Servidor(); //Se crea el servidor
-        System.out.println("Iniciando servidor\n");
-        serv.startServer(); //Se inicia el servidor
-
-        for(Jugador j:MainServidor.juegoMain.jugadores){
+            for (Jugador j : MainServidor.juegoMain.jugadores) {
+                listViewJugadores.getItems().clear();
                 listViewJugadores.getItems().add(j.getNickname());
                 System.out.println(j.nickname);
             }
-       
-//            FlowController.getInstance().goView("Inicio");
+            String val = MainServidor.juegoMain.conexion;
+            switch (val) {
+
+                case "w":
+                    System.out.println("En modo espera de juego");
+                    break;
+
+                case "o":
+                    Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
+                    band=false;
+                    break;
+
+                case "l":
+                    Mensaje.show(Alert.AlertType.INFORMATION, "Juego por iniciar", "El juego va a iniciar");
+                    FlowController.getInstance().goView("Inicio");
+                    break;
+
+                default:
+                    Mensaje.show(Alert.AlertType.INFORMATION, "Ha ocurrido un error", "Error inesperado");
+                    ;
+                    break;
+
+            }
+        }
+
     }
 
     @FXML

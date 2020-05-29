@@ -13,13 +13,15 @@ import java.util.List;
  *
  * @author cfugu
  */
+public class Juego implements Serializable {
 
-public class Juego implements Serializable{
-    public List<Jugador> jugadores = new ArrayList<>();;
+    public List<Jugador> jugadores = new ArrayList<>();
+
     int turno;
+    public String conexion = "w";//w=esperar, o=tiempo excedido, l=juego listo
     public List<Carta> mazo = new ArrayList<>();
     public List<Carta> cementerio = new ArrayList<>();
-    
+
     public Juego() {
         jugadores = new ArrayList<>();
         mazo = new ArrayList<>();
@@ -34,7 +36,6 @@ public class Juego implements Serializable{
         this.cementerio = cementerio;
     }
 
-    
     public int getTurno() {
         return turno;
     }
@@ -58,6 +59,5 @@ public class Juego implements Serializable{
     public void setMazo(List mazo) {
         this.mazo = mazo;
     }
-    
-    
+
 }

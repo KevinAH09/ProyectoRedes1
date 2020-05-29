@@ -11,9 +11,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import viruss.util.AppContext;
 
-public class Conexion
-{
-    String ip=(String) AppContext.getInstance().get("ipservidor");
+public class Conexion {
+
+    String ip = (String) AppContext.getInstance().get("ipservidor");
     private final int PUERTO = 44440; //Puerto para la conexión
     private final String HOST = "25.101.246.19";  //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
@@ -23,13 +23,10 @@ public class Conexion
 
     public Conexion(String tipo) throws IOException //Constructor
     {
-        if(tipo.equalsIgnoreCase("servidor"))
-        {
+        if (tipo.equalsIgnoreCase("servidor")) {
             ss = new ServerSocket(5000);//Se crea el socket para el servidor en puerto 1234
             cs = new Socket(); //Socket para el cliente
-        }
-        else
-        {
+        } else {
             cs = new Socket(HOST, PUERTO); //Socket para el cliente en localhost en puerto 1234
         }
     }

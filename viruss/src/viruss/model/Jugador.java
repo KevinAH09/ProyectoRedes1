@@ -14,8 +14,9 @@ import java.util.List;
  * @author cfugu
  */
 public class Jugador implements Serializable{
-    String nickname;
-    String ip;
+    private static final long serialVersionUID = 6529685098267757691L;
+    public String nickname;
+    public String ip;
     public List<Carta> mazo1 = new ArrayList<>();;
     public List<Carta> mazo2 = new ArrayList<>();;
 

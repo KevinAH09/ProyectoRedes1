@@ -13,9 +13,9 @@ import viruss.util.AppContext;
 
 public class Conexion
 {
-//    String ip=(String) AppContext.getInstance().get("ipservidor");
+    String ip=(String) AppContext.getInstance().get("ipservidor");
     private final int PUERTO = 44440; //Puerto para la conexión
-    private final String HOST = "25.146.184.249";  //Host para la conexión
+    private final String HOST = "25.101.246.19";  //Host para la conexión
     protected String mensajeServidor; //Mensajes entrantes (recibidos) en el servidor
     protected ServerSocket ss; //Socket del servidor
     protected Socket cs; //Socket del cliente
@@ -25,7 +25,7 @@ public class Conexion
     {
         if(tipo.equalsIgnoreCase("servidor"))
         {
-            ss = new ServerSocket(PUERTO);//Se crea el socket para el servidor en puerto 1234
+            ss = new ServerSocket(5000);//Se crea el socket para el servidor en puerto 1234
             cs = new Socket(); //Socket para el cliente
         }
         else

@@ -8,6 +8,7 @@ package viruss.model;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import viruss.util.AppContext;
 
 public class Servidor extends Conexion 
 {
@@ -27,23 +28,23 @@ public class Servidor extends Conexion
 //                String ip = cs.getInetAddress().toString();
 //                ip.replaceAll("/", "");
 //                if(MainServidor.juegoMain.jugadores.isEmpty()){
-//                    MainServidor.juegoMain = lc;
+                    MainServidor.juegoMain = lc;
 //                    MainServidor.juegoMain.jugadores.get(0).setIp(ip);
 //                }else{
 //                    lc.jugadores.get(0).ip=ip;
 //                    MainServidor.juegoMain.jugadores.add(lc.jugadores.get(0));                    
 //                }
-                for(int i=0;i<lc.mazo.size();i++){
-                    System.out.println(lc.mazo.get(i).color);
-                }
+//                for(int i=0;i<lc.mazo.size();i++){
+//                    System.out.println(lc.mazo.get(i).color);
+//                }
 //                for (Jugador object : MainServidor.juegoMain.jugadores) {
 //                    System.out.println(object.nickname);
-//                }
-                
+//                }             
                 System.out.println("Fin de la conexión");
                 inObjeto.close();
                 cs.close();
                 ss.close();//Se finaliza la conexión con el cliente
+               
            
             
         }

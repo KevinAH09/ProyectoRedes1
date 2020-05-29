@@ -7,6 +7,8 @@ package viruss.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
+import static java.lang.Boolean.TRUE;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -16,14 +18,30 @@ import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;;
+import javafx.scene.control.ListView;
+;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
+import viruss.model.Cliente;
+import viruss.model.Juego;
+import viruss.model.Jugador;
+import viruss.util.AppContext;
+import viruss.util.FlowController;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
+import javax.swing.JOptionPane;
+import viruss.model.Cliente;
+import viruss.model.Juego;
+import viruss.model.Jugador;
+import viruss.model.MainServidor;
+import viruss.model.Servidor;
 import viruss.util.AppContext;
 import viruss.util.FlowController;
 
@@ -32,6 +50,8 @@ import viruss.util.FlowController;
  *
  * @author colo7
  */
+
+
 public class MenuController extends Controller implements Initializable {
 
     @FXML
@@ -56,13 +76,13 @@ public class MenuController extends Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Timeline clock =new Timeline(new KeyFrame(Duration.ZERO, e->{
-        DateTimeFormatter format= DateTimeFormatter.ofPattern("HH:mm:ss");
-        lHora.setText(LocalDateTime.now().format(format));
-        }),new KeyFrame(javafx.util.Duration.seconds(1)));
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm:ss");
+            lHora.setText(LocalDateTime.now().format(format));
+        }), new KeyFrame(javafx.util.Duration.seconds(1)));
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
-        
+
         Date now = new Date(System.currentTimeMillis());
         SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
         lFecha.setText(date.format(now));
@@ -80,21 +100,38 @@ public class MenuController extends Controller implements Initializable {
 ////                }
 //            }
 //        });
-    }    
+    }
 
     @Override
     public void initialize() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   
 
     @FXML
-    private void Ingresar(ActionEvent event) {
+    private void Ingresar(ActionEvent event) throws IOException {
 
-//            AppContext.getInstance().set("nick", txtNick.getText());
-            FlowController.getInstance().goView("Inicio");
-      
-        
+//        AppContext.getInstance().set("nick", txtNick.getText());
+        Juego ju = new Juego();
+        Jugador jug = new Jugador();
+        jug.nickname = txtNick.getText();
+        ju.jugadores.add(jug);
+
+
+        Cliente cli = new Cliente(); //Se crea el cliente
+        System.out.println("Iniciando cliente\n");
+        cli.startClient(ju); //Se inicia el cliente
+
+//             while(TRUE){
+        Servidor serv = new Servidor(); //Se crea el servidor
+        System.out.println("Iniciando servidor\n");
+        serv.startServer(); //Se inicia el servidor
+
+        for(Jugador j:MainServidor.juegoMain.jugadores){
+                listViewJugadores.getItems().add(j.getNickname());
+                System.out.println(j.nickname);
+            }
+       
+//            FlowController.getInstance().goView("Inicio");
     }
 
     @FXML
@@ -102,10 +139,7 @@ public class MenuController extends Controller implements Initializable {
         String name = JOptionPane.showInputDialog("Ingrese la dirección IP del servidor de destino");
         JOptionPane.showMessageDialog(null, "Se ha guardado la IP ");
         AppContext.getInstance().set("ipservidor", name);
-  
-    }
-    
-    
-}
-    
 
+    }
+
+}

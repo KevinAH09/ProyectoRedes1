@@ -29,6 +29,7 @@ public class Carta extends ImageView implements Serializable{
         this.setFitWidth(ancho);
         this.tipoCarta = tipoCarta;
         this.color = color;
+        this.setRotate(0);
 //        this.img = new Image(img);
         
         if(tipoCarta.equals("Virus"))
@@ -300,23 +301,24 @@ public class Carta extends ImageView implements Serializable{
                 cont++;
             }
             else if(cont==1){
+                this.setRotate(0);
                 boolean fuera=true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
                 boolean dentroMedicina=true;//validacion de poder curar los organos de la mesa del jugador
-//                for(Carta cartas : MainServidor.juegoMain.jugadores.get(0).mazo2)
-//                {
-//                    if (cartas.equals(this)){
-//                        fuera=false;
-//                    }
-//                    
-//                }
+                for(Carta cartas : MainServidor.juegoMain.jugadores.get(0).mazo2)
+                {
+                    if (cartas.equals(this)){
+                        fuera=false;
+                    }
+                    
+                }
                 
-//                for(Carta cartas : MainServidor.juegoMain.jugadores.get(0).mazo1)
-//                {
-//                    if (cartas.equals(this)){
-//                        fuera=false;
-//                    }
-//                    
-//                }
+                for(Carta cartas : MainServidor.juegoMain.jugadores.get(0).mazo1)
+                {
+                    if (cartas.equals(this)){
+                        fuera=false;
+                    }
+                    
+                }
 //                
                 for(Carta cartass : MainServidor.juegoMain.jugadores.get(0).mazo2)
                 {

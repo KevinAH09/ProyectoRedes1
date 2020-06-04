@@ -25,6 +25,7 @@ import viruss.model.Cliente;
 import viruss.model.Juego;
 import viruss.model.Jugador;
 import viruss.model.MainServidor;
+import viruss.model.Servidor;
 
 /**
  * FXML Controller class
@@ -268,5 +269,15 @@ public class InicioController extends Controller implements Initializable {
         }
 
     }
-
+    
+    private void iniciarServidor() throws IOException{
+        Servidor serv = new Servidor(); //Se crea el servidor
+        System.out.println("Iniciando servidor\n");
+        serv.startServer(); //Se inicia el servidor
+    }
+    private void iniciarCliente(Juego ju) throws IOException{
+        Cliente cli = new Cliente(); //Se crea el cliente
+        System.out.println("Iniciando cliente\n");
+        cli.startClient(ju); //Se inicia el cliente
+    }
 }

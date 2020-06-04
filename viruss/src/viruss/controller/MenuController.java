@@ -113,9 +113,14 @@ public class MenuController extends Controller implements Initializable {
         band = true;
 //        AppContext.getInstance().set("nick", txtNick.getText());
         Juego ju = new Juego();
-        Jugador jug = new Jugador();
-        jug.nickname = txtNick.getText();
-        ju.jugadores.add(jug);
+//        Jugador jug = new Jugador();
+//        jug.nickname = txtNick.getText();
+        Jugador jugador1 = new Jugador("carlos", "1");
+        Jugador jugador2 = new Jugador("juan", "2");
+        Jugador jugador3 = new Jugador("benito", "3");
+        ju.jugadores.add(jugador1);
+        ju.jugadores.add(jugador2);
+        ju.jugadores.add(jugador3);
 
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
@@ -159,7 +164,6 @@ public class MenuController extends Controller implements Initializable {
 
             }
         }
-
     }
 
     @FXML

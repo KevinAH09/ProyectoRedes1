@@ -8,8 +8,6 @@ package viruss.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -18,10 +16,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -85,7 +80,7 @@ public class MenuController extends Controller implements Initializable {
         Date now = new Date(System.currentTimeMillis());
         SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
         lFecha.setText(date.format(now));
-        texto();
+//        texto();
 //        
 //        
 //        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -118,9 +113,15 @@ public class MenuController extends Controller implements Initializable {
         Jugador jugador1 = new Jugador("carlos", "1");
         Jugador jugador2 = new Jugador("juan", "2");
         Jugador jugador3 = new Jugador("benito", "3");
+//        Jugador jugador4 = new Jugador("mario", "4");
+//        Jugador jugador5 = new Jugador("ale", "5");
+//        Jugador jugador6 = new Jugador("kevin", "6");
         ju.jugadores.add(jugador1);
         ju.jugadores.add(jugador2);
         ju.jugadores.add(jugador3);
+//        ju.jugadores.add(jugador4);
+//        ju.jugadores.add(jugador5);
+//        ju.jugadores.add(jugador6);
 
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
@@ -142,24 +143,24 @@ public class MenuController extends Controller implements Initializable {
                 case "w":
                     System.out.println("En modo espera de juego");
                     lCrono.setText("Esperando al host");
-                    t.play();
+//                    t.play();
                     break;
 
                 case "o":
                     Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
                     band = false;
-                    t.stop();
+//                    t.stop();
                     lCrono.setText("");
                     break;
 
                 case "l":
-                    Mensaje.show(Alert.AlertType.INFORMATION, "Juego por iniciar", "El juego va a iniciar");
+//                    Mensaje.show(Alert.AlertType.INFORMATION, "Juego por iniciar", "El juego va a iniciar");
+                    band = false;
                     FlowController.getInstance().goView("Inicio");
                     break;
 
                 default:
                     Mensaje.show(Alert.AlertType.INFORMATION, "Ha ocurrido un error", "Error inesperado");
-                    ;
                     break;
 
             }
@@ -174,13 +175,13 @@ public class MenuController extends Controller implements Initializable {
 
     }
 
-    private void texto() {
-        t = new Timeline(
-                new KeyFrame(Duration.seconds(0), new KeyValue(lCrono.translateXProperty(), 0)),
-                new KeyFrame(Duration.seconds(2), new KeyValue(lCrono.translateXProperty(), 80))
-        );
-        t.setAutoReverse(true);
-        t.setCycleCount(Timeline.INDEFINITE);
-
-    }
+//    private void texto() {
+//        t = new Timeline(
+//                new KeyFrame(Duration.seconds(0), new KeyValue(lCrono.translateXProperty(), 0)),
+//                new KeyFrame(Duration.seconds(2), new KeyValue(lCrono.translateXProperty(), 80))
+//        );
+//        t.setAutoReverse(true);
+//        t.setCycleCount(Timeline.INDEFINITE);
+//
+//    }
 }

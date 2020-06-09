@@ -75,84 +75,12 @@ public class InicioController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        crearCartas();
-        masoStatico = hboxMasoJug;
-        miMesa = hboxMesaJug2;
-        basura = HboxBasura;
-
-        Random o = new Random();
-        int aux;
-        int resta = 67;
-
-        while (lista != null && resta > 0) {
-            Carta a;
-            aux = o.nextInt(resta);
-            a = lista.get(aux);
-            listaRandom.add(a);
-
-            lista.remove(a);
-            resta--;
-        }
-
-        MainServidor.juegoMain = new Juego();
-        MainServidor.juegoMain.setMazo(listaRandom);
-        MainServidor.juegoMain.setCementerio(listaCementerio);
-
-        Jugador jugador1 = new Jugador("bosco", "1");
-        Jugador jugador2 = new Jugador("kevin", "2");
-        Jugador jugador3 = new Jugador("gustavo", "3");
-
-        MainServidor.juegoMain.jugadores.add(jugador1);
-        MainServidor.juegoMain.jugadores.add(jugador2);
-        MainServidor.juegoMain.jugadores.add(jugador3);
-//            Cliente cli;
-//            try {
-//                cli = new Cliente(); //Se crea el cliente
-//                System.out.println("Iniciando cliente\n");
-//                cli.startClient(); //Se inicia el cliente
-//            } catch (IOException ex) {
-//                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            MainServidor.juegoMain.jugadores.get(0).mazo1 = listaMasoJugador;
-//            MainServidor.juegoMain.jugadores.get(0).mazo2 = ListaMesaJugador;
-//        
-        int cont = 0;
-        while (cont != 18) {
-            if (cont < 19) {
-                if (cont < 3) {
-                    hboxMesaJug1.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-
-                }
-//                    if (cont >= 3 && cont < 6) {
-//                        hboxMesaJug2.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-//                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-//                    }
-                if (cont >= 6 && cont < 9) {
-                    hboxMesaJug3.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                }
-                if (cont >= 9 && cont < 12) {
-                    hboxMesaJug4.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                }
-                if (cont >= 12 && cont < 15) {
-                    p = MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1);
-                    p.setRotate(180);
-                    hboxMesaJug5.getChildren().add(p);
-                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                }
-                if (cont >= 15 && cont < 18) {
-
-                    p = MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1);
-                    p.setRotate(180);
-                    hboxMesaJug6.getChildren().add(p);
-                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                }
-                cont++;
-            }
-        }
-
+//        try {
+//            iniciarServidor();
+            cargarPartida();
+//        } catch (IOException ex) {
+//            Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     @Override
@@ -280,4 +208,52 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando cliente\n");
         cli.startClient(ju); //Se inicia el cliente
     }
-}
+    private void cargarPartida(){
+        hboxMesaJug1.getChildren().clear();
+        hboxMesaJug2.getChildren().clear();
+        hboxMesaJug3.getChildren().clear();
+        hboxMesaJug4.getChildren().clear();
+        hboxMesaJug5.getChildren().clear();
+        hboxMesaJug6.getChildren().clear();
+        hboxmaso.getChildren().clear();
+        HboxBasura.getChildren().clear();
+        hboxMasoJug.getChildren().clear();
+//        for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
+//           MainServidor.juegoMain.mazo.get(i).setImg();
+//        }
+//        for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
+//            hboxmaso.getChildren().add(MainServidor.juegoMain.mazo.get(i));
+//        }
+        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
+            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo1.size(); i++) {
+                MainServidor.juegoMain.jugadores.get(j).mazo1.get(i).setImg();
+//                if(MainServidor.juegoMain.jugadores.get(j).mazo2.size()<=1){
+//                    MainServidor.juegoMain.jugadores.get(j).mazo2.get(i).setImg();
+//                }
+            }
+        }
+
+                    hboxMasoJug.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+//                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo2);
+
+                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(1).mazo1);
+
+               
+                    hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(2).mazo1);
+
+//                    hboxMesaJug4.getChildren().add(MainServidor.juegoMain.jugadores.get(4).mazo1.get(cont));
+
+//                    p = MainServidor.juegoMain.jugadores.get(5).mazo1.get(cont);
+//                    p.setRotate(180);
+//                    hboxMesaJug5.getChildren().add(p);
+
+//                    p = MainServidor.juegoMain.jugadores.get(1).mazo1.get(cont);
+//                    p.setRotate(180);
+//                    hboxMesaJug6.getChildren().add(p);
+
+//                cont++;
+            }
+        }
+
+    
+

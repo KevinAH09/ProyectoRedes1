@@ -134,7 +134,6 @@ public class Carta extends ImageView implements Serializable{
         this.setFitHeight(195);
         this.setFitWidth(130);
         this.setOnMouseClicked(ke->{
-            
            jugar();
            
         });
@@ -142,7 +141,6 @@ public class Carta extends ImageView implements Serializable{
     
     public void jugar()
     {
-        
         if(cont ==0)
             {
                 

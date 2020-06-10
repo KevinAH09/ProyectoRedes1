@@ -106,7 +106,7 @@ public class MenuController extends Controller implements Initializable {
     @FXML
     private void Ingresar(ActionEvent event) throws IOException {
         band = true;
-//        AppContext.getInstance().set("nick", txtNick.getText());
+        AppContext.getInstance().set("nick", "juan");
         Juego ju = new Juego();
 //        Jugador jug = new Jugador();
 //        jug.nickname = txtNick.getText();
@@ -134,7 +134,7 @@ public class MenuController extends Controller implements Initializable {
 
             for (Jugador j : MainServidor.juegoMain.jugadores) {
                 listViewJugadores.getItems().clear();
-                listViewJugadores.getItems().add(j.getNickname());
+                listViewJugadores.getItems().add(j.getNickname().toString());
                 System.out.println(j.nickname);
             }
             String val = MainServidor.juegoMain.conexion;

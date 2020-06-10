@@ -141,6 +141,7 @@ public class Carta extends ImageView implements Serializable{
     
     public void jugar()
     {
+        System.out.println(MainServidor.juegoMain.jugadores.get(InicioController.posJug).nickname);
         if(cont ==0)
             {
                 
@@ -150,7 +151,7 @@ public class Carta extends ImageView implements Serializable{
                     if(this.color==1)
                     {
                         
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             //InicioController.cartaSelec.setImage(this.getImage());
                             InicioController.cartaSelec = this;
@@ -161,7 +162,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     if(this.color==2)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
                             
@@ -170,7 +171,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     if(this.color==3)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
                             
@@ -179,7 +180,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     if(this.color==4)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
                             
@@ -188,7 +189,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     if(this.color==5)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             InicioController.cartaSelec = this;
                             
@@ -201,7 +202,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if(this.color==1)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                             //CartaAux.setImage(image);
@@ -210,7 +211,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color==2)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             
                             CartaAux=this;
@@ -221,7 +222,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color==3)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             
                             CartaAux=this;
@@ -232,7 +233,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color==4)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             
                             CartaAux=this;
@@ -243,7 +244,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color==5)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                             //image=new Image("viruss/recursos/amarilloinfectado.jpg");
@@ -256,7 +257,7 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if(this.color == 1)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                         }
@@ -265,7 +266,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color == 2)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                         }
@@ -274,7 +275,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color == 3)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                         }
@@ -283,7 +284,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color == 4)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                         }
@@ -292,7 +293,7 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if(this.color==5)
                     {
-                        if(MainServidor.juegoMain.jugadores.get(0).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
+                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
                         {
                             CartaAux=this;
                         }
@@ -305,7 +306,7 @@ public class Carta extends ImageView implements Serializable{
                 this.setRotate(0);
                 boolean fuera=true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
                 boolean dentroMedicina=true;//validacion de poder curar los organos de la mesa del jugador
-                for(Carta cartas : MainServidor.juegoMain.jugadores.get(0).mazo2)
+                for(Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2)
                 {
                     if (cartas.equals(this)){
                         fuera=false;
@@ -313,7 +314,7 @@ public class Carta extends ImageView implements Serializable{
                     
                 }
                 
-                for(Carta cartas : MainServidor.juegoMain.jugadores.get(0).mazo1)
+                for(Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1)
                 {
                     if (cartas.equals(this)){
                         fuera=false;
@@ -321,7 +322,7 @@ public class Carta extends ImageView implements Serializable{
                     
                 }
 //                
-                for(Carta cartass : MainServidor.juegoMain.jugadores.get(0).mazo2)
+                for(Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2)
                 {
                     if (cartass.equals(this)){
                         dentroMedicina=false;
@@ -335,13 +336,13 @@ public class Carta extends ImageView implements Serializable{
                    
                 if (this.color == 1) {
                     if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) { //-------------------CONTAMINAR ORGANO---------------------------------
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 //InicioController.listaCementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image=new Image("viruss/recursos/rojoinfectado.jpg");
                                 //CartaAux.setImage(image);
                                // this.setImage(CartaAux.getImage());
@@ -356,14 +357,14 @@ public class Carta extends ImageView implements Serializable{
                     }
                     
                     else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 System.out.println(CartaAux.toString());
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image = new Image("viruss/recursos/CORAZONINM.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -376,13 +377,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
@@ -396,13 +397,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/CORAZONINM.jpg");
                                 //CartaAux.setImage(image);
@@ -417,14 +418,14 @@ public class Carta extends ImageView implements Serializable{
                     
                 } else if (this.color == 2) {
                     if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&&this.estado.equals("Estable")) {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux)&& fuera) {
 
 //                                InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image=new Image("viruss/recursos/verdeinfectado.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -438,13 +439,13 @@ public class Carta extends ImageView implements Serializable{
                     }
                     
                     else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image = new Image("viruss/recursos/ESTOMAGOINM.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -457,13 +458,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
@@ -476,13 +477,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") &&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/ESTOMAGOINM.jpg");
                                 //CartaAux.setImage(image);
@@ -496,14 +497,14 @@ public class Carta extends ImageView implements Serializable{
                     
                 } else if (this.color == 3) {
                     if (this.color == CartaAux.color&& CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux)&& fuera) {
 
 //                                InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image=new Image("viruss/recursos/azulinfectado.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -516,12 +517,12 @@ public class Carta extends ImageView implements Serializable{
                     }
                     
                     else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image = new Image("viruss/recursos/CEREBROINM.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -534,13 +535,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
@@ -553,13 +554,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") &&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/CEREBROINM.jpg");
                                 //CartaAux.setImage(image);
@@ -573,14 +574,14 @@ public class Carta extends ImageView implements Serializable{
                     
                 } else if (this.color == 4) {
                     if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&& this.estado.equals("Estable")) {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux)&& fuera) {
 
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image=new Image("viruss/recursos/amarilloinfectado.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -594,12 +595,12 @@ public class Carta extends ImageView implements Serializable{
                     }
                     
                     else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image = new Image("viruss/recursos/HUESOINM.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
@@ -612,13 +613,13 @@ public class Carta extends ImageView implements Serializable{
                     
                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
@@ -631,13 +632,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") &&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/HUESOINM.jpg");
                                 //CartaAux.setImage(image);
@@ -660,13 +661,13 @@ public class Carta extends ImageView implements Serializable{
                     {
                         //--------------- CURAR ORGANOS -----------------
                         if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas") &&this.estado.equals("Contaminado")) {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && !dentroMedicina) {
 
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/CORAZON.jpg");
                                     this.setImage(image);
                                     this.setTipoCarta("Organos");
@@ -681,13 +682,13 @@ public class Carta extends ImageView implements Serializable{
                         //--------------  MATAR ORGANOS    -------------------------------------------
                         
                         else if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
                                     //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     this.setTipoCarta("Organos");
                                     this.setColor(1);
                                     this.setEstado("Estable");
@@ -705,13 +706,13 @@ public class Carta extends ImageView implements Serializable{
                         
                         else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/CORAZON.jpg");
                                 //CartaAux.setImage(image);
@@ -730,13 +731,13 @@ public class Carta extends ImageView implements Serializable{
                 {
                     //--------------- CURAR ORGANOS -----------------
                     if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux)&& !dentroMedicina) {
 
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image = new Image("viruss/recursos/ESTOMAGO.jpg");
                                 this.setImage(image);
                                 this.setTipoCarta("Organos");
@@ -751,13 +752,13 @@ public class Carta extends ImageView implements Serializable{
                     //--------------  MATAR ORGANOS    -------------------------------------------
                         
                         else if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     //InicioController.listaCementerio.add(CartaAux);
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     this.setTipoCarta("Organos");
                                     this.setColor(2);
                                     this.setEstado("Estable");
@@ -775,13 +776,13 @@ public class Carta extends ImageView implements Serializable{
                     
                      else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/ESTOMAGO.jpg");
                                 //CartaAux.setImage(image);
@@ -800,13 +801,13 @@ public class Carta extends ImageView implements Serializable{
                 {
                     //--------------- CURAR ORGANOS -----------------
                     if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux)&& !dentroMedicina) {
 
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 image = new Image("viruss/recursos/CEREBRO.jpg");
                                 this.setImage(image);
                                 this.setTipoCarta("Organos");
@@ -820,13 +821,13 @@ public class Carta extends ImageView implements Serializable{
                     //--------------  MATAR ORGANOS    -------------------------------------------
                         
                         else if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
                                     //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     this.setTipoCarta("Organos");
                                     this.setColor(3);
                                     this.setEstado("Estable");
@@ -844,13 +845,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/CEREBRO.jpg");
                                 //CartaAux.setImage(image);
@@ -868,13 +869,13 @@ public class Carta extends ImageView implements Serializable{
                 {
                     //--------------- CURAR ORGANOS -----------------
                     if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux)&& !dentroMedicina) {
 
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/HUESO.jpg");
                                     this.setImage(image);
                                     this.setTipoCarta("Organos");
@@ -887,13 +888,13 @@ public class Carta extends ImageView implements Serializable{
                     //--------------  MATAR ORGANOS    -------------------------------------------
                         
                         else if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     //InicioController.listaCementerio.add(CartaAux);
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     this.setTipoCarta("Organos");
                                     this.setColor(4);
                                     this.setEstado("Estable");
@@ -911,13 +912,13 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 image = new Image("viruss/recursos/HUESO.jpg");
                                 //CartaAux.setImage(image);
@@ -938,12 +939,12 @@ public class Carta extends ImageView implements Serializable{
                 {
                     if (this.color == 1) {
                         if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && !dentroMedicina) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/CORAZONINM2.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -955,12 +956,12 @@ public class Carta extends ImageView implements Serializable{
                         }
                         
                         else if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/CORAZON.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -973,13 +974,13 @@ public class Carta extends ImageView implements Serializable{
                         
                         else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
                         {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     //InicioController.listaCementerio.add(CartaAux);
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     //InicioController.listaCementerio.add(this);
                                     image = new Image("viruss/recursos/CORAZON.jpg");
                                     //CartaAux.setImage(image);
@@ -996,12 +997,12 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (this.color == 2) {
                         if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && !dentroMedicina) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/ESTOMAGOINM2.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -1013,12 +1014,12 @@ public class Carta extends ImageView implements Serializable{
                         }
                         
                         else if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/ESTOMAGO.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -1031,13 +1032,13 @@ public class Carta extends ImageView implements Serializable{
                         
                         else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
                         {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     //InicioController.listaCementerio.add(CartaAux);
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     //InicioController.listaCementerio.add(this);
                                     image = new Image("viruss/recursos/ESTOMAGO.jpg");
                                     //CartaAux.setImage(image);
@@ -1055,12 +1056,12 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (this.color == 3) {
                         if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && !dentroMedicina) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/CEREBROINM2.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -1072,12 +1073,12 @@ public class Carta extends ImageView implements Serializable{
                         }
                         
                       else if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/CEREBRO.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -1090,13 +1091,13 @@ public class Carta extends ImageView implements Serializable{
                         
                         else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
                         {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     //InicioController.listaCementerio.add(CartaAux);
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     //InicioController.listaCementerio.add(this);
                                     image = new Image("viruss/recursos/CEREBRO.jpg");
                                     //CartaAux.setImage(image);
@@ -1115,12 +1116,12 @@ public class Carta extends ImageView implements Serializable{
                     
                     else if (this.color == 4) {
                         if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && !dentroMedicina) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/HUESOINM2.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -1132,12 +1133,12 @@ public class Carta extends ImageView implements Serializable{
                         }
                         
                         else if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     image = new Image("viruss/recursos/HUESO.jpg");
                                     //CartaAux.setImage(image);
                                     this.setImage(image);
@@ -1150,13 +1151,13 @@ public class Carta extends ImageView implements Serializable{
                         
                         else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
                         {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo1) {
+                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                                 if (carta.equals(CartaAux) && fuera) {
                                     //InicioController.listaCementerio.add(CartaAux);
                                     MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(0).mazo1.remove(carta);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                     InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(0).mazo1);
+                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                     //InicioController.listaCementerio.add(this);
                                     image = new Image("viruss/recursos/HUESO.jpg");
                                     //CartaAux.setImage(image);

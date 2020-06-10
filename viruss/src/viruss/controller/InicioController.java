@@ -23,7 +23,6 @@ import javafx.scene.layout.HBox;
 import viruss.model.Carta;
 import viruss.model.Cliente;
 import viruss.model.Juego;
-import viruss.model.Jugador;
 import viruss.model.MainServidor;
 import viruss.model.Servidor;
 import viruss.util.AppContext;
@@ -80,12 +79,8 @@ public class InicioController extends Controller implements Initializable {
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
-//        try {
-//            iniciarServidor();
         cargarPartida();
-//        } catch (IOException ex) {
-//            Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
     }
 
     @Override

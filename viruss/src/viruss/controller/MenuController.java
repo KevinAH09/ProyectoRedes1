@@ -106,19 +106,20 @@ public class MenuController extends Controller implements Initializable {
     @FXML
     private void Ingresar(ActionEvent event) throws IOException {
         band = true;
-        AppContext.getInstance().set("nick", "juan");
+        AppContext.getInstance().set("nick", txtNick.getText());
         Juego ju = new Juego();
-//        Jugador jug = new Jugador();
-//        jug.nickname = txtNick.getText();
-        Jugador jugador1 = new Jugador("carlos", "1");
-        Jugador jugador2 = new Jugador("juan", "2");
-        Jugador jugador3 = new Jugador("benito", "3");
+        Jugador jug = new Jugador();
+        jug.nickname = txtNick.getText();
+//        Jugador jugador1 = new Jugador("carlos", "1");
+//        Jugador jugador2 = new Jugador("juan", "2");
+//        Jugador jugador3 = new Jugador("benito", "3");
 //        Jugador jugador4 = new Jugador("mario", "4");
 //        Jugador jugador5 = new Jugador("ale", "5");
 //        Jugador jugador6 = new Jugador("kevin", "6");
-        ju.jugadores.add(jugador1);
-        ju.jugadores.add(jugador2);
-        ju.jugadores.add(jugador3);
+        ju.jugadores.add(jug);
+//        ju.jugadores.add(jugador1);
+//        ju.jugadores.add(jugador2);
+//        ju.jugadores.add(jugador3);
 //        ju.jugadores.add(jugador4);
 //        ju.jugadores.add(jugador5);
 //        ju.jugadores.add(jugador6);

@@ -119,11 +119,12 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.cementerio.clear();
         }
         iniciarCliente();
+        iniciarServidor();
 
     }
 
     @FXML
-    private void actionHboxJug(MouseEvent event) {
+    private void actionHboxJug(MouseEvent event) throws IOException {
         if (cartaSelec != null) {
             boolean band = true;
             for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo2) {
@@ -140,7 +141,8 @@ public class InicioController extends Controller implements Initializable {
             cartaSelec = null;
 
         }
-
+        iniciarCliente();
+        iniciarServidor();
     }
 
     private void iniciarServidor() throws IOException {
@@ -191,7 +193,7 @@ public class InicioController extends Controller implements Initializable {
                 hboxMesaJug2.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
-                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
+                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
 
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);

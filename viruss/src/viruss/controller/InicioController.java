@@ -89,8 +89,10 @@ public class InicioController extends Controller implements Initializable {
                 } catch (IOException ex) {
                     Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                task.cancel();
             }
-            task.cancel();
+            
+            
 
         }
     };

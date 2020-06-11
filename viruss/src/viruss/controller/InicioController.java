@@ -89,7 +89,9 @@ public class InicioController extends Controller implements Initializable {
         cargarPartida();
         timeline = new Timeline(new KeyFrame(Duration.seconds(3), ev -> {
             try {
-                iniciarServidor();
+                if (MainServidor.juegoMain.turno != posJug) {
+                    iniciarServidor();
+                }
                 timeline.stop();
             } catch (IOException ex) {
                 Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);

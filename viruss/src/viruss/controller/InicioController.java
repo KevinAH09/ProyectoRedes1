@@ -191,7 +191,7 @@ public class InicioController extends Controller implements Initializable {
                 hboxMesaJug2.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
-                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
 
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
@@ -207,7 +207,7 @@ public class InicioController extends Controller implements Initializable {
         }
         System.out.println(posJug);
         System.out.println(MainServidor.juegoMain.turno);
-        if (MainServidor.juegoMain.turno != posJug) {
+        if (MainServidor.juegoMain.turno == posJug) {
             hboxMesaJug1.setDisable(true);
             hboxMesaJug2.setDisable(true);
             hboxMesaJug3.setDisable(true);

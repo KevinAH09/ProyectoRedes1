@@ -15,12 +15,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.util.Duration;
 import viruss.model.Carta;
 import viruss.model.Cliente;
 import viruss.model.Conexion;
@@ -75,34 +79,24 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox HboxBasura;
     public static HBox basura;
-    Timer timer = new Timer();
-    int tic = 0;
-    TimerTask task = new TimerTask() {
-
-        @Override
-        public void run() {
-
-            tic++;
-            if (tic == 10) {
-                try {
-                    cargarPartida();
-                } catch (IOException ex) {
-                    Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                task.cancel();
-            }
-            
-            
-
-        }
-    };
+    Timeline timeline;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
-        timer.schedule(task, 10, 1000);
+        cargarPartida();
+        timeline = new Timeline(new KeyFrame(Duration.seconds(3), ev -> {
+            try {
+                iniciarServidor();
+                timeline.stop();
+            } catch (IOException ex) {
+                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
 
     }
 
@@ -160,7 +154,7 @@ public class InicioController extends Controller implements Initializable {
         cli.startClient(); //Se inicia el cliente
     }
 
-    private void cargarPartida() throws IOException {
+    private void cargarPartida() {
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
         hboxMesaJug2.getChildren().clear();
@@ -209,6 +203,8 @@ public class InicioController extends Controller implements Initializable {
             }
 
         }
+        System.out.println(posJug);
+        System.out.println(MainServidor.juegoMain.turno);
         if (MainServidor.juegoMain.turno != posJug) {
             hboxMesaJug1.setDisable(true);
             hboxMesaJug2.setDisable(true);
@@ -229,7 +225,7 @@ public class InicioController extends Controller implements Initializable {
             hboxmaso.setDisable(false);
             HboxBasura.setDisable(false);
             hboxMasoJug.setDisable(false);
-            iniciarServidor();
+
         }
 
     }

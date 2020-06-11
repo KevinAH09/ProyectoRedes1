@@ -123,7 +123,7 @@ public class MenuController extends Controller implements Initializable {
 //        ju.jugadores.add(jugador4);
 //        ju.jugadores.add(jugador5);
 //        ju.jugadores.add(jugador6);
-
+        MainServidor.juegoMain=ju;
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
         cli.startClient(); //Se inicia el cliente

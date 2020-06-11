@@ -6,14 +6,13 @@
 package viruss.model;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Cliente extends Conexion
 {
     public Cliente() throws IOException{super("cliente");} //Se usa el constructor para cliente de Conexion
 
-    public void startClient(Object objeto) //Método para iniciar el cliente
+    public void startClient() //Método para iniciar el cliente
     {
         try
         {                  
@@ -21,7 +20,7 @@ public class Cliente extends Conexion
             ObjectOutputStream carta1 = new ObjectOutputStream( cs.getOutputStream());
            
             // Se envía el objeto
-            carta1.writeObject(objeto);           
+            carta1.writeObject(MainServidor.juegoMain);           
             carta1.close();
             cs.close();//Fin de la conexión
 

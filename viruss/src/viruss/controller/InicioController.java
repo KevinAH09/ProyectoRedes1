@@ -9,11 +9,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
@@ -22,7 +20,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import viruss.model.Carta;
 import viruss.model.Cliente;
-import viruss.model.Juego;
 import viruss.model.MainServidor;
 import viruss.model.Servidor;
 import viruss.util.AppContext;
@@ -79,7 +76,11 @@ public class InicioController extends Controller implements Initializable {
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
-        cargarPartida();
+        try {
+            cargarPartida();
+        } catch (IOException ex) {
+            Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -90,7 +91,6 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
-        iniciarServidor();
         if (MainServidor.juegoMain.mazo.isEmpty() != true) {
             hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
             MainServidor.juegoMain.jugadores.get(0).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
@@ -100,8 +100,8 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
             MainServidor.juegoMain.cementerio.clear();
         }
-        System.out.println(MainServidor.juegoMain.jugadores.get(0).mazo2);
-        cargarPartida();
+        iniciarCliente();
+
     }
 
     @FXML
@@ -129,15 +129,16 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
+        cargarPartida();
     }
 
-    private void iniciarCliente(Juego ju) throws IOException {
+    private void iniciarCliente() throws IOException {
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
-        cli.startClient(ju); //Se inicia el cliente
+        cli.startClient(); //Se inicia el cliente
     }
 
-    private void cargarPartida() {
+    private void cargarPartida() throws IOException {
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
         hboxMesaJug2.getChildren().clear();
@@ -148,6 +149,7 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
+        
         for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
             MainServidor.juegoMain.mazo.get(i).setImg();
         }
@@ -170,9 +172,9 @@ public class InicioController extends Controller implements Initializable {
                 hboxMasoJug.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
                 hboxMesaJug2.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
             } else {
-                if (hboxMesaJug5.getChildren().isEmpty()) {
-                    hboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    hboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
+                if (hboxMesaJug1.getChildren().isEmpty()) {
+                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {
@@ -185,27 +187,28 @@ public class InicioController extends Controller implements Initializable {
             }
 
         }
-//        if(MainServidor.juegoMain.turno!=posJug){
-//            hboxMesaJug1.setDisable(true);
-//            hboxMesaJug2.setDisable(true);
-//            hboxMesaJug3.setDisable(true);
-//            hboxMesaJug4.setDisable(true);
-//            hboxMesaJug5.setDisable(true);
-//            hboxMesaJug6.setDisable(true);
-//            hboxmaso.setDisable(true);
-//            HboxBasura.setDisable(true);
-//            hboxMasoJug.setDisable(true);
-//        }else{
-//            hboxMesaJug1.setDisable(false);
-//            hboxMesaJug2.setDisable(false);
-//            hboxMesaJug3.setDisable(false);
-//            hboxMesaJug4.setDisable(false);
-//            hboxMesaJug5.setDisable(false);
-//            hboxMesaJug6.setDisable(false);
-//            hboxmaso.setDisable(false);
-//            HboxBasura.setDisable(false);
-//            hboxMasoJug.setDisable(false);
-//        }
+        if(MainServidor.juegoMain.turno!=posJug){
+            hboxMesaJug1.setDisable(true);
+            hboxMesaJug2.setDisable(true);
+            hboxMesaJug3.setDisable(true);
+            hboxMesaJug4.setDisable(true);
+            hboxMesaJug5.setDisable(true);
+            hboxMesaJug6.setDisable(true);
+            hboxmaso.setDisable(true);
+            HboxBasura.setDisable(true);
+            hboxMasoJug.setDisable(true);
+        }else{
+            hboxMesaJug1.setDisable(false);
+            hboxMesaJug2.setDisable(false);
+            hboxMesaJug3.setDisable(false);
+            hboxMesaJug4.setDisable(false);
+            hboxMesaJug5.setDisable(false);
+            hboxMesaJug6.setDisable(false);
+            hboxmaso.setDisable(false);
+            HboxBasura.setDisable(false);
+            hboxMasoJug.setDisable(false);
+            iniciarServidor();
+        }
   
     }
 

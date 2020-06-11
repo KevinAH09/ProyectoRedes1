@@ -7,8 +7,7 @@ package viruss.model;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.List;
-import viruss.util.AppContext;
+
 
 public class Servidor extends Conexion {
 

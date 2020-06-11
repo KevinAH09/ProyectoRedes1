@@ -126,7 +126,7 @@ public class MenuController extends Controller implements Initializable {
 
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
-        cli.startClient(ju); //Se inicia el cliente
+        cli.startClient(); //Se inicia el cliente
 
         while (band) {
             Servidor serv = new Servidor(); //Se crea el servidor

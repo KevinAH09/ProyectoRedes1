@@ -89,7 +89,8 @@ public class InicioController extends Controller implements Initializable {
     }
 
     @FXML
-    private void actionMasoClick(MouseEvent event) {
+    private void actionMasoClick(MouseEvent event) throws IOException {
+        iniciarServidor();
         if (MainServidor.juegoMain.mazo.isEmpty() != true) {
             hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
             MainServidor.juegoMain.jugadores.get(0).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
@@ -99,6 +100,8 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
             MainServidor.juegoMain.cementerio.clear();
         }
+        System.out.println(MainServidor.juegoMain.jugadores.get(0).mazo2);
+        cargarPartida();
     }
 
     @FXML
@@ -167,8 +170,9 @@ public class InicioController extends Controller implements Initializable {
                 hboxMasoJug.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
                 hboxMesaJug2.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
             } else {
-                if (hboxMesaJug1.getChildren().isEmpty()) {
-                    hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                if (hboxMesaJug5.getChildren().isEmpty()) {
+                    hboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    hboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {
@@ -202,6 +206,7 @@ public class InicioController extends Controller implements Initializable {
 //            HboxBasura.setDisable(false);
 //            hboxMasoJug.setDisable(false);
 //        }
+  
     }
-    
+
 }

@@ -87,7 +87,7 @@ public class InicioController extends Controller implements Initializable {
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
         cargarPartida();
-        timeline = new Timeline(new KeyFrame(Duration.seconds(3), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
@@ -150,6 +150,9 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         cargarPartida();
+        if(MainServidor.juegoMain.turno!=posJug){
+            iniciarServidor();
+        }
     }
 
     private void iniciarCliente() throws IOException {

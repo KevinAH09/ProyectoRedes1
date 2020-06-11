@@ -6,10 +6,13 @@
 package viruss.controller;
 
 import java.io.IOException;
+import static java.lang.Boolean.FALSE;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
@@ -20,6 +23,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import viruss.model.Carta;
 import viruss.model.Cliente;
+import viruss.model.Conexion;
+import viruss.model.Jugador;
 import viruss.model.MainServidor;
 import viruss.model.Servidor;
 import viruss.util.AppContext;
@@ -70,17 +75,32 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox HboxBasura;
     public static HBox basura;
+    Timer timer = new Timer();
+    int tic = 0;
+    TimerTask task = new TimerTask() {
+
+        @Override
+        public void run() {
+
+            tic++;
+            if (tic == 10) {
+                try {
+                    cargarPartida();
+                } catch (IOException ex) {
+                    Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            task.cancel();
+
+        }
+    };
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
-        try {
-            cargarPartida();
-        } catch (IOException ex) {
-            Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        timer.schedule(task, 10, 1000);
 
     }
 
@@ -149,7 +169,7 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
-        
+
         for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
             MainServidor.juegoMain.mazo.get(i).setImg();
         }
@@ -174,7 +194,7 @@ public class InicioController extends Controller implements Initializable {
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
                     hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    
+
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {
@@ -187,7 +207,7 @@ public class InicioController extends Controller implements Initializable {
             }
 
         }
-        if(MainServidor.juegoMain.turno!=posJug){
+        if (MainServidor.juegoMain.turno != posJug) {
             hboxMesaJug1.setDisable(true);
             hboxMesaJug2.setDisable(true);
             hboxMesaJug3.setDisable(true);
@@ -197,7 +217,7 @@ public class InicioController extends Controller implements Initializable {
             hboxmaso.setDisable(true);
             HboxBasura.setDisable(true);
             hboxMasoJug.setDisable(true);
-        }else{
+        } else {
             hboxMesaJug1.setDisable(false);
             hboxMesaJug2.setDisable(false);
             hboxMesaJug3.setDisable(false);
@@ -209,7 +229,7 @@ public class InicioController extends Controller implements Initializable {
             hboxMasoJug.setDisable(false);
             iniciarServidor();
         }
-  
+
     }
 
-} 
+}

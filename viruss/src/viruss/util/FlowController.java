@@ -23,7 +23,7 @@ import javafx.stage.WindowEvent;
 import viruss.controller.Controller;
 
 public class FlowController {
-
+    public static Stage sta;
     private static FlowController INSTANCE = null;
     private static Stage mainStage;
     private static ResourceBundle idioma;
@@ -169,6 +169,7 @@ public class FlowController {
         stage.setScene(scene);
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(parentStage);
+        sta = stage;
         stage.centerOnScreen();
         stage.showAndWait();
 

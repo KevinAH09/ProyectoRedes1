@@ -7,9 +7,9 @@ and open the template in the editor.
     Created on : Apr 29, 2020, 9:42:59 PM
     Author     : colo7
 */
-@font-face {
+/*@font-face {
     src: url("../resources/font/century.ttf");
-}
+}*/
 *{
     /*-fx-border-style: segments*/
     -fx-focus-traversable: false;

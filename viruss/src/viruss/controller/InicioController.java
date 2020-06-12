@@ -119,7 +119,7 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.cementerio.clear();
         }
         iniciarCliente();
-        iniciarServidor();
+//        iniciarServidor();
 
     }
 

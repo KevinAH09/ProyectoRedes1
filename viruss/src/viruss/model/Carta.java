@@ -21,6 +21,7 @@ public class Carta extends ImageView implements Serializable {
     private static final long serialVersionUID = 6529685098267757690L;
     private String tipoCarta;
     public int color;
+    public int idcarta;
     public int altura;
     public int ancho;
     public String estado;
@@ -35,7 +36,8 @@ public class Carta extends ImageView implements Serializable {
     public Carta() {
     }
 
-    public Carta(String tipoCarta, int color, int altura, int ancho) {
+    public Carta(int id,String tipoCarta, int color, int altura, int ancho) {
+        this.idcarta = id;
         this.altura = altura;
         this.ancho = ancho;
         this.tipoCarta = tipoCarta;

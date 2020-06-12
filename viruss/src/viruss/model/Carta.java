@@ -155,12 +155,16 @@ public class Carta extends ImageView implements Serializable {
         this.setFitHeight(195);
         this.setFitWidth(130);
         this.setOnMouseClicked(ke -> {
-            jugar();
+            try {
+                jugar();
+            } catch (IOException ex) {
+                Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         });
     }
 
-    public void jugar() {
+    public void jugar() throws IOException {
         System.out.println(MainServidor.juegoMain.jugadores.get(InicioController.posJug).nickname);
         if (cont == 0) {
 
@@ -1063,6 +1067,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                 }
+                iniciarCliente();
                 hiloServidor();
 
             }
@@ -1079,6 +1084,11 @@ public class Carta extends ImageView implements Serializable {
 //        statichboxMesaJug4=hboxMesaJug4;
 //        statichboxMesaJug5=hboxMesaJug5;
 //        statichboxMesaJug6=hboxMesaJug6;
+    private void iniciarCliente() throws IOException {
+        Cliente cli = new Cliente(); //Se crea el cliente
+        System.out.println("Iniciando cliente\n");
+        cli.startClient(); //Se inicia el cliente
+    }
     
     public void cargarPartida() {
         InicioController.masoStatico.getChildren().clear();//maso del jugador

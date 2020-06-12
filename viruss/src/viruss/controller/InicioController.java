@@ -130,19 +130,21 @@ public class InicioController extends Controller implements Initializable {
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
                 if (carta.color == cartaSelec.color) {
                     band = false;
+                    
                 }
             }
             if (band) {
                 MainServidor.juegoMain.jugadores.get(posJug).mazo2.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
+                iniciarCliente();
+                iniciarServidor();
             }
             Carta.cont = 0;
             cartaSelec = null;
-
+            
         }
-        iniciarCliente();
-        iniciarServidor();
+
     }
 
     private void iniciarServidor() throws IOException {

@@ -19,6 +19,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 import viruss.controller.Controller;
 
@@ -166,9 +167,11 @@ public class FlowController {
         controller.setStage(stage);
         Parent root = loader.getRoot();
         Scene scene = new Scene(root);
+       
         stage.setScene(scene);
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(parentStage);
+        stage.initStyle(StageStyle.UNDECORATED);
         sta = stage;
         stage.centerOnScreen();
         stage.showAndWait();

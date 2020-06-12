@@ -40,7 +40,7 @@ public class Carta extends ImageView implements Serializable {
         this.ancho = ancho;
         this.tipoCarta = tipoCarta;
         this.color = color;
-        
+
     }
 
     public void setImg() {
@@ -134,7 +134,7 @@ public class Carta extends ImageView implements Serializable {
                 this.setImage(new Image("viruss/recursos/HOSPITAL.jpg"));
             }
         }
-        
+
         if (tipoCarta.equals("OrganosVacuna")) {
             if (color == 1) {
                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
@@ -149,8 +149,8 @@ public class Carta extends ImageView implements Serializable {
                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
             }
         }
-        
-        if(tipoCarta.equals("OrganosVirus")){
+
+        if (tipoCarta.equals("OrganosVirus")) {
             if (color == 11) {
                 this.setImage(new Image("viruss/recursos/rojoinfectado.jpg"));
             }
@@ -164,7 +164,7 @@ public class Carta extends ImageView implements Serializable {
                 this.setImage(new Image("viruss/recursos/amarilloinfetado.jpg"));
             }
         }
-        if(tipoCarta.equals("OrganosInmune")){
+        if (tipoCarta.equals("OrganosInmune")) {
             if (color == 1) {
                 this.setImage(new Image("viruss/recursos/CORAZONINM2.jpg"));
             }
@@ -178,7 +178,7 @@ public class Carta extends ImageView implements Serializable {
                 this.setImage(new Image("viruss/recursos/HUESOINM2.jpg"));
             }
         }
-        
+
         this.setFitHeight(195);
         this.setFitWidth(130);
         this.setOnMouseClicked(ke -> {
@@ -830,7 +830,7 @@ public class Carta extends ImageView implements Serializable {
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
 //                                image = new Image("viruss/recursos/HUESO.jpg");
-                                this.setImage( new Image("viruss/recursos/HUESO.jpg"));
+                                this.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
@@ -1097,6 +1097,7 @@ public class Carta extends ImageView implements Serializable {
 
                 }
                 iniciarCliente();
+
                 hiloServidor();
 
             }
@@ -1113,12 +1114,20 @@ public class Carta extends ImageView implements Serializable {
 //        statichboxMesaJug4=hboxMesaJug4;
 //        statichboxMesaJug5=hboxMesaJug5;
 //        statichboxMesaJug6=hboxMesaJug6;
+
     private void iniciarCliente() throws IOException {
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
         cli.startClient(); //Se inicia el cliente
+        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+            MainServidor.juegoMain.turno = 0;
+
+        } else {
+            MainServidor.juegoMain.turno++;
+        }
+
     }
-    
+
     public void cargarPartida() {
         InicioController.masoStatico.getChildren().clear();//maso del jugador
         InicioController.miMesa.getChildren().clear();//mesa
@@ -1146,7 +1155,7 @@ public class Carta extends ImageView implements Serializable {
 
         for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
 
-            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals((String)(AppContext.getInstance().get("nick")))) {
+            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals((String) (AppContext.getInstance().get("nick")))) {
                 posJug = j;
                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
                 InicioController.miMesa.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
@@ -1196,7 +1205,7 @@ public class Carta extends ImageView implements Serializable {
         }
 
     }
-    
+
     private void hiloServidor() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
             try {

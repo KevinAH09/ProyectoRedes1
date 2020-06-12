@@ -310,6 +310,7 @@ public class Carta extends ImageView implements Serializable {
             for (Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                 if (cartas.equals(this)) {
                     fuera = false;
+                    
                 }
 
             }
@@ -348,6 +349,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(11);
                                 this.setEstado("Contaminado");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -365,6 +368,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -382,6 +387,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -400,6 +407,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -422,6 +431,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(22);
                                 this.setEstado("Contaminado");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -438,6 +449,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -455,6 +468,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -473,6 +488,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -495,6 +512,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(33);
                                 this.setEstado("Contaminado");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
                             }
                         }
@@ -509,6 +528,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -526,6 +547,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -544,6 +567,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -566,6 +591,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(44);
                                 this.setEstado("Contaminado");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -581,10 +608,13 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
                         }
+                        
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
@@ -598,10 +628,13 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
                         }
+                        
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
@@ -616,15 +649,17 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
-
                             }
                         }
+                        
                     }
 
                 }
-                iniciarCliente();
-                hiloServidor();
+                
             } else if (this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
             {
                 if (this.color == 11)//CORAZON-VIRUS
@@ -643,6 +678,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -665,6 +702,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -685,6 +724,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -707,6 +748,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -729,6 +772,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -749,6 +794,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -771,6 +818,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
                             }
                         }
@@ -792,6 +841,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -812,6 +863,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -834,6 +887,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
                             }
                         }
@@ -855,6 +910,8 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -875,6 +932,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -896,6 +955,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -911,6 +972,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZON.jpg"));
                                 this.setTipoCarta("Organos");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -931,6 +994,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -948,6 +1013,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -963,6 +1030,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
                                 this.setTipoCarta("Organos");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -983,6 +1052,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1001,6 +1072,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1016,6 +1089,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
                                 this.setTipoCarta("Organos");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1036,6 +1111,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1054,6 +1131,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1069,6 +1148,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                 this.setTipoCarta("Organos");
+                                iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1088,7 +1169,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
-                                this.setEstado("Estable");
+                                this.setEstado("Estable");iniciarCliente();
+                                hiloServidor();
                                 break;
 
                             }
@@ -1096,9 +1178,6 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                 }
-                iniciarCliente();
-
-                hiloServidor();
 
             }
 

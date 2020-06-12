@@ -161,7 +161,7 @@ public class Carta extends ImageView implements Serializable {
                 this.setImage(new Image("viruss/recursos/azulinfectado.jpg"));
             }
             if (color == 44) {
-                this.setImage(new Image("viruss/recursos/amarilloinfetado.jpg"));
+                this.setImage(new Image("viruss/recursos/amarilloinfectado.jpg"));
             }
         }
         if (tipoCarta.equals("OrganosInmune")) {

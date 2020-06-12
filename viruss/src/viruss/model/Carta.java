@@ -1169,7 +1169,8 @@ public class Carta extends ImageView implements Serializable {
                                 this.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
-                                this.setEstado("Estable");iniciarCliente();
+                                this.setEstado("Estable");
+                                iniciarCliente();
                                 hiloServidor();
                                 break;
 

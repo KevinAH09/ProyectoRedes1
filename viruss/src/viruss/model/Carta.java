@@ -414,6 +414,27 @@ public class Carta extends ImageView implements Serializable {
                             }
                         }
                     }
+                    
+                     else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
+                                break;
+
+                            }
+                        }
+                    } 
 
                 } else if (this.color == 2) {
                     if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) {
@@ -495,6 +516,27 @@ public class Carta extends ImageView implements Serializable {
                             }
                         }
                     }
+                    
+                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Containado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
+                                break;
+
+                            }
+                        }
+                    }
 
                 } else if (this.color == 3) {
                     if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) {
@@ -567,6 +609,26 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                iniciarCliente();
+                                hiloServidor();
+                                break;
+
+                            }
+                        }
+                    }
+                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -659,6 +721,29 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                 }
+                
+                else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                iniciarCliente();
+                                hiloServidor();
+                                break;
+
+                            }
+                        }
+                        
+                    }
+                
                 
             } else if (this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
             {

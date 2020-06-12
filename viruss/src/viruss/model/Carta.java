@@ -34,12 +34,12 @@ public class Carta extends ImageView implements Serializable {
     public Carta() {
     }
 
-    public Carta(String img, String tipoCarta, int color, int altura, int ancho) {
+    public Carta(String tipoCarta, int color, int altura, int ancho) {
         this.altura = altura;
         this.ancho = ancho;
         this.tipoCarta = tipoCarta;
         this.color = color;
-        this.img = img;
+        
     }
 
     public void setImg() {
@@ -48,91 +48,109 @@ public class Carta extends ImageView implements Serializable {
 
             if (color == 1)//ROJIVIRUS
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/ROJIVURUS.jpg"));
             }
             if (color == 2)//VERDON EL VIRUS
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/VERDON EL VIRUS.jpg"));
             }
             if (color == 3)//VIRUBLU
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/VIRUBLU.jpg"));
             }
             if (color == 4)//YELLVIRUS
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/YELLVIRUS.jpg"));
             }
             if (color == 5)//COVID-19
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/COVID-19.jpg"));
             }
         }
         if (tipoCarta.equals("Tratamientos")) {
             if (color == 1)//Transplante
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/TRANSPLANTE.jpg"));
             }
             if (color == 2)//Ladrón de órganos
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/LADRON DE ORGANOS.jpg"));
             }
             if (color == 3)//Contagio
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/CONTAGIO.jpg"));
             }
             if (color == 4)//Guante de látex
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/GUANTES DE LATEX.jpg"));
             }
             if (color == 5)//Error médico
             {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/ERROR MEDICO.jpg"));
             }
         }
         if (tipoCarta.equals("Organos")) {
             if (color == 1)//corazon
             {
                 this.estado = "Estable";
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/CORAZON.jpg"));
             }
             if (color == 2)//estomago
             {
                 this.estado = "Estable";
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
             }
             if (color == 3)//cerebro
             {
                 this.estado = "Estable";
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
             }
             if (color == 4)//hueso
             {
                 this.estado = "Estable";
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/HUESO.jpg"));
             }
             if (color == 5)//comodin
             {
                 this.estado = "Estable";
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/CUERPO.jpg"));
             }
         }
         if (tipoCarta.equals("Medicinas")) {
             if (color == 1) {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/BOTIQUIN.jpg"));
             }
             if (color == 2) {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/VACUNA.jpg"));
             }
             if (color == 3) {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/ANTISUERO.jpg"));
             }
             if (color == 4) {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/CURITAS.jpg"));
             }
             if (color == 5) {
-                this.setImage(new Image(img));
+                this.setImage(new Image("viruss/recursos/HOSPITAL.jpg"));
             }
         }
+        
+        if (tipoCarta.equals("OrganosVacuna")) {
+            if (color == 1) {
+                this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
+            }
+            if (color == 2) {
+                this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
+            }
+            if (color == 3) {
+                this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
+            }
+            if (color == 4) {
+                this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
+            }
+        }
+        
+        
+        
         this.setFitHeight(195);
         this.setFitWidth(130);
         this.setOnMouseClicked(ke -> {

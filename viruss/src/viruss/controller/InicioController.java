@@ -97,7 +97,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     private void hiloServidor() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();

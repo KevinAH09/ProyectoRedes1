@@ -87,6 +87,16 @@ public class InicioController extends Controller implements Initializable {
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
         cargarPartida();
+        hiloServidor();
+
+    }
+
+    @Override
+    public void initialize() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void hiloServidor() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
@@ -99,12 +109,6 @@ public class InicioController extends Controller implements Initializable {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
-
-    }
-
-    @Override
-    public void initialize() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @FXML
@@ -119,7 +123,8 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.cementerio.clear();
         }
         iniciarCliente();
-//        iniciarServidor();
+        hiloServidor();
+
 
     }
 
@@ -130,7 +135,7 @@ public class InicioController extends Controller implements Initializable {
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
                 if (carta.color == cartaSelec.color) {
                     band = false;
-                    
+
                 }
             }
             if (band) {
@@ -138,11 +143,11 @@ public class InicioController extends Controller implements Initializable {
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
                 iniciarCliente();
-                iniciarServidor();
+                hiloServidor();
             }
             Carta.cont = 0;
             cartaSelec = null;
-            
+
         }
 
     }
@@ -152,8 +157,8 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         cargarPartida();
-        if(MainServidor.juegoMain.turno!=posJug){
-            iniciarServidor();
+        if (MainServidor.juegoMain.turno != posJug) {
+            hiloServidor();
         }
     }
 
@@ -163,7 +168,7 @@ public class InicioController extends Controller implements Initializable {
         cli.startClient(); //Se inicia el cliente
     }
 
-    private void cargarPartida() {
+    public void cargarPartida() {
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
         hboxMesaJug2.getChildren().clear();

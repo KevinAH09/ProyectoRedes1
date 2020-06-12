@@ -110,19 +110,7 @@ public class MenuController extends Controller implements Initializable {
         Juego ju = new Juego();
         Jugador jug = new Jugador();
         jug.nickname = txtNick.getText();
-//        Jugador jugador1 = new Jugador("carlos", "1");
-//        Jugador jugador2 = new Jugador("juan", "2");
-//        Jugador jugador3 = new Jugador("benito", "3");
-//        Jugador jugador4 = new Jugador("mario", "4");
-//        Jugador jugador5 = new Jugador("ale", "5");
-//        Jugador jugador6 = new Jugador("kevin", "6");
         ju.jugadores.add(jug);
-//        ju.jugadores.add(jugador1);
-//        ju.jugadores.add(jugador2);
-//        ju.jugadores.add(jugador3);
-//        ju.jugadores.add(jugador4);
-//        ju.jugadores.add(jugador5);
-//        ju.jugadores.add(jugador6);
         MainServidor.juegoMain=ju;
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
@@ -173,7 +161,6 @@ public class MenuController extends Controller implements Initializable {
         String name = JOptionPane.showInputDialog("Ingrese la dirección IP del servidor de destino");
         JOptionPane.showMessageDialog(null, "Se ha guardado la IP ");
         AppContext.getInstance().set("ipservidor", name);
-
     }
 
 //    private void texto() {

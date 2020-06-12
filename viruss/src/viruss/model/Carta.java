@@ -1,13 +1,22 @@
 package viruss.model;
 
-
+import java.io.IOException;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
 
 import viruss.controller.InicioController;
-public class Carta extends ImageView implements Serializable{
+import static viruss.controller.InicioController.posJug;
+
+public class Carta extends ImageView implements Serializable {
+
     private static final long serialVersionUID = 6529685098267757690L;
     private String tipoCarta;
     public int color;
@@ -16,326 +25,265 @@ public class Carta extends ImageView implements Serializable{
     public String estado;
     public String img;
     public static Carta CartaAux;
-    List <Carta> lista;
-    
-    public static int cont=0;
+    List<Carta> lista;
+    Timeline timeline;
+
+    public static int cont = 0;
     public Image image;
 
     public Carta() {
     }
-    
-    public Carta(String img,String tipoCarta,int color,int altura,int ancho){
-        this.altura=altura;
-        this.ancho=ancho;
+
+    public Carta(String img, String tipoCarta, int color, int altura, int ancho) {
+        this.altura = altura;
+        this.ancho = ancho;
         this.tipoCarta = tipoCarta;
         this.color = color;
         this.img = img;
     }
-    public void setImg(){
-        
-        if(tipoCarta.equals("Virus"))
-        {
-            
-            if(color == 1)//ROJIVIRUS
+
+    public void setImg() {
+
+        if (tipoCarta.equals("Virus")) {
+
+            if (color == 1)//ROJIVIRUS
             {
                 this.setImage(new Image(img));
             }
-            if(color == 2)//VERDON EL VIRUS
+            if (color == 2)//VERDON EL VIRUS
             {
                 this.setImage(new Image(img));
             }
-            if(color == 3)//VIRUBLU
+            if (color == 3)//VIRUBLU
             {
                 this.setImage(new Image(img));
             }
-            if(color == 4)//YELLVIRUS
+            if (color == 4)//YELLVIRUS
             {
                 this.setImage(new Image(img));
             }
-            if(color == 5)//COVID-19
-            {
-                this.setImage(new Image(img));
-            }
-        }
-        if(tipoCarta.equals("Tratamientos"))
-        {
-            if(color == 1)//Transplante
-            {
-                this.setImage(new Image(img));
-            }
-            if(color == 2)//Ladrón de órganos
-            {
-                this.setImage(new Image(img));
-            }
-            if(color == 3)//Contagio
-            {
-                this.setImage(new Image(img));
-            }
-            if(color == 4)//Guante de látex
-            {
-               this.setImage(new Image(img));
-            }
-            if(color == 5)//Error médico
+            if (color == 5)//COVID-19
             {
                 this.setImage(new Image(img));
             }
         }
-        if(tipoCarta.equals("Organos"))
-        {
-            if(color == 1)//corazon
+        if (tipoCarta.equals("Tratamientos")) {
+            if (color == 1)//Transplante
+            {
+                this.setImage(new Image(img));
+            }
+            if (color == 2)//Ladrón de órganos
+            {
+                this.setImage(new Image(img));
+            }
+            if (color == 3)//Contagio
+            {
+                this.setImage(new Image(img));
+            }
+            if (color == 4)//Guante de látex
+            {
+                this.setImage(new Image(img));
+            }
+            if (color == 5)//Error médico
+            {
+                this.setImage(new Image(img));
+            }
+        }
+        if (tipoCarta.equals("Organos")) {
+            if (color == 1)//corazon
             {
                 this.estado = "Estable";
                 this.setImage(new Image(img));
             }
-            if(color == 2)//estomago
+            if (color == 2)//estomago
             {
                 this.estado = "Estable";
                 this.setImage(new Image(img));
             }
-            if(color == 3)//cerebro
+            if (color == 3)//cerebro
             {
                 this.estado = "Estable";
                 this.setImage(new Image(img));
             }
-            if(color == 4)//hueso
+            if (color == 4)//hueso
             {
                 this.estado = "Estable";
                 this.setImage(new Image(img));
             }
-            if(color == 5)//comodin
+            if (color == 5)//comodin
             {
                 this.estado = "Estable";
                 this.setImage(new Image(img));
             }
         }
-        if(tipoCarta.equals("Medicinas"))
-        {
-            if(color == 1)
-            {
+        if (tipoCarta.equals("Medicinas")) {
+            if (color == 1) {
                 this.setImage(new Image(img));
             }
-            if(color == 2)
-            {
+            if (color == 2) {
                 this.setImage(new Image(img));
             }
-            if(color == 3)
-            {
+            if (color == 3) {
                 this.setImage(new Image(img));
             }
-            if(color == 4)
-            {
+            if (color == 4) {
                 this.setImage(new Image(img));
             }
-            if(color == 5)
-            {
+            if (color == 5) {
                 this.setImage(new Image(img));
             }
         }
         this.setFitHeight(195);
         this.setFitWidth(130);
-        this.setOnMouseClicked(ke->{
-           jugar();
-           
+        this.setOnMouseClicked(ke -> {
+            jugar();
+
         });
     }
-    
-    public void jugar()
-    {
+
+    public void jugar() {
         System.out.println(MainServidor.juegoMain.jugadores.get(InicioController.posJug).nickname);
-        if(cont ==0)
+        if (cont == 0) {
+
+            if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS SOBRE MESA    --------------------------------------------------------
             {
-                
-                if(this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS SOBRE MESA    --------------------------------------------------------
-                {
-                    
-                    if(this.color==1)
-                    {
-                        
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            //InicioController.cartaSelec.setImage(this.getImage());
-                            InicioController.cartaSelec = this;
-                            
-                            
-                        }
-                    }
-                    
-                    if(this.color==2)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            InicioController.cartaSelec = this;
-                            
-                        }
-                    }
-                    
-                    if(this.color==3)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            InicioController.cartaSelec = this;
-                            
-                        }
-                    }
-                    
-                    if(this.color==4)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            InicioController.cartaSelec = this;
-                            
-                        }
-                    }
-                    
-                    if(this.color==5)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            InicioController.cartaSelec = this;
-                            
-                        }
-                    }
-                    
-                    
-                }
-                if(this.tipoCarta.equals("Virus"))//-----------------------------------------------------------------------     VIRUS     --------------------------------------------------------
-                {
-                    if(this.color==1)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                            //CartaAux.setImage(image);
-                        }
-                    }
-                    
-                    else if(this.color==2)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            
-                            CartaAux=this;
-                            
-                            //CartaAux.setImage(image);
-                        }
-                    }
-                    
-                    else if(this.color==3)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            
-                            CartaAux=this;
-                            
-                            //CartaAux.setImage(image);
-                        }
-                    }
-                    
-                    else if(this.color==4)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            
-                            CartaAux=this;
-                            
-                            //CartaAux.setImage(image);
-                        }
-                    }
-                    
-                    else if(this.color==5)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                            //image=new Image("viruss/recursos/amarilloinfectado.jpg");
-                            //CartaAux.setImage(image);
-                        }
-                    }
-                    
-                }
-                if(this.tipoCarta.equals("Medicinas"))//-----------------------------------------------------------------------     MEDICINA     --------------------------------------------------------
-                {
-                    if(this.color == 1)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                        }
-                        
-                    }
-                    
-                    else if(this.color == 2)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                        }
-                        
-                    }
-                    
-                    else if(this.color == 3)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                        }
-                        
-                    }
-                    
-                    else if(this.color == 4)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                        }
-                        
-                    }
-                    
-                    else if(this.color==5)
-                    {
-                        if(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x->x.getColor()==this.color && x.getTipoCarta().equals(this.tipoCarta)).count()>=1)
-                        {
-                            CartaAux=this;
-                        }
-                    }
-                    
-                }
-                cont++;
-            }
-            else if(cont==1){
-                this.setRotate(0);
-                boolean fuera=true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
-                boolean dentroMedicina=true;//validacion de poder curar los organos de la mesa del jugador
-                for(Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2)
-                {
-                    if (cartas.equals(this)){
-                        fuera=false;
-                    }
-                    
-                }
-                
-                for(Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1)
-                {
-                    if (cartas.equals(this)){
-                        fuera=false;
-                    }
-                    
-                }
-//                
-                for(Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2)
-                {
-                    if (cartass.equals(this)){
-                        dentroMedicina=false;
-                        //fuera=false;
-                    }
-                    
-                }
-                
-                if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS     --------------------------------------------------------
-            {
-                   
+
                 if (this.color == 1) {
-                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) { //-------------------CONTAMINAR ORGANO---------------------------------
+
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        //InicioController.cartaSelec.setImage(this.getImage());
+                        InicioController.cartaSelec = this;
+
+                    }
+                }
+
+                if (this.color == 2) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        InicioController.cartaSelec = this;
+
+                    }
+                }
+
+                if (this.color == 3) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        InicioController.cartaSelec = this;
+
+                    }
+                }
+
+                if (this.color == 4) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        InicioController.cartaSelec = this;
+
+                    }
+                }
+
+                if (this.color == 5) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        InicioController.cartaSelec = this;
+
+                    }
+                }
+
+            }
+            if (this.tipoCarta.equals("Virus"))//-----------------------------------------------------------------------     VIRUS     --------------------------------------------------------
+            {
+                if (this.color == 1) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                        //CartaAux.setImage(image);
+                    }
+                } else if (this.color == 2) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+
+                        CartaAux = this;
+
+                        //CartaAux.setImage(image);
+                    }
+                } else if (this.color == 3) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+
+                        CartaAux = this;
+
+                        //CartaAux.setImage(image);
+                    }
+                } else if (this.color == 4) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+
+                        CartaAux = this;
+
+                        //CartaAux.setImage(image);
+                    }
+                } else if (this.color == 5) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                        //image=new Image("viruss/recursos/amarilloinfectado.jpg");
+                        //CartaAux.setImage(image);
+                    }
+                }
+
+            }
+            if (this.tipoCarta.equals("Medicinas"))//-----------------------------------------------------------------------     MEDICINA     --------------------------------------------------------
+            {
+                if (this.color == 1) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+
+                } else if (this.color == 2) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+
+                } else if (this.color == 3) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+
+                } else if (this.color == 4) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+
+                } else if (this.color == 5) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+                }
+
+            }
+            cont++;
+        } else if (cont == 1) {
+            this.setRotate(0);
+            boolean fuera = true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
+            boolean dentroMedicina = true;//validacion de poder curar los organos de la mesa del jugador
+            for (Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                if (cartas.equals(this)) {
+                    fuera = false;
+                }
+
+            }
+
+            for (Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                if (cartas.equals(this)) {
+                    fuera = false;
+                }
+
+            }
+//                
+            for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                if (cartass.equals(this)) {
+                    dentroMedicina = false;
+                    //fuera=false;
+                }
+
+            }
+
+            if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS     --------------------------------------------------------
+            {
+
+                if (this.color == 1) {
+                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) { //-------------------CONTAMINAR ORGANO---------------------------------
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
@@ -343,9 +291,9 @@ public class Carta extends ImageView implements Serializable{
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                image=new Image("viruss/recursos/rojoinfectado.jpg");
+                                image = new Image("viruss/recursos/rojoinfectado.jpg");
                                 //CartaAux.setImage(image);
-                               // this.setImage(CartaAux.getImage());
+                                // this.setImage(CartaAux.getImage());
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(11);
@@ -354,9 +302,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                    } else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
@@ -373,9 +319,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -389,13 +333,10 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
                                 break;
-                                
+
                             }
                         }
-                    }
-                    
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -410,23 +351,22 @@ public class Carta extends ImageView implements Serializable{
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
-                    
+
                 } else if (this.color == 2) {
-                    if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&&this.estado.equals("Estable")) {
+                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
 
 //                                InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                image=new Image("viruss/recursos/verdeinfectado.jpg");
+                                image = new Image("viruss/recursos/verdeinfectado.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVirus");
@@ -436,9 +376,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                    } else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
@@ -454,9 +392,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -470,12 +406,10 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
                                 break;
-                                
+
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") &&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -490,22 +424,22 @@ public class Carta extends ImageView implements Serializable{
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
+
                 } else if (this.color == 3) {
-                    if (this.color == CartaAux.color&& CartaAux.tipoCarta.equals("Virus")&&  this.estado.equals("Estable")) {
+                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
 
 //                                InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                image=new Image("viruss/recursos/azulinfectado.jpg");
+                                image = new Image("viruss/recursos/azulinfectado.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVirus");
@@ -514,9 +448,7 @@ public class Carta extends ImageView implements Serializable{
                                 break;
                             }
                         }
-                    }
-                    
-                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                    } else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
@@ -531,9 +463,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -547,12 +477,10 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
                                 break;
-                                
+
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") &&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -567,22 +495,22 @@ public class Carta extends ImageView implements Serializable{
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
+
                 } else if (this.color == 4) {
-                    if (this.color == CartaAux.color&&  CartaAux.tipoCarta.equals("Virus")&& this.estado.equals("Estable")) {
+                    if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
 
                                 //InicioController.listaCementerio.add(CartaAux);
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
                                 InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                image=new Image("viruss/recursos/amarilloinfectado.jpg");
+                                image = new Image("viruss/recursos/amarilloinfectado.jpg");
                                 //CartaAux.setImage(image);
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVirus");
@@ -592,9 +520,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas")&&  this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
+                    } else if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) {//------------------- ORGANOS VACUNA --------------------------------
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
@@ -609,9 +535,7 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                   else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus") &&  this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -625,12 +549,10 @@ public class Carta extends ImageView implements Serializable{
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
                                 break;
-                                
+
                             }
                         }
-                    } 
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") &&  this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -645,66 +567,57 @@ public class Carta extends ImageView implements Serializable{
                                 this.setImage(image);
                                 this.setTipoCarta("OrganosVacuna");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
+
                 }
-                }
-                
-                
-            
-                else if (this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
+            } else if (this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
+            {
+                if (this.color == 11)//CORAZON-VIRUS
                 {
-                    if (this.color == 11)//CORAZON-VIRUS
-                    {
-                        //--------------- CURAR ORGANOS -----------------
-                        if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas") &&this.estado.equals("Contaminado")) {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && !dentroMedicina) {
+                    //--------------- CURAR ORGANOS -----------------
+                    if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
 
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/CORAZON.jpg");
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(1);
-                                    this.setEstado("Estable");
-                                    break;
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/CORAZON.jpg");
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(1);
+                                this.setEstado("Estable");
+                                break;
 
-                                }
                             }
                         }
-                        
-                        //--------------  MATAR ORGANOS    -------------------------------------------
-                        
-                        else if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(1);
-                                    this.setEstado("Estable");
-                                    image = new Image("viruss/recursos/CORAZON.jpg");
-                                    this.setImage(image);
-                                    //InicioController.listaCementerio.add(this);
-                                    MainServidor.juegoMain.cementerio.add(this);
-                                    InicioController.basura.getChildren().add(this);
-                                    InicioController.basura.getChildren().remove(0);
-                                    break;
+                    } //--------------  MATAR ORGANOS    -------------------------------------------
+                    else if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                this.setTipoCarta("Organos");
+                                this.setColor(1);
+                                this.setEstado("Estable");
+                                image = new Image("viruss/recursos/CORAZON.jpg");
+                                this.setImage(image);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                break;
 
-                                }
                             }
                         }
-                        
-                        else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -721,18 +634,17 @@ public class Carta extends ImageView implements Serializable{
                                 this.setColor(1);
                                 this.setEstado("Estable");
                                 break;
-                                
+
                             }
                         }
                     }
-                        
-                    
+
                 } else if (this.color == 22)//ESTOMAGO-VIRUS
                 {
                     //--------------- CURAR ORGANOS -----------------
-                    if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
+                    if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& !dentroMedicina) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
 
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
@@ -747,34 +659,29 @@ public class Carta extends ImageView implements Serializable{
 
                             }
                         }
-                    }
-                    
-                    //--------------  MATAR ORGANOS    -------------------------------------------
-                        
-                        else if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(2);
-                                    this.setEstado("Estable");
-                                    image = new Image("viruss/recursos/ESTOMAGO.jpg");
-                                    this.setImage(image);
+                    } //--------------  MATAR ORGANOS    -------------------------------------------
+                    else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                this.setTipoCarta("Organos");
+                                this.setColor(2);
+                                this.setEstado("Estable");
+                                image = new Image("viruss/recursos/ESTOMAGO.jpg");
+                                this.setImage(image);
 //                                    InicioController.listaCementerio.add(this);
-                                    MainServidor.juegoMain.cementerio.add(this);  
-                                    InicioController.basura.getChildren().add(this);
-                                    InicioController.basura.getChildren().remove(0);
-                                    break;
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                break;
 
-                                }
                             }
                         }
-                    
-                     else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -791,18 +698,17 @@ public class Carta extends ImageView implements Serializable{
                                 this.setColor(2);
                                 this.setEstado("Estable");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
-                    
+
                 } else if (this.color == 33)//CEREBRO-VIRUS
                 {
                     //--------------- CURAR ORGANOS -----------------
-                    if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
+                    if (CartaAux.color == 3 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& !dentroMedicina) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
 
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
@@ -816,34 +722,29 @@ public class Carta extends ImageView implements Serializable{
                                 break;
                             }
                         }
-                    }
-                    
-                    //--------------  MATAR ORGANOS    -------------------------------------------
-                        
-                        else if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(3);
-                                    this.setEstado("Estable");
-                                    image = new Image("viruss/recursos/CEREBRO.jpg");
-                                    this.setImage(image);
-                                    //InicioController.listaCementerio.add(this);
-                                    MainServidor.juegoMain.cementerio.add(this);
-                                    InicioController.basura.getChildren().add(this);
-                                    InicioController.basura.getChildren().remove(0);
-                                    break;
+                    } //--------------  MATAR ORGANOS    -------------------------------------------
+                    else if (CartaAux.color == 3 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                this.setTipoCarta("Organos");
+                                this.setColor(3);
+                                this.setEstado("Estable");
+                                image = new Image("viruss/recursos/CEREBRO.jpg");
+                                this.setImage(image);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                break;
 
-                                }
                             }
                         }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -860,57 +761,53 @@ public class Carta extends ImageView implements Serializable{
                                 this.setColor(3);
                                 this.setEstado("Estable");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
+
                 } else if (this.color == 44)//HUESO-VIRUS
                 {
                     //--------------- CURAR ORGANOS -----------------
-                    if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")&& this.estado.equals("Contaminado")) {
+                    if (CartaAux.color == 4 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& !dentroMedicina) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
 
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/HUESO.jpg");
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(4);
-                                    this.setEstado("Estable");
-                                    break;
-                                }
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/HUESO.jpg");
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(4);
+                                this.setEstado("Estable");
+                                break;
                             }
                         }
-                    //--------------  MATAR ORGANOS    -------------------------------------------
-                        
-                        else if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(4);
-                                    this.setEstado("Estable");
-                                    image = new Image("viruss/recursos/HUESO.jpg");
-                                    this.setImage(image);
-                                    //InicioController.listaCementerio.add(this);
-                                    MainServidor.juegoMain.cementerio.add(this);
-                                    InicioController.basura.getChildren().add(this);
-                                    InicioController.basura.getChildren().remove(0);
-                                    break;
+                    } //--------------  MATAR ORGANOS    -------------------------------------------
+                    else if (CartaAux.color == 4 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                this.setTipoCarta("Organos");
+                                this.setColor(4);
+                                this.setEstado("Estable");
+                                image = new Image("viruss/recursos/HUESO.jpg");
+                                this.setImage(image);
+                                //InicioController.listaCementerio.add(this);
+                                MainServidor.juegoMain.cementerio.add(this);
+                                InicioController.basura.getChildren().add(this);
+                                InicioController.basura.getChildren().remove(0);
+                                break;
 
-                                }
                             }
                         }
-                    
-                    else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -927,272 +824,263 @@ public class Carta extends ImageView implements Serializable{
                                 this.setColor(4);
                                 this.setEstado("Estable");
                                 break;
-                                
+
                             }
                         }
                     }
-                    
-                    }
+
                 }
-                
-                else if(this.tipoCarta.equals("OrganosVacuna"))//---------------- ORGANOS INMUNES --------------------------------------------------
-                {
-                    if (this.color == 1) {
-                        if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && !dentroMedicina) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/CORAZONINM2.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("OrganosInmune");
-                                    break;
+            } else if (this.tipoCarta.equals("OrganosVacuna"))//---------------- ORGANOS INMUNES --------------------------------------------------
+            {
+                if (this.color == 1) {
+                    if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Medicinas")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/CORAZONINM2.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("OrganosInmune");
+                                break;
 
-                                }
                             }
                         }
-                        
-                        else if (CartaAux.color==1 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/CORAZON.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    break;
+                    } else if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/CORAZON.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                break;
 
-                                }
                             }
                         }
-                        
-                        else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
-                        {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    //InicioController.listaCementerio.add(this);
-                                    image = new Image("viruss/recursos/CORAZON.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(1);
-                                    this.setEstado("Estable");
-                                    break;
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                image = new Image("viruss/recursos/CORAZON.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(1);
+                                this.setEstado("Estable");
+                                break;
 
-                                }
                             }
                         }
                     }
-                    
-                    else if (this.color == 2) {
-                        if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && !dentroMedicina) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/ESTOMAGOINM2.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("OrganosInmune");
-                                    break;
+                } else if (this.color == 2) {
+                    if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Medicinas")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/ESTOMAGOINM2.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("OrganosInmune");
+                                break;
 
-                                }
                             }
                         }
-                        
-                        else if (CartaAux.color==2 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/ESTOMAGO.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    break;
+                    } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/ESTOMAGO.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                break;
 
-                                }
                             }
                         }
-                        
-                        else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
-                        {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    //InicioController.listaCementerio.add(this);
-                                    image = new Image("viruss/recursos/ESTOMAGO.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(2);
-                                    this.setEstado("Estable");
-                                    break;
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                image = new Image("viruss/recursos/ESTOMAGO.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(2);
+                                this.setEstado("Estable");
+                                break;
 
-                                }
                             }
                         }
-                        
-                    }
-                    
-                    else if (this.color == 3) {
-                        if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && !dentroMedicina) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/CEREBROINM2.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("OrganosInmune");
-                                    break;
-
-                                }
-                            }
-                        }
-                        
-                      else if (CartaAux.color==3 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/CEREBRO.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    break;
-
-                                }
-                            }
-                        }
-                        
-                        else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
-                        {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    //InicioController.listaCementerio.add(this);
-                                    image = new Image("viruss/recursos/CEREBRO.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(3);
-                                    this.setEstado("Estable");
-                                    break;
-
-                                }
-                            }
-                        }
-                        
-                    }
-                    
-                    
-                    else if (this.color == 4) {
-                        if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Medicinas")) { 
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && !dentroMedicina) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/HUESOINM2.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("OrganosInmune");
-                                    break;
-
-                                }
-                            }
-                        }
-                        
-                        else if (CartaAux.color==4 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    image = new Image("viruss/recursos/HUESO.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    break;
-
-                                }
-                            }
-                        }
-                        
-                        else if (CartaAux.color==5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
-                        {
-                            for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                                if (carta.equals(CartaAux) && fuera) {
-                                    //InicioController.listaCementerio.add(CartaAux);
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                    InicioController.masoStatico.getChildren().clear();
-                                    InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                    //InicioController.listaCementerio.add(this);
-                                    image = new Image("viruss/recursos/HUESO.jpg");
-                                    //CartaAux.setImage(image);
-                                    this.setImage(image);
-                                    this.setTipoCarta("Organos");
-                                    this.setColor(4);
-                                    this.setEstado("Estable");
-                                    break;
-
-                                }
-                            }
-                        }
-                        
                     }
 
-                    
+                } else if (this.color == 3) {
+                    if (CartaAux.color == 3 && CartaAux.tipoCarta.equals("Medicinas")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/CEREBROINM2.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("OrganosInmune");
+                                break;
+
+                            }
+                        }
+                    } else if (CartaAux.color == 3 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/CEREBRO.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                break;
+
+                            }
+                        }
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                image = new Image("viruss/recursos/CEREBRO.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(3);
+                                this.setEstado("Estable");
+                                break;
+
+                            }
+                        }
+                    }
+
+                } else if (this.color == 4) {
+                    if (CartaAux.color == 4 && CartaAux.tipoCarta.equals("Medicinas")) {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/HUESOINM2.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("OrganosInmune");
+                                break;
+
+                            }
+                        }
+                    } else if (CartaAux.color == 4 && CartaAux.tipoCarta.equals("Virus")) { //------------------------------------------------------ DESTRUIR MEDICNINA -------------------------------
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                image = new Image("viruss/recursos/HUESO.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                break;
+
+                            }
+                        }
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus"))//------------------------------ COVID 19 ATC ORGANO VACUNA -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && fuera) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                image = new Image("viruss/recursos/HUESO.jpg");
+                                //CartaAux.setImage(image);
+                                this.setImage(image);
+                                this.setTipoCarta("Organos");
+                                this.setColor(4);
+                                this.setEstado("Estable");
+                                break;
+
+                            }
+                        }
+                    }
+
                 }
-                
-              
-            image=null;     
+
+            }
+
+            image = null;
             cont = 0;
         }
     }
-    
-    public void setAltura(int altura)
-    {
+
+    private void hiloServidor() {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
+            try {
+                if (MainServidor.juegoMain.turno != posJug) {
+                    Servidor serv = new Servidor(); //Se crea el servidor
+                    System.out.println("Iniciando servidor\n");
+                    serv.startServer(); //Se inicia el servidor               
+                }
+                timeline.stop();
+            } catch (IOException ex) {
+                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
+
+    public void setAltura(int altura) {
         this.altura = altura;
     }
-        public int getAltura() {
+
+    public int getAltura() {
         return altura;
     }
-    public void setAncho(int ancho)
-    {
+
+    public void setAncho(int ancho) {
         this.ancho = ancho;
     }
+
     public int getAncho() {
         return ancho;
     }
@@ -1226,12 +1114,4 @@ public class Carta extends ImageView implements Serializable{
         return "Carta{" + "tipoCarta=" + tipoCarta + ", color=" + color + ", estado=" + estado + ", image=" + image + '}';
     }
 
-    
-
-    
-    
-    
-    
-    
-    
 }

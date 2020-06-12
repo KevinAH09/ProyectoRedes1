@@ -71,7 +71,7 @@ public class InicioController extends Controller implements Initializable {
     public static List<Carta> listaMasoJugador = new ArrayList();
     public static List<Carta> listaCementerio = new ArrayList();
     public static Carta cartaSelec = null;
-    public String nombre;
+    public  String nombre;
     public static int posJug;
     @FXML
     private ImageView cemento;
@@ -79,6 +79,13 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private HBox HboxBasura;
     public static HBox basura;
+    public static HBox statichboxMesaJug1;
+    public static HBox statichboxMesaJug3;
+    public static HBox statichboxMesaJug4;
+    public static HBox statichboxMesaJug5;
+    public static HBox statichboxMesaJug6;
+    
+    
     Timeline timeline;
 
     @Override
@@ -86,6 +93,12 @@ public class InicioController extends Controller implements Initializable {
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
+        statichboxMesaJug1=hboxMesaJug1;
+        statichboxMesaJug3=hboxMesaJug3;
+        statichboxMesaJug4=hboxMesaJug4;
+        statichboxMesaJug5=hboxMesaJug5;
+        statichboxMesaJug6=hboxMesaJug6;
+        
         cargarPartida();
         hiloServidor();
 

@@ -122,9 +122,15 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
             MainServidor.juegoMain.cementerio.clear();
         }
+        
         iniciarCliente();
-        hiloServidor();
+        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+            MainServidor.juegoMain.turno = 0;
 
+        } else {
+            MainServidor.juegoMain.turno++;
+        }
+        hiloServidor();
 
     }
 
@@ -142,9 +148,17 @@ public class InicioController extends Controller implements Initializable {
                 MainServidor.juegoMain.jugadores.get(posJug).mazo2.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
+                
                 iniciarCliente();
+                if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                    MainServidor.juegoMain.turno = 0;
+
+                } else {
+                    MainServidor.juegoMain.turno++;
+                }
                 hiloServidor();
             }
+
             Carta.cont = 0;
             cartaSelec = null;
 

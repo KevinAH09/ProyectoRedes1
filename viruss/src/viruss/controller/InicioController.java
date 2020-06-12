@@ -111,7 +111,7 @@ public class InicioController extends Controller implements Initializable {
     private void actionMasoClick(MouseEvent event) throws IOException {
         if (MainServidor.juegoMain.mazo.isEmpty() != true) {
             hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-            MainServidor.juegoMain.jugadores.get(0).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+            MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
             MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
         } else {
 
@@ -127,15 +127,15 @@ public class InicioController extends Controller implements Initializable {
     private void actionHboxJug(MouseEvent event) throws IOException {
         if (cartaSelec != null) {
             boolean band = true;
-            for (Carta carta : MainServidor.juegoMain.jugadores.get(0).mazo2) {
+            for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
                 if (carta.color == cartaSelec.color) {
                     band = false;
                 }
             }
             if (band) {
-                MainServidor.juegoMain.jugadores.get(0).mazo2.add(InicioController.cartaSelec);
+                MainServidor.juegoMain.jugadores.get(posJug).mazo2.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
-                MainServidor.juegoMain.jugadores.get(0).mazo1.remove(InicioController.cartaSelec);
+                MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
             }
             Carta.cont = 0;
             cartaSelec = null;
@@ -212,7 +212,10 @@ public class InicioController extends Controller implements Initializable {
         }
         System.out.println(posJug);
         System.out.println(MainServidor.juegoMain.turno);
-        if (MainServidor.juegoMain.turno == posJug) {
+        if (MainServidor.juegoMain.turno != posJug) {
+            for (Carta carta : MainServidor.juegoMain.mazo) {
+                carta.setDisable(true);
+            }
             hboxMesaJug1.setDisable(true);
             hboxMesaJug2.setDisable(true);
             hboxMesaJug3.setDisable(true);
@@ -223,6 +226,9 @@ public class InicioController extends Controller implements Initializable {
             HboxBasura.setDisable(true);
             hboxMasoJug.setDisable(true);
         } else {
+            for (Carta carta : MainServidor.juegoMain.mazo) {
+                carta.setDisable(false);
+            }
             hboxMesaJug1.setDisable(false);
             hboxMesaJug2.setDisable(false);
             hboxMesaJug3.setDisable(false);

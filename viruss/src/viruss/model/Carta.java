@@ -396,6 +396,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -448,6 +449,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -520,6 +522,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -572,6 +575,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -642,6 +646,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -693,6 +698,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -765,6 +771,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -821,6 +828,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -885,6 +893,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -966,6 +975,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -1046,6 +1056,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     
@@ -1126,6 +1137,7 @@ public class Carta extends ImageView implements Serializable {
                                         if(this.idcarta==carta1.idcarta)
                                         {
                                             jugadore.mazo2.remove(carta1);
+                                            break;
                                         }
                                     }
                                     

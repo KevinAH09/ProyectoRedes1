@@ -311,7 +311,7 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private void AplicarCambios(ActionEvent event) throws IOException {
 
-        if (listaCambiarCarta != null) {
+        if (listaCambiarCarta.size() != 0) {
             for (Carta carta : listaCambiarCarta) {
                 if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                     hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
@@ -342,6 +342,10 @@ public class InicioController extends Controller implements Initializable {
                 MainServidor.juegoMain.turno++;
             }
             hiloServidor();
+        }
+        else
+        {
+            //mensaje de alerta
         }
 
         entrada = false;

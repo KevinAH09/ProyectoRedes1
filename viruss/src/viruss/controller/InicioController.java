@@ -217,7 +217,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     public void cargarPartida() {
-        Carta.pasarTurno=false;
+        Carta.pasarTurno = false;
         contMaso = 0;
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
@@ -304,47 +304,49 @@ public class InicioController extends Controller implements Initializable {
     private void CambiarCartas(ActionEvent event) {
 
         entrada = true;
-        contMaso=1;
+        contMaso = 1;
 
     }
 
     @FXML
     private void AplicarCambios(ActionEvent event) throws IOException {
 
-        for (Carta carta : listaCambiarCarta) {
-            if (MainServidor.juegoMain.mazo.isEmpty() != true) {
-                hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-            } else {
-
-                MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
-                MainServidor.juegoMain.cementerio.clear();
+        if (listaCambiarCarta != null) {
+            for (Carta carta : listaCambiarCarta) {
                 if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                     hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                } else {
 
+                    MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+                    MainServidor.juegoMain.cementerio.clear();
+                    if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                        hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+
+                    }
                 }
+
             }
 
+            listaCambiarCarta.clear();
+
+            iniciarCliente();
+            listaCambiarCarta.clear();
+            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                MainServidor.juegoMain.turno = 0;
+
+            } else {
+                MainServidor.juegoMain.turno++;
+            }
+            hiloServidor();
         }
 
-        listaCambiarCarta.clear();
-        
-        
-        iniciarCliente();
-        listaCambiarCarta.clear();
-        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-            MainServidor.juegoMain.turno = 0;
-
-        } else {
-            MainServidor.juegoMain.turno++;
-        }
-        hiloServidor();
         entrada = false;
         listaCambiarCarta.clear();
-        contMaso=0;
+        contMaso = 0;
     }
 
 }

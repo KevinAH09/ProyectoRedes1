@@ -389,6 +389,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -430,6 +441,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -491,6 +513,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -532,6 +565,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -591,6 +635,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -631,6 +686,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -692,6 +758,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -737,6 +814,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -789,6 +877,18 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -859,6 +959,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -928,6 +1039,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
@@ -997,6 +1119,17 @@ public class Carta extends ImageView implements Serializable {
                                 MainServidor.juegoMain.cementerio.add(this);
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
+                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                    for (Carta carta1 : jugadore.mazo2) {
+                                        System.out.println(this.idcarta);
+                                        System.out.println(carta1.idcarta);
+                                        if(this.idcarta==carta1.idcarta)
+                                        {
+                                            jugadore.mazo2.remove(carta1);
+                                        }
+                                    }
+                                    
+                                }
                                 iniciarCliente();
                                 hiloServidor();
                                 break;

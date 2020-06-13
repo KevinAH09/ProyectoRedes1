@@ -205,6 +205,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     public void cargarPartida() {
+        contMaso = 0;
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
         hboxMesaJug2.getChildren().clear();

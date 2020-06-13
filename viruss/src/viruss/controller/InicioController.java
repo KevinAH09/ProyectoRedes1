@@ -158,7 +158,7 @@ public class InicioController extends Controller implements Initializable {
         if (cartaSelec != null) {
             boolean band = true;
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
-                if (carta.color == cartaSelec.color) {
+                if (carta.color == cartaSelec.color  || (carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color ) || (carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color)  || (carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color )) {
                     band = false;
                 }
             }

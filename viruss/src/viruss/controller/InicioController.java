@@ -120,9 +120,11 @@ public class InicioController extends Controller implements Initializable {
 
     private void hiloServidor() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
+            
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
+                    contMaso=0;
 
                 }
                 timeline.stop();
@@ -218,7 +220,6 @@ public class InicioController extends Controller implements Initializable {
 
     public void cargarPartida() {
         Carta.pasarTurno = false;
-        contMaso = 0;
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
         hboxMesaJug2.getChildren().clear();

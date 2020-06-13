@@ -24,6 +24,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import viruss.model.Carta;
 import viruss.model.Cliente;
@@ -32,6 +33,7 @@ import viruss.model.Jugador;
 import viruss.model.MainServidor;
 import viruss.model.Servidor;
 import viruss.util.AppContext;
+import viruss.util.FlowController;
 
 /**
  * FXML Controller class
@@ -84,6 +86,7 @@ public class InicioController extends Controller implements Initializable {
     public static HBox statichboxMesaJug4;
     public static HBox statichboxMesaJug5;
     public static HBox statichboxMesaJug6;
+    public static Stage stage; 
     
     
     Timeline timeline;
@@ -98,7 +101,7 @@ public class InicioController extends Controller implements Initializable {
         statichboxMesaJug4=hboxMesaJug4;
         statichboxMesaJug5=hboxMesaJug5;
         statichboxMesaJug6=hboxMesaJug6;
-        
+        stage =this.getStage();
         cargarPartida();
         hiloServidor();
 
@@ -114,6 +117,7 @@ public class InicioController extends Controller implements Initializable {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
+                    FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", stage, false);
                 }
                 timeline.stop();
             } catch (IOException ex) {

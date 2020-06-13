@@ -15,6 +15,7 @@ import javafx.util.Duration;
 import viruss.controller.InicioController;
 import static viruss.controller.InicioController.posJug;
 import viruss.util.AppContext;
+import viruss.util.FlowController;
 
 public class Carta extends ImageView implements Serializable {
 
@@ -1524,7 +1525,8 @@ public class Carta extends ImageView implements Serializable {
                 if (MainServidor.juegoMain.turno != posJug) {
                     Servidor serv = new Servidor(); //Se crea el servidor
                     System.out.println("Iniciando servidor\n");
-                    serv.startServer(); //Se inicia el servidor     
+                    serv.startServer(); //Se inicia el servidor
+                    FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", InicioController.stage, false);
                     cargarPartida();
                 }
                 timeline.stop();

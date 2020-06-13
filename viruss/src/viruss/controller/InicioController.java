@@ -309,7 +309,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     @FXML
-    private void AplicarCambios(ActionEvent event) {
+    private void AplicarCambios(ActionEvent event) throws IOException {
 
         for (Carta carta : listaCambiarCarta) {
             if (MainServidor.juegoMain.mazo.isEmpty() != true) {
@@ -327,10 +327,19 @@ public class InicioController extends Controller implements Initializable {
 
                 }
             }
-            
+
         }
+
         listaCambiarCarta.clear();
-        entrada=false;
+        entrada = false;
+        iniciarCliente();
+        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+            MainServidor.juegoMain.turno = 0;
+
+        } else {
+            MainServidor.juegoMain.turno++;
+        }
+        hiloServidor();
     }
 
 }

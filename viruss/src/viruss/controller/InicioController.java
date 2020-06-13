@@ -124,8 +124,7 @@ public class InicioController extends Controller implements Initializable {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
-                    contMaso=0;
-                    hboxmaso.setDisable(false);
+                    
                 }
                 timeline.stop();
             } catch (IOException ex) {
@@ -207,8 +206,9 @@ public class InicioController extends Controller implements Initializable {
             cargarPartida();
             hiloServidor();
         } else {
-
             cargarPartida();
+            contMaso=0;
+            hboxmaso.setDisable(false);
         }
     }
 

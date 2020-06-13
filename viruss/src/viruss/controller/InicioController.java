@@ -181,12 +181,12 @@ public class InicioController extends Controller implements Initializable {
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
 
-                if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-                    MainServidor.juegoMain.turno = 0;
-
-                } else {
-                    MainServidor.juegoMain.turno++;
-                }
+//                if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+//                    MainServidor.juegoMain.turno = 0;
+//
+//                } else {
+//                    MainServidor.juegoMain.turno++;
+//                }
             }
 
             Carta.cont = 0;

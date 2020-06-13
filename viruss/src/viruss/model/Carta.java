@@ -1442,6 +1442,7 @@ public class Carta extends ImageView implements Serializable {
     }
 
     public void cargarPartida() {
+        FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", InicioController.stage, false);
         InicioController.masoStatico.getChildren().clear();//maso del jugador
         InicioController.miMesa.getChildren().clear();//mesa
         InicioController.basura.getChildren().clear();
@@ -1526,7 +1527,7 @@ public class Carta extends ImageView implements Serializable {
                     Servidor serv = new Servidor(); //Se crea el servidor
                     System.out.println("Iniciando servidor\n");
                     serv.startServer(); //Se inicia el servidor
-                    FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", InicioController.stage, false);
+                    
                     cargarPartida();
                 }
                 timeline.stop();

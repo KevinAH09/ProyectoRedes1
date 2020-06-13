@@ -117,7 +117,7 @@ public class InicioController extends Controller implements Initializable {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
-                    FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", stage, false);
+                    
                 }
                 timeline.stop();
             } catch (IOException ex) {
@@ -186,9 +186,14 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
-        cargarPartida();
+        
         if (MainServidor.juegoMain.turno != posJug) {
+            cargarPartida();
             hiloServidor();
+        }
+        else{
+            FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", stage, false);
+            cargarPartida();
         }
     }
 

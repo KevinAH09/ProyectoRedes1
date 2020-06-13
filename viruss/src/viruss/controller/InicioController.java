@@ -241,6 +241,7 @@ public class InicioController extends Controller implements Initializable {
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
                     hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {

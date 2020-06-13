@@ -345,12 +345,13 @@ public class InicioController extends Controller implements Initializable {
         }
         else
         {
+            contMaso = 0;
             //mensaje de alerta
         }
 
         entrada = false;
         listaCambiarCarta.clear();
-        contMaso = 0;
+        
     }
 
 }

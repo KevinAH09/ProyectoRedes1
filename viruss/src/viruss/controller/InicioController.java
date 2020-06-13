@@ -5,6 +5,7 @@
  */
 package viruss.controller;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import static java.lang.Boolean.FALSE;
 import java.net.URL;
@@ -18,6 +19,7 @@ import java.util.logging.Logger;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
@@ -68,13 +70,12 @@ public class InicioController extends Controller implements Initializable {
     Carta p = new Carta();
     @FXML
     private ImageView imgMaso;
-    @FXML
-    private ScrollPane scrollpane;
     public static List<Carta> listaMasoJugador = new ArrayList();
     public static List<Carta> listaCementerio = new ArrayList();
     public static Carta cartaSelec = null;
     public String nombre;
     public static int posJug;
+    public static boolean entrada;
     @FXML
     private ImageView cemento;
     public static List<Carta> ListaMesaJugador = new ArrayList();
@@ -87,8 +88,13 @@ public class InicioController extends Controller implements Initializable {
     public static HBox statichboxMesaJug5;
     public static HBox statichboxMesaJug6;
     public static Stage stage;
+    public static List<Carta> listaCambiarCarta = new ArrayList();
 
     Timeline timeline;
+    @FXML
+    private JFXButton BtnCambiarCartas;
+    @FXML
+    private JFXButton BtnAplicar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -100,6 +106,7 @@ public class InicioController extends Controller implements Initializable {
         statichboxMesaJug4 = hboxMesaJug4;
         statichboxMesaJug5 = hboxMesaJug5;
         statichboxMesaJug6 = hboxMesaJug6;
+
         stage = this.getStage();
         cargarPartida();
         hiloServidor();
@@ -129,7 +136,7 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
-        
+
         if (contMaso == 0) {
             contMaso = 1;
             if (MainServidor.juegoMain.mazo.isEmpty() != true) {
@@ -140,6 +147,12 @@ public class InicioController extends Controller implements Initializable {
 
                 MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
                 MainServidor.juegoMain.cementerio.clear();
+                if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                    hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                    MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+
+                }
             }
 
             iniciarCliente();
@@ -158,8 +171,8 @@ public class InicioController extends Controller implements Initializable {
         if (cartaSelec != null) {
             boolean band = true;
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
-                if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color ) || (carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color)  || (carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color )) {
-                    System.out.println("rico");
+                if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color) || (carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color) || (carta.getTipoCarta().equals("OrganosVirus") && carta.color == cartaSelec.color)) {
+
                     band = false;
                 }
             }
@@ -206,6 +219,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     public void cargarPartida() {
+        Carta.pasarTurno=false;
         contMaso = 0;
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
@@ -286,6 +300,48 @@ public class InicioController extends Controller implements Initializable {
 
         }
 
+    }
+
+    @FXML
+    private void CambiarCartas(ActionEvent event) {
+
+        entrada = true;
+
+    }
+
+    @FXML
+    private void AplicarCambios(ActionEvent event) throws IOException {
+
+        for (Carta carta : listaCambiarCarta) {
+            if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+            } else {
+
+                MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+                MainServidor.juegoMain.cementerio.clear();
+                if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                    hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                    MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+
+                }
+            }
+
+        }
+
+        listaCambiarCarta.clear();
+        entrada = false;
+        
+        iniciarCliente();
+        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+            MainServidor.juegoMain.turno = 0;
+
+        } else {
+            MainServidor.juegoMain.turno++;
+        }
+        hiloServidor();
     }
 
 }

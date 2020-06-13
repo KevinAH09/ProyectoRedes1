@@ -192,7 +192,7 @@ public class InicioController extends Controller implements Initializable {
             hiloServidor();
         }
         else{
-            FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", stage, false);
+            
             cargarPartida();
         }
     }

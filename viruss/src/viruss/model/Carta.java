@@ -1442,7 +1442,7 @@ public class Carta extends ImageView implements Serializable {
     }
 
     public void cargarPartida() {
-        FlowController.getInstance().goViewInWindowModal("viewServirdorActivo", InicioController.stage, false);
+        
         InicioController.masoStatico.getChildren().clear();//maso del jugador
         InicioController.miMesa.getChildren().clear();//mesa
         InicioController.basura.getChildren().clear();

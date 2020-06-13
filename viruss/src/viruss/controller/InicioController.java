@@ -304,6 +304,7 @@ public class InicioController extends Controller implements Initializable {
     private void CambiarCartas(ActionEvent event) {
 
         entrada = true;
+        contMaso=1;
 
     }
 
@@ -330,9 +331,10 @@ public class InicioController extends Controller implements Initializable {
         }
 
         listaCambiarCarta.clear();
-        entrada = false;
+        
         
         iniciarCliente();
+        listaCambiarCarta.clear();
         if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
             MainServidor.juegoMain.turno = 0;
 
@@ -340,6 +342,9 @@ public class InicioController extends Controller implements Initializable {
             MainServidor.juegoMain.turno++;
         }
         hiloServidor();
+        entrada = false;
+        listaCambiarCarta.clear();
+        contMaso=0;
     }
 
 }

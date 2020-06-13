@@ -62,7 +62,7 @@ public class InicioController extends Controller implements Initializable {
     public static HBox masoStatico;
     public static HBox miMesa;
     //public static HBox mesaJugador;
-
+    int contMaso = 0;
     private List<Carta> lista = new ArrayList();
     static private List<Carta> listaRandom = new ArrayList();
     Carta p = new Carta();
@@ -73,7 +73,7 @@ public class InicioController extends Controller implements Initializable {
     public static List<Carta> listaMasoJugador = new ArrayList();
     public static List<Carta> listaCementerio = new ArrayList();
     public static Carta cartaSelec = null;
-    public  String nombre;
+    public String nombre;
     public static int posJug;
     @FXML
     private ImageView cemento;
@@ -86,9 +86,8 @@ public class InicioController extends Controller implements Initializable {
     public static HBox statichboxMesaJug4;
     public static HBox statichboxMesaJug5;
     public static HBox statichboxMesaJug6;
-    public static Stage stage; 
-    
-    
+    public static Stage stage;
+
     Timeline timeline;
 
     @Override
@@ -96,12 +95,12 @@ public class InicioController extends Controller implements Initializable {
         masoStatico = hboxMasoJug;
         miMesa = hboxMesaJug2;
         basura = HboxBasura;
-        statichboxMesaJug1=hboxMesaJug1;
-        statichboxMesaJug3=hboxMesaJug3;
-        statichboxMesaJug4=hboxMesaJug4;
-        statichboxMesaJug5=hboxMesaJug5;
-        statichboxMesaJug6=hboxMesaJug6;
-        stage =this.getStage();
+        statichboxMesaJug1 = hboxMesaJug1;
+        statichboxMesaJug3 = hboxMesaJug3;
+        statichboxMesaJug4 = hboxMesaJug4;
+        statichboxMesaJug5 = hboxMesaJug5;
+        statichboxMesaJug6 = hboxMesaJug6;
+        stage = this.getStage();
         cargarPartida();
         hiloServidor();
 
@@ -117,7 +116,7 @@ public class InicioController extends Controller implements Initializable {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
-                    
+
                 }
                 timeline.stop();
             } catch (IOException ex) {
@@ -130,25 +129,28 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
-        if (MainServidor.juegoMain.mazo.isEmpty() != true) {
-            hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-            MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-            MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-        } else {
-
-            MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
-            MainServidor.juegoMain.cementerio.clear();
-        }
         
-        iniciarCliente();
-        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-            MainServidor.juegoMain.turno = 0;
+        if (contMaso == 0) {
+            contMaso = 1;
+            if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+            } else {
 
-        } else {
-            MainServidor.juegoMain.turno++;
+                MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+                MainServidor.juegoMain.cementerio.clear();
+            }
+
+            iniciarCliente();
+            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                MainServidor.juegoMain.turno = 0;
+
+            } else {
+                MainServidor.juegoMain.turno++;
+            }
+            hiloServidor();
         }
-        hiloServidor();
-
     }
 
     @FXML
@@ -164,7 +166,7 @@ public class InicioController extends Controller implements Initializable {
                 MainServidor.juegoMain.jugadores.get(posJug).mazo2.add(InicioController.cartaSelec);
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
-                
+
                 iniciarCliente();
                 if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
                     MainServidor.juegoMain.turno = 0;
@@ -186,13 +188,12 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
-        
+
         if (MainServidor.juegoMain.turno != posJug) {
             cargarPartida();
             hiloServidor();
-        }
-        else{
-            
+        } else {
+
             cargarPartida();
         }
     }

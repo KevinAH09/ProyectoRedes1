@@ -190,11 +190,11 @@ public class Carta extends ImageView implements Serializable {
                 if (pasarTurno != true) {
                     try {
                         jugar();
-                        
+
                     } catch (IOException ex) {
                         Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+
                 }
 
             } else {
@@ -327,8 +327,41 @@ public class Carta extends ImageView implements Serializable {
                         CartaAux = this;
                     }
                 }
-
             }
+
+            if (this.tipoCarta.equals("Tratamientos")) {
+                if (color == 1)//Transplante
+                {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+                }
+                if (color == 2)//Ladrón de órganos
+                {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+                }
+                if (color == 3)//Contagio
+                {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+                }
+                if (color == 4)//Guante de látex
+                {
+                   if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+                }
+                if (color == 5)//Error médico
+                {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                        CartaAux = this;
+                    }
+                }
+            }
+
             cont++;
         } else if (cont == 1) {
             this.setRotate(0);
@@ -871,9 +904,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) //------------------------------ HOSPITAL ORGANO VACUNA-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -907,7 +938,6 @@ public class Carta extends ImageView implements Serializable {
                             }
                         }
                     }
-                    
 
                 } else if (this.color == 22)//ESTOMAGO-VIRUS
                 {
@@ -985,10 +1015,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
@@ -1096,9 +1123,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
@@ -1130,7 +1155,6 @@ public class Carta extends ImageView implements Serializable {
                             }
                         }
                     }
-                    
 
                 } else if (this.color == 44)//HUESO-VIRUS
                 {
@@ -1207,9 +1231,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
@@ -1245,9 +1267,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                 }
-                
-                
-                
+
             } else if (this.tipoCarta.equals("OrganosVacuna"))//---------------- ORGANOS INMUNES --------------------------------------------------
             {
                 if (this.color == 1) {

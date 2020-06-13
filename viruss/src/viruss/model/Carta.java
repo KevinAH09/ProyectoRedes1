@@ -37,7 +37,7 @@ public class Carta extends ImageView implements Serializable {
     public Carta() {
     }
 
-    public Carta(int id,String tipoCarta, int color, int altura, int ancho) {
+    public Carta(int id, String tipoCarta, int color, int altura, int ancho) {
         this.idcarta = id;
         this.altura = altura;
         this.ancho = ancho;
@@ -185,10 +185,28 @@ public class Carta extends ImageView implements Serializable {
         this.setFitHeight(195);
         this.setFitWidth(130);
         this.setOnMouseClicked(ke -> {
-            try {
-                jugar();
-            } catch (IOException ex) {
-                Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+            if (!InicioController.entrada) {
+                try {
+                    jugar();
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().anyMatch(x -> x.getIdcarta() == this.getIdcarta())) {
+                    MainServidor.juegoMain.cementerio.add(this);
+                    InicioController.basura.getChildren().add(this);
+                    InicioController.basura.getChildren().remove(0);
+                    for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+
+                        for (Carta carta1 : jugadore.mazo1) {
+                            if (this.idcarta == carta1.idcarta) {
+                                InicioController.listaCambiarCarta.add(this);
+                                jugadore.mazo1.remove(carta1);
+                                break;
+                            }
+                        }
+                    }
+                }
             }
 
         });
@@ -313,7 +331,7 @@ public class Carta extends ImageView implements Serializable {
             for (Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                 if (cartas.equals(this)) {
                     fuera = false;
-                    
+
                 }
 
             }
@@ -394,13 +412,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -428,9 +445,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    
-                     else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -447,13 +462,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -461,7 +475,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    } 
+                    }
 
                 } else if (this.color == 2) {
                     if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) {
@@ -520,13 +534,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -554,9 +567,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Containado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Containado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -573,13 +584,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -644,13 +654,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -678,8 +687,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    }
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
@@ -696,13 +704,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -751,7 +758,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                        
+
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
@@ -769,13 +776,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -783,7 +789,7 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                        
+
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
@@ -798,52 +804,48 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                
+
                                 iniciarCliente();
                                 hiloServidor();
                                 break;
                             }
                         }
-                        
+
+                    }
+
+                } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                {
+                    for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                        if (carta.equals(CartaAux) && fuera) {
+                            //InicioController.listaCementerio.add(CartaAux);
+                            MainServidor.juegoMain.cementerio.add(CartaAux);
+                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                            InicioController.masoStatico.getChildren().clear();
+                            InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                            //InicioController.listaCementerio.add(this);
+                            MainServidor.juegoMain.cementerio.add(this);
+                            InicioController.basura.getChildren().add(this);
+                            InicioController.basura.getChildren().remove(0);
+                            for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                                for (Carta carta1 : jugadore.mazo2) {
+                                    System.out.println(this.idcarta);
+                                    System.out.println(carta1.idcarta);
+                                    if (this.idcarta == carta1.idcarta) {
+                                        jugadore.mazo2.remove(carta1);
+                                        break;
+                                    }
+                                }
+
+                            }
+                            iniciarCliente();
+                            hiloServidor();
+                            break;
+
+                        }
                     }
 
                 }
-                
-                else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Contaminado"))//------------------------------ COVID 19 ATC ORGANO -----------------------------------
-                    {
-                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && fuera) {
-                                //InicioController.listaCementerio.add(CartaAux);
-                                MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                                //InicioController.listaCementerio.add(this);
-                                MainServidor.juegoMain.cementerio.add(this);
-                                InicioController.basura.getChildren().add(this);
-                                InicioController.basura.getChildren().remove(0);
-                                for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                                    for (Carta carta1 : jugadore.mazo2) {
-                                        System.out.println(this.idcarta);
-                                        System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
-                                            jugadore.mazo2.remove(carta1);
-                                            break;
-                                        }
-                                    }
-                                    
-                                }
-                                iniciarCliente();
-                                hiloServidor();
-                                break;
 
-                            }
-                        }
-                        
-                    }
-                
-                
             } else if (this.tipoCarta.equals("OrganosVirus"))//-----------------------------------------------------------------------     ORGANOS-VIRUS     --------------------------------------------------------
             {
                 if (this.color == 11)//CORAZON-VIRUS
@@ -887,17 +889,16 @@ public class Carta extends ImageView implements Serializable {
                                 InicioController.basura.getChildren().add(this);
                                 InicioController.basura.getChildren().remove(0);
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                                    
+
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -973,13 +974,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -1054,13 +1054,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -1135,13 +1134,12 @@ public class Carta extends ImageView implements Serializable {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         System.out.println(this.idcarta);
                                         System.out.println(carta1.idcarta);
-                                        if(this.idcarta==carta1.idcarta)
-                                        {
+                                        if (this.idcarta == carta1.idcarta) {
                                             jugadore.mazo2.remove(carta1);
                                             break;
                                         }
                                     }
-                                    
+
                                 }
                                 iniciarCliente();
                                 hiloServidor();
@@ -1442,7 +1440,7 @@ public class Carta extends ImageView implements Serializable {
     }
 
     public void cargarPartida() {
-        
+
         InicioController.masoStatico.getChildren().clear();//maso del jugador
         InicioController.miMesa.getChildren().clear();//mesa
         InicioController.basura.getChildren().clear();
@@ -1527,7 +1525,7 @@ public class Carta extends ImageView implements Serializable {
                     Servidor serv = new Servidor(); //Se crea el servidor
                     System.out.println("Iniciando servidor\n");
                     serv.startServer(); //Se inicia el servidor
-                    
+
                     cargarPartida();
                 }
                 timeline.stop();
@@ -1537,6 +1535,14 @@ public class Carta extends ImageView implements Serializable {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+    }
+
+    public int getIdcarta() {
+        return idcarta;
+    }
+
+    public void setIdcarta(int idcarta) {
+        this.idcarta = idcarta;
     }
 
     public void setAltura(int altura) {

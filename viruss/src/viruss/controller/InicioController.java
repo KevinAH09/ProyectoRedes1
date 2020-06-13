@@ -219,6 +219,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     public void cargarPartida() {
+        Carta.pasarTurno=false;
         contMaso = 0;
         nombre = (String) AppContext.getInstance().get("nick");
         hboxMesaJug1.getChildren().clear();
@@ -332,6 +333,7 @@ public class InicioController extends Controller implements Initializable {
 
         listaCambiarCarta.clear();
         entrada = false;
+        
         iniciarCliente();
         if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
             MainServidor.juegoMain.turno = 0;

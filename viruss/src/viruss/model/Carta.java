@@ -33,6 +33,7 @@ public class Carta extends ImageView implements Serializable {
 
     public static int cont = 0;
     public Image image;
+    public static boolean pasarTurno;
 
     public Carta() {
     }
@@ -186,11 +187,16 @@ public class Carta extends ImageView implements Serializable {
         this.setFitWidth(130);
         this.setOnMouseClicked(ke -> {
             if (!InicioController.entrada) {
-                try {
-                    jugar();
-                } catch (IOException ex) {
-                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                if (pasarTurno != true) {
+                    try {
+                        jugar();
+                        
+                    } catch (IOException ex) {
+                        Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
                 }
+
             } else {
                 if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().anyMatch(x -> x.getIdcarta() == this.getIdcarta())) {
                     MainServidor.juegoMain.cementerio.add(this);
@@ -370,7 +376,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(11);
                                 this.setEstado("Contaminado");
-                             
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -388,7 +394,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                            
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -417,7 +423,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                            
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -436,7 +442,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                              
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -465,7 +471,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                          
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -488,7 +494,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(22);
                                 this.setEstado("Contaminado");
-                              
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -505,7 +511,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                           
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -534,7 +540,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                              
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -553,7 +559,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -582,7 +588,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -605,7 +611,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(33);
                                 this.setEstado("Contaminado");
-                               
+                                pasarTurno = true;
                                 break;
                             }
                         }
@@ -620,7 +626,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                              
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -649,7 +655,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                             
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -668,7 +674,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -697,7 +703,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                          
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -720,7 +726,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(44);
                                 this.setEstado("Contaminado");
-                            
+
                                 break;
 
                             }
@@ -736,7 +742,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                             
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -766,7 +772,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                           
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -786,8 +792,8 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
+                                pasarTurno = true;
 
-                            
                                 break;
                             }
                         }
@@ -818,7 +824,7 @@ public class Carta extends ImageView implements Serializable {
                                 }
 
                             }
-                          
+                            pasarTurno = true;
                             break;
 
                         }
@@ -844,7 +850,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -879,7 +885,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                             
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -900,7 +906,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
-                             
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -923,7 +929,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
-                              
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -957,7 +963,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -978,7 +984,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1001,7 +1007,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
-                              
+                                pasarTurno = true;
                                 break;
                             }
                         }
@@ -1034,7 +1040,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1055,7 +1061,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1078,7 +1084,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
-                              
+                                pasarTurno = true;
                                 break;
                             }
                         }
@@ -1111,7 +1117,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1132,7 +1138,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1154,7 +1160,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1170,7 +1176,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZON.jpg"));
                                 this.setTipoCarta("Organos");
-                                
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1191,7 +1197,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
-                                
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1209,7 +1215,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1225,7 +1231,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
                                 this.setTipoCarta("Organos");
-                                
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1246,7 +1252,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
-                                
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1265,7 +1271,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                                
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1281,7 +1287,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
                                 this.setTipoCarta("Organos");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1302,7 +1308,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1321,7 +1327,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1337,7 +1343,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                 this.setTipoCarta("Organos");
-                               
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1358,7 +1364,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
-                              
+                                pasarTurno = true;
                                 break;
 
                             }
@@ -1394,7 +1400,6 @@ public class Carta extends ImageView implements Serializable {
 //        }
 //
 //    }
-
 //    public void cargarPartida() {
 //
 //        InicioController.masoStatico.getChildren().clear();//maso del jugador
@@ -1473,7 +1478,6 @@ public class Carta extends ImageView implements Serializable {
 //        }
 //
 //    }
-
 //    private void hiloServidor() {
 //        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
 //            try {
@@ -1492,7 +1496,6 @@ public class Carta extends ImageView implements Serializable {
 //        timeline.setCycleCount(Animation.INDEFINITE);
 //        timeline.play();
 //    }
-
     public int getIdcarta() {
         return idcarta;
     }

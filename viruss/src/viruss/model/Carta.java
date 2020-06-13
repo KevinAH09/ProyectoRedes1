@@ -370,8 +370,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(11);
                                 this.setEstado("Contaminado");
-                                iniciarCliente();
-                                hiloServidor();
+                             
                                 break;
 
                             }
@@ -389,8 +388,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                            
                                 break;
 
                             }
@@ -419,8 +417,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                            
                                 break;
 
                             }
@@ -439,8 +436,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
 
                             }
@@ -469,8 +465,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                          
                                 break;
 
                             }
@@ -493,8 +488,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(22);
                                 this.setEstado("Contaminado");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
 
                             }
@@ -511,8 +505,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                           
                                 break;
 
                             }
@@ -541,8 +534,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
 
                             }
@@ -561,8 +553,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -591,8 +582,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -615,8 +605,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(33);
                                 this.setEstado("Contaminado");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
                             }
                         }
@@ -631,8 +620,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
 
                             }
@@ -661,8 +649,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                             
                                 break;
 
                             }
@@ -681,8 +668,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -711,8 +697,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                          
                                 break;
 
                             }
@@ -735,8 +720,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("OrganosVirus");
                                 this.setColor(44);
                                 this.setEstado("Contaminado");
-                                iniciarCliente();
-                                hiloServidor();
+                            
                                 break;
 
                             }
@@ -752,8 +736,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
-                                iniciarCliente();
-                                hiloServidor();
+                             
                                 break;
 
                             }
@@ -783,8 +766,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                           
                                 break;
 
                             }
@@ -805,8 +787,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
                                 this.setTipoCarta("OrganosVacuna");
 
-                                iniciarCliente();
-                                hiloServidor();
+                            
                                 break;
                             }
                         }
@@ -837,8 +818,7 @@ public class Carta extends ImageView implements Serializable {
                                 }
 
                             }
-                            iniciarCliente();
-                            hiloServidor();
+                          
                             break;
 
                         }
@@ -864,8 +844,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -900,8 +879,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                             
                                 break;
 
                             }
@@ -922,8 +900,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                             
                                 break;
 
                             }
@@ -946,8 +923,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
 
                             }
@@ -981,8 +957,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1003,8 +978,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1027,8 +1001,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
                             }
                         }
@@ -1061,8 +1034,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1083,8 +1055,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1107,8 +1078,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
                             }
                         }
@@ -1141,8 +1111,7 @@ public class Carta extends ImageView implements Serializable {
                                     }
 
                                 }
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1163,8 +1132,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1186,8 +1154,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZONINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1203,8 +1170,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CORAZON.jpg"));
                                 this.setTipoCarta("Organos");
-                                iniciarCliente();
-                                hiloServidor();
+                                
                                 break;
 
                             }
@@ -1225,8 +1191,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(1);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                                
                                 break;
 
                             }
@@ -1244,8 +1209,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGOINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1261,8 +1225,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
                                 this.setTipoCarta("Organos");
-                                iniciarCliente();
-                                hiloServidor();
+                                
                                 break;
 
                             }
@@ -1283,8 +1246,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(2);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                                
                                 break;
 
                             }
@@ -1303,8 +1265,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBROINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                                iniciarCliente();
-                                hiloServidor();
+                                
                                 break;
 
                             }
@@ -1320,8 +1281,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
                                 this.setTipoCarta("Organos");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1342,8 +1302,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(3);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1362,8 +1321,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESOINM2.jpg"));
                                 this.setTipoCarta("OrganosInmune");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1379,8 +1337,7 @@ public class Carta extends ImageView implements Serializable {
                                 //CartaAux.setImage(image);
                                 this.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                 this.setTipoCarta("Organos");
-                                iniciarCliente();
-                                hiloServidor();
+                               
                                 break;
 
                             }
@@ -1401,8 +1358,7 @@ public class Carta extends ImageView implements Serializable {
                                 this.setTipoCarta("Organos");
                                 this.setColor(4);
                                 this.setEstado("Estable");
-                                iniciarCliente();
-                                hiloServidor();
+                              
                                 break;
 
                             }
@@ -1426,116 +1382,116 @@ public class Carta extends ImageView implements Serializable {
 //        statichboxMesaJug5=hboxMesaJug5;
 //        statichboxMesaJug6=hboxMesaJug6;
 
-    private void iniciarCliente() throws IOException {
-        Cliente cli = new Cliente(); //Se crea el cliente
-        System.out.println("Iniciando cliente\n");
-        cli.startClient(); //Se inicia el cliente
-        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-            MainServidor.juegoMain.turno = 0;
+//    private void iniciarCliente() throws IOException {
+//        Cliente cli = new Cliente(); //Se crea el cliente
+//        System.out.println("Iniciando cliente\n");
+//        cli.startClient(); //Se inicia el cliente
+//        if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+//            MainServidor.juegoMain.turno = 0;
+//
+//        } else {
+//            MainServidor.juegoMain.turno++;
+//        }
+//
+//    }
 
-        } else {
-            MainServidor.juegoMain.turno++;
-        }
+//    public void cargarPartida() {
+//
+//        InicioController.masoStatico.getChildren().clear();//maso del jugador
+//        InicioController.miMesa.getChildren().clear();//mesa
+//        InicioController.basura.getChildren().clear();
+//        InicioController.statichboxMesaJug1.getChildren().clear();
+//        InicioController.statichboxMesaJug3.getChildren().clear();
+//        InicioController.statichboxMesaJug4.getChildren().clear();
+//        InicioController.statichboxMesaJug5.getChildren().clear();
+//        InicioController.statichboxMesaJug6.getChildren().clear();
+//
+//        for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
+//            MainServidor.juegoMain.mazo.get(i).setImg();
+//        }
+//
+//        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
+//            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo1.size(); i++) {
+//                MainServidor.juegoMain.jugadores.get(j).mazo1.get(i).setImg();
+//
+//            }
+//            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo2.size(); i++) {
+//                MainServidor.juegoMain.jugadores.get(j).mazo2.get(i).setImg();
+//
+//            }
+//        }
+//
+//        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
+//
+//            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals((String) (AppContext.getInstance().get("nick")))) {
+//                posJug = j;
+//                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
+//                InicioController.miMesa.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+//            } else {
+//                if (InicioController.statichboxMesaJug1.getChildren().isEmpty()) {
+//                    InicioController.statichboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+//
+//                } else if (InicioController.statichboxMesaJug3.getChildren().isEmpty()) {
+//                    InicioController.statichboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+//                } else if (InicioController.statichboxMesaJug4.getChildren().isEmpty()) {
+//                    InicioController.statichboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+//                } else if (InicioController.statichboxMesaJug5.getChildren().isEmpty()) {
+//                    InicioController.statichboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+//                } else if (InicioController.statichboxMesaJug6.getChildren().isEmpty()) {
+//                    InicioController.statichboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+//                }
+//            }
+//
+//        }
+//        System.out.println(posJug);
+//        System.out.println(MainServidor.juegoMain.turno);
+//        if (MainServidor.juegoMain.turno != posJug) {
+//            for (Carta carta : MainServidor.juegoMain.mazo) {
+//                carta.setDisable(true);
+//            }
+//            InicioController.statichboxMesaJug1.setDisable(true);
+//            InicioController.miMesa.setDisable(true);
+//            InicioController.statichboxMesaJug1.setDisable(true);
+//            InicioController.statichboxMesaJug1.setDisable(true);
+//            InicioController.statichboxMesaJug1.setDisable(true);
+//            InicioController.statichboxMesaJug1.setDisable(true);
+//            InicioController.basura.setDisable(true);
+//            InicioController.masoStatico.setDisable(true);
+//        } else {
+//            for (Carta carta : MainServidor.juegoMain.mazo) {
+//                carta.setDisable(false);
+//            }
+//            InicioController.statichboxMesaJug1.setDisable(false);
+//            InicioController.miMesa.setDisable(false);
+//            InicioController.statichboxMesaJug1.setDisable(false);
+//            InicioController.statichboxMesaJug1.setDisable(false);
+//            InicioController.statichboxMesaJug1.setDisable(false);
+//            InicioController.statichboxMesaJug1.setDisable(false);
+//            InicioController.basura.setDisable(false);
+//            InicioController.masoStatico.setDisable(false);
+//
+//        }
+//
+//    }
 
-    }
-
-    public void cargarPartida() {
-
-        InicioController.masoStatico.getChildren().clear();//maso del jugador
-        InicioController.miMesa.getChildren().clear();//mesa
-        InicioController.basura.getChildren().clear();
-        InicioController.statichboxMesaJug1.getChildren().clear();
-        InicioController.statichboxMesaJug3.getChildren().clear();
-        InicioController.statichboxMesaJug4.getChildren().clear();
-        InicioController.statichboxMesaJug5.getChildren().clear();
-        InicioController.statichboxMesaJug6.getChildren().clear();
-
-        for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
-            MainServidor.juegoMain.mazo.get(i).setImg();
-        }
-
-        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
-            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo1.size(); i++) {
-                MainServidor.juegoMain.jugadores.get(j).mazo1.get(i).setImg();
-
-            }
-            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo2.size(); i++) {
-                MainServidor.juegoMain.jugadores.get(j).mazo2.get(i).setImg();
-
-            }
-        }
-
-        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
-
-            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals((String) (AppContext.getInstance().get("nick")))) {
-                posJug = j;
-                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
-                InicioController.miMesa.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-            } else {
-                if (InicioController.statichboxMesaJug1.getChildren().isEmpty()) {
-                    InicioController.statichboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-
-                } else if (InicioController.statichboxMesaJug3.getChildren().isEmpty()) {
-                    InicioController.statichboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                } else if (InicioController.statichboxMesaJug4.getChildren().isEmpty()) {
-                    InicioController.statichboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                } else if (InicioController.statichboxMesaJug5.getChildren().isEmpty()) {
-                    InicioController.statichboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                } else if (InicioController.statichboxMesaJug6.getChildren().isEmpty()) {
-                    InicioController.statichboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                }
-            }
-
-        }
-        System.out.println(posJug);
-        System.out.println(MainServidor.juegoMain.turno);
-        if (MainServidor.juegoMain.turno != posJug) {
-            for (Carta carta : MainServidor.juegoMain.mazo) {
-                carta.setDisable(true);
-            }
-            InicioController.statichboxMesaJug1.setDisable(true);
-            InicioController.miMesa.setDisable(true);
-            InicioController.statichboxMesaJug1.setDisable(true);
-            InicioController.statichboxMesaJug1.setDisable(true);
-            InicioController.statichboxMesaJug1.setDisable(true);
-            InicioController.statichboxMesaJug1.setDisable(true);
-            InicioController.basura.setDisable(true);
-            InicioController.masoStatico.setDisable(true);
-        } else {
-            for (Carta carta : MainServidor.juegoMain.mazo) {
-                carta.setDisable(false);
-            }
-            InicioController.statichboxMesaJug1.setDisable(false);
-            InicioController.miMesa.setDisable(false);
-            InicioController.statichboxMesaJug1.setDisable(false);
-            InicioController.statichboxMesaJug1.setDisable(false);
-            InicioController.statichboxMesaJug1.setDisable(false);
-            InicioController.statichboxMesaJug1.setDisable(false);
-            InicioController.basura.setDisable(false);
-            InicioController.masoStatico.setDisable(false);
-
-        }
-
-    }
-
-    private void hiloServidor() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
-            try {
-                if (MainServidor.juegoMain.turno != posJug) {
-                    Servidor serv = new Servidor(); //Se crea el servidor
-                    System.out.println("Iniciando servidor\n");
-                    serv.startServer(); //Se inicia el servidor
-
-                    cargarPartida();
-                }
-                timeline.stop();
-            } catch (IOException ex) {
-                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }));
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-    }
+//    private void hiloServidor() {
+//        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
+//            try {
+//                if (MainServidor.juegoMain.turno != posJug) {
+//                    Servidor serv = new Servidor(); //Se crea el servidor
+//                    System.out.println("Iniciando servidor\n");
+//                    serv.startServer(); //Se inicia el servidor
+//
+//                    cargarPartida();
+//                }
+//                timeline.stop();
+//            } catch (IOException ex) {
+//                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }));
+//        timeline.setCycleCount(Animation.INDEFINITE);
+//        timeline.play();
+//    }
 
     public int getIdcarta() {
         return idcarta;

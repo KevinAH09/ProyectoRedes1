@@ -171,14 +171,30 @@ public class InicioController extends Controller implements Initializable {
     private void actionHboxJug(MouseEvent event) throws IOException {
         if (cartaSelec != null) {
             boolean band = true;
+            //------------------------------------verificar si funciona----------------------------
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
-                if (carta.color == cartaSelec.color) {
-                    band = false;
-                }
-                if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color) || (carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color) || (carta.getTipoCarta().equals("OrganosVirus") && carta.color == cartaSelec.color)) {
+
+                if ((carta.getTipoCarta().equals("Organos") && carta.color == cartaSelec.color)) {
 
                     band = false;
+                    break;
                 }
+                else if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color)) {
+
+                    band = false;
+                    break;
+                }
+                else if ((carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color)) {
+
+                    band = false;
+                    break;
+                }
+                else if ((carta.getTipoCarta().equals("OrganosVirus") && carta.color == cartaSelec.color)) {
+
+                    band = false;
+                    break;
+                }
+
             }
             if (band) {
                 MainServidor.juegoMain.jugadores.get(posJug).mazo2.add(InicioController.cartaSelec);

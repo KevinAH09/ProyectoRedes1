@@ -682,10 +682,10 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
-                                MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+//                                MainServidor.juegoMain.cementerio.add(CartaAux);
+//                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+//                                InicioController.masoStatico.getChildren().clear();
+//                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 CartaAux2 = CartaAux;
                                 CartaAux = this;
@@ -824,10 +824,10 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
-                                MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+//                                MainServidor.juegoMain.cementerio.add(CartaAux);
+//                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+//                                InicioController.masoStatico.getChildren().clear();
+//                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 CartaAux2 = CartaAux;
                                 CartaAux = this;
@@ -950,10 +950,10 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
-                                MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+//                                MainServidor.juegoMain.cementerio.add(CartaAux);
+//                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+//                                InicioController.masoStatico.getChildren().clear();
+//                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 CartaAux2 = CartaAux;
                                 CartaAux = this;

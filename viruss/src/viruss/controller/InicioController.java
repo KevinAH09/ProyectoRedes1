@@ -120,11 +120,11 @@ public class InicioController extends Controller implements Initializable {
 
     private void hiloServidor() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
-            
+
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
-                    
+
                 }
                 timeline.stop();
             } catch (IOException ex) {
@@ -172,6 +172,9 @@ public class InicioController extends Controller implements Initializable {
         if (cartaSelec != null) {
             boolean band = true;
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
+                if (carta.color == cartaSelec.color) {
+                    band = false;
+                }
                 if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color) || (carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color) || (carta.getTipoCarta().equals("OrganosVirus") && carta.color == cartaSelec.color)) {
 
                     band = false;
@@ -207,7 +210,7 @@ public class InicioController extends Controller implements Initializable {
             hiloServidor();
         } else {
             cargarPartida();
-            contMaso=0;
+            contMaso = 0;
             hboxmaso.setDisable(false);
         }
     }
@@ -344,9 +347,7 @@ public class InicioController extends Controller implements Initializable {
                 MainServidor.juegoMain.turno++;
             }
             hiloServidor();
-        }
-        else
-        {
+        } else {
             contMaso = 0;
             hboxmaso.setDisable(false);
             //mensaje de alerta
@@ -354,7 +355,7 @@ public class InicioController extends Controller implements Initializable {
 
         entrada = false;
         listaCambiarCarta.clear();
-        
+
     }
 
 }

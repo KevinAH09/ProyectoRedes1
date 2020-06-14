@@ -7,35 +7,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1800.0" stylesheets="@bordesBox.css">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" stylesheets="@bordesBox.css">
          <children>
-            <ImageView fx:id="imgMaso" fitHeight="1000.0" fitWidth="1800.0" pickOnBounds="true" smooth="false">
-               <image>
-                  <Image url="@../recursos/24408.jpg" />
-               </image>
-            </ImageView>
-            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="714.0" layoutY="761.0" prefHeight="195.0" prefWidth="390.0" stylesheets="@bordesBox.css" />
-            <HBox fx:id="hboxMesaJug1" layoutX="244.0" layoutY="500.0" prefHeight="195.0" prefWidth="657.0" />
-            <HBox fx:id="hboxMesaJug2" layoutX="916.0" layoutY="500.0" onMouseClicked="#actionHboxJug" prefHeight="195.0" prefWidth="657.0" />
-            <HBox fx:id="hboxMesaJug5" layoutX="244.0" layoutY="14.0" prefHeight="195.0" prefWidth="657.0" />
-            <HBox fx:id="hboxMesaJug6" layoutX="916.0" layoutY="14.0" prefHeight="195.0" prefWidth="657.0" />
-            <HBox fx:id="hboxmaso" layoutX="1408.0" layoutY="695.0" prefHeight="197.0" prefWidth="150.0" stylesheets="@bordesBox.css" />
-            <HBox fx:id="hboxMesaJug4" layoutX="1378.0" layoutY="324.0" prefHeight="195.0" prefWidth="622.0" rotate="-90.0" />
-            <HBox fx:id="hboxMesaJug3" layoutX="-188.0" layoutY="324.0" prefHeight="195.0" prefWidth="622.0" rotate="90.0" />
-            <ImageView fitHeight="193.0" fitWidth="130.0" layoutX="892.0" layoutY="256.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
+            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="713.0" layoutY="597.0" prefHeight="195.0" prefWidth="390.0" stylesheets="@bordesBox.css" />
+            <HBox fx:id="hboxMesaJug1" layoutX="196.0" layoutY="402.0" prefHeight="195.0" prefWidth="657.0" />
+            <HBox fx:id="hboxMesaJug2" layoutX="850.0" layoutY="402.0" onMouseClicked="#actionHboxJug" prefHeight="195.0" prefWidth="657.0" />
+            <HBox fx:id="hboxMesaJug5" layoutX="196.0" layoutY="14.0" prefHeight="195.0" prefWidth="657.0" />
+            <HBox fx:id="hboxMesaJug6" layoutX="850.0" layoutY="14.0" prefHeight="195.0" prefWidth="657.0" />
+            <HBox fx:id="hboxmaso" layoutX="1112.0" layoutY="240.0" prefHeight="132.0" prefWidth="150.0" stylesheets="@bordesBox.css" />
+            <HBox fx:id="hboxMesaJug4" layoutX="1294.0" layoutY="214.0" prefHeight="195.0" prefWidth="622.0" rotate="-90.0" />
+            <HBox fx:id="hboxMesaJug3" layoutX="-213.0" layoutY="214.0" prefHeight="195.0" prefWidth="622.0" rotate="90.0" />
+            <ImageView fitHeight="193.0" fitWidth="130.0" layoutX="853.0" layoutY="209.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../recursos/carta_detras.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="cemento" fitHeight="193.0" fitWidth="130.0" layoutX="744.0" layoutY="256.0" pickOnBounds="true">
+            <ImageView fx:id="cemento" fitHeight="193.0" fitWidth="130.0" layoutX="720.0" layoutY="209.0" pickOnBounds="true">
                <image>
                   <Image url="@../recursos/Cementerio.jpg" />
                </image></ImageView>
-            <HBox fx:id="HboxBasura" layoutX="14.0" layoutY="14.0" prefHeight="68.0" prefWidth="150.0" />
-            <JFXButton fx:id="BtnCambiarCartas" layoutX="424.0" layoutY="825.0" onAction="#CambiarCartas" prefHeight="68.0" prefWidth="100.0" text="Imagen" />
-            <JFXButton fx:id="BtnAplicar" layoutX="540.0" layoutY="843.0" onAction="#AplicarCambios" text="bien" />
+            <HBox fx:id="HboxBasura" layoutX="580.0" layoutY="272.0" prefHeight="68.0" prefWidth="150.0" />
+            <JFXButton fx:id="BtnCambiarCartas" layoutX="562.0" layoutY="661.0" onAction="#CambiarCartas" prefHeight="68.0" prefWidth="100.0" text="Imagen" />
+            <JFXButton fx:id="BtnAplicar" layoutX="662.0" layoutY="682.0" onAction="#AplicarCambios" text="bien" />
          </children>
       </AnchorPane>
    </children>

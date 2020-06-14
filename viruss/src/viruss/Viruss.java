@@ -25,7 +25,7 @@ public class Viruss extends Application {
         stage.setTitle("Virus");
         stage.initStyle(StageStyle.DECORATED);
         FlowController.getInstance().goMain();
-        FlowController.getInstance().goView("Menu");
+        FlowController.getInstance().goView("Inicio");
     }
 
     /**

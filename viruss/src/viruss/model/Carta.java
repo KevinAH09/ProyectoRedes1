@@ -30,7 +30,7 @@ public class Carta extends ImageView implements Serializable {
     public static Carta CartaAux;
     List<Carta> lista;
     Timeline timeline;
-
+    public  Carta CartaAux2;
     public static int cont = 0;
     public Image image;
     public static boolean pasarTurno;
@@ -350,7 +350,7 @@ public class Carta extends ImageView implements Serializable {
                 }
                 if (color == 4)//Guante de látex
                 {
-                   if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
                         CartaAux = this;
                     }
                 }
@@ -363,6 +363,58 @@ public class Carta extends ImageView implements Serializable {
             }
 
             cont++;
+        } else if (cont == 3) {
+            this.setRotate(0);
+            boolean fuera = true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
+            boolean dentroMedicina = true;//validacion de poder curar los organos de la mesa del jugador
+            for (Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                if (cartas.equals(this)) {
+                    fuera = false;
+
+                }
+
+            }
+
+            for (Carta cartas : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                if (cartas.equals(this)) {
+                    fuera = false;
+                }
+
+            }
+//                
+            for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                if (cartass.equals(this)) {
+                    dentroMedicina = false;
+                    //fuera=false;
+                }
+
+            }//------------------------------
+            
+            if (this.tipoCarta.equals("Organos")) {
+
+                if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune")) {
+                    for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+
+                        for (Carta carta1 : jugadore.mazo2) {
+                            if (this.idcarta == carta1.idcarta) {
+                                jugadore.mazo2.remove(carta1);
+                                jugadore.mazo2.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carta1);
+                                cargarPartida();
+                                
+                                pasarTurno = true;
+                                break;
+                            }
+                           
+                        }
+
+                    }
+
+                }
+                cont=0;
+            }
+
         } else if (cont == 1) {
             this.setRotate(0);
             boolean fuera = true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
@@ -410,6 +462,24 @@ public class Carta extends ImageView implements Serializable {
                                 this.setColor(11);
                                 this.setEstado("Contaminado");
                                 pasarTurno = true;
+                                break;
+
+                            }
+                        }
+                    } else if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ COVID 19 ATC ORGANO -----------------------------------
+                    {
+                        for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
+                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                                //InicioController.listaCementerio.add(CartaAux);
+                                MainServidor.juegoMain.cementerio.add(CartaAux);
+                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+                                InicioController.masoStatico.getChildren().clear();
+                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+                                //InicioController.listaCementerio.add(this);
+                                
+                                CartaAux = this;
+                                cont = 3;
+                                //pasarTurno = true;
                                 break;
 
                             }
@@ -1522,84 +1592,83 @@ public class Carta extends ImageView implements Serializable {
 //        }
 //
 //    }
-//    public void cargarPartida() {
-//
-//        InicioController.masoStatico.getChildren().clear();//maso del jugador
-//        InicioController.miMesa.getChildren().clear();//mesa
-//        InicioController.basura.getChildren().clear();
-//        InicioController.statichboxMesaJug1.getChildren().clear();
-//        InicioController.statichboxMesaJug3.getChildren().clear();
-//        InicioController.statichboxMesaJug4.getChildren().clear();
-//        InicioController.statichboxMesaJug5.getChildren().clear();
-//        InicioController.statichboxMesaJug6.getChildren().clear();
-//
-//        for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
-//            MainServidor.juegoMain.mazo.get(i).setImg();
-//        }
-//
-//        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
-//            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo1.size(); i++) {
-//                MainServidor.juegoMain.jugadores.get(j).mazo1.get(i).setImg();
-//
-//            }
-//            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo2.size(); i++) {
-//                MainServidor.juegoMain.jugadores.get(j).mazo2.get(i).setImg();
-//
-//            }
-//        }
-//
-//        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
-//
-//            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals((String) (AppContext.getInstance().get("nick")))) {
-//                posJug = j;
-//                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
-//                InicioController.miMesa.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-//            } else {
-//                if (InicioController.statichboxMesaJug1.getChildren().isEmpty()) {
-//                    InicioController.statichboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-//
-//                } else if (InicioController.statichboxMesaJug3.getChildren().isEmpty()) {
-//                    InicioController.statichboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-//                } else if (InicioController.statichboxMesaJug4.getChildren().isEmpty()) {
-//                    InicioController.statichboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-//                } else if (InicioController.statichboxMesaJug5.getChildren().isEmpty()) {
-//                    InicioController.statichboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-//                } else if (InicioController.statichboxMesaJug6.getChildren().isEmpty()) {
-//                    InicioController.statichboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-//                }
-//            }
-//
-//        }
-//        System.out.println(posJug);
-//        System.out.println(MainServidor.juegoMain.turno);
-//        if (MainServidor.juegoMain.turno != posJug) {
-//            for (Carta carta : MainServidor.juegoMain.mazo) {
-//                carta.setDisable(true);
-//            }
-//            InicioController.statichboxMesaJug1.setDisable(true);
-//            InicioController.miMesa.setDisable(true);
-//            InicioController.statichboxMesaJug1.setDisable(true);
-//            InicioController.statichboxMesaJug1.setDisable(true);
-//            InicioController.statichboxMesaJug1.setDisable(true);
-//            InicioController.statichboxMesaJug1.setDisable(true);
-//            InicioController.basura.setDisable(true);
-//            InicioController.masoStatico.setDisable(true);
-//        } else {
-//            for (Carta carta : MainServidor.juegoMain.mazo) {
-//                carta.setDisable(false);
-//            }
-//            InicioController.statichboxMesaJug1.setDisable(false);
-//            InicioController.miMesa.setDisable(false);
-//            InicioController.statichboxMesaJug1.setDisable(false);
-//            InicioController.statichboxMesaJug1.setDisable(false);
-//            InicioController.statichboxMesaJug1.setDisable(false);
-//            InicioController.statichboxMesaJug1.setDisable(false);
-//            InicioController.basura.setDisable(false);
-//            InicioController.masoStatico.setDisable(false);
-//
-//        }
-//
-//    }
+    public void cargarPartida() {
+
+        InicioController.masoStatico.getChildren().clear();//maso del jugador
+        InicioController.miMesa.getChildren().clear();//mesa
+        InicioController.basura.getChildren().clear();
+        InicioController.statichboxMesaJug1.getChildren().clear();
+        InicioController.statichboxMesaJug3.getChildren().clear();
+        InicioController.statichboxMesaJug4.getChildren().clear();
+        InicioController.statichboxMesaJug5.getChildren().clear();
+        InicioController.statichboxMesaJug6.getChildren().clear();
+
+        for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
+            MainServidor.juegoMain.mazo.get(i).setImg();
+        }
+
+        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
+            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo1.size(); i++) {
+                MainServidor.juegoMain.jugadores.get(j).mazo1.get(i).setImg();
+
+            }
+            for (int i = 0; i < MainServidor.juegoMain.jugadores.get(j).mazo2.size(); i++) {
+                MainServidor.juegoMain.jugadores.get(j).mazo2.get(i).setImg();
+
+            }
+        }
+
+        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
+
+            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals((String) (AppContext.getInstance().get("nick")))) {
+                posJug = j;
+                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
+                InicioController.miMesa.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+            } else {
+                if (InicioController.statichboxMesaJug1.getChildren().isEmpty()) {
+                    InicioController.statichboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+
+                } else if (InicioController.statichboxMesaJug3.getChildren().isEmpty()) {
+                    InicioController.statichboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                } else if (InicioController.statichboxMesaJug4.getChildren().isEmpty()) {
+                    InicioController.statichboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                } else if (InicioController.statichboxMesaJug5.getChildren().isEmpty()) {
+                    InicioController.statichboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                } else if (InicioController.statichboxMesaJug6.getChildren().isEmpty()) {
+                    InicioController.statichboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                }
+            }
+
+        }
+        
+        if (MainServidor.juegoMain.turno != posJug) {
+            for (Carta carta : MainServidor.juegoMain.mazo) {
+                carta.setDisable(true);
+            }
+            InicioController.statichboxMesaJug1.setDisable(true);
+            InicioController.miMesa.setDisable(true);
+            InicioController.statichboxMesaJug1.setDisable(true);
+            InicioController.statichboxMesaJug1.setDisable(true);
+            InicioController.statichboxMesaJug1.setDisable(true);
+            InicioController.statichboxMesaJug1.setDisable(true);
+            InicioController.basura.setDisable(true);
+            InicioController.masoStatico.setDisable(true);
+        } else {
+            for (Carta carta : MainServidor.juegoMain.mazo) {
+                carta.setDisable(false);
+            }
+            InicioController.statichboxMesaJug1.setDisable(false);
+            InicioController.miMesa.setDisable(false);
+            InicioController.statichboxMesaJug1.setDisable(false);
+            InicioController.statichboxMesaJug1.setDisable(false);
+            InicioController.statichboxMesaJug1.setDisable(false);
+            InicioController.statichboxMesaJug1.setDisable(false);
+            InicioController.basura.setDisable(false);
+            InicioController.masoStatico.setDisable(false);
+
+        }
+
+    }
 //    private void hiloServidor() {
 //        timeline = new Timeline(new KeyFrame(Duration.seconds(10), ev -> {
 //            try {

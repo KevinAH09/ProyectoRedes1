@@ -391,12 +391,15 @@ public class Carta extends ImageView implements Serializable {
             }//------------------------------
             
             if (this.tipoCarta.equals("Organos")) {
-
+               
                 if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune")) {
                     for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-
+                            
                         for (Carta carta1 : jugadore.mazo2) {
                             if (this.idcarta == carta1.idcarta) {
+                                System.out.println("dentro");
+                                System.out.println(CartaAux);
+                                System.out.println(carta1);
                                 jugadore.mazo2.remove(carta1);
                                 jugadore.mazo2.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);
@@ -444,7 +447,6 @@ public class Carta extends ImageView implements Serializable {
 
             if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS     --------------------------------------------------------
             {
-
                 if (this.color == 1) {
                     if (this.color == CartaAux.color && CartaAux.tipoCarta.equals("Virus") && this.estado.equals("Estable")) { //-------------------CONTAMINAR ORGANO---------------------------------
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
@@ -488,7 +490,6 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
-                                System.out.println(CartaAux.toString());
                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
                                 InicioController.masoStatico.getChildren().clear();

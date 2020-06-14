@@ -22,12 +22,12 @@
                         <Image url="@../recursos/Fondo1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="176.0" fitWidth="676.0" layoutX="497.0" layoutY="221.0" pickOnBounds="true" smooth="false">
+                  <ImageView fitHeight="176.0" fitWidth="676.0" layoutX="488.0" layoutY="165.0" pickOnBounds="true" smooth="false">
                      <image>
                         <Image url="@../recursos/Logo.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="576.0" layoutY="446.0" prefHeight="50.0" prefWidth="500.0" promptText="Nickname" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="576.0" layoutY="421.0" prefHeight="50.0" prefWidth="500.0" promptText="Nickname" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -55,17 +55,17 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lCrono" layoutX="1387.0" layoutY="221.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                  <Label fx:id="lCrono" layoutX="1378.0" layoutY="221.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="108.0" layoutX="1378.0" layoutY="36.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="108.0" layoutX="1370.0" layoutY="36.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
                   <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="28.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/transmision.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnRed" layoutX="1378.0" layoutY="165.0" onAction="#ingresarRed" prefHeight="44.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
+                  <JFXButton fx:id="btnRed" layoutX="1370.0" layoutY="165.0" onAction="#ingresarRed" prefHeight="44.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
                      <graphic>
                         <ImageView fitHeight="58.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -74,8 +74,8 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <ListView fx:id="listViewJugadores" layoutX="1378.0" layoutY="320.0" prefHeight="252.0" prefWidth="308.0" />
-                  <Label layoutX="1485.0" layoutY="289.0" text="Lista Jugadores" textFill="#c68b00">
+                  <ListView fx:id="listViewJugadores" layoutX="1370.0" layoutY="320.0" prefHeight="252.0" prefWidth="308.0" />
+                  <Label layoutX="1477.0" layoutY="287.0" text="Lista Jugadores" textFill="#c68b00">
                      <font>
                         <Font size="14.0" />
                      </font>

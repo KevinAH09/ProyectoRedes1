@@ -363,7 +363,8 @@ public class Carta extends ImageView implements Serializable {
             }
 
             cont++;
-        } else if (cont == 3) {
+        } else if (cont == 2) {
+            System.out.println("dentro 3 click");
             this.setRotate(0);
             boolean fuera = true; //validacion de solo poder poner virus fuera del maso y de la mesa del jugador
             boolean dentroMedicina = true;//validacion de poder curar los organos de la mesa del jugador
@@ -391,10 +392,11 @@ public class Carta extends ImageView implements Serializable {
             }//------------------------------
             
             if (this.tipoCarta.equals("Organos")) {
-               
+               System.out.println("dentro 3 click organo");
                 if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune")) {
+                    System.out.println("dentro 3 click organo 2");
                     for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                            
+                            System.out.println("dentro 3 click organo 222");
                         for (Carta carta1 : jugadore.mazo2) {
                             if (this.idcarta == carta1.idcarta) {
                                 System.out.println("dentro");
@@ -480,7 +482,7 @@ public class Carta extends ImageView implements Serializable {
                                 //InicioController.listaCementerio.add(this);
                                 
                                 CartaAux = this;
-                                cont = 3;
+                                cont++;
                                 //pasarTurno = true;
                                 break;
 
@@ -567,7 +569,6 @@ public class Carta extends ImageView implements Serializable {
                                 }
                                 pasarTurno = true;
                                 break;
-
                             }
                         }
                     }
@@ -1569,7 +1570,10 @@ public class Carta extends ImageView implements Serializable {
             }
 
             image = null;
-            cont = 0;
+            if(cont != 2){
+                cont = 0;
+            }
+            
         }
     }
 //masoStatico = hboxMasoJug;

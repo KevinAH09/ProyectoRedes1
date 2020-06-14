@@ -415,7 +415,7 @@ public class Carta extends ImageView implements Serializable {
                 }
                 
             }
-            else if(this.tipoCarta.equals("OrganosVacunas"))
+            else if(this.tipoCarta.equals("OrganosVacuna"))
             {
                 if (!this.tipoCarta.equals("OrganosInmune")&&fuera) {
                     for (Jugador jugadore : MainServidor.juegoMain.jugadores) {

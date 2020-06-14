@@ -425,7 +425,8 @@ public class Carta extends ImageView implements Serializable {
                             break;
                         }
                     }
-                    if (semaforo = true) {
+                    if (semaforo == true) {
+                        System.out.println("entro en semaforo = true");
                         listaVerificar.remove(cartaverificar);
                         listaVerificar.add(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);

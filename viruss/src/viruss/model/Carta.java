@@ -431,15 +431,14 @@ public class Carta extends ImageView implements Serializable {
                         listaVerificar.add(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(cartaverificar);
+                        
+                        MainServidor.juegoMain.cementerio.add(CartaAux2);
+                        MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux2);
+                        InicioController.masoStatico.getChildren().clear();
+                        InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
 
                         cargarPartida();
                         pasarTurno = true;
-                    } else {
-                        MainServidor.juegoMain.cementerio.remove(CartaAux);
-                        MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.add(CartaAux2);
-                        InicioController.masoStatico.getChildren().clear();
-                        InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
-                        cargarPartida();    
                     }
                 }
 
@@ -542,10 +541,10 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 //InicioController.listaCementerio.add(CartaAux);
-                                MainServidor.juegoMain.cementerio.add(CartaAux);
-                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
-                                InicioController.masoStatico.getChildren().clear();
-                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
+//                                MainServidor.juegoMain.cementerio.add(CartaAux);
+//                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
+//                                InicioController.masoStatico.getChildren().clear();
+//                                InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                                 //InicioController.listaCementerio.add(this);
                                 CartaAux2 = CartaAux;
                                 CartaAux = this;

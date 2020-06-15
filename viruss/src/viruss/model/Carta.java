@@ -558,6 +558,7 @@ public class Carta extends ImageView implements Serializable {
                         }
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
+//         
                         Carta carElegida = new Carta();
                         boolean bandCarta = true;
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
@@ -571,7 +572,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -751,7 +752,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -931,7 +932,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -1095,7 +1096,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -1317,7 +1318,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -1482,7 +1483,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -1646,7 +1647,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -1814,7 +1815,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -1928,7 +1929,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -2039,7 +2040,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -2151,7 +2152,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }
@@ -2263,7 +2264,7 @@ public class Carta extends ImageView implements Serializable {
                                         }
                                     }
                                     for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                        if (carElegida.color == carta2.idcarta) {
+                                        if (carElegida.color == carta2.color) {
                                             bandCarta = false;
                                             break;
                                         }

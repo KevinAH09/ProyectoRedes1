@@ -558,7 +558,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && !fuera) {
 
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
@@ -737,7 +737,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRASNPLANTE -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -914,7 +914,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRASPLANTE -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -1058,7 +1058,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 //InicioController.listaCementerio.add(CartaAux);
 //                                MainServidor.juegoMain.cementerio.add(CartaAux);
 //                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta);
@@ -1296,7 +1296,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -1459,7 +1459,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -1621,7 +1621,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -1787,7 +1787,7 @@ public class Carta extends ImageView implements Serializable {
                 } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                 {
                     for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                        if (carta.equals(CartaAux) && !dentroMedicina) {
+                        if (carta.equals(CartaAux) && fuera) {
                             for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                 for (Carta carta1 : jugadore.mazo2) {
                                     if (this.idcarta == carta1.idcarta) {
@@ -1899,7 +1899,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -2008,7 +2008,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -2118,7 +2118,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
@@ -2228,7 +2228,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !dentroMedicina) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {

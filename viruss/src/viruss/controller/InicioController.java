@@ -89,7 +89,7 @@ public class InicioController extends Controller implements Initializable {
     public static HBox statichboxMesaJug6;
     public static Stage stage;
     public static List<Carta> listaCambiarCarta = new ArrayList();
-    int timpo = 0;
+
     Timeline timeline;
     @FXML
     private JFXButton BtnCambiarCartas;
@@ -119,7 +119,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     private void hiloServidor() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(timpo), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
 
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
@@ -163,7 +163,6 @@ public class InicioController extends Controller implements Initializable {
 //            } else {
 //                MainServidor.juegoMain.turno++;
 //            }
-            timpo = 0;
             hiloServidor();
         }
     }
@@ -179,15 +178,18 @@ public class InicioController extends Controller implements Initializable {
 
                     band = false;
                     break;
-                } else if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color)) {
+                }
+                else if ((carta.getTipoCarta().equals("OrganosVacuna") && carta.color == cartaSelec.color)) {
 
                     band = false;
                     break;
-                } else if ((carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color)) {
+                }
+                else if ((carta.getTipoCarta().equals("OrganosInmune") && carta.color == cartaSelec.color)) {
 
                     band = false;
                     break;
-                } else if ((carta.getTipoCarta().equals("OrganosVirus") && carta.color == cartaSelec.color)) {
+                }
+                else if ((carta.getTipoCarta().equals("OrganosVirus") && carta.color == cartaSelec.color)) {
 
                     band = false;
                     break;
@@ -220,7 +222,6 @@ public class InicioController extends Controller implements Initializable {
         serv.startServer(); //Se inicia el servidor
 
         if (MainServidor.juegoMain.turno != posJug) {
-            timpo = 5;
             cargarPartida();
             hiloServidor();
         } else {
@@ -361,8 +362,6 @@ public class InicioController extends Controller implements Initializable {
 //            } else {
 //                MainServidor.juegoMain.turno++;
 //            }
-
-            timpo = 0;
             hiloServidor();
         } else {
             contMaso = 0;

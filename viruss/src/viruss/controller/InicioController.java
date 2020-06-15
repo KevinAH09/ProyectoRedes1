@@ -157,12 +157,12 @@ public class InicioController extends Controller implements Initializable {
             }
 
             iniciarCliente();
-            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-                MainServidor.juegoMain.turno = 0;
-
-            } else {
-                MainServidor.juegoMain.turno++;
-            }
+//            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+//                MainServidor.juegoMain.turno = 0;
+//
+//            } else {
+//                MainServidor.juegoMain.turno++;
+//            }
             hiloServidor();
         }
     }
@@ -356,12 +356,12 @@ public class InicioController extends Controller implements Initializable {
 
             iniciarCliente();
             listaCambiarCarta.clear();
-            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-                MainServidor.juegoMain.turno = 0;
-
-            } else {
-                MainServidor.juegoMain.turno++;
-            }
+//            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+//                MainServidor.juegoMain.turno = 0;
+//
+//            } else {
+//                MainServidor.juegoMain.turno++;
+//            }
             hiloServidor();
         } else {
             contMaso = 0;

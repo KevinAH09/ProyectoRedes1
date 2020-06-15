@@ -109,7 +109,19 @@ public class InicioController extends Controller implements Initializable {
 
         stage = this.getStage();
         cargarPartida();
-        hiloServidor();
+        timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
+
+            try {
+                if (MainServidor.juegoMain.turno != posJug) {
+                    iniciarServidor();
+                }
+                timeline.stop();
+            } catch (IOException ex) {
+                Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
 
     }
 
@@ -119,7 +131,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     private void hiloServidor() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
 
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
@@ -157,12 +169,12 @@ public class InicioController extends Controller implements Initializable {
             }
 
             iniciarCliente();
-//            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-//                MainServidor.juegoMain.turno = 0;
-//
-//            } else {
-//                MainServidor.juegoMain.turno++;
-//            }
+            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                MainServidor.juegoMain.turno = 0;
+
+            } else {
+                MainServidor.juegoMain.turno++;
+            }
             hiloServidor();
         }
     }
@@ -356,12 +368,12 @@ public class InicioController extends Controller implements Initializable {
 
             iniciarCliente();
             listaCambiarCarta.clear();
-//            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-//                MainServidor.juegoMain.turno = 0;
-//
-//            } else {
-//                MainServidor.juegoMain.turno++;
-//            }
+            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                MainServidor.juegoMain.turno = 0;
+
+            } else {
+                MainServidor.juegoMain.turno++;
+            }
             hiloServidor();
         } else {
             contMaso = 0;

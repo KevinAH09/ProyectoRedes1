@@ -561,11 +561,17 @@ public class Carta extends ImageView implements Serializable {
                             if (carta.equals(CartaAux) && !fuera) {
 
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                                    for (Carta carta1 : jugadore.mazo2) {
-                                        if (this.idcarta == carta1.idcarta) {
+                                    Carta carElegida = new Carta();
+                                    boolean bandCarta = true;
+                                    for (Carta carta12 : jugadore.mazo2) {
+                                        carta12 = carElegida;
+                                        bandCarta = false;
+                                    }
+                                    if (!bandCarta) {
+                                        if (this.idcarta == carElegida.idcarta) {
                                             band = true;
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                                if (carta1.color == carta2.idcarta) {
+                                                if (carElegida.color == carta2.idcarta) {
                                                     band = false;
 //                                                    alerta
                                                     System.out.println("repetida");
@@ -573,8 +579,8 @@ public class Carta extends ImageView implements Serializable {
                                                 }
                                             }
                                             if (band) {
-                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carta1);
-                                                jugadore.mazo2.remove(carta1);
+                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carElegida);
+                                                jugadore.mazo2.remove(carElegida);
                                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                                 InicioController.masoStatico.getChildren().clear();
@@ -739,11 +745,17 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                                    for (Carta carta1 : jugadore.mazo2) {
-                                        if (this.idcarta == carta1.idcarta) {
+                                    Carta carElegida = new Carta();
+                                    boolean bandCarta = true;
+                                    for (Carta carta12 : jugadore.mazo2) {
+                                        carta12 = carElegida;
+                                        bandCarta = false;
+                                    }
+                                    if (!bandCarta) {
+                                        if (this.idcarta == carElegida.idcarta) {
                                             band = true;
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                                if (carta1.color == carta2.idcarta) {
+                                                if (carElegida.color == carta2.idcarta) {
                                                     band = false;
 //                                                    alerta
                                                     System.out.println("repetida");
@@ -751,8 +763,8 @@ public class Carta extends ImageView implements Serializable {
                                                 }
                                             }
                                             if (band) {
-                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carta1);
-                                                jugadore.mazo2.remove(carta1);
+                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carElegida);
+                                                jugadore.mazo2.remove(carElegida);
                                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                                 InicioController.masoStatico.getChildren().clear();
@@ -916,11 +928,17 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                                    for (Carta carta1 : jugadore.mazo2) {
-                                        if (this.idcarta == carta1.idcarta) {
+                                    Carta carElegida = new Carta();
+                                    boolean bandCarta = true;
+                                    for (Carta carta12 : jugadore.mazo2) {
+                                        carta12 = carElegida;
+                                        bandCarta = false;
+                                    }
+                                    if (!bandCarta) {
+                                        if (this.idcarta == carElegida.idcarta) {
                                             band = true;
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                                if (carta1.color == carta2.idcarta) {
+                                                if (carElegida.color == carta2.idcarta) {
                                                     band = false;
 //                                                    alerta
                                                     System.out.println("repetida");
@@ -928,8 +946,8 @@ public class Carta extends ImageView implements Serializable {
                                                 }
                                             }
                                             if (band) {
-                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carta1);
-                                                jugadore.mazo2.remove(carta1);
+                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carElegida);
+                                                jugadore.mazo2.remove(carElegida);
                                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                                 InicioController.masoStatico.getChildren().clear();
@@ -1078,11 +1096,17 @@ public class Carta extends ImageView implements Serializable {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
-                                    for (Carta carta1 : jugadore.mazo2) {
-                                        if (this.idcarta == carta1.idcarta) {
+                                    Carta carElegida = new Carta();
+                                    boolean bandCarta = true;
+                                    for (Carta carta12 : jugadore.mazo2) {
+                                        carta12 = carElegida;
+                                        bandCarta = false;
+                                    }
+                                    if (!bandCarta) {
+                                        if (this.idcarta == carElegida.idcarta) {
                                             band = true;
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                                                if (carta1.color == carta2.idcarta) {
+                                                if (carElegida.color == carta2.idcarta) {
                                                     band = false;
 //                                                    alerta
                                                     System.out.println("repetida");
@@ -1090,8 +1114,8 @@ public class Carta extends ImageView implements Serializable {
                                                 }
                                             }
                                             if (band) {
-                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carta1);
-                                                jugadore.mazo2.remove(carta1);
+                                                MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(carElegida);
+                                                jugadore.mazo2.remove(carElegida);
                                                 MainServidor.juegoMain.cementerio.add(CartaAux);
                                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                                 InicioController.masoStatico.getChildren().clear();

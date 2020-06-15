@@ -558,7 +558,7 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux) && !fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
 
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     Carta carElegida = new Carta();

@@ -64,7 +64,7 @@ public class InicioController extends Controller implements Initializable {
     public static HBox masoStatico;
     public static HBox miMesa;
     //public static HBox mesaJugador;
-    int contMaso = 0;
+    public static int contMaso = 0;
     private List<Carta> lista = new ArrayList();
     static private List<Carta> listaRandom = new ArrayList();
     Carta p = new Carta();
@@ -149,8 +149,12 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
-
-        if (contMaso == 0) {
+        if(Carta.pasarTurno==true)
+        {
+            System.out.println("dasfsd");
+            System.out.println(contMaso);
+            if (contMaso == 0) {
+                System.out.println("viruss.controller.InicioController.actionMasoClick()");
             contMaso = 1;
             if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                 hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
@@ -177,6 +181,8 @@ public class InicioController extends Controller implements Initializable {
             }
             hiloServidor();
         }
+        }
+        
     }
 
     @FXML
@@ -219,10 +225,12 @@ public class InicioController extends Controller implements Initializable {
 //                } else {
 //                    MainServidor.juegoMain.turno++;
 //                }
+                Carta.pasarTurno=true;  
             }
 
             Carta.cont = 0;
             cartaSelec = null;
+            
 
         }
 

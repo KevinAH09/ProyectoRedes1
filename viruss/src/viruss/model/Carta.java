@@ -33,7 +33,7 @@ public class Carta extends ImageView implements Serializable {
     public Carta CartaAux2;
     public static int cont = 0;
     public Image image;
-    public static boolean pasarTurno;
+    public static boolean pasarTurno =false;
     public static Carta cartaverificar;
     List<Carta> listaVerificar;
     List<Carta> listaVerificarCarta;
@@ -2052,7 +2052,8 @@ public class Carta extends ImageView implements Serializable {
                 }
 
             }
-
+            
+            
             image = null;
             if (cont != 2) {
                 cont = 0;

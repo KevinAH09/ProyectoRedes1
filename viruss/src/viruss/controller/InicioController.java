@@ -89,7 +89,7 @@ public class InicioController extends Controller implements Initializable {
     public static HBox statichboxMesaJug6;
     public static Stage stage;
     public static List<Carta> listaCambiarCarta = new ArrayList();
-    int timpo = 5;
+    int timpo = 0;
     Timeline timeline;
     @FXML
     private JFXButton BtnCambiarCartas;

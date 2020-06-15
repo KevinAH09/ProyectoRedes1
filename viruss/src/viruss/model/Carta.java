@@ -567,6 +567,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -744,6 +745,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -920,6 +922,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -1081,6 +1084,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -1300,6 +1304,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -1462,6 +1467,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -1623,6 +1629,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -1788,6 +1795,7 @@ public class Carta extends ImageView implements Serializable {
                                         for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                             if (carta1.color == carta2.idcarta) {
                                                 band = false;
+//                                                alerta
                                                 System.out.println("repetida");
                                                 break;
                                             }
@@ -1899,6 +1907,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -2007,6 +2016,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -2116,6 +2126,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }
@@ -2225,6 +2236,7 @@ public class Carta extends ImageView implements Serializable {
                                             for (Carta carta2 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
                                                 if (carta1.color == carta2.idcarta) {
                                                     band = false;
+//                                                    alerta
                                                     System.out.println("repetida");
                                                     break;
                                                 }

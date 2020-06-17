@@ -265,7 +265,9 @@ public class InicioController extends Controller implements Initializable {
             cargarPartida();
             hiloServidor();
         } else {
-            
+            if(MainServidor.juegoMain.conexion.equals("GL") ){
+                MainServidor.juegoMain.conexion.equals("l");
+            }
             cargarPartida();
             contMaso = 0;
             hboxmaso.setDisable(false);

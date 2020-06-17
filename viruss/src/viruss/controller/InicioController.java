@@ -152,7 +152,7 @@ public class InicioController extends Controller implements Initializable {
         if (Carta.pasarTurno == true) {
             if (!bandaGuanteLatex) {
                 if (contMaso == 0) {
-                    System.out.println("viruss.controller.InicioController.actionMasoClick()");
+                    System.out.println("viruss.controller.InicioController.actionMasoClick() CNNNNNNNNN GLLLLLLLLL");
                     contMaso = 1;
                     if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                         hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
@@ -170,7 +170,7 @@ public class InicioController extends Controller implements Initializable {
                         }
                     }
 
-                    MainServidor.juegoMain.conexion = "GL";
+                    
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         if (i != posJug) {
                             for (int j = 0; j < 3; j++) {
@@ -179,7 +179,7 @@ public class InicioController extends Controller implements Initializable {
                             }
                         }
                     }
-
+                    MainServidor.juegoMain.conexion = "GL";
                     bandaGuanteLatex = true;
                     iniciarCliente();
                     
@@ -257,7 +257,7 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
-        if (MainServidor.juegoMain.conexion == "GL" && MainServidor.juegoMain.turno != posJug) {
+        if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
             Mensaje.show(Alert.AlertType.NONE, "Guante de látex", "El jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " utilizo la carta guante de látex");
             cargarPartida();
             hiloServidor();

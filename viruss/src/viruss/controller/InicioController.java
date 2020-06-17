@@ -89,7 +89,7 @@ public class InicioController extends Controller implements Initializable {
     public static HBox statichboxMesaJug6;
     public static Stage stage;
     public static List<Carta> listaCambiarCarta = new ArrayList();
-
+    public static boolean bandaGuanteLatex = true;
     Timeline timeline;
     @FXML
     private JFXButton BtnCambiarCartas;
@@ -150,9 +150,19 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
         if (Carta.pasarTurno == true) {
-            System.out.println("dasfsd");
-            System.out.println(contMaso);
-            if (contMaso == 0) {
+            if (!bandaGuanteLatex) {
+                MainServidor.juegoMain.conexion = "GL";
+                for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
+                    if (i != posJug) {
+                        for (int j = 0; j < 3; j++) {
+                            MainServidor.juegoMain.jugadores.get(i).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                            MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.size() - 1);
+                        }
+                    }
+                }
+                iniciarCliente();
+                hiloServidor();
+            } else if (contMaso == 0) {
                 System.out.println("viruss.controller.InicioController.actionMasoClick()");
                 contMaso = 1;
                 if (MainServidor.juegoMain.mazo.isEmpty() != true) {
@@ -224,8 +234,12 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
+        if (MainServidor.juegoMain.conexion == "GL" && MainServidor.juegoMain.turno != posJug) {
+            Mensaje.show(Alert.AlertType.NONE, "Guante de látex", "El jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " utilizo la carta guante de látex");
+            cargarPartida();
+            hiloServidor();
 
-        if (MainServidor.juegoMain.turno != posJug) {
+        } else if (MainServidor.juegoMain.turno != posJug) {
             cargarPartida();
             hiloServidor();
         } else {

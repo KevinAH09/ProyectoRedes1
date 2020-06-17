@@ -183,6 +183,7 @@ public class InicioController extends Controller implements Initializable {
                     bandaGuanteLatex = true;
                     iniciarCliente();
                     
+                    hiloServidor();
                 }
             } else if (contMaso == 0) {
                 System.out.println("viruss.controller.InicioController.actionMasoClick()");
@@ -265,9 +266,7 @@ public class InicioController extends Controller implements Initializable {
             cargarPartida();
             hiloServidor();
         } else {
-            if(MainServidor.juegoMain.conexion == "GL"){
-                MainServidor.juegoMain.conexion = "l";
-            }
+            
             cargarPartida();
             contMaso = 0;
             hboxmaso.setDisable(false);

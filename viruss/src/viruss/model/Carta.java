@@ -372,6 +372,7 @@ public class Carta extends ImageView implements Serializable {
                                 }
                             }
                             MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(this);
+                            InicioController.bandaGuanteLatex = false;
                             pasarTurno = true;
                             cargarPartida();
                             //poner bandera desde inicioControler

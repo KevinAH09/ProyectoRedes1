@@ -160,6 +160,7 @@ public class InicioController extends Controller implements Initializable {
                         }
                     }
                 }
+                bandaGuanteLatex = true;
                 iniciarCliente();
                 hiloServidor();
             } else if (contMaso == 0) {

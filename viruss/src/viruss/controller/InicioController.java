@@ -258,7 +258,6 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
-            Mensaje.show(Alert.AlertType.NONE, "Guante de látex", "El jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " utilizo la carta guante de látex");
             cargarPartida();
             hiloServidor();
 

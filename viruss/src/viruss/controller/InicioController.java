@@ -151,18 +151,40 @@ public class InicioController extends Controller implements Initializable {
     private void actionMasoClick(MouseEvent event) throws IOException {
         if (Carta.pasarTurno == true) {
             if (!bandaGuanteLatex) {
-                MainServidor.juegoMain.conexion = "GL";
-                for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
-                    if (i != posJug) {
-                        for (int j = 0; j < 3; j++) {
-                            MainServidor.juegoMain.jugadores.get(i).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                            MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.size() - 1);
+                if (contMaso == 0) {
+                    System.out.println("viruss.controller.InicioController.actionMasoClick()");
+                    contMaso = 1;
+                    if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                        hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                    } else {
+                        new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "El mazo se ha quedado vacío, se cargarán las cartas desechadas");
+                        MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+                        MainServidor.juegoMain.cementerio.clear();
+                        if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                            hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                            MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                            MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+
                         }
                     }
+
+                    MainServidor.juegoMain.conexion = "GL";
+                    for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
+                        if (i != posJug) {
+                            for (int j = 0; j < 3; j++) {
+                                MainServidor.juegoMain.jugadores.get(i).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                                MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.size() - 1);
+                            }
+                        }
+                    }
+
+                    bandaGuanteLatex = true;
+                    iniciarCliente();
+                    
+                    hiloServidor();
                 }
-                bandaGuanteLatex = true;
-                iniciarCliente();
-                hiloServidor();
             } else if (contMaso == 0) {
                 System.out.println("viruss.controller.InicioController.actionMasoClick()");
                 contMaso = 1;
@@ -244,6 +266,9 @@ public class InicioController extends Controller implements Initializable {
             cargarPartida();
             hiloServidor();
         } else {
+            if(MainServidor.juegoMain.conexion == "GL"){
+                MainServidor.juegoMain.conexion = "l";
+            }
             cargarPartida();
             contMaso = 0;
             hboxmaso.setDisable(false);

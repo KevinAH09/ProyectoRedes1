@@ -190,26 +190,17 @@ public class InicioController extends Controller implements Initializable {
             //------------------------------------verificar si funciona----------------------------
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
 
-                if ((carta.getTipoCarta().equals("Organos") || carta.color == cartaSelec.color)) {
+                if ( carta.color == cartaSelec.color) {
 
                     band = false;
                     break;
                 }
-                else if ((carta.getTipoCarta().equals("OrganosVacuna") || carta.color == cartaSelec.color)) {
+                 if (cartaSelec.color*11 == carta.color) {
 
                     band = false;
                     break;
                 }
-                else if ((carta.getTipoCarta().equals("OrganosInmune") || carta.color == cartaSelec.color)) {
-
-                    band = false;
-                    break;
-                }
-                else if ((carta.getTipoCarta().equals("OrganosVirus") || carta.color == cartaSelec.color)) {
-
-                    band = false;
-                    break;
-                }
+                
 
             }
             if (band) {

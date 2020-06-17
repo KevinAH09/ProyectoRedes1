@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" stylesheets="@bordesBox.css">
          <children>
@@ -24,27 +24,28 @@
             <HBox fx:id="hboxmaso" layoutX="1112.0" layoutY="240.0" prefHeight="132.0" prefWidth="150.0" stylesheets="@bordesBox.css" />
             <HBox fx:id="hboxMesaJug4" layoutX="1294.0" layoutY="214.0" prefHeight="195.0" prefWidth="622.0" rotate="-90.0" />
             <HBox fx:id="hboxMesaJug3" layoutX="-213.0" layoutY="214.0" prefHeight="195.0" prefWidth="622.0" rotate="90.0" />
-            <ImageView fitHeight="193.0" fitWidth="130.0" layoutX="853.0" layoutY="209.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="193.0" fitWidth="130.0" layoutX="785.0" layoutY="209.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../recursos/carta_detras.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="cemento" fitHeight="193.0" fitWidth="130.0" layoutX="720.0" layoutY="209.0" pickOnBounds="true">
+            <ImageView fx:id="cemento" fitHeight="193.0" fitWidth="130.0" layoutX="371.0" layoutY="209.0" pickOnBounds="true" visible="false">
                <image>
                   <Image url="@../recursos/Cementerio.jpg" />
-               </image></ImageView>
-            <HBox fx:id="HboxBasura" layoutX="580.0" layoutY="272.0" prefHeight="68.0" prefWidth="150.0" />
-            <JFXButton fx:id="BtnCambiarCartas" layoutX="562.0" layoutY="661.0" onAction="#CambiarCartas" prefHeight="42.0" prefWidth="124.0" text="Descartar">
+               </image>
+            </ImageView>
+            <HBox fx:id="HboxBasura" layoutX="515.0" layoutY="259.0" prefHeight="68.0" prefWidth="150.0" visible="false" />
+            <JFXButton fx:id="BtnCambiarCartas" contentDisplay="TOP" graphicTextGap="0.0" layoutX="623.0" layoutY="640.0" onAction="#CambiarCartas" prefHeight="82.0" prefWidth="83.0" text="Descartar">
                <graphic>
-                  <ImageView fitHeight="39.0" fitWidth="35.0" pickOnBounds="true">
+                  <ImageView fitHeight="57.0" fitWidth="54.0" pickOnBounds="true">
                      <image>
                         <Image url="@../recursos/cambio.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <JFXButton fx:id="BtnAplicar" layoutX="562.0" layoutY="721.0" onAction="#AplicarCambios" prefHeight="38.0" prefWidth="124.0" text="Aplicar">
+            <JFXButton fx:id="BtnAplicar" contentDisplay="TOP" graphicTextGap="0.0" layoutX="539.0" layoutY="640.0" onAction="#AplicarCambios" prefHeight="82.0" prefWidth="83.0" text="Aplicar">
                <graphic>
-                  <ImageView fitHeight="34.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="56.0" fitWidth="54.0" pickOnBounds="true">
                      <image>
                         <Image url="@../recursos/aplicar.png" />
                      </image>

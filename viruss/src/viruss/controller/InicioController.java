@@ -22,6 +22,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -36,6 +37,7 @@ import viruss.model.MainServidor;
 import viruss.model.Servidor;
 import viruss.util.AppContext;
 import viruss.util.FlowController;
+import viruss.util.Mensaje;
 
 /**
  * FXML Controller class
@@ -147,40 +149,39 @@ public class InicioController extends Controller implements Initializable {
 
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
-        if(Carta.pasarTurno==true)
-        {
+        if (Carta.pasarTurno == true) {
             System.out.println("dasfsd");
             System.out.println(contMaso);
             if (contMaso == 0) {
                 System.out.println("viruss.controller.InicioController.actionMasoClick()");
-            contMaso = 1;
-            if (MainServidor.juegoMain.mazo.isEmpty() != true) {
-                hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-            } else {
-
-                MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
-                MainServidor.juegoMain.cementerio.clear();
+                contMaso = 1;
                 if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                     hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                } else {
+                    new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "El mazo se ha quedado vacío, se cargarán las cartas desechadas");
+                    MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+                    MainServidor.juegoMain.cementerio.clear();
+                    if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                        hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                        MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
 
+                    }
                 }
-            }
 
-            iniciarCliente();
-            if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-                MainServidor.juegoMain.turno = 0;
+                iniciarCliente();
+                if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                    MainServidor.juegoMain.turno = 0;
 
-            } else {
-                MainServidor.juegoMain.turno++;
+                } else {
+                    MainServidor.juegoMain.turno++;
+                }
+                hiloServidor();
             }
-            hiloServidor();
         }
-        }
-        
+
     }
 
     @FXML
@@ -190,17 +191,16 @@ public class InicioController extends Controller implements Initializable {
             //------------------------------------verificar si funciona----------------------------
             for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
 
-                if ( carta.color == cartaSelec.color) {
+                if (carta.color == cartaSelec.color) {
 
                     band = false;
                     break;
                 }
-                 if (cartaSelec.color*11 == carta.color) {
+                if (cartaSelec.color * 11 == carta.color) {
 
                     band = false;
                     break;
                 }
-                
 
             }
             if (band) {
@@ -208,18 +208,13 @@ public class InicioController extends Controller implements Initializable {
                 hboxMesaJug2.getChildren().add(InicioController.cartaSelec);
                 MainServidor.juegoMain.jugadores.get(posJug).mazo1.remove(InicioController.cartaSelec);
 
-//                if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-//                    MainServidor.juegoMain.turno = 0;
-//
-//                } else {
-//                    MainServidor.juegoMain.turno++;
-//                }
-                Carta.pasarTurno=true;  
+                Carta.pasarTurno = true;
+            } else {
+                new Mensaje().show(Alert.AlertType.ERROR, "Error de movimiento", "Movimiento inválido, intentelo de nuevo");
             }
 
             Carta.cont = 0;
             cartaSelec = null;
-            
 
         }
 

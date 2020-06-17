@@ -2485,6 +2485,7 @@ public class Carta extends ImageView implements Serializable {
             
             else if (this.tipoCarta.equals("OrganosInmune"))
             {
+                System.out.println("holaaaaaaaaaaaaaaaaa");
                  if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         boolean bandd = true;

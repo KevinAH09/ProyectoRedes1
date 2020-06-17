@@ -536,27 +536,32 @@ public class Carta extends ImageView implements Serializable {
                         }
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
-
+                        boolean bandd = false;
+                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
-
+                                            bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
-
-                                            MainServidor.juegoMain.cementerio.add(CartaAux);
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
-                                            cargarPartida();
-                                            pasarTurno=true;
+                                            Jug = jugadore;
                                             break;
                                         }
 
                                     }
 
                                 }
+                                if (!bandd) {
+                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                    MainServidor.juegoMain.cementerio.add(CartaAux);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
+                                    cargarPartida();
+                                    pasarTurno = true;
+                                }
+
                             }
 
                         }
@@ -715,37 +720,39 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    } 
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
 
+                        boolean bandd = false;
+                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
-
+                                            bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
-
-                                            MainServidor.juegoMain.cementerio.add(CartaAux);
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
-                                            cargarPartida();
-                                            pasarTurno=true;
+                                            Jug = jugadore;
                                             break;
                                         }
 
                                     }
 
                                 }
+                                if (!bandd) {
+                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                    MainServidor.juegoMain.cementerio.add(CartaAux);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
+                                    cargarPartida();
+                                    pasarTurno = true;
+                                }
+
                             }
 
                         }
-                    }
-                    
-                    else if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRASNPLANTE -----------------------------------
+                    } else if (CartaAux.color == 1 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRASNPLANTE -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {
@@ -912,38 +919,39 @@ public class Carta extends ImageView implements Serializable {
 
                             }
                         }
-                    } 
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
 
+                        boolean bandd = false;
+                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
-
+                                            bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
-
-                                            MainServidor.juegoMain.cementerio.add(CartaAux);
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
-                                            cargarPartida();
-                                            pasarTurno=true;
+                                            Jug = jugadore;
                                             break;
                                         }
 
                                     }
 
                                 }
+                                if (!bandd) {
+                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                    MainServidor.juegoMain.cementerio.add(CartaAux);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
+                                    cargarPartida();
+                                    pasarTurno = true;
+                                }
+
                             }
 
                         }
-                    }
-                    
-                    
-                    else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRASPLANTE -----------------------------------
+                    } else if (CartaAux.color == 2 && CartaAux.tipoCarta.equals("Tratamientos") && !this.tipoCarta.equals("OrganosInmune")) //------------------------------ TRASPLANTE -----------------------------------
                     {
                         Carta carElegida = new Carta();
                         boolean bandCarta = true;
@@ -1121,37 +1129,39 @@ public class Carta extends ImageView implements Serializable {
                             cargarPartida();
 
                         }
-                    } 
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
 
+                        boolean bandd = false;
+                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            if (carta.equals(CartaAux)&& fuera) {
+                            if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
                                     for (Carta carta1 : jugadore.mazo2) {
                                         if (this.idcarta == carta1.idcarta) {
-
+                                            bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
-
-                                            MainServidor.juegoMain.cementerio.add(CartaAux);
-                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
-                                            cargarPartida();
-                                            pasarTurno=true;
+                                            Jug = jugadore;
                                             break;
                                         }
 
                                     }
 
                                 }
+                                if (!bandd) {
+                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                    MainServidor.juegoMain.cementerio.add(CartaAux);
+                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
+                                    cargarPartida();
+                                    pasarTurno = true;
+                                }
+
                             }
 
                         }
-                    }
-                    
-                    else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
+                    } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && !dentroMedicina) {

@@ -375,6 +375,7 @@ public class Carta extends ImageView implements Serializable {
                             InicioController.bandaGuanteLatex = false;
                             pasarTurno = true;
                             cargarPartida();
+                            bandf = false;
                             //poner bandera desde inicioControler
                         }
                     } else {

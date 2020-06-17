@@ -514,6 +514,9 @@ public class Carta extends ImageView implements Serializable {
                 if (cartass.equals(this)) {
                     dentroMedicina = false;
                 }
+                
+                
+                
 
             }
 

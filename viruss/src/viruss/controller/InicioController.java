@@ -68,8 +68,6 @@ public class InicioController extends Controller implements Initializable {
     private List<Carta> lista = new ArrayList();
     static private List<Carta> listaRandom = new ArrayList();
     Carta p = new Carta();
-    @FXML
-    private ImageView imgMaso;
     public static List<Carta> listaMasoJugador = new ArrayList();
     public static List<Carta> listaCementerio = new ArrayList();
     public static Carta cartaSelec = null;

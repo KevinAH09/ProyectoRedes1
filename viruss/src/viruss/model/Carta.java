@@ -231,7 +231,7 @@ public class Carta extends ImageView implements Serializable {
     public void jugar() throws IOException {
         System.out.println(MainServidor.juegoMain.jugadores.get(InicioController.posJug).nickname);
         if (cont == 0) {
-
+            boolean bandf = true;
             if (this.tipoCarta.equals("Organos"))//-----------------------------------------------------------------------     ORGANOS SOBRE MESA    --------------------------------------------------------
             {
 
@@ -360,9 +360,30 @@ public class Carta extends ImageView implements Serializable {
                 }
                 if (color == 4)//Guante de látex
                 {
-                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
-                        CartaAux = this;
+                    
+                    if (Mensaje.showConfirmation("Guante de látex", InicioController.stage, "Desea realizar esta jugada?")) {
+                        if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+                           
+                            for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
+                                if(i!=InicioController.posJug)
+                                {
+                                    MainServidor.juegoMain.cementerio.addAll(MainServidor.juegoMain.jugadores.get(i).mazo1);
+                                    MainServidor.juegoMain.jugadores.get(i).mazo1.clear();
+                                }
+                            }
+                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(this);
+                            pasarTurno = true;
+                            cargarPartida();
+                            //poner bandera desde inicioControler
+                        }
+                    } else {
+                        bandf = false;
+
                     }
+
+//                    if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().filter(x -> x.getColor() == this.color && x.getTipoCarta().equals(this.tipoCarta)).count() >= 1) {
+//                        CartaAux = this;
+//                    }
                 }
                 if (color == 5)//Error médico
                 {
@@ -372,7 +393,12 @@ public class Carta extends ImageView implements Serializable {
                 }
             }
 
-            cont++;
+            if (!bandf) {
+                cont = 0;
+            } else {
+                cont++;
+            }
+
         } else if (cont == 2) {
             System.out.println("dentro 3 click");
             this.setRotate(0);

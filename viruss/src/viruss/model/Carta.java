@@ -537,7 +537,6 @@ public class Carta extends ImageView implements Serializable {
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Tratamientos")) //------------------------------ TRANSPLANTE-----------------------------------
                     {
                         boolean bandd = false;
-                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
@@ -545,7 +544,11 @@ public class Carta extends ImageView implements Serializable {
                                         if (this.idcarta == carta1.idcarta) {
                                             bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            Jug = jugadore;
+                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                            MainServidor.juegoMain.cementerio.add(CartaAux);
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                             break;
                                         }
 
@@ -553,11 +556,7 @@ public class Carta extends ImageView implements Serializable {
 
                                 }
                                 if (!bandd) {
-                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
 
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                     cargarPartida();
                                     pasarTurno = true;
                                 }
@@ -724,7 +723,6 @@ public class Carta extends ImageView implements Serializable {
                     {
 
                         boolean bandd = false;
-                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
@@ -732,7 +730,11 @@ public class Carta extends ImageView implements Serializable {
                                         if (this.idcarta == carta1.idcarta) {
                                             bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            Jug = jugadore;
+                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                            MainServidor.juegoMain.cementerio.add(CartaAux);
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                             break;
                                         }
 
@@ -740,11 +742,7 @@ public class Carta extends ImageView implements Serializable {
 
                                 }
                                 if (!bandd) {
-                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
 
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                     cargarPartida();
                                     pasarTurno = true;
                                 }
@@ -923,7 +921,6 @@ public class Carta extends ImageView implements Serializable {
                     {
 
                         boolean bandd = false;
-                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
@@ -931,7 +928,11 @@ public class Carta extends ImageView implements Serializable {
                                         if (this.idcarta == carta1.idcarta) {
                                             bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            Jug = jugadore;
+                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                            MainServidor.juegoMain.cementerio.add(CartaAux);
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                             break;
                                         }
 
@@ -939,11 +940,7 @@ public class Carta extends ImageView implements Serializable {
 
                                 }
                                 if (!bandd) {
-                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
 
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                     cargarPartida();
                                     pasarTurno = true;
                                 }
@@ -1133,7 +1130,6 @@ public class Carta extends ImageView implements Serializable {
                     {
 
                         boolean bandd = false;
-                        Jugador Jug = new Jugador();
                         for (Carta carta : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (carta.equals(CartaAux) && fuera) {
                                 for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
@@ -1141,7 +1137,11 @@ public class Carta extends ImageView implements Serializable {
                                         if (this.idcarta == carta1.idcarta) {
                                             bandd = true;
                                             listaVerificar = jugadore.mazo2;
-                                            Jug = jugadore;
+                                            jugadore.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
+
+                                            MainServidor.juegoMain.cementerio.add(CartaAux);
+                                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                             break;
                                         }
 
@@ -1149,11 +1149,7 @@ public class Carta extends ImageView implements Serializable {
 
                                 }
                                 if (!bandd) {
-                                    Jug.mazo2 = MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2;
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2 = listaVerificar;
 
-                                    MainServidor.juegoMain.cementerio.add(CartaAux);
-                                    MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(CartaAux);
                                     cargarPartida();
                                     pasarTurno = true;
                                 }

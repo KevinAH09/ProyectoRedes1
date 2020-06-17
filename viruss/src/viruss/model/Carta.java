@@ -205,18 +205,20 @@ public class Carta extends ImageView implements Serializable {
 
             } else {
                 if (MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.stream().anyMatch(x -> x.getIdcarta() == this.getIdcarta())) {
+                    System.out.println("Cambiar cartas" + InicioController.posJug);
                     MainServidor.juegoMain.cementerio.add(this);
                     InicioController.basura.getChildren().add(this);
                     InicioController.basura.getChildren().remove(0);
-                    for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
+                    for (Carta carta1 : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
 
-                        for (Carta carta1 : jugadore.mazo1) {
-                            if (this.idcarta == carta1.idcarta) {
-                                InicioController.listaCambiarCarta.add(this);
-                                jugadore.mazo1.remove(carta1);
-                                break;
-                            }
+//                        for (Carta carta1 : jugadore.mazo1) {
+                        if (this.idcarta == carta1.idcarta) {
+                            System.out.println(carta1.idcarta);
+                            InicioController.listaCambiarCarta.add(this);
+                            MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(carta1);
+                            break;
                         }
+//                        }
                     }
                 }
             }
@@ -563,7 +565,7 @@ public class Carta extends ImageView implements Serializable {
                         }
                         if (!bandd) {
                             System.err.println("HOLA2");
-                            cont=0;
+                            cont = 0;
                             cargarPartida();
                             pasarTurno = true;
                         }
@@ -752,7 +754,7 @@ public class Carta extends ImageView implements Serializable {
 
                         }
                         if (!bandd) {
-                            cont=0;
+                            cont = 0;
                             System.err.println("HOLA2");
                             cargarPartida();
                             pasarTurno = true;
@@ -1169,7 +1171,7 @@ public class Carta extends ImageView implements Serializable {
                             System.err.println("HOLA2");
                             cargarPartida();
                             pasarTurno = true;
-                            cont=0;
+                            cont = 0;
                         }
                     } else if (CartaAux.color == 5 && CartaAux.tipoCarta.equals("Medicinas") && this.estado.equals("Estable")) //------------------------------ HOSPITAL ORGANO -----------------------------------
                     {

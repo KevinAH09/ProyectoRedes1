@@ -346,7 +346,7 @@ public class InicioController extends Controller implements Initializable {
         entrada = true;
         contMaso = 1;
         hboxmaso.setDisable(true);
-
+        listaCambiarCarta.clear();
     }
 
     @FXML

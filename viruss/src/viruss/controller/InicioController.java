@@ -170,7 +170,6 @@ public class InicioController extends Controller implements Initializable {
                         }
                     }
 
-                    
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         if (i != posJug) {
                             for (int j = 0; j < 3; j++) {
@@ -182,7 +181,7 @@ public class InicioController extends Controller implements Initializable {
                     MainServidor.juegoMain.conexion = "GL";
                     bandaGuanteLatex = true;
                     iniciarCliente();
-                    
+
                     hiloServidor();
                 }
             } else if (contMaso == 0) {
@@ -203,7 +202,9 @@ public class InicioController extends Controller implements Initializable {
 
                     }
                 }
-
+                if (MainServidor.juegoMain.conexion.equals("GL")) {
+                    MainServidor.juegoMain.conexion.equals("l");
+                }
                 iniciarCliente();
                 if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
                     MainServidor.juegoMain.turno = 0;
@@ -258,6 +259,7 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
+
             cargarPartida();
             hiloServidor();
 
@@ -265,9 +267,7 @@ public class InicioController extends Controller implements Initializable {
             cargarPartida();
             hiloServidor();
         } else {
-            if(MainServidor.juegoMain.conexion.equals("GL") ){
-                MainServidor.juegoMain.conexion.equals("l");
-            }
+
             cargarPartida();
             contMaso = 0;
             hboxmaso.setDisable(false);
@@ -396,7 +396,9 @@ public class InicioController extends Controller implements Initializable {
             }
 
             listaCambiarCarta.clear();
-
+            if (MainServidor.juegoMain.conexion.equals("GL")) {
+                MainServidor.juegoMain.conexion.equals("l");
+            }
             iniciarCliente();
             listaCambiarCarta.clear();
             if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {

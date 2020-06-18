@@ -37,7 +37,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                  <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="1562.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="1553.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/transmision.png" />
                      </image>
@@ -60,12 +60,7 @@
                         <Font size="14.0" />
                      </font></Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="108.0" layoutX="1370.0" layoutY="36.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
-                  <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="28.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../recursos/transmision.png" />
-                     </image>
-                  </ImageView>
-                  <JFXButton fx:id="btnRed" layoutX="1370.0" layoutY="165.0" onAction="#ingresarRed" prefHeight="44.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
+                  <JFXButton fx:id="btnRed" layoutX="1371.0" layoutY="188.0" onAction="#ingresarRed" prefHeight="44.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
                      <graphic>
                         <ImageView fitHeight="58.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -74,12 +69,24 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <ListView fx:id="listViewJugadores" layoutX="1370.0" layoutY="320.0" prefHeight="252.0" prefWidth="308.0" />
-                  <Label layoutX="1477.0" layoutY="287.0" text="Lista Jugadores" textFill="#c68b00">
+                  <ListView fx:id="listViewJugadores" layoutX="1370.0" layoutY="331.0" prefHeight="252.0" prefWidth="308.0" />
+                  <Label layoutX="1475.0" layoutY="302.0" text="Lista de Jugadores" textFill="#c68b00">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <JFXButton contentDisplay="TOP" layoutX="28.0" layoutY="33.0" onAction="#actioonBtnInformacion" prefHeight="96.0" prefWidth="102.0" text="Informacion" textFill="#b50b0b">
+                     <graphic>
+                        <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../recursos/help.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </AnchorPane>
          </children>

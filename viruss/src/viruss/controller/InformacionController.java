@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  *
  * @author cfugu
  */
-public class InformacionController implements Initializable {
+public class InformacionController extends Controller implements Initializable {
 
     @FXML
     private JFXButton btnVolver;
@@ -34,6 +34,11 @@ public class InformacionController implements Initializable {
     @FXML
     private void volver(ActionEvent event) {
         ((Stage) btnVolver.getScene().getWindow()).close();
+    }
+
+    @Override
+    public void initialize() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

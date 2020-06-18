@@ -172,4 +172,9 @@ public class MenuController extends Controller implements Initializable {
 //        t.setCycleCount(Timeline.INDEFINITE);
 //
 //    }
+
+    @FXML
+    private void actioonBtnInformacion(ActionEvent event) {
+        FlowController.getInstance().goViewInWindowModal("Informacion", this.stage, false);
+    }
 }

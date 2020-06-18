@@ -578,12 +578,15 @@ public class Carta extends ImageView implements Serializable {
                                             if (carta.color == 1) {
                                                 carta.setImage(new Image("viruss/recursos/rojoinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
+                                                carta.setColor(11);
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/CORAZON.jpg"));
+                                                
                                                 carta1.setTipoCarta("Organos");
                                             } else if (carta.color == 2) {
                                                 carta.setImage(new Image("viruss/recursos/verdeinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
+                                                carta.setColor(22);
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
                                                 carta1.setTipoCarta("Organos");
@@ -591,12 +594,14 @@ public class Carta extends ImageView implements Serializable {
 
                                                 carta.setImage(new Image("viruss/recursos/azulinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
+                                                carta.setColor(33);
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
                                                 carta1.setTipoCarta("Organos");
                                             } else if (carta.color == 4) {
                                                 carta.setImage(new Image("viruss/recursos/amarilloinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
+                                                carta.setColor(44);
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                                 carta1.setTipoCarta("Organos");

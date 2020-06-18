@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" stylesheets="@bordesBox.css">
          <children>
             <ImageView fitHeight="800.0" fitWidth="1700.0" layoutY="2.0" pickOnBounds="true" smooth="false">
                <image>
-                  <Image url="@../recursos/24408.jpg" />
+                  <Image url="@../recursos/lienzo.jpg" />
                </image>
             </ImageView>
             <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="713.0" layoutY="597.0" prefHeight="195.0" prefWidth="390.0" stylesheets="@bordesBox.css" />

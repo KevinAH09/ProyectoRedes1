@@ -17,6 +17,8 @@ import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,6 +64,7 @@ public class MenuController extends Controller implements Initializable {
     private JFXButton btnRed;
     @FXML
     private ListView<String> listViewJugadores;
+    ObservableList<String> items = FXCollections.observableArrayList();
     boolean band = true;
     Timeline t;
 
@@ -111,7 +114,7 @@ public class MenuController extends Controller implements Initializable {
         Jugador jug = new Jugador();
         jug.nickname = txtNick.getText();
         ju.jugadores.add(jug);
-        MainServidor.juegoMain=ju;
+        MainServidor.juegoMain = ju;
         Cliente cli = new Cliente(); //Se crea el cliente
         System.out.println("Iniciando cliente\n");
         cli.startClient(); //Se inicia el cliente
@@ -122,10 +125,11 @@ public class MenuController extends Controller implements Initializable {
             serv.startServer(); //Se inicia el servidor
 
             for (Jugador j : MainServidor.juegoMain.jugadores) {
-                listViewJugadores.getItems().clear();
-                listViewJugadores.getItems().add(j.getNickname().toString());
+                //                listViewJugadores.getItems().clear();
+                items.add(j.getNickname());
                 System.out.println(j.nickname);
             }
+            listViewJugadores.getItems().addAll(items);
             String val = MainServidor.juegoMain.conexion;
             switch (val) {
 
@@ -172,7 +176,6 @@ public class MenuController extends Controller implements Initializable {
 //        t.setCycleCount(Timeline.INDEFINITE);
 //
 //    }
-
     @FXML
     private void actioonBtnInformacion(ActionEvent event) {
         FlowController.getInstance().goViewInWindowModal("Informacion", this.stage, false);

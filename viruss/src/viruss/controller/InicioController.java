@@ -95,6 +95,8 @@ public class InicioController extends Controller implements Initializable {
     private JFXButton BtnCambiarCartas;
     @FXML
     private JFXButton BtnAplicar;
+    @FXML
+    private JFXButton btnAyuda;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -417,6 +419,11 @@ public class InicioController extends Controller implements Initializable {
         entrada = false;
         listaCambiarCarta.clear();
 
+    }
+
+    @FXML
+    private void ayuda(ActionEvent event) {
+        FlowController.getInstance().goViewInWindowModal("Informacion", this.getStage(), false);
     }
 
 }

@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InformacionController">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1700.0">
+         <children>
+            <ImageView fitHeight="800.0" fitWidth="1700.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../recursos/virus-molecule-close-up-body-purple-background_99433-6.jpg" />
+               </image>
+            </ImageView>
+            <ScrollPane layoutX="179.0" layoutY="31.0" prefHeight="770.0" prefWidth="1343.0" style="-fx-background-color: ff0000;">
+               <content>
+                  <VBox prefHeight="1222.0" prefWidth="1325.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="ORGANOS" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CORAZON.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="CORAZON" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="4.0" layoutY="3.0" prefHeight="112.0" prefWidth="93.0" text="Órgano sano que correponde a una parte del cuerpo" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/HUESO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="HUESO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="7.0" prefHeight="119.0" prefWidth="91.0" text="Órgano sano que correponde a una parte del cuerpo" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/ESTOMAGO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="ESTOMAGO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="5.0" prefHeight="117.0" prefWidth="93.0" text="Órgano sano que correponde a una parte del cuerpo" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CEREBRO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="CEREBRO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="99.0" text="Órgano sano que correponde a una parte del cuerpo" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="MEDICINAS" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/BOTIQUIN.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="BOTIQUIN" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="6.0" prefHeight="119.0" prefWidth="92.0" text="Si el órgano es del mismo color a la medicina y además no posee ningún virus sobre él,&#10;el órgano se protege. Pero si sobre el órgano hay una carta de virus del mismo color a la medicina,&#10;entonces el virus se destruye. si ya el órgano cuenta con una medicina, esta segunda medicina logrará&#10;proteger para siempre contra el ataque de cualquier virus y no podrá ser destruido ni&#10;afectado." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CURITAS.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="CURITAS" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="6.0" prefHeight="119.0" prefWidth="92.0" text="Si el órgano es del mismo color a la medicina y además no posee ningún virus sobre él,&#10;el órgano se protege. Pero si sobre el órgano hay una carta de virus del mismo color a la medicina,&#10;entonces el virus se destruye. si ya el órgano cuenta con una medicina, esta segunda medicina logrará&#10;proteger para siempre contra el ataque de cualquier virus y no podrá ser destruido ni&#10;afectado." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/VACUNA.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="VACUNAS" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="6.0" prefHeight="119.0" prefWidth="92.0" text="Si el órgano es del mismo color a la medicina y además no posee ningún virus sobre él,&#10;el órgano se protege. Pero si sobre el órgano hay una carta de virus del mismo color a la medicina,&#10;entonces el virus se destruye. si ya el órgano cuenta con una medicina, esta segunda medicina logrará&#10;proteger para siempre contra el ataque de cualquier virus y no podrá ser destruido ni&#10;afectado." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/ANTISUERO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="ANTISUERO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="7.0" prefHeight="119.0" prefWidth="93.0" text="Si el órgano es del mismo color a la medicina y además no posee ningún virus sobre él,&#10;el órgano se protege. Pero si sobre el órgano hay una carta de virus del mismo color a la medicina,&#10;entonces el virus se destruye. si ya el órgano cuenta con una medicina, esta segunda medicina logrará&#10;proteger para siempre contra el ataque de cualquier virus y no podrá ser destruido ni&#10;afectado." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="ORGANOS VACUNADOS">
+                                 <padding>
+                                    <Insets left="30.0" />
+                                 </padding>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CORAZONINM.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CORAZON VACUNADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="6.0" prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un órgano vacunado" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/HUESOINM.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="HUESO VACUNADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="6.0" prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un órgano vacunado" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/ESTOMAGOINM.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="ESTOMAGO VACUNADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="4.0" prefHeight="119.0" prefWidth="94.0" text="Esta carta ejemplifica a un órgano vacunado" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CEREBROINM.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="CEREBRO VACUNADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="6.0" prefHeight="119.0" prefWidth="92.0" text="Esta carta ejemplifica a un órgano vacunado" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="VIRUS" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/ROJIVURUS.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="ROJIVIRUS" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="4.0" prefHeight="119.0" prefWidth="93.0" text="Si se encuentra un órgano libre de virus y corresponde con el color de la&#10;carta de virus a utilizar, este órgano se infectará, si un segundo virus es colocado sobre un órgano ya infectado, este órgano&#10;será destruido. Pero si sobre un órgano se encuentra una carta de medicina y se le aplica&#10;un virus del mismo color, ambas cartas (la medicina y el virus) serán enviadas a la pila&#10;de descarte." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/YELLVIRUS.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="YELLVIRUS" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="5.0" prefHeight="119.0" prefWidth="92.0" text="Si se encuentra un órgano libre de virus y corresponde con el color de la&#10;carta de virus a utilizar, este órgano se infectará, si un segundo virus es colocado sobre un órgano ya infectado, este órgano&#10;será destruido. Pero si sobre un órgano se encuentra una carta de medicina y se le aplica&#10;un virus del mismo color, ambas cartas (la medicina y el virus) serán enviadas a la pila&#10;de descarte." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/VERDON%20EL%20VIRUS.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="VERDON EL VIRUS" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="4.0" prefHeight="119.0" prefWidth="93.0" text="Si se encuentra un órgano libre de virus y corresponde con el color de la&#10;carta de virus a utilizar, este órgano se infectará, si un segundo virus es colocado sobre un órgano ya infectado, este órgano&#10;será destruido. Pero si sobre un órgano se encuentra una carta de medicina y se le aplica&#10;un virus del mismo color, ambas cartas (la medicina y el virus) serán enviadas a la pila&#10;de descarte." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/VIRUBLU.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="VIRUBLU" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea layoutX="3.0" prefHeight="119.0" prefWidth="94.0" text="Si se encuentra un órgano libre de virus y corresponde con el color de la&#10;carta de virus a utilizar, este órgano se infectará, si un segundo virus es colocado sobre un órgano ya infectado, este órgano&#10;será destruido. Pero si sobre un órgano se encuentra una carta de medicina y se le aplica&#10;un virus del mismo color, ambas cartas (la medicina y el virus) serán enviadas a la pila&#10;de descarte." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="ORGANOS INMUNE" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CORAZONINM2.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CORAZON INMUNE" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano inmune." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/HUESOINM2.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="HUESO INMUNE" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano inmune." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/ESTOMAGOINM2.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="ESTOMAGO INMUNE" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano inmune." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CEREBROINM2.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CEREBRO INMUNE" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano inmune." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="ORGANOS INFECTADO" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/rojoinfectado.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CORAZON INFECTADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano infectado por un virus." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/amarilloinfectado.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="HUESO INFECTADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano infectado por un virus." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/verdeinfectado.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="ESTOMAGO INFECTADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano infectado por un virus." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/azulinfectado.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CEREBRO INFECTADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta ejemplifica a un un órgano infectado por un virus." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="COMODINES" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CUERPO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CUERPO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta funciona como un organo cualquiera. Permite simular cualquiera de los 4 organos." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/COVID-19.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="COVID-19" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta permite se usada como un virus de cualquier tipo." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/HOSPITAL.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="HOSPITAL" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta puede ser usada como una medicina de cualquier tipo." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                       <image>
+                                          <Image url="@../recursos/azulinfectado.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox disable="true" prefHeight="150.0" prefWidth="200.0" spacing="10.0" visible="false">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CEREBRO INFECTADO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <Label text="DESCRICION" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="TRATAMIENTOS" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/CONTAGIO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="CONTAGIO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta permite trasladar tantos virus como se pueda de sus órganos infectados a los&#10;órganos de los demás jugadores. No se puede utilizar el contagio sobre órganos&#10;vacunados o infectados, sólo se podrá contagiar órganos libres." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/ERROR%20MEDICO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="ERROR MEDICO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta permite intercambiar todo su cuerpo por el de otro jugador, incluyendo&#10;órganos, virus y vacunas. No importa el número de cartas que cada uno tenga en mesa.&#10;Cuando se utiliza esta carta, los órganos inmunizados también son intercambiados." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/GUANTES%20DE%20LATEX.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="GUANTE LATEX" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta permite que todos los jugadores, excepto el que utiliza el guante,&#10;descarten su mano. Al comienzo de su siguiente turno, al no tener cartas, estos&#10;jugadores tan solo podrán robar una nueva mano, perdiendo así un turno de juego." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/LADRON%20DE%20ORGANOS.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="103.0" text="LADRÓN ORGANOS" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta permite robar un órgano de otro jugador y añadirlo a su propio&#10;cuerpo. Se puede robar órganos sanos, vacunados o infectados, pero no inmunes. No se&#10;pueden tener dos órganos del mismo color." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../recursos/TRANSPLANTE.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="TRANSPLANTE" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <JFXTextArea prefHeight="119.0" prefWidth="93.0" text="Esta carta permite intercambiar un órgano por otro entre 2 jugadores cualesquiera.&#10;No importa si el color de estos órganos es diferente, ni si están sanos, infectados o&#10;vacunados." />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                       <image>
+                                          <Image url="@../recursos/HUESO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox disable="true" prefHeight="150.0" prefWidth="200.0" spacing="10.0" visible="false">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="HUESO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <Label text="DESCRICION" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                       <image>
+                                          <Image url="@../recursos/ESTOMAGO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox disable="true" prefHeight="150.0" prefWidth="200.0" spacing="10.0" visible="false">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="ESTOMAGO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <Label text="DESCRICION" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                    <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                       <image>
+                                          <Image url="@../recursos/CEREBRO.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox disable="true" prefHeight="150.0" prefWidth="200.0" spacing="10.0" visible="false">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="152.0" text="CEREBRO" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd86b" height="120.0" stroke="#46022b" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+                                                <Label text="DESCRICION" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" right="30.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <JFXButton fx:id="btnVolver" layoutX="1608.0" layoutY="760.0" onAction="#volver" ripplerFill="#e80c0c" text="VOLVER" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

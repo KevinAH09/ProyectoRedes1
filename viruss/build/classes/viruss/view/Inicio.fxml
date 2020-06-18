@@ -51,6 +51,15 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
+            <JFXButton fx:id="btnAyuda" contentDisplay="TOP" layoutX="450.0" layoutY="639.0" onAction="#ayuda" prefHeight="82.0" prefWidth="83.0" text="Ayuda">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="54.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../recursos/help.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

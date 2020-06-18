@@ -2653,7 +2653,8 @@ public class Carta extends ImageView implements Serializable {
                     }
                 }
             }
-
+            System.out.println("cemenerioAux");
+            System.out.println(MainServidor.juegoMain.cementerioAux);
             image = null;
             if (cont != 2) {
                 cont = 0;

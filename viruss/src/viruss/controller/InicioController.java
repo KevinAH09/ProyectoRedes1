@@ -136,10 +136,10 @@ public class InicioController extends Controller implements Initializable {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
 
             try {
-//                if (MainServidor.juegoMain.turno != posJug) {
+                if (MainServidor.juegoMain.turno != posJug) {
                 iniciarServidor();
 
-//                }
+                }
                 timeline.stop();
             } catch (IOException ex) {
                 Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);

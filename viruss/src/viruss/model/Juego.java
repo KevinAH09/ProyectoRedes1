@@ -15,7 +15,7 @@ import java.util.List;
  * @author cfugu
  */
 public class Juego implements Serializable {
-
+    private static final long serialVersionUID = 6529685098267757694L;
     public List<Jugador> jugadores = new ArrayList<>();
 
     public int turno;

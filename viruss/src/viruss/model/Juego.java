@@ -6,6 +6,7 @@
 package viruss.model;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class Juego implements Serializable {
     public String conexion ;//w=esperar, o=tiempo excedido, l=juego listo
     public List<Carta> mazo = new ArrayList<>();
     public List<Carta> cementerio = new ArrayList<>();
+    public List<Carta> cementerioAux = new ArrayList<>();
 
     public Juego() {
         conexion = "w";

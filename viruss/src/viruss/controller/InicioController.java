@@ -183,8 +183,8 @@ public class InicioController extends Controller implements Initializable {
                     MainServidor.juegoMain.conexion = "GL";
                     bandaGuanteLatex = true;
                     iniciarCliente();
-
-                    hiloServidor();
+                    cargarPartida();
+                    //hiloServidor();
                 }
             } else if (contMaso == 0) {
                 System.out.println("viruss.controller.InicioController.actionMasoClick()");

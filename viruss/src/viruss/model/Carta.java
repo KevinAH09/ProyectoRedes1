@@ -581,6 +581,7 @@ public class Carta extends ImageView implements Serializable {
                                                 carta.setColor(11);
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/CORAZON.jpg"));
+                                                carta1.setColor(1);
                                                 
                                                 carta1.setTipoCarta("Organos");
                                             } else if (carta.color == 2) {
@@ -590,6 +591,7 @@ public class Carta extends ImageView implements Serializable {
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
                                                 carta1.setTipoCarta("Organos");
+                                                carta1.setColor(2);
                                             } else if (carta.color == 3) {
 
                                                 carta.setImage(new Image("viruss/recursos/azulinfectado.jpg"));
@@ -598,6 +600,7 @@ public class Carta extends ImageView implements Serializable {
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
                                                 carta1.setTipoCarta("Organos");
+                                                carta1.setColor(3);
                                             } else if (carta.color == 4) {
                                                 carta.setImage(new Image("viruss/recursos/amarilloinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
@@ -605,6 +608,7 @@ public class Carta extends ImageView implements Serializable {
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                                 carta1.setTipoCarta("Organos");
+                                                carta1.setColor(4);
 
                                             }
                                             

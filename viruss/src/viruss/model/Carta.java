@@ -160,6 +160,9 @@ public class Carta extends ImageView implements Serializable {
             if (color == 4) {
                 this.setImage(new Image("viruss/recursos/HUESOINM.jpg"));
             }
+            if (color == 5) {
+                this.setImage(new Image("viruss/recursos/CUERPOVACUNH.jpg"));
+            }
         }
 
         if (tipoCarta.equals("OrganosVirus")) {
@@ -175,6 +178,9 @@ public class Carta extends ImageView implements Serializable {
             if (color == 44) {
                 this.setImage(new Image("viruss/recursos/amarilloinfectado.jpg"));
             }
+            if (color == 55) {
+                this.setImage(new Image("viruss/recursos/CUERPOCOV.jpg"));
+            }
         }
         if (tipoCarta.equals("OrganosInmune")) {
             if (color == 1) {
@@ -188,6 +194,9 @@ public class Carta extends ImageView implements Serializable {
             }
             if (color == 4) {
                 this.setImage(new Image("viruss/recursos/HUESOINM2.jpg"));
+            }
+            if (color == 5) {
+                this.setImage(new Image("viruss/recursos/CUERPOINMH.jpg"));
             }
         }
 

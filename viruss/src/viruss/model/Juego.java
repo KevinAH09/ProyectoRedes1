@@ -29,6 +29,7 @@ public class Juego implements Serializable {
         jugadores = new ArrayList<>();
         mazo = new ArrayList<>();
         cementerio = new ArrayList<>();
+        cementerioAux =new ArrayList<>();
     }
 
     public List<Carta> getCementerio() {
@@ -62,5 +63,14 @@ public class Juego implements Serializable {
     public void setMazo(List mazo) {
         this.mazo = mazo;
     }
+
+    public List<Carta> getCementerioAux() {
+        return cementerioAux;
+    }
+
+    public void setCementerioAux(List<Carta> cementerioAux) {
+        this.cementerioAux = cementerioAux;
+    }
+    
 
 }

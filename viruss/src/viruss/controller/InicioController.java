@@ -137,7 +137,7 @@ public class InicioController extends Controller implements Initializable {
 
             try {
 //                if (MainServidor.juegoMain.turno != posJug) {
-                    iniciarServidor();
+                iniciarServidor();
 
 //                }
                 timeline.stop();
@@ -205,7 +205,7 @@ public class InicioController extends Controller implements Initializable {
                     }
                 }
                 if (MainServidor.juegoMain.conexion.equals("GL")) {
-                    MainServidor.juegoMain.conexion.equals("l");
+                    MainServidor.juegoMain.conexion = "l";
                 }
                 iniciarCliente();
                 if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
@@ -269,7 +269,7 @@ public class InicioController extends Controller implements Initializable {
             cargarPartida();
             hiloServidor();
         } else {
-
+            
             cargarPartida();
             contMaso = 0;
             hboxmaso.setDisable(false);
@@ -399,7 +399,7 @@ public class InicioController extends Controller implements Initializable {
 
             listaCambiarCarta.clear();
             if (MainServidor.juegoMain.conexion.equals("GL")) {
-                MainServidor.juegoMain.conexion.equals("l");
+                MainServidor.juegoMain.conexion = "l";
             }
             iniciarCliente();
             listaCambiarCarta.clear();

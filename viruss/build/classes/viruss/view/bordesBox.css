@@ -39,6 +39,9 @@ and open the template in the editor.
     -fx-border-radius: 15px;
     
 }
+#VBoxGrande {
+    -fx-background-color: #a80271
+}
 #hboxMesaJug1{
     -fx-border-color: white;
     -fx-border-width: 3px;

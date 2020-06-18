@@ -579,36 +579,43 @@ public class Carta extends ImageView implements Serializable {
                                                 carta.setImage(new Image("viruss/recursos/rojoinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
                                                 carta.setColor(11);
+                                                carta.setEstado("Contaminado");
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/CORAZON.jpg"));
                                                 carta1.setColor(1);
-                                                
                                                 carta1.setTipoCarta("Organos");
+                                                carta1.setEstado("Estable");
                                             } else if (carta.color == 2) {
                                                 carta.setImage(new Image("viruss/recursos/verdeinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
                                                 carta.setColor(22);
+                                                carta.setEstado("Contaminado");
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/ESTOMAGO.jpg"));
                                                 carta1.setTipoCarta("Organos");
                                                 carta1.setColor(2);
+                                                carta1.setEstado("Estable");
                                             } else if (carta.color == 3) {
 
                                                 carta.setImage(new Image("viruss/recursos/azulinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
                                                 carta.setColor(33);
+                                                carta.setEstado("Contaminado");
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/CEREBRO.jpg"));
                                                 carta1.setTipoCarta("Organos");
                                                 carta1.setColor(3);
+                                                carta1.setEstado("Estable");
                                             } else if (carta.color == 4) {
                                                 carta.setImage(new Image("viruss/recursos/amarilloinfectado.jpg"));
                                                 carta.setTipoCarta("OrganosVirus");
                                                 carta.setColor(44);
+                                                carta.setEstado("Contaminado");
                                                 
                                                 carta1.setImage(new Image("viruss/recursos/HUESO.jpg"));
                                                 carta1.setTipoCarta("Organos");
                                                 carta1.setColor(4);
+                                                carta1.setEstado("Estable");
 
                                             }
                                             
@@ -624,6 +631,7 @@ public class Carta extends ImageView implements Serializable {
                             cont = 0;
                             cargarPartida();
                             pasarTurno = true;
+                            CartaAux = null;
                         } else {
                             new Mensaje().show(Alert.AlertType.ERROR, "Error de movimiento", "Movimiento inválido, intentelo de nuevo");
                         }

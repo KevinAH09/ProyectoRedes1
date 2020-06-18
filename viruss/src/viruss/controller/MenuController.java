@@ -123,13 +123,13 @@ public class MenuController extends Controller implements Initializable {
             Servidor serv = new Servidor(); //Se crea el servidor
             System.out.println("Iniciando servidor\n");
             serv.startServer(); //Se inicia el servidor
-
+            listViewJugadores=new ListView();
             for (Jugador j : MainServidor.juegoMain.jugadores) {
                 //                listViewJugadores.getItems().clear();
                 items.add(j.getNickname());
                 System.out.println(j.nickname);
             }
-            listViewJugadores.getItems().addAll(items);
+             listViewJugadores=new ListView(items);
             String val = MainServidor.juegoMain.conexion;
             switch (val) {
 

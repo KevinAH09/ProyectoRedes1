@@ -109,50 +109,55 @@ public class MenuController extends Controller implements Initializable {
 
     @FXML
     private void Ingresar(ActionEvent event) throws IOException {
-        band = true;
-        AppContext.getInstance().set("nick", txtNick.getText());
-        Juego ju = new Juego();
-        Jugador jug = new Jugador();
-        jug.nickname = txtNick.getText();
-        ju.jugadores.add(jug);
-        MainServidor.juegoMain = ju;
-        Cliente cli = new Cliente(); //Se crea el cliente
-        System.out.println("Iniciando cliente\n");
-        cli.startClient(); //Se inicia el cliente
+        if (AppContext.getInstance().get("IPSERVIDOR") != null) {
 
-        while (band) {
-            Servidor serv = new Servidor(); //Se crea el servidor
-            System.out.println("Iniciando servidor\n");
-            serv.startServer(); //Se inicia el servidor
-            String val = MainServidor.juegoMain.conexion;
-            listViewJugadores.getItems().clear();
-            listViewJugadores.getItems().addAll(FXCollections.observableArrayList(MainServidor.juegoMain.jugadores));
-            switch (val) {
+            band = true;
+            AppContext.getInstance().set("nick", txtNick.getText());
+            Juego ju = new Juego();
+            Jugador jug = new Jugador();
+            jug.nickname = txtNick.getText();
+            ju.jugadores.add(jug);
+            MainServidor.juegoMain = ju;
+            Cliente cli = new Cliente(); //Se crea el cliente
+            System.out.println("Iniciando cliente\n");
+            cli.startClient(); //Se inicia el cliente
 
-                case "w":
-                    System.out.println("En modo espera de juego");
-                    lCrono.setText("Esperando al host");
+            while (band) {
+                Servidor serv = new Servidor(); //Se crea el servidor
+                System.out.println("Iniciando servidor\n");
+                serv.startServer(); //Se inicia el servidor
+                String val = MainServidor.juegoMain.conexion;
+                listViewJugadores.getItems().clear();
+                listViewJugadores.getItems().addAll(FXCollections.observableArrayList(MainServidor.juegoMain.jugadores));
+                switch (val) {
+
+                    case "w":
+                        System.out.println("En modo espera de juego");
+                        lCrono.setText("Esperando al host");
 //                    t.play();
-                    break;
+                        break;
 
-                case "o":
-                    Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
-                    band = false;
+                    case "o":
+                        Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
+                        band = false;
 //                    t.stop();
-                    lCrono.setText("");
-                    break;
+                        lCrono.setText("");
+                        break;
 
-                case "l":
+                    case "l":
 //                    Mensaje.show(Alert.AlertType.INFORMATION, "Juego por iniciar", "El juego va a iniciar");
-                    band = false;
-                    FlowController.getInstance().goView("Inicio");
-                    break;
+                        band = false;
+                        FlowController.getInstance().goView("Inicio");
+                        break;
 
-                default:
-                    Mensaje.show(Alert.AlertType.INFORMATION, "Ha ocurrido un error", "Error inesperado");
-                    break;
+                    default:
+                        Mensaje.show(Alert.AlertType.INFORMATION, "Ha ocurrido un error", "Error inesperado");
+                        break;
 
+                }
             }
+        }else{
+            Mensaje.show(Alert.AlertType.ERROR, "ERROR IP", "Ingrese la direccion ip del servidor al que se desea conectar");
         }
     }
 
@@ -160,7 +165,7 @@ public class MenuController extends Controller implements Initializable {
     private void ingresarRed(ActionEvent event) {
         String name = JOptionPane.showInputDialog("Ingrese la dirección IP del servidor de destino");
         JOptionPane.showMessageDialog(null, "Se ha guardado la IP ");
-        AppContext.getInstance().set("ipservidor", name);
+        AppContext.getInstance().set("IPSERVIDOR", name);
     }
 
 //    private void texto() {

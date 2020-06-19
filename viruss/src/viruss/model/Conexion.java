@@ -27,7 +27,7 @@ public class Conexion {
             ss = new ServerSocket(5000);//Se crea el socket para el servidor en puerto 1234
             cs = new Socket(); //Socket para el cliente
         } else {
-            cs = new Socket(HOST, PUERTO); //Socket para el cliente en localhost en puerto 1234
+            cs = new Socket((String)AppContext.getInstance().get("IPSERVIDOR"), PUERTO); //Socket para el cliente en localhost en puerto 1234
         }
     }
 }

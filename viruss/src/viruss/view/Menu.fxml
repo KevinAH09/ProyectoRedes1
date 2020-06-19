@@ -11,56 +11,51 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" stylesheets="@bordesBox.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1565.0" stylesheets="@bordesBox.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.MenuController">
    <children>
-      <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1700.0" stylesheets="@bordesBox.css">
+      <AnchorPane id="AnchorPane" prefHeight="717.0" prefWidth="1565.0" stylesheets="@bordesBox.css">
          <children>
-            <AnchorPane fx:id="scene" prefHeight="800.0" prefWidth="1700.0" style="-fx-background-color: e39727;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="scene" prefHeight="717.0" prefWidth="1565.0" style="-fx-background-color: e39727;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="780.0" fitWidth="1680.0" layoutY="1.0" opacity="0.84" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <ImageView fitHeight="697.0" fitWidth="1545.0" layoutY="1.0" opacity="0.84" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <image>
                         <Image url="@../recursos/Fondo1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="176.0" fitWidth="676.0" layoutX="488.0" layoutY="165.0" pickOnBounds="true" smooth="false">
+                  <ImageView fitHeight="176.0" fitWidth="676.0" layoutX="430.0" layoutY="153.0" pickOnBounds="true" smooth="false">
                      <image>
                         <Image url="@../recursos/Logo.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="576.0" layoutY="421.0" prefHeight="50.0" prefWidth="500.0" promptText="Nickname" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txtNick" alignment="TOP_CENTER" focusColor="#e39727" labelFloat="true" layoutX="518.0" layoutY="396.0" prefHeight="50.0" prefWidth="500.0" promptText="Nickname" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="btnIngresar" layoutX="768.0" layoutY="554.0" onAction="#Ingresar" prefHeight="30.0" prefWidth="134.0" text="Ingresar" textFill="#e39727">
+                  <JFXButton fx:id="btnIngresar" layoutX="701.0" layoutY="496.0" onAction="#Ingresar" prefHeight="30.0" prefWidth="134.0" text="Ingresar" textFill="#e39727">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </JFXButton>
-                  <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="1553.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="60.0" layoutX="1491.0" layoutY="643.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/transmision.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="117.0" fitWidth="134.0" layoutX="28.0" layoutY="655.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../recursos/radiation.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="lFecha" layoutX="1386.0" layoutY="61.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                  <Label fx:id="lFecha" layoutX="1330.0" layoutY="55.0" prefHeight="20.0" prefWidth="203.0" textFill="#e39727">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lHora" layoutX="1386.0" layoutY="100.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                  <Label fx:id="lHora" layoutX="1330.0" layoutY="96.0" prefHeight="20.0" prefWidth="203.0" textFill="#e39727">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lCrono" layoutX="1378.0" layoutY="221.0" prefHeight="17.0" prefWidth="292.0" textFill="#e39727">
+                  <Label fx:id="lCrono" layoutX="1322.0" layoutY="279.0" prefHeight="20.0" prefWidth="211.0" textFill="#e39727">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="108.0" layoutX="1370.0" layoutY="36.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="308.0" />
-                  <JFXButton fx:id="btnRed" layoutX="1371.0" layoutY="188.0" onAction="#ingresarRed" prefHeight="44.0" prefWidth="308.0" text="Configuración de Red" textFill="#c68b00">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717" height="108.0" layoutX="1322.0" layoutY="31.0" opacity="0.41" stroke="#e39727" strokeType="INSIDE" width="211.0" />
+                  <JFXButton fx:id="btnRed" layoutX="1322.0" layoutY="208.0" onAction="#ingresarRed" prefHeight="66.0" prefWidth="211.0" text="Configuración de Red" textFill="#c68b00">
                      <graphic>
                         <ImageView fitHeight="58.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -69,13 +64,13 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <ListView fx:id="listViewJugadores" layoutX="1370.0" layoutY="331.0" prefHeight="252.0" prefWidth="308.0" />
-                  <Label layoutX="1475.0" layoutY="302.0" text="Lista de Jugadores" textFill="#c68b00">
+                  <ListView fx:id="listViewJugadores" layoutX="1311.0" layoutY="383.0" prefHeight="157.0" prefWidth="233.0" />
+                  <Label layoutX="1370.0" layoutY="352.0" text="Lista de Jugadores" textFill="#c68b00">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton contentDisplay="TOP" layoutX="28.0" layoutY="33.0" onAction="#actioonBtnInformacion" prefHeight="96.0" prefWidth="102.0" text="Informacion" textFill="#b50b0b">
+                  <JFXButton contentDisplay="TOP" layoutX="23.0" layoutY="17.0" onAction="#actioonBtnInformacion" prefHeight="96.0" prefWidth="102.0" text="Informacion" textFill="#b50b0b">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true">
                            <image>
@@ -87,6 +82,11 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
+                  <ImageView fitHeight="100.0" fitWidth="60.0" layoutX="14.0" layoutY="643.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/transmision.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

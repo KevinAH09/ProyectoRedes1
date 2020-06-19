@@ -106,6 +106,10 @@ public class InicioController extends Controller implements Initializable {
     private Label lb6;
     @FXML
     private Label lb1;
+    @FXML
+    private Label lbTurno;
+    @FXML
+    private Label lbNum;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -341,6 +345,8 @@ public class InicioController extends Controller implements Initializable {
         lb4.setText("");
         lb5.setText("");
         lb6.setText("");
+        lbNum.setText("");
+        lbTurno.setText("");
 
         for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
             MainServidor.juegoMain.mazo.get(i).setImg();
@@ -384,6 +390,8 @@ public class InicioController extends Controller implements Initializable {
             }
 
         }
+        lbNum.setText(String.valueOf(MainServidor.juegoMain.turno));
+        lbTurno.setText(MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname);
         System.out.println(posJug);
         System.out.println(MainServidor.juegoMain.turno);
         if (MainServidor.juegoMain.turno != posJug) {

@@ -147,7 +147,10 @@ public class InicioController extends Controller implements Initializable {
 
     private void hiloServidor() {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
-
+            lbNum.setText("");
+            lbTurno.setText("");
+            lbNum.setText(String.valueOf(MainServidor.juegoMain.turno + 1));
+            lbTurno.setText(MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname);
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
@@ -300,7 +303,7 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         if (MainServidor.juegoMain.conexion.equals("g")) {
-            
+
             timeline.stop();
             cargarPartida();
             new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
@@ -390,7 +393,7 @@ public class InicioController extends Controller implements Initializable {
             }
 
         }
-        lbNum.setText(String.valueOf(MainServidor.juegoMain.turno));
+        lbNum.setText(String.valueOf(MainServidor.juegoMain.turno + 1));
         lbTurno.setText(MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname);
         System.out.println(posJug);
         System.out.println(MainServidor.juegoMain.turno);

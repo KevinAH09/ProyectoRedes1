@@ -67,15 +67,15 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1515" height="118.0" layoutX="1075.0" layoutY="562.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-            <Label layoutX="1089.0" layoutY="580.0" text="El turno actual es el numero:" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#38628a" height="58.0" layoutX="1089.0" layoutY="603.0" stroke="BLACK" strokeType="INSIDE" width="174.0" />
-            <Label fx:id="lbTurno" layoutX="1101.0" layoutY="613.0" prefHeight="38.0" prefWidth="150.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1515" height="118.0" layoutX="1075.0" layoutY="562.0" stroke="BLACK" strokeType="INSIDE" width="242.0" />
+            <Label layoutX="1089.0" layoutY="580.0" prefHeight="17.0" prefWidth="180.0" text="El turno actual es el numero:" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#38628a" height="58.0" layoutX="1089.0" layoutY="603.0" stroke="BLACK" strokeType="INSIDE" width="211.0" />
+            <Label fx:id="lbTurno" layoutX="1101.0" layoutY="613.0" prefHeight="38.0" prefWidth="186.0">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lbNum" layoutX="1241.0" layoutY="580.0" prefHeight="17.0" prefWidth="21.0" />
+            <Label fx:id="lbNum" layoutX="1272.0" layoutY="580.0" prefHeight="17.0" prefWidth="34.0" />
          </children>
       </AnchorPane>
    </children>

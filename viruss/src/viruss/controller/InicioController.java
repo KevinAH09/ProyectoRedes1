@@ -296,8 +296,11 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         if (MainServidor.juegoMain.conexion.equals("g")) {
+            
+            timeline.stop();
             cargarPartida();
             new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
+            MainServidor.juegoMain.turno = posJug;
         } else if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
 
             cargarPartida();

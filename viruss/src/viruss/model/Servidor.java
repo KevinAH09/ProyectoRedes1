@@ -7,6 +7,8 @@ package viruss.model;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import javafx.scene.control.Alert;
+import viruss.util.Mensaje;
 
 
 public class Servidor extends Conexion {
@@ -24,7 +26,7 @@ public class Servidor extends Conexion {
 
             ObjectInputStream inObjeto = new ObjectInputStream(cs.getInputStream());
             Juego lc = (Juego) inObjeto.readObject();
-
+            
             MainServidor.juegoMain = lc;
 
             System.out.println("Fin de la conexión");

@@ -200,8 +200,8 @@ public class Carta extends ImageView implements Serializable {
             }
         }
 
-        this.setFitHeight(195);
-        this.setFitWidth(130);
+        this.setFitHeight(160);
+        this.setFitWidth(110);
         this.setOnMouseClicked(ke -> {
             if (!InicioController.entrada) {
                 if (pasarTurno != true) {

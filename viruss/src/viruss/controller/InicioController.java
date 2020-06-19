@@ -233,13 +233,12 @@ public class InicioController extends Controller implements Initializable {
                     hiloServidor();
                 }
 
-            }
-            else
-            {
+            } else {
+                System.out.println("viruss.controller.InicioController.actionMasoClick()");
                 MainServidor.juegoMain.conexion = "g";
                 iniciarCliente();
                 new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "HAS GANADO");
-                
+
             }
         }
 
@@ -285,12 +284,10 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
-        if(MainServidor.juegoMain.conexion.equals("g"))
-        {
+        if (MainServidor.juegoMain.conexion.equals("g")) {
             cargarPartida();
-            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador "+MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname+" a ganado la partida");
-        }
-        if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
+            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
+        } else if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
 
             cargarPartida();
             hiloServidor();

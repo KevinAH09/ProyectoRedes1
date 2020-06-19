@@ -248,6 +248,8 @@ public class InicioController extends Controller implements Initializable {
                     } else {
                         MainServidor.juegoMain.turno++;
                     }
+                    lbNum.setText(String.valueOf(MainServidor.juegoMain.turno + 1));
+                    lbTurno.setText(MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname);
                     hiloServidor();
                 }
 
@@ -475,6 +477,8 @@ public class InicioController extends Controller implements Initializable {
             } else {
                 MainServidor.juegoMain.turno++;
             }
+            lbNum.setText(String.valueOf(MainServidor.juegoMain.turno + 1));
+            lbTurno.setText(MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname);
             hiloServidor();
         } else {
             contMaso = 0;

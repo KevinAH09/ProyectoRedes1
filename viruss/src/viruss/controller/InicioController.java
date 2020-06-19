@@ -147,13 +147,27 @@ public class InicioController extends Controller implements Initializable {
         timeline.play();
     }
 
+    private boolean Ganar() {
+        int aux = 0;
+        for (Carta carta : MainServidor.juegoMain.jugadores.get(posJug).mazo2) {
+            if (carta.getTipoCarta().equals("Organos") || carta.getTipoCarta().equals("OrganosVacuna") || carta.getTipoCarta().equals("OrganosInmune")) {
+                aux = aux + 1;
+            }
+        }
+        if (aux == 4) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     @FXML
     private void actionMasoClick(MouseEvent event) throws IOException {
         System.out.println(Carta.pasarTurno);
         if (Carta.pasarTurno == true) {
             if (!bandaGuanteLatex) {
                 if (contMaso == 0) {
-                    System.out.println("viruss.controller.InicioController.actionMasoClick() CNNNNNNNNN GLLLLLLLLL");
                     contMaso = 1;
                     if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                         hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
@@ -181,39 +195,51 @@ public class InicioController extends Controller implements Initializable {
                     }
                     MainServidor.juegoMain.conexion = "GL";
                     bandaGuanteLatex = true;
+
                     iniciarCliente();
                     cargarPartida();
                     //hiloServidor();
                 }
-            } else if (contMaso == 0) {
-                System.out.println("viruss.controller.InicioController.actionMasoClick()");
-                contMaso = 1;
-                if (MainServidor.juegoMain.mazo.isEmpty() != true) {
-                    hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                    MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                    MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
-                } else {
-                    new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "El mazo se ha quedado vacío, se cargarán las cartas desechadas");
-                    MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
-                    MainServidor.juegoMain.cementerio.clear();
+            } else if (!Ganar()) {
+                if (contMaso == 0) {
+
+                    contMaso = 1;
                     if (MainServidor.juegoMain.mazo.isEmpty() != true) {
                         hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                         MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                         MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
 
-                    }
-                }
-                if (MainServidor.juegoMain.conexion.equals("GL")) {
-                    MainServidor.juegoMain.conexion = "l";
-                }
-                iniciarCliente();
-                if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
-                    MainServidor.juegoMain.turno = 0;
+                    } else {
+                        new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "El mazo se ha quedado vacío, se cargarán las cartas desechadas");
+                        MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
+                        MainServidor.juegoMain.cementerio.clear();
+                        if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                            hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                            MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
+                            MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
 
-                } else {
-                    MainServidor.juegoMain.turno++;
+                        }
+                    }
+                    if (MainServidor.juegoMain.conexion.equals("GL")) {
+                        MainServidor.juegoMain.conexion = "l";
+                    }
+                    iniciarCliente();
+                    if (MainServidor.juegoMain.turno == MainServidor.juegoMain.jugadores.size() - 1) {
+                        MainServidor.juegoMain.turno = 0;
+
+                    } else {
+                        MainServidor.juegoMain.turno++;
+                    }
+                    hiloServidor();
                 }
-                hiloServidor();
+
+            }
+            else
+            {
+                MainServidor.juegoMain.conexion = "g";
+                iniciarCliente();
+                new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "HAS GANADO");
+                
             }
         }
 
@@ -259,6 +285,11 @@ public class InicioController extends Controller implements Initializable {
         Servidor serv = new Servidor(); //Se crea el servidor
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
+        if(MainServidor.juegoMain.conexion.equals("g"))
+        {
+            cargarPartida();
+            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador "+MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname+" a ganado la partida");
+        }
         if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
 
             cargarPartida();
@@ -428,5 +459,4 @@ public class InicioController extends Controller implements Initializable {
 
     }
 
-    
 }

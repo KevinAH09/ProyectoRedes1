@@ -3253,7 +3253,6 @@ public class Carta extends ImageView implements Serializable {
             if (cont != 2) {
                 cont = 0;
             }
-
         }
     }
 

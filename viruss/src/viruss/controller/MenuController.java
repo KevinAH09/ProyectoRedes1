@@ -12,7 +12,9 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -63,8 +65,7 @@ public class MenuController extends Controller implements Initializable {
     @FXML
     private JFXButton btnRed;
     @FXML
-    private ListView<String> listViewJugadores;
-    ObservableList<String> items = FXCollections.observableArrayList();
+    private ListView listViewJugadores;
     boolean band = true;
     Timeline t;
 
@@ -123,14 +124,9 @@ public class MenuController extends Controller implements Initializable {
             Servidor serv = new Servidor(); //Se crea el servidor
             System.out.println("Iniciando servidor\n");
             serv.startServer(); //Se inicia el servidor
-            listViewJugadores=new ListView();
-            for (Jugador j : MainServidor.juegoMain.jugadores) {
-                //                listViewJugadores.getItems().clear();
-                items.add(j.getNickname());
-                System.out.println(j.nickname);
-            }
-             listViewJugadores=new ListView(items);
             String val = MainServidor.juegoMain.conexion;
+            listViewJugadores.getItems().clear();
+            listViewJugadores.getItems().addAll(FXCollections.observableArrayList(MainServidor.juegoMain.jugadores));
             switch (val) {
 
                 case "w":

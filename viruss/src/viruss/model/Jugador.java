@@ -60,6 +60,11 @@ public class Jugador implements Serializable{
     public void setMazo2(List mazo2) {
         this.mazo2 = mazo2;
     }
+
+    @Override
+    public String toString() {
+        return  nickname + "  IP=" + ip ;
+    }
     
 }
 

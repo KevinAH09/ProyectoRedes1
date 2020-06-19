@@ -23,6 +23,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -95,6 +96,16 @@ public class InicioController extends Controller implements Initializable {
     private JFXButton BtnCambiarCartas;
     @FXML
     private JFXButton BtnAplicar;
+    @FXML
+    private Label lb3;
+    @FXML
+    private Label lb4;
+    @FXML
+    private Label lb5;
+    @FXML
+    private Label lb6;
+    @FXML
+    private Label lb1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -322,6 +333,11 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
+        lb1.setText("");
+        lb3.setText("");
+        lb4.setText("");
+        lb5.setText("");
+        lb6.setText("");
 
         for (int i = 0; i < MainServidor.juegoMain.mazo.size(); i++) {
             MainServidor.juegoMain.mazo.get(i).setImg();
@@ -347,15 +363,20 @@ public class InicioController extends Controller implements Initializable {
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
                     hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb1.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
 
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb3.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {
                     hboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb4.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug5.getChildren().isEmpty()) {
                     hboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb5.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug6.getChildren().isEmpty()) {
                     hboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb6.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 }
             }
 

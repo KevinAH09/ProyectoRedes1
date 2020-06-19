@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -35,7 +36,7 @@
                </image>
             </ImageView>
             <HBox fx:id="HboxBasura" layoutX="515.0" layoutY="259.0" prefHeight="68.0" prefWidth="150.0" visible="false" />
-            <JFXButton fx:id="BtnCambiarCartas" contentDisplay="TOP" graphicTextGap="0.0" layoutX="624.0" layoutY="654.0" onAction="#CambiarCartas" prefHeight="82.0" prefWidth="83.0" text="Descartar">
+            <JFXButton fx:id="BtnCambiarCartas" contentDisplay="TOP" graphicTextGap="0.0" layoutX="624.0" layoutY="654.0" onAction="#CambiarCartas" prefHeight="82.0" prefWidth="83.0" text="Descartar" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="57.0" fitWidth="54.0" pickOnBounds="true">
                      <image>
@@ -43,7 +44,7 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <JFXButton fx:id="BtnAplicar" contentDisplay="TOP" disable="true" graphicTextGap="0.0" layoutX="624.0" layoutY="654.0" onAction="#AplicarCambios" prefHeight="82.0" prefWidth="83.0" text="Aplicar" visible="false">
+            <JFXButton fx:id="BtnAplicar" contentDisplay="TOP" disable="true" graphicTextGap="0.0" layoutX="624.0" layoutY="654.0" onAction="#AplicarCambios" prefHeight="82.0" prefWidth="83.0" text="Aplicar" textFill="WHITE" visible="false">
                <graphic>
                   <ImageView fitHeight="56.0" fitWidth="54.0" pickOnBounds="true">
                      <image>
@@ -51,6 +52,11 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
+            <Label fx:id="lb3" layoutX="54.0" layoutY="637.0" prefHeight="17.0" prefWidth="89.0" textFill="#fffdfd" />
+            <Label fx:id="lb1" layoutX="417.0" layoutY="614.0" prefHeight="17.0" prefWidth="108.0" />
+            <Label fx:id="lb4" layoutX="1561.0" layoutY="646.0" prefHeight="17.0" prefWidth="89.0" textFill="WHITE" />
+            <Label fx:id="lb5" layoutX="454.0" layoutY="215.0" prefHeight="17.0" prefWidth="122.0" textFill="WHITE" />
+            <Label fx:id="lb6" layoutX="1112.0" layoutY="215.0" prefHeight="17.0" prefWidth="150.0" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

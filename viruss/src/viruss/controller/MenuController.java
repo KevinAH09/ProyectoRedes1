@@ -54,7 +54,6 @@ public class MenuController extends Controller implements Initializable {
     private Label lFecha;
     @FXML
     private Label lHora;
-    @FXML
     private Label lCrono;
     @FXML
     private JFXTextField txtNick;
@@ -64,8 +63,6 @@ public class MenuController extends Controller implements Initializable {
     private AnchorPane scene;
     @FXML
     private JFXButton btnRed;
-    @FXML
-    private ListView listViewJugadores;
     boolean band = true;
     Timeline t;
 
@@ -112,8 +109,7 @@ public class MenuController extends Controller implements Initializable {
                 System.out.println("Iniciando servidor\n");
                 serv.startServer(); //Se inicia el servidor
                 String val = MainServidor.juegoMain.conexion;
-                listViewJugadores.getItems().clear();
-                listViewJugadores.getItems().addAll(FXCollections.observableArrayList(MainServidor.juegoMain.jugadores));
+
                 switch (val) {
 
                     case "w":

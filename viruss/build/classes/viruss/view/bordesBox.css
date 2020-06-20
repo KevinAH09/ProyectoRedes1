@@ -64,7 +64,7 @@ and open the template in the editor.
     
 }
 #hboxMesaJug4{
-    -fx-border-color: #009933;
+    -fx-border-color: #006600;
     -fx-border-width: 3px;
     -fx-border-style: solid;
     -fx-border-radius: 10px;
@@ -104,7 +104,7 @@ and open the template in the editor.
     -fx-text-fill: white;
 }
 #lb4{
-    -fx-text-fill: #009933;
+    -fx-text-fill: #006600;
 }
 #lb5{
     -fx-text-fill: gray;

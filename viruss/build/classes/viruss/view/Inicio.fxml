@@ -49,22 +49,34 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <Label fx:id="lb3" alignment="CENTER" layoutX="-96.0" layoutY="252.0" prefHeight="20.0" prefWidth="220.0" rotate="-90.0" textFill="#fffdfd" />
-            <Label fx:id="lb1" alignment="CENTER" layoutX="381.0" layoutY="343.0" prefHeight="20.0" prefWidth="220.0" />
-            <Label fx:id="lb4" alignment="CENTER" layoutX="1441.0" layoutY="272.0" prefHeight="20.0" prefWidth="220.0" rotate="90.0" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="lb3" alignment="CENTER" layoutX="-96.0" layoutY="252.0" prefHeight="20.0" prefWidth="220.0" rotate="-90.0" text="Kevin" textFill="#fffdfd">
                <font>
-                  <Font size="15.0" />
+                  <Font size="18.0" />
                </font></Label>
-            <Label fx:id="lb5" alignment="CENTER" layoutX="391.0" layoutY="4.0" prefHeight="20.0" prefWidth="220.0" textFill="WHITE" />
-            <Label fx:id="lb6" alignment="CENTER" layoutX="991.0" layoutY="4.0" prefHeight="20.0" prefWidth="220.0" textFill="WHITE" />
+            <Label fx:id="lb1" alignment="CENTER" layoutX="381.0" layoutY="337.0" prefHeight="20.0" prefWidth="220.0" text="Kevin">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="lb4" alignment="CENTER" layoutX="1441.0" layoutY="272.0" prefHeight="20.0" prefWidth="220.0" rotate="90.0" text="Kevin" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="lb5" alignment="CENTER" layoutX="391.0" prefHeight="20.0" prefWidth="220.0" text="Kevin" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="lb6" alignment="CENTER" layoutX="991.0" prefHeight="20.0" prefWidth="220.0" text="Kevin" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <ImageView fitHeight="160.0" fitWidth="110.0" layoutX="728.0" layoutY="200.0" onMouseClicked="#actionMasoClick" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../recursos/carta_detras.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="991.0" layoutY="343.0" prefHeight="20.0" prefWidth="220.0" text="Mi mesa">
+            <Label fx:id="LbMasopropio" alignment="CENTER" layoutX="991.0" layoutY="337.0" prefHeight="20.0" prefWidth="220.0" text="MI MESA">
                <font>
-                  <Font size="15.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1515" height="118.0" layoutX="1319.0" layoutY="586.0" stroke="BLACK" strokeType="INSIDE" width="232.0" />

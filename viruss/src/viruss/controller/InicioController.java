@@ -367,11 +367,7 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
-        lb1.setText("");
-        lb3.setText("");
-        lb4.setText("");
-        lb5.setText("");
-        lb6.setText("");
+        
         lbNum.setText("");
         lbTurno.setText("");
 

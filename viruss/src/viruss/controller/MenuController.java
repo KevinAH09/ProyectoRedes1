@@ -54,7 +54,6 @@ public class MenuController extends Controller implements Initializable {
     private Label lFecha;
     @FXML
     private Label lHora;
-    private Label lCrono;
     @FXML
     private JFXTextField txtNick;
     @FXML
@@ -113,14 +112,12 @@ public class MenuController extends Controller implements Initializable {
                 switch (val) {
 
                     case "w":
-                        System.out.println("En modo espera de juego");
-                        lCrono.setText("Esperando al host");
+                        System.out.println("En modo espera de juego");                      
                         break;
 
                     case "o":
                         Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
                         band = false;
-                        lCrono.setText("");
                         break;
 
                     case "l":

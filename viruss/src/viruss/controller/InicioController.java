@@ -167,7 +167,7 @@ public class InicioController extends Controller implements Initializable {
     }
 
     private void hiloServidor() {
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(2), ev -> {
             lbNum.setText("");
             lbTurno.setText("");
             lbNum.setText(String.valueOf(MainServidor.juegoMain.turno + 1));

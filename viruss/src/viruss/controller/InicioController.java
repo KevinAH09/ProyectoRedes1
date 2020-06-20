@@ -365,7 +365,7 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
-
+        System.out.println(MainServidor.juegoMain.mazo);
         lbNum.setText("");
         lbTurno.setText("");
 
@@ -466,6 +466,7 @@ public class InicioController extends Controller implements Initializable {
                     MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                 } else {
+                    System.out.println("Cambio de cartas");
                     new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "El mazo se ha quedado vacío, se cargarán las cartas desechadas");
                     MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
                     MainServidor.juegoMain.cementerio.clear();

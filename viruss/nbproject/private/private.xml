@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/model/Servidor.java</file>
-            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/model/Carta.java</file>
-            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/model/Juego.java</file>
-            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/model/Conexion.java</file>
             <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/controller/InicioController.java</file>
-            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/controller/MenuController.java</file>
-            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/model/Jugador.java</file>
+            <file>file:/C:/Users/colo7/Documents/Quiz-1-2-SO/ProyectoRedes1/viruss/src/viruss/model/MainServidor.java</file>
         </group>
     </open-files>
 </project-private>

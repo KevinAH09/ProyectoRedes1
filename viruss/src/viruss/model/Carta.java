@@ -522,7 +522,7 @@ public class Carta extends ImageView implements Serializable {
 //                }
                 int num = 0;
                 semaforo = true;
-                if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune") && fuera) {
+                if (!this.tipoCarta.equals("OrganosInmune") && fuera) {
 
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         for (Carta carta1 : MainServidor.juegoMain.jugadores.get(i).mazo2) {
@@ -605,7 +605,7 @@ public class Carta extends ImageView implements Serializable {
 //                }
                 int num = 0;
                 semaforo = true;
-                if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune") && fuera) {
+                if ( !this.tipoCarta.equals("OrganosInmune") && fuera) {
 
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         for (Carta carta1 : MainServidor.juegoMain.jugadores.get(i).mazo2) {

@@ -125,24 +125,7 @@ public class InicioController extends Controller implements Initializable {
 
         stage = this.getStage();
         nombre = (String) AppContext.getInstance().get("nick");
-        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
 
-            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals(nombre)) {
-            } else {
-                if (lb1.getText().isEmpty()) {
-                    lb1.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (lb3.getText().isEmpty()) {
-                    lb3.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (lb4.getText().isEmpty()) {
-                    lb4.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (lb5.getText().isEmpty()) {
-                    lb5.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (lb6.getText().isEmpty()) {
-                    lb6.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                }
-            }
-
-        }
         cargarPartida();
         timeline = new Timeline(new KeyFrame(Duration.seconds(3), ev -> {
 
@@ -275,8 +258,8 @@ public class InicioController extends Controller implements Initializable {
                 }
 
             } else {
-                System.out.println("viruss.controller.InicioController.actionMasoClick()");
                 MainServidor.juegoMain.conexion = "g";
+                MainServidor.juegoMain.ganador = posJug;
                 iniciarCliente();
                 new Mensaje().showModal(Alert.AlertType.CONFIRMATION, "Fin de la partida", this.getStage(), "HAS GANADO");
 
@@ -329,7 +312,7 @@ public class InicioController extends Controller implements Initializable {
             timeline.stop();
             cargarPartida();
             MainServidor.juegoMain.turno = posJug;
-            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
+            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.ganador).nickname + " a ganado la partida");
         } else if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
 
             cargarPartida();
@@ -365,7 +348,7 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
-        System.out.println(MainServidor.juegoMain.mazo);
+        System.out.println(MainServidor.juegoMain.mazo.size());
         lbNum.setText("");
         lbTurno.setText("");
 
@@ -393,15 +376,19 @@ public class InicioController extends Controller implements Initializable {
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
                     hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-
+                    lb1.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb3.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {
                     hboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb4.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug5.getChildren().isEmpty()) {
                     hboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb5.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug6.getChildren().isEmpty()) {
                     hboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
+                    lb6.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 }
             }
 
@@ -457,11 +444,10 @@ public class InicioController extends Controller implements Initializable {
     private void AplicarCambios(ActionEvent event) throws IOException {
 
         if (!listaCambiarCarta.isEmpty()) {
-            
+
             for (Carta carta : listaCambiarCarta) {
                 if (MainServidor.juegoMain.mazo.isEmpty() != true) {
-                    
-                    
+
                     hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));

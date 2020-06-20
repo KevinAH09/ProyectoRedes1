@@ -23,7 +23,7 @@ public class Juego implements Serializable {
     public List<Carta> mazo = new ArrayList<>();
     public List<Carta> cementerio = new ArrayList<>();
     public List<Carta> cementerioAux = new ArrayList<>();
-
+    public int ganador =0;
     public Juego() {
         conexion = "w";
         jugadores = new ArrayList<>();

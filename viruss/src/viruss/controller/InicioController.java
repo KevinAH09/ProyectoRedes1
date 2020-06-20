@@ -124,6 +124,7 @@ public class InicioController extends Controller implements Initializable {
         statichboxMesaJug6 = hboxMesaJug6;
 
         stage = this.getStage();
+        nombre = (String) AppContext.getInstance().get("nick");
         for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
 
             if (MainServidor.juegoMain.jugadores.get(j).nickname.equals(nombre)) {
@@ -183,9 +184,7 @@ public class InicioController extends Controller implements Initializable {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
-        if (!gane) {
-            FlowController.getInstance().goView("Menu");
-        }
+       
     }
 
     private boolean Ganar() {

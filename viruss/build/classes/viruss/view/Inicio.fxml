@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="1563.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="1563.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viruss.controller.InicioController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1565.0" stylesheets="@bordesBox.css">
          <children>
@@ -19,7 +19,7 @@
                   <Image url="@../recursos/lienzo.jpg" />
                </image>
             </ImageView>
-            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="614.0" layoutY="538.0" prefHeight="166.0" prefWidth="338.0" stylesheets="@bordesBox.css" />
+            <HBox fx:id="hboxMasoJug" alignment="CENTER" layoutX="614.0" layoutY="544.0" prefHeight="166.0" prefWidth="338.0" stylesheets="@bordesBox.css" />
             <HBox fx:id="hboxMesaJug1" alignment="CENTER" layoutX="212.0" layoutY="364.0" prefHeight="166.0" prefWidth="558.0" />
             <HBox fx:id="hboxMesaJug2" layoutX="796.0" layoutY="364.0" onMouseClicked="#actionHboxJug" prefHeight="166.0" prefWidth="558.0" />
             <HBox fx:id="hboxMesaJug5" layoutX="212.0" layoutY="26.0" prefHeight="166.0" prefWidth="558.0" />
@@ -49,7 +49,7 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <Label fx:id="lb3" alignment="CENTER" layoutX="-96.0" layoutY="252.0" prefHeight="20.0" prefWidth="220.0" rotate="90.0" textFill="#fffdfd" />
+            <Label fx:id="lb3" alignment="CENTER" layoutX="-96.0" layoutY="252.0" prefHeight="20.0" prefWidth="220.0" rotate="-90.0" textFill="#fffdfd" />
             <Label fx:id="lb1" alignment="CENTER" layoutX="381.0" layoutY="343.0" prefHeight="20.0" prefWidth="220.0" />
             <Label fx:id="lb4" alignment="CENTER" layoutX="1441.0" layoutY="272.0" prefHeight="20.0" prefWidth="220.0" rotate="90.0" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -67,15 +67,15 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1515" height="118.0" layoutX="1075.0" layoutY="562.0" stroke="BLACK" strokeType="INSIDE" width="242.0" />
-            <Label layoutX="1089.0" layoutY="580.0" prefHeight="17.0" prefWidth="180.0" text="El turno actual es el numero:" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#38628a" height="58.0" layoutX="1089.0" layoutY="603.0" stroke="BLACK" strokeType="INSIDE" width="211.0" />
-            <Label fx:id="lbTurno" layoutX="1101.0" layoutY="613.0" prefHeight="38.0" prefWidth="186.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1515" height="118.0" layoutX="1319.0" layoutY="586.0" stroke="BLACK" strokeType="INSIDE" width="232.0" />
+            <Label layoutX="1327.0" layoutY="604.0" prefHeight="17.0" prefWidth="199.0" text="El turno actual es el numero:" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#38628a" height="58.0" layoutX="1330.0" layoutY="627.0" stroke="BLACK" strokeType="INSIDE" width="211.0" />
+            <Label fx:id="lbTurno" alignment="CENTER" layoutX="1342.0" layoutY="637.0" prefHeight="38.0" prefWidth="186.0">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lbNum" layoutX="1272.0" layoutY="580.0" prefHeight="17.0" prefWidth="34.0" />
+            <Label fx:id="lbNum" layoutX="1529.0" layoutY="604.0" prefHeight="17.0" prefWidth="21.0" />
          </children>
       </AnchorPane>
    </children>

@@ -55,8 +55,6 @@ public class MenuController extends Controller implements Initializable {
     @FXML
     private Label lHora;
     @FXML
-    private Label lCrono;
-    @FXML
     private JFXTextField txtNick;
     @FXML
     private JFXButton btnIngresar;
@@ -64,8 +62,6 @@ public class MenuController extends Controller implements Initializable {
     private AnchorPane scene;
     @FXML
     private JFXButton btnRed;
-    @FXML
-    private ListView listViewJugadores;
     boolean band = true;
     Timeline t;
 
@@ -112,19 +108,16 @@ public class MenuController extends Controller implements Initializable {
                 System.out.println("Iniciando servidor\n");
                 serv.startServer(); //Se inicia el servidor
                 String val = MainServidor.juegoMain.conexion;
-                listViewJugadores.getItems().clear();
-                listViewJugadores.getItems().addAll(FXCollections.observableArrayList(MainServidor.juegoMain.jugadores));
+
                 switch (val) {
 
                     case "w":
-                        System.out.println("En modo espera de juego");
-                        lCrono.setText("Esperando al host");
+                        System.out.println("En modo espera de juego");                      
                         break;
 
                     case "o":
                         Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
                         band = false;
-                        lCrono.setText("");
                         break;
 
                     case "l":

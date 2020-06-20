@@ -439,16 +439,16 @@ public class Carta extends ImageView implements Serializable {
             }//------------------------------
 
             if (this.tipoCarta.equals("Organos")) {
-                int num=0;
+                int num = 0;
                 semaforo = true;
                 if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune") && fuera) {
-                   
+
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         for (Carta carta1 : MainServidor.juegoMain.jugadores.get(i).mazo2) {
                             if (this.idcarta == carta1.idcarta) {
                                 cartaverificar = carta1;
                                 listaVerificar = MainServidor.juegoMain.jugadores.get(i).mazo2;
-                                num=i;
+                                num = i;
                                 break;
                             }
 
@@ -456,7 +456,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                     for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                        if (cartass.color == cartaverificar.color) {
+                        if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
                             semaforo = false;
                             System.out.println("repetida");
                             break;
@@ -464,7 +464,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                     for (Carta carta1 : listaVerificar) {
-                        if (CartaAux.color == carta1.idcarta) {
+                        if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
                             semaforo = false;
                             System.out.println("repetida");
                             break;
@@ -476,16 +476,14 @@ public class Carta extends ImageView implements Serializable {
                         MainServidor.juegoMain.jugadores.get(num).mazo2.add(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(cartaverificar);
-                        
 
-                        
 //                        InicioController.masoStatico.getChildren().clear();
 //                        InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                         for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (CartaAux2.idcarta == cartass.idcarta) {
                                 MainServidor.juegoMain.cementerio.add(cartass);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(cartass);
-                                CartaAux2=null;
+                                CartaAux2 = null;
                                 break;
                             }
 
@@ -517,16 +515,16 @@ public class Carta extends ImageView implements Serializable {
 //                    }
 //
 //                }
-               int num=0;
+                int num = 0;
                 semaforo = true;
                 if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune") && fuera) {
-                  
+
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         for (Carta carta1 : MainServidor.juegoMain.jugadores.get(i).mazo2) {
                             if (this.idcarta == carta1.idcarta) {
                                 cartaverificar = carta1;
                                 listaVerificar = MainServidor.juegoMain.jugadores.get(i).mazo2;
-                                num=i;
+                                num = i;
                                 break;
                             }
 
@@ -534,7 +532,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                     for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                        if (cartass.color == cartaverificar.color) {
+                        if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
                             semaforo = false;
                             System.out.println("repetida");
                             break;
@@ -542,7 +540,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                     for (Carta carta1 : listaVerificar) {
-                        if (CartaAux.color == carta1.idcarta) {
+                        if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
                             semaforo = false;
                             System.out.println("repetida");
                             break;
@@ -554,16 +552,14 @@ public class Carta extends ImageView implements Serializable {
                         MainServidor.juegoMain.jugadores.get(num).mazo2.add(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(cartaverificar);
-                        
 
-                        
 //                        InicioController.masoStatico.getChildren().clear();
 //                        InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                         for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
                             if (CartaAux2.idcarta == cartass.idcarta) {
                                 MainServidor.juegoMain.cementerio.add(cartass);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(cartass);
-                                CartaAux2=null;
+                                CartaAux2 = null;
                                 break;
                             }
 
@@ -576,7 +572,7 @@ public class Carta extends ImageView implements Serializable {
                 }
 
             } else if (this.tipoCarta.equals("OrganosVirus")) {
-                int num=0;
+
 //                if (!this.tipoCarta.equals("OrganosInmune") && fuera) {
 //                    for (Jugador jugadore : MainServidor.juegoMain.jugadores) {
 //                        for (Carta carta1 : jugadore.mazo2) {
@@ -596,16 +592,16 @@ public class Carta extends ImageView implements Serializable {
 //                    }
 //
 //                }
-
-
+                int num = 0;
                 semaforo = true;
                 if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune") && fuera) {
+
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         for (Carta carta1 : MainServidor.juegoMain.jugadores.get(i).mazo2) {
                             if (this.idcarta == carta1.idcarta) {
                                 cartaverificar = carta1;
                                 listaVerificar = MainServidor.juegoMain.jugadores.get(i).mazo2;
-                                num=i;
+                                num = i;
                                 break;
                             }
 
@@ -613,7 +609,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                     for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                        if (cartass.color == cartaverificar.color) {
+                        if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
                             semaforo = false;
                             System.out.println("repetida");
                             break;
@@ -621,7 +617,7 @@ public class Carta extends ImageView implements Serializable {
                     }
 
                     for (Carta carta1 : listaVerificar) {
-                        if (CartaAux.color == carta1.idcarta) {
+                        if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
                             semaforo = false;
                             System.out.println("repetida");
                             break;
@@ -633,18 +629,14 @@ public class Carta extends ImageView implements Serializable {
                         MainServidor.juegoMain.jugadores.get(num).mazo2.add(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.remove(CartaAux);
                         MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2.add(cartaverificar);
-                        
 
-                        
 //                        InicioController.masoStatico.getChildren().clear();
 //                        InicioController.masoStatico.getChildren().addAll(MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1);
                         for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1) {
-                            System.out.println(CartaAux2+"dasd");
                             if (CartaAux2.idcarta == cartass.idcarta) {
-                                
                                 MainServidor.juegoMain.cementerio.add(cartass);
                                 MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo1.remove(cartass);
-                                CartaAux2=null;
+                                CartaAux2 = null;
                                 break;
                             }
 
@@ -658,7 +650,7 @@ public class Carta extends ImageView implements Serializable {
             }
 
             cont = 0;
-            CartaAux2=null;
+            CartaAux2 = null;
 
         } else if (cont == 1) {
             this.setRotate(0);

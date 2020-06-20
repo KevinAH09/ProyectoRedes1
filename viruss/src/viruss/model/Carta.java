@@ -441,7 +441,7 @@ public class Carta extends ImageView implements Serializable {
             if (this.tipoCarta.equals("Organos")) {
                 int num = 0;
                 semaforo = true;
-                if (CartaAux.color != this.color && !this.tipoCarta.equals("OrganosInmune") && fuera) {
+                if (!this.tipoCarta.equals("OrganosInmune") && fuera) {
 
                     for (int i = 0; i < MainServidor.juegoMain.jugadores.size(); i++) {
                         for (Carta carta1 : MainServidor.juegoMain.jugadores.get(i).mazo2) {
@@ -454,20 +454,25 @@ public class Carta extends ImageView implements Serializable {
 
                         }
                     }
+                    if ((CartaAux.color * 11 == cartaverificar.color) || (CartaAux.color == cartaverificar.color * 11) || (CartaAux.color == cartaverificar.color)) {
+                        semaforo = true;
+                    } else {
 
-                    for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                        if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
-                            semaforo = false;
-                            System.out.println("repetida");
-                            break;
+                        for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                            if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
+
+                                semaforo = false;
+                                System.out.println("repetida");
+                                break;
+                            }
                         }
-                    }
 
-                    for (Carta carta1 : listaVerificar) {
-                        if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
-                            semaforo = false;
-                            System.out.println("repetida");
-                            break;
+                        for (Carta carta1 : listaVerificar) {
+                            if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
+                                semaforo = false;
+                                System.out.println("repetida");
+                                break;
+                            }
                         }
                     }
                     if (semaforo == true) {
@@ -531,19 +536,25 @@ public class Carta extends ImageView implements Serializable {
                         }
                     }
 
-                    for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                        if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
-                            semaforo = false;
-                            System.out.println("repetida");
-                            break;
-                        }
-                    }
+                    if ((CartaAux.color * 11 == cartaverificar.color) || (CartaAux.color == cartaverificar.color * 11) || (CartaAux.color == cartaverificar.color)) {
+                        semaforo = true;
+                    } else {
 
-                    for (Carta carta1 : listaVerificar) {
-                        if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
-                            semaforo = false;
-                            System.out.println("repetida");
-                            break;
+                        for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                            if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
+
+                                semaforo = false;
+                                System.out.println("repetida");
+                                break;
+                            }
+                        }
+
+                        for (Carta carta1 : listaVerificar) {
+                            if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
+                                semaforo = false;
+                                System.out.println("repetida");
+                                break;
+                            }
                         }
                     }
                     if (semaforo == true) {
@@ -608,19 +619,25 @@ public class Carta extends ImageView implements Serializable {
                         }
                     }
 
-                    for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
-                        if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
-                            semaforo = false;
-                            System.out.println("repetida");
-                            break;
-                        }
-                    }
+                    if ((CartaAux.color * 11 == cartaverificar.color) || (CartaAux.color == cartaverificar.color * 11) || (CartaAux.color == cartaverificar.color)) {
+                        semaforo = true;
+                    } else {
 
-                    for (Carta carta1 : listaVerificar) {
-                        if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
-                            semaforo = false;
-                            System.out.println("repetida");
-                            break;
+                        for (Carta cartass : MainServidor.juegoMain.jugadores.get(InicioController.posJug).mazo2) {
+                            if ((cartass.color == cartaverificar.color) || (cartass.color * 11 == cartaverificar.color) || (cartass.color == cartaverificar.color * 11)) {
+
+                                semaforo = false;
+                                System.out.println("repetida");
+                                break;
+                            }
+                        }
+
+                        for (Carta carta1 : listaVerificar) {
+                            if ((carta1.color == CartaAux.color) || (carta1.color * 11 == CartaAux.color) || (carta1.color == CartaAux.color * 11)) {
+                                semaforo = false;
+                                System.out.println("repetida");
+                                break;
+                            }
                         }
                     }
                     if (semaforo == true) {

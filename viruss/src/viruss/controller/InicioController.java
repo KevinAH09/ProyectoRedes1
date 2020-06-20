@@ -312,7 +312,7 @@ public class InicioController extends Controller implements Initializable {
             timeline.stop();
             cargarPartida();
             MainServidor.juegoMain.turno = posJug;
-            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.ganador).nickname + " a ganado la partida");
+            new Mensaje().showConfirmation("GANADOR", this.stage, "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.ganador).nickname + " a ganado la partida");
         } else if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
 
             cargarPartida();

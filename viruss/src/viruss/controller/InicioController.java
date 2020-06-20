@@ -278,7 +278,7 @@ public class InicioController extends Controller implements Initializable {
                 System.out.println("viruss.controller.InicioController.actionMasoClick()");
                 MainServidor.juegoMain.conexion = "g";
                 iniciarCliente();
-                new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "HAS GANADO");
+                new Mensaje().showModal(Alert.AlertType.CONFIRMATION, "Fin de la partida", this.getStage(), "HAS GANADO");
 
             }
         }
@@ -457,13 +457,16 @@ public class InicioController extends Controller implements Initializable {
     private void AplicarCambios(ActionEvent event) throws IOException {
 
         if (!listaCambiarCarta.isEmpty()) {
+            
             for (Carta carta : listaCambiarCarta) {
                 if (MainServidor.juegoMain.mazo.isEmpty() != true) {
+                    
+                    
                     hboxMasoJug.getChildren().add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.jugadores.get(posJug).mazo1.add(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                     MainServidor.juegoMain.mazo.remove(MainServidor.juegoMain.mazo.get(MainServidor.juegoMain.mazo.size() - 1));
                 } else {
-
+                    new Mensaje().showModal(Alert.AlertType.ERROR, "Mazo vacío", this.getStage(), "El mazo se ha quedado vacío, se cargarán las cartas desechadas");
                     MainServidor.juegoMain.mazo.addAll(MainServidor.juegoMain.cementerio);
                     MainServidor.juegoMain.cementerio.clear();
                     if (MainServidor.juegoMain.mazo.isEmpty() != true) {

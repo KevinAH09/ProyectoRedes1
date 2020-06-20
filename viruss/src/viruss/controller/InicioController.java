@@ -144,7 +144,7 @@ public class InicioController extends Controller implements Initializable {
 
         }
         cargarPartida();
-        timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(3), ev -> {
 
             try {
                 if (MainServidor.juegoMain.turno != posJug) {

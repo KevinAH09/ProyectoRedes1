@@ -110,6 +110,7 @@ public class InicioController extends Controller implements Initializable {
     private Label lbTurno;
     @FXML
     private Label lbNum;
+    public boolean gane = true;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -123,6 +124,24 @@ public class InicioController extends Controller implements Initializable {
         statichboxMesaJug6 = hboxMesaJug6;
 
         stage = this.getStage();
+        for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
+
+            if (MainServidor.juegoMain.jugadores.get(j).nickname.equals(nombre)) {
+            } else {
+                if (lb1.getText().isEmpty()) {
+                    lb1.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
+                } else if (lb3.getText().isEmpty()) {
+                    lb3.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
+                } else if (lb4.getText().isEmpty()) {
+                    lb4.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
+                } else if (lb5.getText().isEmpty()) {
+                    lb5.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
+                } else if (lb6.getText().isEmpty()) {
+                    lb6.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
+                }
+            }
+
+        }
         cargarPartida();
         timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
 
@@ -130,6 +149,7 @@ public class InicioController extends Controller implements Initializable {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
                 }
+
                 timeline.stop();
             } catch (IOException ex) {
                 Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
@@ -163,6 +183,9 @@ public class InicioController extends Controller implements Initializable {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+        if (!gane) {
+            FlowController.getInstance().goView("Menu");
+        }
     }
 
     private boolean Ganar() {
@@ -305,9 +328,9 @@ public class InicioController extends Controller implements Initializable {
         System.out.println("Iniciando servidor\n");
         serv.startServer(); //Se inicia el servidor
         if (MainServidor.juegoMain.conexion.equals("g")) {
-
             timeline.stop();
             cargarPartida();
+            gane = false;
             new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
             MainServidor.juegoMain.turno = posJug;
         } else if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
@@ -377,20 +400,15 @@ public class InicioController extends Controller implements Initializable {
             } else {
                 if (hboxMesaJug1.getChildren().isEmpty()) {
                     hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    lb1.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
 
                 } else if (hboxMesaJug3.getChildren().isEmpty()) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    lb3.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug4.getChildren().isEmpty()) {
                     hboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    lb4.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug5.getChildren().isEmpty()) {
                     hboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    lb5.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 } else if (hboxMesaJug6.getChildren().isEmpty()) {
                     hboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
-                    lb6.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
                 }
             }
 

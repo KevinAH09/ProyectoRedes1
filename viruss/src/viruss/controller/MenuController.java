@@ -84,21 +84,6 @@ public class MenuController extends Controller implements Initializable {
         Date now = new Date(System.currentTimeMillis());
         SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
         lFecha.setText(date.format(now));
-//        texto();
-//        
-//        
-//        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent mouseEvent) {
-//                System.out.println("Mouse clicked X : Y - " + 
-//                        mouseEvent.getX() + " : " + mouseEvent.getY());         
-////                if(mouseEvent.getButton() == MouseButton.PRIMARY) {
-////                    System.out.println("Botón principal");
-////                } else if(mouseEvent.getButton() == MouseButton.SECONDARY) {
-////                    System.out.println("Botón secundario");
-////                }
-//            }
-//        });
 
     }
 
@@ -109,7 +94,7 @@ public class MenuController extends Controller implements Initializable {
 
     @FXML
     private void Ingresar(ActionEvent event) throws IOException {
-        if (AppContext.getInstance().get("IPSERVIDOR") != null) {
+        if (AppContext.getInstance().get("IPSERVIDOR") != null && !txtNick.getText().isEmpty()) {
 
             band = true;
             AppContext.getInstance().set("nick", txtNick.getText());
@@ -134,18 +119,15 @@ public class MenuController extends Controller implements Initializable {
                     case "w":
                         System.out.println("En modo espera de juego");
                         lCrono.setText("Esperando al host");
-//                    t.play();
                         break;
 
                     case "o":
                         Mensaje.show(Alert.AlertType.ERROR, "Tiempo Fuera", "El tiempo para iniciar el juego llegó al límite y no cumple con la cantidad de jugadores mínimos");
                         band = false;
-//                    t.stop();
                         lCrono.setText("");
                         break;
 
                     case "l":
-//                    Mensaje.show(Alert.AlertType.INFORMATION, "Juego por iniciar", "El juego va a iniciar");
                         band = false;
                         FlowController.getInstance().goView("Inicio");
                         break;
@@ -156,7 +138,7 @@ public class MenuController extends Controller implements Initializable {
 
                 }
             }
-        }else{
+        } else {
             Mensaje.show(Alert.AlertType.ERROR, "ERROR IP", "Ingrese la direccion ip del servidor al que se desea conectar");
         }
     }
@@ -164,21 +146,18 @@ public class MenuController extends Controller implements Initializable {
     @FXML
     private void ingresarRed(ActionEvent event) {
         String name = JOptionPane.showInputDialog("Ingrese la dirección IP del servidor de destino");
-        JOptionPane.showMessageDialog(null, "Se ha guardado la IP ");
-        AppContext.getInstance().set("IPSERVIDOR", name);
+        if (name == null || (name != null && ("".equals(name)))) {
+            JOptionPane.showMessageDialog(null, " Ingrese la IP!!!", " ^-^ Campo de IP vacío", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Se ha guardado la IP ", "Confimación de IP", JOptionPane.INFORMATION_MESSAGE);
+            AppContext.getInstance().set("IPSERVIDOR", name);
+        }
     }
 
-//    private void texto() {
-//        t = new Timeline(
-//                new KeyFrame(Duration.seconds(0), new KeyValue(lCrono.translateXProperty(), 0)),
-//                new KeyFrame(Duration.seconds(2), new KeyValue(lCrono.translateXProperty(), 80))
-//        );
-//        t.setAutoReverse(true);
-//        t.setCycleCount(Timeline.INDEFINITE);
-//
-//    }
     @FXML
-    private void actioonBtnInformacion(ActionEvent event) {
+    private void actioonBtnInformacion(ActionEvent event
+    ) {
         FlowController.getInstance().goViewInWindowModal("Informacion", this.stage, false);
     }
 }

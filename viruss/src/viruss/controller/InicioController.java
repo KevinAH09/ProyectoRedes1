@@ -175,7 +175,6 @@ public class InicioController extends Controller implements Initializable {
             try {
                 if (MainServidor.juegoMain.turno != posJug) {
                     iniciarServidor();
-
                 }
                 timeline.stop();
             } catch (IOException ex) {
@@ -184,7 +183,7 @@ public class InicioController extends Controller implements Initializable {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
-       
+
     }
 
     private boolean Ganar() {
@@ -329,9 +328,8 @@ public class InicioController extends Controller implements Initializable {
         if (MainServidor.juegoMain.conexion.equals("g")) {
             timeline.stop();
             cargarPartida();
-            gane = false;
-            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
             MainServidor.juegoMain.turno = posJug;
+            new Mensaje().show(Alert.AlertType.INFORMATION, "GANADOR", "Jugador " + MainServidor.juegoMain.jugadores.get(MainServidor.juegoMain.turno).nickname + " a ganado la partida");
         } else if (MainServidor.juegoMain.conexion.equals("GL") && MainServidor.juegoMain.turno != posJug) {
 
             cargarPartida();
@@ -367,7 +365,7 @@ public class InicioController extends Controller implements Initializable {
         hboxmaso.getChildren().clear();
         HboxBasura.getChildren().clear();
         hboxMasoJug.getChildren().clear();
-        
+
         lbNum.setText("");
         lbTurno.setText("");
 

@@ -111,6 +111,8 @@ public class InicioController extends Controller implements Initializable {
     @FXML
     private Label lbNum;
     public boolean gane = true;
+    @FXML
+    private Label LbMasopropio;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

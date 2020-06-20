@@ -26,7 +26,7 @@
             <HBox fx:id="hboxMesaJug6" layoutX="796.0" layoutY="26.0" prefHeight="166.0" prefWidth="558.0" />
             <HBox fx:id="hboxmaso" layoutX="809.0" layoutY="85.0" prefHeight="58.0" prefWidth="83.0" stylesheets="@bordesBox.css" />
             <HBox fx:id="hboxMesaJug4" layoutX="1171.0" layoutY="199.0" prefHeight="166.0" prefWidth="558.0" rotate="-90.0" />
-            <HBox fx:id="hboxMesaJug3" layoutX="-164.0" layoutY="197.0" prefHeight="166.0" prefWidth="558.0" rotate="90.0" />
+            <HBox fx:id="hboxMesaJug3" layoutX="-168.0" layoutY="199.0" prefHeight="166.0" prefWidth="558.0" rotate="90.0" />
             <ImageView fx:id="cemento" fitHeight="106.0" fitWidth="130.0" layoutX="371.0" layoutY="209.0" pickOnBounds="true" visible="false">
                <image>
                   <Image url="@../recursos/Cementerio.jpg" />
@@ -49,23 +49,23 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <Label fx:id="lb3" alignment="CENTER" layoutX="-96.0" layoutY="252.0" prefHeight="20.0" prefWidth="220.0" rotate="-90.0" text="Kevin" textFill="#fffdfd">
+            <Label fx:id="lb3" alignment="CENTER" layoutX="-96.0" layoutY="252.0" prefHeight="20.0" prefWidth="220.0" rotate="-90.0" textFill="#fffdfd">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label fx:id="lb1" alignment="CENTER" layoutX="381.0" layoutY="337.0" prefHeight="20.0" prefWidth="220.0" text="Kevin">
+            <Label fx:id="lb1" alignment="CENTER" layoutX="381.0" layoutY="337.0" prefHeight="20.0" prefWidth="220.0">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label fx:id="lb4" alignment="CENTER" layoutX="1441.0" layoutY="272.0" prefHeight="20.0" prefWidth="220.0" rotate="90.0" text="Kevin" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="lb4" alignment="CENTER" layoutX="1441.0" layoutY="272.0" prefHeight="20.0" prefWidth="220.0" rotate="90.0" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label fx:id="lb5" alignment="CENTER" layoutX="391.0" prefHeight="20.0" prefWidth="220.0" text="Kevin" textFill="WHITE">
+            <Label fx:id="lb5" alignment="CENTER" layoutX="391.0" prefHeight="20.0" prefWidth="220.0" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label fx:id="lb6" alignment="CENTER" layoutX="991.0" prefHeight="20.0" prefWidth="220.0" text="Kevin" textFill="WHITE">
+            <Label fx:id="lb6" alignment="CENTER" layoutX="991.0" prefHeight="20.0" prefWidth="220.0" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Label>

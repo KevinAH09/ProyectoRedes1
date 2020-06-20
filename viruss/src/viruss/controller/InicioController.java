@@ -366,7 +366,11 @@ public class InicioController extends Controller implements Initializable {
 
             }
         }
-
+        boolean hbox1 = true;
+        boolean hbox2 = true;
+        boolean hbox3 = true;
+        boolean hbox4 = true;
+        boolean hbox5 = true;
         for (int j = 0; j < MainServidor.juegoMain.jugadores.size(); j++) {
 
             if (MainServidor.juegoMain.jugadores.get(j).nickname.equals(nombre)) {
@@ -374,22 +378,29 @@ public class InicioController extends Controller implements Initializable {
                 hboxMasoJug.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo1);
                 hboxMesaJug2.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
             } else {
-                if (hboxMesaJug1.getChildren().isEmpty()) {
+                
+                if (hbox1) {
                     hboxMesaJug1.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                     lb1.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (hboxMesaJug3.getChildren().isEmpty()) {
+                    hbox1 = false;
+                } else if (hbox2) {
                     hboxMesaJug3.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                     lb3.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (hboxMesaJug4.getChildren().isEmpty()) {
+                    hbox2 = false;
+                } else if (hbox3) {
                     hboxMesaJug4.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                     lb4.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (hboxMesaJug5.getChildren().isEmpty()) {
+                    hbox3 = false;
+                } else if (hbox4) {
                     hboxMesaJug5.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                     lb5.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
-                } else if (hboxMesaJug6.getChildren().isEmpty()) {
+                    hbox4 = false;
+                } else if (hbox5) {
                     hboxMesaJug6.getChildren().addAll(MainServidor.juegoMain.jugadores.get(j).mazo2);
                     lb6.setText(MainServidor.juegoMain.jugadores.get(j).nickname);
+                    hbox5 = false;
                 }
+                
             }
 
         }
